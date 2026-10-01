@@ -18,7 +18,7 @@ cap = {r[0]: r[1] for r in csv.reader(open(os.path.join(CE, "images", "captions.
 def figure(m):
     i = m.group(1); num = "Intro" if i.startswith("INTRO") else f"{int(i[1:3])}.{int(i[4:6])}"
     c = html.escape(cap.get(i, ""))
-    return f'\n<figure><img src="../../img/{i}.png" alt="Figure {num}. {c}" loading="lazy"><figcaption><b>Figure {num}.</b> {c}</figcaption></figure>\n'
+    return f'\n<figure><img src="img/{i}.png" alt="Figure {num}. {c}" loading="lazy"><figcaption><b>Figure {num}.</b> {c}</figcaption></figure>\n'
 
 def md2html(md):
     md = re.sub(r"^> \[ILLUSTRATION ([A-Z0-9-]+): .*\]\s*$", figure, md, flags=re.M)
