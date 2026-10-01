@@ -1,4 +1,4 @@
-// EHRIC Learning Center — phase 1 (lessons, module quizzes, progress).
+// EHRIC Learning Center — phase 2 (sign-in, saved progress, lessons, module quizzes).
 const PASS = 0.8, QUIZ_SIZE = 10;
 const $ = (s) => document.querySelector(s);
 const main = $("#main");
@@ -110,11 +110,44 @@ async function quizView(n) {
   show();
 }
 
-function route() {
+function signInView(msg) {
+  main.innerHTML = `<h1>Sign in to your course</h1>
+    <p>Enter your email and we'll send you a sign-in link. No password needed. Open the link on this same device and browser.</p>
+    ${msg ? `<p class="fb" role="status">${msg}</p>` : ""}
+    <form id="si" class="q" style="max-width:520px">
+      <label for="si-name">Full name (first time only)</label><input id="si-name" autocomplete="name" style="width:100%;padding:10px;margin:4px 0 12px">
+      <label for="si-email">Email</label><input id="si-email" type="email" required autocomplete="email" style="width:100%;padding:10px;margin:4px 0 14px">
+      <button class="btn" type="submit">Email me a sign-in link</button>
+    </form>`;
+  $("#si").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = $("#si-email").value.trim(), name = $("#si-name").value.trim();
+    const { error } = await Store.signIn(email, name);
+    signInView(error ? "Sorry, that didn't work: " + esc(error.message) + " Please try again in a minute."
+      : "Check your email for a sign-in link from EHRIC (check Junk too). Open it on this device to continue.");
+  });
+  focusMain("Sign in");
+}
+
+function showWho() {
+  const u = Store.user(); const w = $("#who");
+  w.innerHTML = u ? `${esc(u.email)} · <a href="#/signout" style="color:#fff">Sign out</a>` : "";
+}
+
+async function route() {
   const h = location.hash.replace(/^#\/?/, "").split("/");
+  if (h[0] === "signout") { await Store.signOut(); showWho(); location.hash = "#/"; return; }
+  showWho();
+  if (!Store.user()) return signInView();
   if (h[0] === "m" && h[2] === "l") return lessonView(+h[1], +h[3]);
   if (h[0] === "m" && h[2] === "quiz") return quizView(+h[1]);
   if (h[0] === "m") return moduleView(+h[1]);
   dashboard();
 }
-fetch("data/course.json").then((r) => r.json()).then((c) => { COURSE = c; window.addEventListener("hashchange", route); route(); });
+(async () => {
+  COURSE = await (await fetch("data/course.json")).json();
+  await Store.load();
+  Store.onChange(async () => { await Store.load(); route(); });
+  window.addEventListener("hashchange", route);
+  route();
+})();
