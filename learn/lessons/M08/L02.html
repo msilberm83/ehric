@@ -1,0 +1,231 @@
+<h1>Module 8, Lesson 2: Map each field by meaning</h1>
+<h2 id="map-each-field-by-meaning">Map each field by meaning</h2>
+<p>Two fields with the same name can mean different things. A wrong
+mapping can put true data in a place where staff will read it the wrong
+way.</p>
+<p>The <strong>mapping workbook</strong> records how each source item
+becomes a destination item. A <strong>transformation rule</strong> is
+the written instruction for changing a value on the way. For each item,
+record:</p>
+<ul>
+<li>source system, table or file, and field;</li>
+<li>source definition and sample format;</li>
+<li>destination object and field;</li>
+<li>destination definition and allowed format;</li>
+<li>transformation rule;</li>
+<li>what happens to blank or default values;</li>
+<li>code or value translation;</li>
+<li>relationship or matching rule;</li>
+<li>access or sensitivity;</li>
+<li>how it will be validated;</li>
+<li>the accountable business approver;</li>
+<li>the decision and version.</li>
+</ul>
+<p>Do not force a mapping because two fields have similar names.
+"Status," "provider," "owner," "date," or "balance" may mean different
+things in each system. If no safe destination exists, send the decision
+to the data owner. Approved archive access is often safer than putting
+information in a misleading field.</p>
+<h3 id="transformation-examples">Transformation examples</h3>
+<ul>
+<li>change a date's display format without changing the date
+itself;</li>
+<li>translate old status values into approved new values;</li>
+<li>split a full name only under an approved rule, with a process for
+exceptions;</li>
+<li>keep leading zeros in identifiers;</li>
+<li>convert time zones under a written rule;</li>
+<li>link documents through validated record IDs;</li>
+<li>mark where data came from, so users know it came from the old
+system.</li>
+</ul>
+<p>That last mark is called <strong>provenance</strong>: a record of
+where information came from.</p>
+<p>Every transformation should give the same result each time it runs.
+Give each version of the workbook a number.</p>
+<figure style="margin:16px 0"><img src="../../img/M08-03.png" alt="Figure 8.3. Notice that each mapping row records its rule, its approver, and its version number." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.3.</b> Notice that each mapping row records its rule, its approver, and its version number.</figcaption></figure>
+> **Rule:** Map by meaning, not by name; if no safe destination exists, the data owner decides.
+
+<ul>
+<li><strong>Example A.</strong> The old field "Provider" holds the last
+provider who saw the patient. The new field "Primary care provider"
+means the patient's main doctor. They do not match, so the data owner
+decides.</li>
+<li><strong>Example B.</strong> The old "Status" field uses "I" for
+inactive patients. The new system uses "I" for insured. A direct copy
+would label inactive patients as insured. The team writes a translation
+rule.</li>
+</ul>
+<p>In both cases the field names or codes matched. The meanings did
+not.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List six columns a mapping workbook needs.</li>
+<li>Why is approved archive access sometimes better than a mapped
+field?</li>
+<li>A source field called "Date" might be the visit date or the date it
+was typed in. What do you do before mapping it?</li>
+</ol>
+<h2 id="protect-the-data">Protect the data</h2>
+<p>Conversion copies large amounts of patient data into new places. Each
+copy, error file, and staging area is a new way for that data to
+leak.</p>
+<p><strong>Staging</strong> is a temporary holding area where data waits
+between extraction and loading. Plan security for extraction, transfer,
+staging, validation, error handling, backups, and final disposal.</p>
+<p>Write down:</p>
+<ul>
+<li>the approved transfer method;</li>
+<li>encryption, and who holds the keys;</li>
+<li>access by role;</li>
+<li>the staging location;</li>
+<li>logging and monitoring;</li>
+<li>how rejected records and error files are protected;</li>
+<li>whether vendors or subcontractors create, receive, keep, or send
+protected or confidential information;</li>
+<li>the contracts and approvals that apply;</li>
+<li>how long temporary copies are kept and how they are safely
+destroyed;</li>
+<li>the incident and escalation route.</li>
+</ul>
+<p><strong>HIPAA</strong> is the U.S. Health Insurance Portability and
+Accountability Act. Its rules protect health information. For
+HIPAA-covered work, the client and its business associates decide and
+document their own duties. A <strong>business associate</strong> is an
+outside company that handles protected health information for the
+clinic. Their duties include agreements, risk analysis, safeguards,
+access, audit, availability, and breach response.</p>
+<p>A cloud provider that stores electronic protected health information
+may be a business associate. This is true even if the data is encrypted
+and the provider has no key. Use current guidance from the U.S.
+Department of Health and Human Services (<strong>HHS</strong>) and the
+clinic's privacy and legal review.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every copy of converted data needs a protected
+place, a limited set of users, and a planned end.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name five items a conversion security plan must cover.</li>
+<li>Why do error files need the same protection as the main data?</li>
+<li>A vendor wants to email a test extract to a subcontractor. What do
+you check, and who approves it?</li>
+</ol>
+<h2 id="run-repeated-test-conversions">Run repeated test
+conversions</h2>
+<p>The first load almost never works. Repeated test runs let the team
+find and fix mapping problems before the real go-live load.</p>
+<p>Use a non-production environment, or an approved test area kept apart
+from live work. A well-run conversion usually includes:</p>
+<ol type="1">
+<li>a small technical sample;</li>
+<li>a representative test conversion;</li>
+<li>a corrected full-volume rehearsal;</li>
+<li>the final production conversion;</li>
+<li>checks after the load, and the move to live work.</li>
+</ol>
+<p>Each run uses a controlled mapping version and produces:</p>
+<ul>
+<li>source counts and checks;</li>
+<li>extracted counts;</li>
+<li>loaded, rejected, skipped, and transformed counts;</li>
+<li>reasons for errors;</li>
+<li>relationship checks;</li>
+<li>data-owner validation;</li>
+<li>defects and corrections;</li>
+<li>run time and performance;</li>
+<li>the evidence needed for the next gate.</li>
+</ul>
+<p>Do not change mappings during a run without version control. The team
+must know which rules gave which result.</p>
+<figure style="margin:16px 0"><img src="../../img/M08-04.png" alt="Figure 8.4. Notice that every conversion run uses one numbered mapping version and passes a gate before the next." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.4.</b> Notice that every conversion run uses one numbered mapping version and passes a gate before the next.</figcaption></figure>
+> **Rule:** Every test run uses one numbered mapping version, so each result traces to its rules.
+
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Put the five conversion runs in order.</li>
+<li>Why must the mapping version stay fixed during a run?</li>
+<li>Halfway through a rehearsal, the vendor wants to fix a mapping row
+while the run is still going. What do you do?</li>
+</ol>
+<h2 id="reconcile-and-validate-with-the-owners">Reconcile and validate
+with the owners</h2>
+<p>A clean load report shows that records moved. It does not show that
+they are right, linked, or usable. Owners must check the data they
+understand.</p>
+<p><strong>Validation</strong> asks whether the converted information is
+complete, accurate, correctly linked, usable, visible to the right
+roles, and fit for its approved purpose. <strong>Reconciliation</strong>
+means comparing numbers from the source and destination and explaining
+every difference.</p>
+<p>Use several methods together:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>What you do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Count reconciliation</td>
+<td>Compare source, extracted, loaded, rejected, skipped, and duplicate
+counts for each group. Explain every difference.</td>
+</tr>
+<tr>
+<td>Control totals</td>
+<td>Compare totals that matter: balances, payments, open items,
+appointments, documents. A matching total does not prove each record is
+right. A total that does not match shows a problem.</td>
+</tr>
+<tr>
+<td>Field and relationship checks</td>
+<td>Check values, formats, translations, cut-off text, IDs, documents,
+and links. Include normal, incomplete, edge, duplicate, and high-risk
+examples.</td>
+</tr>
+<tr>
+<td>Business scenario checks</td>
+<td>Use converted records in approved workflows. Can staff find the
+right record, see where it came from, continue an open task, find a
+document, post a payment, and take the next step?</td>
+</tr>
+<tr>
+<td>Access and audit checks</td>
+<td>Confirm the right roles can see what they need and are blocked from
+restricted records. Check source, author, date, approval, and audit
+details.</td>
+</tr>
+<tr>
+<td>Client validation</td>
+<td>Named business owners validate the information they understand.
+Technical success is not client acceptance.</td>
+</tr>
+</tbody>
+</table>
+<figure style="margin:16px 0"><img src="../../img/M08-05.png" alt="Figure 8.5. Notice that every drop from source to loaded must be explained by a reason." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.5.</b> Notice that every drop from source to loaded must be explained by a reason.</figcaption></figure>
+Set the sampling or full-review rule by risk and clinic policy. Some critical groups may need a full check. Others may use a written sample. The data and domain owners approve the approach. For clinical lists, see the next two sections.
+
+<blockquote>
+<p><strong>Rule:</strong> Explain every count difference, then let the
+named owners validate what they understand.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> A run extracts 21,480 patients. Loaded,
+rejected, and skipped add up to 21,440. You open a defect for the
+missing 40 before the validation meeting.</li>
+<li><strong>Example B.</strong> Every appointment loads. When the
+scheduler opens tomorrow's list, three Lakeshore visits show at Cedar
+Point main. The counts matched, but the business scenario check
+failed.</li>
+</ul>
+<p>The counts caught one problem. Only an owner using the data caught
+the other.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four validation methods besides count reconciliation.</li>
+<li>Why doesn't a matching control total prove every record is
+correct?</li>
+<li>The vendor's report says "100% loaded" and client validation is not
+scheduled. What do you recommend?</li>
+</ol>

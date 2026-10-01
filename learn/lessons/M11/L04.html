@@ -1,0 +1,204 @@
+<h1>Module 11, Lesson 4: Worked example: clinic readiness</h1>
+<h2 id="worked-example-clinic-readiness">Worked example: clinic
+readiness</h2>
+<p>A four-provider internal medicine clinic has finished its modules,
+training, and conversion tests. Here is how the implementation
+specialist prepared the go/no-go package.</p>
+<ol type="1">
+<li><strong>Did:</strong> built the readiness dashboard by area.
+<strong>Produced:</strong> a dashboard showing 95 percent of tasks done
+and two areas not ready. <strong>Why:</strong> one overall figure would
+have hidden the two open areas.</li>
+<li><strong>Did:</strong> reviewed the queue register. The
+abnormal-results queue had no aging rule or escalation.
+<strong>Produced:</strong> a register finding marked as a patient-safety
+blocker. <strong>Why:</strong> an unread abnormal result could sit for
+days.</li>
+<li><strong>Did:</strong> drafted an aging and escalation rule and took
+it to the clinical lead, who approved it. The team built and tested it.
+<strong>Produced:</strong> an approved rule and a passed test.
+<strong>Why:</strong> the clinical lead owns clinical thresholds; the
+specialist drafts and builds.</li>
+</ol>
+<p><em>Prompt 1: Why did the dashboard mark patient safety as not ready
+even though most tasks were done?</em></p>
+<ol start="4" type="1">
+<li><strong>Did:</strong> ran the timed cutover rehearsal. The final
+data load took nine hours, and the approved window was six.
+<strong>Produced:</strong> a rehearsal record with the overrun marked.
+<strong>Why:</strong> timing problems must show up in rehearsal, not on
+go-live night.</li>
+<li><strong>Did:</strong> set out options to the data owner. The data
+owner approved loading older scanned documents in a later wave, with a
+written plan for where staff find them meanwhile.
+<strong>Produced:</strong> a recorded decision and a staff instruction.
+<strong>Why:</strong> what data is available on day one is the data
+owner's decision.</li>
+</ol>
+<p><em>Prompt 2: Why did the specialist bring options to the data owner
+instead of choosing one?</em></p>
+<ol start="6" type="1">
+<li><strong>Did:</strong> ran a second rehearsal with the smaller load.
+<strong>Produced:</strong> a second record showing the load fit the
+window. <strong>Why:</strong> a plan change needs proof, not an
+estimate.</li>
+<li><strong>Did:</strong> got clinical and QA approval of both changes,
+updated the dashboard, and presented the package and a "go"
+recommendation to the named leaders. <strong>Produced:</strong> an
+approved package and a recorded go decision. <strong>Why:</strong> the
+authorized leaders decide; the specialist records it.</li>
+</ol>
+<p><em>Prompt 3: Why did the team run a second rehearsal instead of
+trusting the estimate for the smaller load?</em></p>
+<h2 id="your-turn-faded-example">Your turn: faded example</h2>
+<p><em>If you have done this task on a real project, try this first,
+then compare with the worked example.</em></p>
+<p>A two-site pediatric clinic goes live in three weeks. The first three
+steps are done. Complete steps 4 to 8.</p>
+<ol type="1">
+<li><strong>Did:</strong> built the readiness dashboard by area.
+<strong>Produced:</strong> a dashboard with three areas not ready.
+<strong>Why:</strong> blockers must be visible by area.</li>
+<li><strong>Did:</strong> walked the site with the clinic's IT owner.
+The prescription printer at site 2 fails. <strong>Produced:</strong> a
+site record naming the IT owner and a fix date. <strong>Why:</strong>
+the clinic's IT owner owns the equipment.</li>
+<li><strong>Did:</strong> checked the training roster. Two providers
+trained on an older release. <strong>Produced:</strong> a refresher plan
+and new skills checks. <strong>Why:</strong> competence counts only on
+the release going live.</li>
+<li><strong>Did:</strong> raised the go-live schedule. Who decides, and
+what must the decision include? <strong>Produced:</strong> ______
+<strong>Why:</strong> ______</li>
+<li><strong>Did:</strong> built the external communication list. Who is
+on it, and who approves the patient wording? <strong>Produced:</strong>
+______ <strong>Why:</strong> ______</li>
+<li><strong>Did:</strong> ran the user access and EPCS check. What do
+you confirm for each user and each prescriber?
+<strong>Produced:</strong> ______ <strong>Why:</strong> ______</li>
+<li><strong>Did:</strong> offered a pre-live SAFER review. Which guides,
+and who rates? <strong>Produced:</strong> ______ <strong>Why:</strong>
+______</li>
+<li><strong>Did:</strong> prepared the go/no-go package. What goes in
+it, and who decides? <strong>Produced:</strong> ______
+<strong>Why:</strong> ______</li>
+</ol>
+<h2 id="field-assignment">Field assignment</h2>
+<p>Prepare the go-live readiness package using the Cedar Point Internal
+Medicine practice case. Do not use a real client, employer, or patient,
+even with names removed.</p>
+<ol type="1">
+<li>Walk two normal journeys and two failure journeys.</li>
+<li>Walk both sites and record equipment and network results with
+owners.</li>
+<li>Review every queue, reminder, measure, and escalation owner.</li>
+<li>Record the pre-live baseline for each agreed measure.</li>
+<li>Test retrieval of the implementation and audit evidence.</li>
+<li>Draft the recovery record and list the owners who must approve each
+RTO and RPO.</li>
+<li>Build the security readiness checklist under the six CSF 2.0
+functions.</li>
+<li>Build the onsite and remote support roster, with super users by
+location and shift.</li>
+<li>Record the clinic's go-live schedule decision.</li>
+<li>Write the command, communication, triage, and decision procedures,
+and the patient and partner notice list.</li>
+<li>Rehearse cutover, a serious failure, and a full patient visit.</li>
+<li>Run the final non-production QA review, including user sign-in and
+EPCS status.</li>
+<li>Check that each user's training is current.</li>
+<li>Complete the readiness dashboard.</li>
+<li>Hold a role-played go/no-go meeting and record the decision.</li>
+</ol>
+<p><strong>Self-check rubric.</strong> Your package is ready when:</p>
+<ul class="task-list">
+<li><p><label><input type="checkbox" />every journey step and site
+failure has a named owner;</label></p></li>
+<li><p><label><input type="checkbox" />every measure has a definition,
+an owner, and a baseline or a recorded reason for none;</label></p></li>
+<li><p><label><input type="checkbox" />the recovery record shows written
+approval by named owners and a dated restore test;</label></p></li>
+<li><p><label><input type="checkbox" />the roster covers every site and
+shift, with super users and backups;</label></p></li>
+<li><p><label><input type="checkbox" />the dashboard names each
+must-pass blocker and its owner, not only a percent;</label></p></li>
+<li><p><label><input type="checkbox" />the go/no-go record names the
+leaders who decided, not you.</label></p></li>
+</ul>
+<h2 id="knowledge-check">Knowledge check</h2>
+<ol type="1">
+<li>What does it mean for the system to act as the operational brain
+without replacing human judgment?</li>
+<li>What information must every queue or reminder have?</li>
+<li>Why can percent complete be misleading?</li>
+<li>What is the difference between an RTO and an RPO, and who approves
+them?</li>
+<li>Under which CSF 2.0 function would you place audit-log review, and
+under which would you place a restore test?</li>
+<li>What is the status of the proposed HIPAA Security Rule update, and
+how should it affect go-live criteria?</li>
+<li>What is the purpose of the final integrated QA review?</li>
+<li>What should a cutover rehearsal test besides the normal
+sequence?</li>
+<li>Who assembles the go/no-go facts, and who makes the decision?</li>
+</ol>
+<h2 id="spaced-review">Spaced review</h2>
+<ol type="1">
+<li>(Module 10) A week before go-live, the vendor moves Cedar Point's AI
+document sorter to a new model version. What do you do before staff use
+it?</li>
+<li>(Module 10) The clinical lead wants a certified predictive risk
+score turned on at go-live. What do you collect, and who decides?</li>
+<li>(Module 8) Staff will keep booking appointments in the old system
+after the final test conversion. What must the cutover plan say about
+this work?</li>
+<li>(Module 7) A fix for a label-printing defect goes in two days before
+final QA. What testing must follow besides retesting the fix?</li>
+<li>(Module 2) The go-live date is written in the signed contract, and
+the clinic now wants to move it. How is this different from moving a
+target date?</li>
+</ol>
+<h2 id="module-11-gate--authorized-to-go-live">Module 11 gate —
+authorized to go live</h2>
+<p><strong>Who must be in the room:</strong> the client sponsor, the
+clinical lead, the security official, and the named go/no-go
+decision-makers.</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Walk normal, exception, downtime,
+and recovery journeys, and run a full patient visit with
+users.</label></li>
+<li><label><input type="checkbox" />Test devices, printers, Wi-Fi, and
+backup internet at every site; assign owners for failures.</label></li>
+<li><label><input type="checkbox" />Give every queue, reminder, measure,
+and alert an owner, threshold, and action; record each
+baseline.</label></li>
+<li><label><input type="checkbox" />Have someone else retrieve the audit
+evidence.</label></li>
+<li><label><input type="checkbox" />Get written approval of recovery
+objectives from named owners, and record a restore test.</label></li>
+<li><label><input type="checkbox" />List security evidence under each
+CSF 2.0 function with an owner and the security official's
+decision.</label></li>
+<li><label><input type="checkbox" />Confirm support for every site and
+shift, with super users, backups, and authority.</label></li>
+<li><label><input type="checkbox" />Record the clinic's schedule
+decision and the date full volume returns.</label></li>
+<li><label><input type="checkbox" />Document issue, escalation, pause,
+and rollback routes, and send approved patient and partner
+notices.</label></li>
+<li><label><input type="checkbox" />Rehearse cutover and a serious
+failure; record times and fixes.</label></li>
+<li><label><input type="checkbox" />Pass final QA: every user signed in
+with the right role, EPCS status recorded, and training current on the
+live release.</label></li>
+<li><label><input type="checkbox" />Show no open must-pass blocker on
+the dashboard, offer the SAFER review, and record the leaders' go/no-go
+decision.</label></li>
+</ul>
+<p><strong>Evidence to keep:</strong> journey review, site record,
+operational-control and baseline record, audit index, recovery record,
+security checklist, support roster, schedule decision, command and
+communication plan, rehearsal records, final QA report, training roster,
+readiness dashboard, and go/no-go decision. This evidence supports your
+practice work. The EHRIC capstone itself is the three-artifact project
+described in the capstone candidate packet.</p>

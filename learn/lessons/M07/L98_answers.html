@@ -1,0 +1,226 @@
+<h1>Module 7 — Answers: Check yourself, examples, knowledge check, spaced review</h1>
+<h2 id="answers-for-this-chapter">Answers for this chapter</h2>
+<h3 id="check-yourself">Check yourself</h3>
+<p><strong>Decide what "it works" must mean</strong></p>
+<ol type="1">
+<li>Any three of: the screen loads; the normal path completes; the
+requirement is met; the right person gets the next work; unauthorized
+actions are blocked; the record is complete and auditable; exceptions
+are caught and recovered; the workflow stays safe when an interface is
+down; trained users do it consistently.</li>
+<li>The requirement may demand more than saving, such as routing, access
+control, or a complete audit record. A screen can work technically and
+still fail the clinic's approved need.</li>
+<li>Check the approved requirement first. Then confirm the referral
+reaches the right person or queue, the right roles can and cannot act on
+it, failure states show, and the record is complete.</li>
+</ol>
+<p><strong>Finish advanced workflows and train the failure
+path</strong></p>
+<ol type="1">
+<li>Any four of: what leaves the system; what should come back; normal
+response time; where success, pending, rejection, or failure shows; who
+owns each side; what to do when it is slow or down; what must never be
+repeated or bypassed.</li>
+<li>It names a field of care, not a workflow. You still need to learn
+the actual templates, devices, results, rules, and handoffs from the
+person who owns the work.</li>
+<li>Recognize the pending state as a possible failure, avoid resending,
+and follow the approved route to the owner of that queue, such as the
+billing lead.</li>
+</ol>
+<p><strong>Control the build that QC receives</strong></p>
+<ol type="1">
+<li>Any four of: release purpose and contents, source and target
+environment, what is included (configuration, manual steps, vendor
+settings, data, interfaces), builder checks done, promotion method,
+known limits, correction path, release approver.</li>
+<li>Production may differ from test, for example through manual settings
+or a failed promotion. A pass is proof only for the version and
+environment tested.</li>
+<li>Record the new version, decide which earlier results are still
+valid, and rerun the tests the change could affect.</li>
+</ol>
+<p><strong>Build the QC plan from requirements</strong></p>
+<ol type="1">
+<li>Entry: requirement and approver named; stable build; environment and
+access ready; test data available; known limits written; expected
+results defined. Exit: planned tests done; evidence recorded;
+Critical/High handled; fixes retested; regression recorded; limits
+approved; training materials updated; version approved.</li>
+<li>Exploration may find defects, but it does not link tests to
+requirements and risks. Without those links you cannot show that every
+important area was checked.</li>
+<li>"Training materials and job aids updated if behavior changed." You
+own the materials, so you update the job aid, then submit the version
+for approval.</li>
+</ol>
+<p><strong>Design reproducible test cases</strong></p>
+<ol type="1">
+<li>Any six of: test ID and requirement, purpose or risk, environment
+and build, role and access, data or preconditions, steps, expected
+result, actual result, pass or fail, evidence, tester and date.</li>
+<li>The busiest hour is when slow responses would delay patients and
+staff. A test after hours can pass while the front desk still stalls at
+8 a.m.</li>
+<li>A permission and segregation test.</li>
+</ol>
+<p><strong>Rate defects by impact</strong></p>
+<ol type="1">
+<li>Severity is how much harm a defect can cause. Priority is the order
+the team works on defects. They can differ.</li>
+<li>Severity is about harm, not effort. A one-line fix can still prevent
+a safety or privacy failure, so it may be High or Critical.</li>
+<li>A retest of the original failure, and regression tests on the
+behavior around it.</li>
+</ol>
+<p><strong>Retest the fix, then run regression tests</strong></p>
+<ol type="1">
+<li>A retest asks whether the original failure is fixed. A regression
+test asks whether the fix or another change broke something else.</li>
+<li>The partner's side changed, so messages in both directions may
+behave differently. An interface change on either side is a
+trigger.</li>
+<li>Any four of: defect fix, configuration change, vendor upgrade or
+patch, interface change, data change, environment change,
+promotion.</li>
+</ol>
+<p><strong>Choose and record a risk-based regression set</strong></p>
+<ol type="1">
+<li>Start from the change record; trace what it touches; add neighbors;
+keep a core set; rank by risk; record what you left out.</li>
+<li>It stops the same failure from quietly returning in a later
+build.</li>
+<li>The two tests, the real risk-based reason (not just "time"), and the
+release owner's acceptance of that risk.</li>
+</ol>
+<p><strong>Protect QC independence</strong></p>
+<ol type="1">
+<li>Any four of: peer review, approved test scripts, recorded evidence,
+client user acceptance, specialist approval for controlled areas,
+release decision by someone other than the builder.</li>
+<li>Independence means a reviewer who can challenge the result and
+report freely. A peer, a client user, or a separate approver can provide
+that in a small team.</li>
+<li>Keep her testing, but add peer review and approved scripts, and name
+someone else to make the release decision.</li>
+</ol>
+<p><strong>Run QC after every module</strong></p>
+<ol type="1">
+<li>Build, builder check, QC, correct, retest and regression, approve,
+train or release.</li>
+<li>Defects found in class waste learners' time, and learners may
+practice on a build that will change. Training should confirm a tested
+build, not test it for the first time.</li>
+<li>Back to retest and regression, then approval, before it is trained
+or released again.</li>
+</ol>
+<p><strong>Keep user acceptance separate from QC</strong></p>
+<ol type="1">
+<li>QC asks, "Does it meet the requirement?" UAT asks, "Can our people
+do the work with it?"</li>
+<li>It does not show which scenarios, users, environment, or results
+were involved, so no one can check what was accepted.</li>
+<li>Record the finding and route the access question to the privacy
+officer. The nurse cannot waive a privacy control she does not own.</li>
+</ol>
+<p><strong>Record the release decision</strong></p>
+<ol type="1">
+<li>One identified version for one named purpose: training, UAT,
+rehearsal, or production.</li>
+<li>A version may be fit for training but not for production. The
+purpose tells everyone exactly what the approval covers.</li>
+</ol>
+<h3 id="worked-example-prompts">Worked example prompts</h3>
+<ul>
+<li><em>Why the billing owner?</em> The 30-minute rule is business
+policy about who watches billing work. The client owns that policy. The
+implementer's job was to find the gap and route it to the person with
+authority.</li>
+<li><em>Why test duplicate prevention?</em> A user facing a stuck
+"pending" check is likely to resend it. The new alert changes how staff
+react, so QC must prove that a second request does not create a
+duplicate.</li>
+<li><em>Why update the job aid first?</em> Exit criteria require
+training materials to match changed behavior. Releasing with an old job
+aid would teach staff the wrong steps.</li>
+</ul>
+<h3 id="faded-example">Faded example</h3>
+<ol start="4" type="1">
+<li>Retest: in build 5.5, sign in as the front-desk role, slow or delay
+the fax response, click "Send" twice, and confirm only one fax goes out.
+Record the result beside the failed result from 5.4.</li>
+<li>Regression set (any three, with reasons): a normal single referral
+fax (same service); a rejected or failed fax (same send logic); other
+outgoing faxes such as records release (shared fax service); referral
+fax from the Lakeshore location (same feature at another site); the core
+set (standard after every build).</li>
+<li>Change and build ID; each test and why it was chosen; environment,
+build, tester, and date; new results beside earlier passing results; any
+new defects linked to the fix; tests not rerun, the reason, and who
+accepted that risk.</li>
+<li>The release owner decides. The purpose is release of build 5.5 for
+its next stage, such as training. Hand over the defect record, retest
+and regression records, exit-criteria status, open Critical and High
+defects, and any accepted risks.</li>
+</ol>
+<h3 id="knowledge-check">Knowledge check</h3>
+<ol type="1">
+<li>A build can run without errors and still miss the approved
+requirement. It may route work to the wrong person, allow an action a
+role should not take, or break a privacy, billing, or safety control. QC
+tests against the requirement, not just against error-free
+behavior.</li>
+<li>It records everything another person needs to repeat it:
+requirement, purpose, environment and build version, role and access,
+data or preconditions, steps, and expected result. It also records the
+actual result, evidence, tester, and date, so the outcome can be
+checked.</li>
+<li>Severity is the harm a defect can cause. Priority is the order in
+which the team works on defects. An easy fix can be Critical, and a hard
+fix can be Low.</li>
+<li>Someone saying "fixed" is not evidence. The retest proves the
+original failure no longer happens in the corrected version. Only then
+can regression testing check what else the fix touched.</li>
+<li>A retest checks that the original failure is fixed. A regression
+test checks that the fix or another change did not break something that
+passed before. Triggers include defect fixes, configuration changes,
+vendor patches, interface or partner changes, data changes, environment
+changes, and promotions.</li>
+<li>Start from the change record and trace what it touches. Add tests
+that share parts with the change, run the core set, and rank by likely
+effect and harm. Record what you left out, and have the release owner
+accept that risk.</li>
+<li>Add peer review, approved scripts, recorded evidence, client user
+acceptance, and specialist approval where needed. Give the release
+decision to someone other than the builder.</li>
+<li>QC asks whether the build meets the approved requirements and
+handles risks. User acceptance asks whether authorized client users can
+do the approved work with it. Neither replaces the other.</li>
+<li>Different environments and versions can behave differently, for
+example because of manual settings or failed promotions. A release
+purpose also limits what the pass supports. A pass carried forward
+without a check is not evidence.</li>
+</ol>
+<h3 id="spaced-review">Spaced review</h3>
+<ol type="1">
+<li>Do not change it. A clinical template change goes to the clinical
+owner and may need billing, safety, build, training, and QC review.
+Record it in the register with an owner and date, and continue the
+session.</li>
+<li>Not yet. Attendance is not competence. She must complete normal,
+exception, and failure scenarios on her own in an approved build, and
+the approved evaluator records the competence decision.</li>
+<li>Record the missing environment as a risk with an owner in the
+environment plan. Ask the vendor about a sandbox or second tenant, then
+propose compensating controls such as clearly named test patients. The
+client's project owner accepts the remaining risk, with privacy and
+security input.</li>
+<li>Record it as a new request for the change process and continue the
+agenda. A new request is not a misunderstanding of the sale, so it does
+not need commercial resolution in the meeting.</li>
+<li>It is a remembered commitment, because it is not in a signed
+document. Log it for verification with an owner, such as the sales
+representative, and a due date. It is not scope until someone with
+authority confirms it.</li>
+</ol>

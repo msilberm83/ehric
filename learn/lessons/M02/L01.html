@@ -1,0 +1,273 @@
+<h1>Module 2, Lesson 1: Turn scope into workstreams</h1>
+<h2 id="turn-scope-into-workstreams">Turn scope into workstreams</h2>
+<p>An item from the order that is missing from the plan usually gets
+forgotten. The clinic finds out at go-live, when the item is not
+there.</p>
+<p>Module 1 recorded what was purchased, what is uncertain, and which
+resources the project probably needs. Planning turns that record into
+work that can be assigned, put in order, and checked.</p>
+<p>Start with the major <strong>workstreams</strong>, the large groups
+of related work, rather than a long list of separate tasks:</p>
+<ul>
+<li>project governance and client decisions;</li>
+<li>deployment and environment readiness;</li>
+<li>workflow discovery and configuration;</li>
+<li>data conversion;</li>
+<li>interfaces and devices;</li>
+<li>privacy, security, and compliance review;</li>
+<li>training and adoption;</li>
+<li>quality control and testing;</li>
+<li>go-live readiness, activation, and follow-up.</li>
+</ul>
+<p>Not every project needs every workstream at the same depth. But each
+purchased item must appear somewhere.</p>
+<figure style="margin:16px 0"><img src="../../img/M02-01.png" alt="Figure 2.1. Notice that one purchased item has no workstream, so it is flagged as missing from the roadmap." style="width:100%;max-width:1000px"><figcaption><b>Figure 2.1.</b> Notice that one purchased item has no workstream, so it is flagged as missing from the roadmap.</figcaption></figure>
+> **Rule:** Every purchased item has a home in a workstream, and every workstream traces back to scope.
+
+<p><strong>Example A.</strong> The order includes twenty signature pads.
+No workstream mentions them. You add them to "interfaces and devices"
+before someone forgets them.</p>
+<p><strong>Example B.</strong> The roadmap includes "redesign the
+referral process." No purchased item covers it. You check whether it is
+a needed implementation task, an internal cost, or a scope change.</p>
+<p>Both checks run the same line in two directions: from the order to
+the plan, and from the plan back to the order.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name five of the nine workstreams.</li>
+<li>You find roadmap work that no purchased item covers. What three
+possibilities do you check?</li>
+</ol>
+<h2 id="break-each-workstream-into-owned-work">Break each workstream
+into owned work</h2>
+<p>"Configure intake" is too broad to manage. Nobody can tell who owns
+which part, or when it is done.</p>
+<p>For each workstream, build a <strong>work breakdown</strong>.
+Name:</p>
+<ul>
+<li>the outcome;</li>
+<li>the deliverables needed to reach it;</li>
+<li>the tasks that create each deliverable;</li>
+<li>the responsible person;</li>
+<li>the accountable approver;</li>
+<li>dependencies;</li>
+<li>planned start and finish;</li>
+<li>acceptance evidence;</li>
+<li>the gate that must pass before the next stage.</li>
+</ul>
+<p>A useful breakdown for intake might include these tasks:</p>
+<ul>
+<li>collect the approved intake forms;</li>
+<li>map the fields and confirm required signatures;</li>
+<li>build a test version;</li>
+<li>review privacy and routing;</li>
+<li>run <strong>user acceptance testing (UAT)</strong>, where clinic
+staff test the build against their workflow;</li>
+<li>correct defects and get approval.</li>
+</ul>
+<p>The breakdown should show ownership and order. It should not record
+every click.</p>
+<blockquote>
+<p><strong>Rule:</strong> Break work down until each piece has one
+owner, one approver, and evidence that it is done.</p>
+</blockquote>
+<p><strong>Example A.</strong> "Configure intake" becomes "build a test
+version of the new-patient form," owned by the configuration analyst and
+approved by the practice administrator.</p>
+<p><strong>Example B.</strong> "Training" becomes "front-desk staff show
+they can check in a patient," owned by the trainer and approved by the
+front-desk manager.</p>
+<p>In both, a vague label becomes a piece of work someone owns and
+someone else can check.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List six things you name for each workstream.</li>
+<li>Why is "configure intake" too broad to manage?</li>
+</ol>
+<h2 id="build-the-roadmap-on-the-courses-four-stages">Build the roadmap
+on the course's four stages</h2>
+<p>Your roadmap and this course should use one map. If they differ, the
+team, the client, and the final exam will each ask which one is
+right.</p>
+<p>The roadmap belongs in the shared <strong>management system</strong>.
+That is the project record where tasks, owners, dates, decisions, and
+evidence live. A slide may explain the plan. A spreadsheet may support
+detailed math. But the official dates, owners, status, and decisions
+point back to the shared record.</p>
+<p>Create one phase for each of the 13 modules, grouped into the four
+stages shown in "The whole process at a glance." Each phase ends at its
+<strong>gate</strong>, a checkpoint that must pass before the work moves
+on.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Phases (modules)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Start the project</td>
+<td>1 Handoff and scope · 2 Planning · 3 Kickoff</td>
+</tr>
+<tr>
+<td>2. Design and train</td>
+<td>4 Workflow discovery · 5 General training · 6 Specialized training ·
+7 Quality control</td>
+</tr>
+<tr>
+<td>3. Build the connected system</td>
+<td>8 Data conversion · 9 Integrations and configuration · 10 Automation
+and AI</td>
+</tr>
+<tr>
+<td>4. Go live and keep improving</td>
+<td>11 Go-live readiness · 12 Go-live and stabilization · 13 Post
+go-live</td>
+</tr>
+</tbody>
+</table>
+<p>The phases are a sequence, not 13 separate boxes. Several overlap.
+Data-conversion discovery may start before training. An interface
+contract may need attention during planning. Quality control runs
+through the whole build. Show those overlaps, but keep the gates that
+control movement.</p>
+<figure style="margin:16px 0"><img src="../../img/M02-02.png" alt="Figure 2.2. Notice that phases overlap and quality control runs the whole way, but no work skips a gate." style="width:100%;max-width:1000px"><figcaption><b>Figure 2.2.</b> Notice that phases overlap and quality control runs the whole way, but no work skips a gate.</figcaption></figure>
+> **Rule:** Build the roadmap from the 13 module phases in four stages, and let work overlap without skipping a gate.
+
+<p><strong>Example A.</strong> The source vendor can send a test export
+early. You start data-conversion work during Stage 2. The Stage 3 gate
+still requires the conversion to pass before production.</p>
+<p><strong>Example B.</strong> The clinic asks to start training before
+discovery is approved. The training phase can start early sessions. But
+the general-training gate still requires approved workflows.</p>
+<p>In both, work can start early. The gate still decides when it is
+finished.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the four stages, and say which modules fall in Stage 3.</li>
+<li>Why should the roadmap use the same phases as the course map?</li>
+<li>Data-conversion work starts early. What still controls when it may
+go to production?</li>
+</ol>
+<h2 id="write-milestones-as-results">Write milestones as results</h2>
+<p>A date alone tells the sponsor that time passed. A result tells the
+sponsor that the project moved.</p>
+<p>A <strong>milestone</strong> is a meaningful event or approved
+result, not only a date. Useful milestones include:</p>
+<ul>
+<li>scope acknowledged;</li>
+<li>required project roles assigned;</li>
+<li>kickoff completed;</li>
+<li>environment ready;</li>
+<li>current-state workflows approved;</li>
+<li>future-state workflows approved;</li>
+<li>configuration build complete;</li>
+<li>test conversion accepted;</li>
+<li>interfaces pass end-to-end testing;</li>
+<li>role-based training complete;</li>
+<li>final readiness review passed;</li>
+<li>production activation;</li>
+<li>stabilization exit.</li>
+</ul>
+<blockquote>
+<p><strong>Rule:</strong> Write each milestone as a result someone
+approved, not only as a date.</p>
+</blockquote>
+<p><strong>Example A.</strong> "Training starts" is an event. "All
+required roles showed they can do the approved workflows and exceptions"
+is a readiness result.</p>
+<p><strong>Example B.</strong> "Interface work begins" is an event. "Lab
+orders and results pass end-to-end testing" is a result.</p>
+<p>Use both dates and outcomes where the difference matters.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Turn "Data conversion begins" into a milestone that describes a
+result.</li>
+<li>Why is a milestone different from a task?</li>
+</ol>
+<h2 id="plan-backward-from-go-live">Plan backward from go-live</h2>
+<p>A date becomes credible only when the work fits before it. Finding a
+gap now gives the sponsor choices. Finding it in the last month leaves
+none.</p>
+<p>First, agree the <strong>rollout approach</strong>: whether the
+clinic goes live all at once, by location, or by provider group. The
+choice changes the training, support, and conversion plans. Record the
+choice and who made it. The sponsor decides; you show how each choice
+changes the plan.</p>
+<p>If the project has a target go-live date, plan backward from it:</p>
+<ol type="1">
+<li>Define the go-live readiness gate.</li>
+<li>Allow time to correct findings from the final readiness review.</li>
+<li>Place final user acceptance testing, role-based training, and
+support preparation before that correction time.</li>
+<li>Place production conversion and interface rehearsals early enough to
+check and correct them.</li>
+<li>Place configuration completion before testing.</li>
+<li>Place approved future-state workflows before configuration.</li>
+<li>Place current-state discovery and decision meetings before
+future-state approval.</li>
+<li>Place contracts, access, environments, devices, source exports, and
+payer enrollments early enough not to block the work they support.</li>
+</ol>
+<figure style="margin:16px 0"><img src="../../img/M02-03.png" alt="Figure 2.3. Plan backward from go-live; when the work does not fit before the date, raise the conflict now." style="width:100%;max-width:1000px"><figcaption><b>Figure 2.3.</b> Plan backward from go-live; when the work does not fit before the date, raise the conflict now.</figcaption></figure>
+A date is not credible because a contract states it or sales announced it. It becomes credible when the roadmap shows that people, dependencies, review time, and correction time fit before it. If they do not fit, raise the conflict now.
+
+<blockquote>
+<p><strong>Rule:</strong> If the work does not fit before the date, show
+the sponsor the gap now, with options.</p>
+</blockquote>
+<p><strong>Example A.</strong> Configuration ends December 15. Testing,
+training, and correction need 10 weeks. Go-live is February 1, about 7
+weeks later. You show the sponsor the 3-week gap and the options.</p>
+<p><strong>Example B.</strong> A two-location clinic chooses to go live
+one location at a time. The second location's training moves 4 weeks
+later. You update the plan and show the sponsor the new dates.</p>
+<p>In both, the plan shows what the date really requires, and the
+sponsor decides with the facts in hand.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the three rollout approaches, and say who chooses among
+them.</li>
+<li>Why do you plan backward from go-live rather than forward from
+today?</li>
+<li>Your backward plan shows a 3-week gap. What would you do?</li>
+</ol>
+<h2 id="label-each-date-by-its-basis">Label each date by its basis</h2>
+<p>Different dates move in different ways. A label tells everyone which
+dates can move through normal planning and which need a formal
+change.</p>
+<p>Record the reason for every important date:</p>
+<ul>
+<li><strong>Contractual:</strong> stated in a signed agreement.</li>
+<li><strong>Operational:</strong> tied to a business need, such as a
+lease, a reporting cycle, a payer or regulatory deadline, or a staffing
+period.</li>
+<li><strong>External dependency:</strong> controlled by a vendor,
+clearinghouse, payer, bank, network, or regulator.</li>
+<li><strong>Resource-based:</strong> limited by staff or specialist
+availability.</li>
+<li><strong>Estimated:</strong> based on expected effort and
+assumptions.</li>
+<li><strong>Target:</strong> wanted but not yet supported by the
+plan.</li>
+</ul>
+<p>The label changes the conversation. A contractual date may need
+escalation or a formal change. A target date can move through normal
+planning. An external date may need a backup plan.</p>
+<blockquote>
+<p><strong>Rule:</strong> Label each important date by its basis, so
+everyone knows how it can move.</p>
+</blockquote>
+<p><strong>Example A.</strong> The order calls January 12 the client's
+"requested target." It is a target, not a contractual date.</p>
+<p><strong>Example B.</strong> The Lakeshore lease starts November 20.
+That date is operational. Moving it is not the project's decision.</p>
+<p>Both dates appear on the roadmap. Their labels tell the team which
+one planning can move.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the six date labels.</li>
+<li>Why does it matter whether a date is labeled contractual or
+target?</li>
+</ol>

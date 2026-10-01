@@ -1,0 +1,242 @@
+[
+{
+"stem": "| Approved requirement | Training objective |\n|---|---|\n| R-12 Reschedule with patient notification | Obj 3: Reschedule and send the approved notice |\n| R-13 Cancel and offer wait-list rebooking | (none) |\n| (none) | Obj 7: Customize personal dashboard colors and widgets |\n| R-15 Route incomplete intake to the review queue | Obj 5: Route an incomplete intake to the review queue |\n\nYou are drafting the session plan for Cedar Point Internal Medicine's front-desk class from the traceability record above. What should you do?",
+"options": {
+"A": "Add an objective for R-13 and keep the dashboard topic, since staff will use it every day",
+"B": "Add an objective for R-13 and drop or shorten the dashboard topic that traces to nothing",
+"C": "Hand out a job aid for R-13 in class and drop the dashboard topic to make room in the plan",
+"D": "Ask the practice manager whether R-13 still needs training before you change the plan"
+},
+"key": "B",
+"feedback": {
+"A": "Half right: adding the R-13 objective is correct, but keeping the dashboard topic breaks the other half of \"Tie training to the approved build,\" because it traces to no requirement. Fix: cut or shorten it.",
+"B": "Correct: \"Tie training to the approved build\" checks the chain both ways, so you add an objective for the untrained requirement and cut the topic with no requirement behind it.",
+"C": "Half right: dropping the dashboard topic is correct, but a handout is not a training objective with practice, so R-13 is still untrained under \"Tie training to the approved build.\" Fix: add an objective and a practice scenario.",
+"D": "Too far: checking with the client sounds respectful, but R-13 is already approved, and \"Tie training to the approved build\" makes adding its objective your own work. Fix: change the plan now."
+}
+},
+{
+"stem": "At Cedar Point, schedulers book new-patient referrals and send the referral packet to the clinical support team. Clinical support staff say incomplete packets sit in their queue for days because they are unsure how to send them back. You are building the role-based training plan. What should you do?",
+"options": {
+"A": "Add a return step to the clinical support job aid and leave the scheduler class unchanged",
+"B": "Train schedulers on the full packet checklist and leave clinical support training unchanged",
+"C": "Log the stalled packets as a defect so QC can check how the referral queue routes them",
+"D": "Train the handoff both ways, including how clinical support returns incomplete packets"
+},
+"key": "D",
+"feedback": {
+"A": "Half right: teaching the receiver to return work fixes one side, but \"Plan by role\" trains a handoff from both sides. Fix: also teach schedulers what clinical support needs.",
+"B": "Half right: a complete packet at the source cuts returns, but clinical support still has no way to send work back. Fix: train the handoff from both sides, as \"Plan by role\" says.",
+"C": "Confused look-alike, defect versus training gap: the packets reach the right queue, and staff simply do not know the return step. Fix: train it under \"Plan by role.\"",
+"D": "Correct: \"Plan by role\" says to train a cross-role handoff from both sides, so the sender knows what the receiver needs and the receiver can return incomplete work."
+}
+},
+{
+"stem": "In a scheduling class at a family medicine clinic, a scheduler says her role cannot book into a provider's blocked time. She asks you to show the class how a supervisor can log in at her desk and book it for her. The organization approved the role and access model, and only supervisors may override blocks. What should you do?",
+"options": {
+"A": "Teach schedulers to request a supervisor override through the approved path in their role",
+"B": "Log a request to give schedulers override rights, and skip overrides until it is decided",
+"C": "Ask the builder to give schedulers override rights so the class can practice the task",
+"D": "Show the override from a supervisor login so schedulers see what the full task looks like"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Plan by role\" says training must not teach users to work around permissions they were not given, so you teach the approved override request.",
+"B": "Too weak: logging a request for broader rights is fine, but skipping overrides leaves schedulers unable to do work they have today. Fix: teach the approved request path now, as \"Plan by role\" requires.",
+"C": "Too far, and the habit of fixing it quickly: the client approved the access model in \"Plan by role,\" and widening access to suit a class changes it without a decision. Fix: teach the approved path.",
+"D": "Habit answer: a full demonstration feels thorough, but showing the task from a login the role does not have teaches the workaround \"Plan by role\" forbids. Fix: demonstrate the scheduler's request step."
+}
+},
+{
+"stem": "| Check before the 2:00 intake class | Status |\n|---|---|\n| Release ID and configuration version | Recorded: 3.4 |\n| Technical acceptance, intake workflow | Passed |\n| Learner logins | Working; shared password printed on the worksheet |\n| Sample records | Synthetic |\n| Job aid | Matches build 3.4 |\n\nYou are running an intake class at an urgent care clinic this afternoon. Which item must you change before the session starts?",
+"options": {
+"A": "Technical acceptance, because it covers the intake workflow and not the whole release",
+"B": "The sample records, because synthetic patients need a privacy review before class use",
+"C": "The worksheet, because real login credentials must not appear on shared materials",
+"D": "The job aid, because the clinic's training lead must sign off on it before each class"
+},
+"key": "C",
+"feedback": {
+"A": "Right rule, wrong facts: technical acceptance must pass, and here it has passed for the workflow being taught under \"Prepare the training environment.\" Fix: leave it and look for the item that breaks a rule.",
+"B": "Confused look-alike, synthetic versus protected real data: \"Prepare the training environment\" requires records that are synthetic or properly protected, and made-up patients need no privacy review.",
+"C": "Correct: \"Prepare the training environment\" says not to put real passwords on a shared slide or worksheet, so you remove them before class.",
+"D": "Habit answer: client sign-off sounds responsible, but \"Prepare the training environment\" asks only that the job aid match the current workflow, which it does for build 3.4."
+}
+},
+{
+"stem": "| Control | Status |\n|---|---|\n| Test patient names | \"ZZTEST, Refresher Two\" format |\n| Who can create test patients | Two named analysts with special permission |\n| Outbound reminders, e-prescriptions, lab orders, claims | Off for test patients |\n| Quality measure and operational reports | Include all patients at the location |\n| Cleanup and verification after each session | Scheduled |\n\nCedar Point will run refresher training for late hires in the live system after go-live, using test patients. Before you present the plan for decision, which control must be corrected?",
+"options": {
+"A": "Reports, because quality measures and reports must leave out the test patients",
+"B": "Creation rights, because each trainer should create the test patients they use",
+"C": "Outbound messages, because lab orders must flow so learners see the full order",
+"D": "Cleanup, because after go-live it should run monthly, not after every session"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Add compensating controls\" requires reports and quality measures to leave out test patients, and this row includes them.",
+"B": "Habit answer: letting each trainer make patients is convenient, but \"Add compensating controls\" limits creation to named staff with special permission, which this row already meets.",
+"C": "Habit answer: realism feels useful, but \"Add compensating controls\" turns outbound messages off for test patients because a live lab order could reach a real lab.",
+"D": "Too weak: a monthly sweep sounds like enough, but \"Add compensating controls\" runs a cleanup check after each session so leftovers never reach real work."
+}
+},
+{
+"stem": "This module describes four training options for a clinic without a separate training environment. Which option carries the most risk and needs the most controls?",
+"options": {
+"A": "The shared vendor demonstration site, since it rarely matches the approved build",
+"B": "The pre-live production copy, since it must be cleaned before conversion loads data",
+"C": "The test environment shared in time, since training can collide with a test cycle",
+"D": "The live production system with named test patients, used after go-live begins"
+},
+"key": "D",
+"feedback": {
+"A": "Confused look-alike, weak evidence versus high risk: \"Know the options\" calls the demonstration site weak evidence of competence, but it never touches the client's live records.",
+"B": "True but does not answer: pre-live production does need cleanup before conversion, but \"Know the options\" notes it holds no real patient data yet, so its limit is timing, not the highest risk.",
+"C": "True but does not answer: training can clash with testing, but \"Know the options\" handles that by scheduling between test cycles and freezing the build, with no real patients involved.",
+"D": "Correct: \"Know the options\" says production with test patients after go-live carries the most risk and needs the most controls."
+}
+},
+{
+"stem": "You are reviewing draft objectives for a forms-and-signatures class at a pediatric clinic. Which draft objective is written as an observable learning objective?",
+"options": {
+"A": "Understand how to send a consent form and what to do when a request expires",
+"B": "Send a consent form for signature and resolve a request that has expired",
+"C": "Know where expired requests appear and which staff may resend each one",
+"D": "Review the forms library and signature settings during the guided demo"
+},
+"key": "B",
+"feedback": {
+"A": "Half right: the content is right, but \"Write observable learning objectives\" says you cannot check \"understand.\" Fix: start with an action verb you can watch, such as \"send\" or \"resolve.\"",
+"B": "Correct: \"Write observable learning objectives\" asks what the learner will do, and sending and resolving a request can be watched in practice.",
+"C": "Half right: the facts are useful, but \"know\" cannot be watched. Fix: turn it into an action, such as \"find and resend an expired request,\" as \"Write observable learning objectives\" asks.",
+"D": "Confused look-alike, class activity versus learning result: reviewing a demo is something the class does, not what the learner can do afterward under \"Write observable learning objectives.\""
+}
+},
+{
+"stem": "In an intake class at Cedar Point, a medical assistant says some patients arrive with a court-appointed guardian, and the approved intake workflow has no step to record the guardian. No approved requirement covers it. What should you do?",
+"options": {
+"A": "Add a guardian field during class, since the gap leaves learners unable to finish intake",
+"B": "Log it as a policy decision for the practice manager, since guardianship rules are policy",
+"C": "Log it as a new requirement for the requirements and change process, then keep teaching",
+"D": "Log it as a defect, since the approved intake build cannot handle a real patient type"
+},
+"key": "C",
+"feedback": {
+"A": "Habit answer, fix it in class: \"Run the training loop\" allows in-class setup only for approved low-risk items, and a new intake field affects data and tested behavior. Fix: log it as a new requirement.",
+"B": "Confused look-alike, policy decision versus new requirement: guardianship touches policy, but the gap is a missing workflow step, which \"Route open items and request QC\" sorts as a new requirement.",
+"C": "Correct: the \"ask\" step in \"Run the training loop\" can reveal a missed exception, and the register in \"Route open items and request QC\" sends a new requirement to the requirements, decision, or change process.",
+"D": "Confused look-alike, defect versus new requirement: a defect is a build that fails an approved requirement, and no requirement covers guardians, so \"Route open items and request QC\" makes it a new requirement."
+}
+},
+{
+"stem": "During a scheduling class at an orthopedic clinic, the office manager asks you to let front-desk staff cancel surgical appointments, which today only the surgery scheduler can do. The project's low-risk list covers labels and noncritical queue views. She says, \"It's one checkbox; set it up now so we can practice.\" What should you do?",
+"options": {
+"A": "Change the setting with her in class, since she is the client authority present in the room",
+"B": "Change the setting in class and add it to the QC request once the class has finished",
+"C": "Log it as a training question and show staff how to ask the surgery scheduler to cancel",
+"D": "Record the request and send it through the decision, change, build, and QC process"
+},
+"key": "D",
+"feedback": {
+"A": "Right rule, wrong facts: \"Run the training loop\" does allow setup with the client in class, but only for items on the approved low-risk list, and an access change is not one. Fix: route it.",
+"B": "Right action, wrong time: QC is part of the path, but \"Run the training loop\" says an access change goes through decision, change, and build before anyone uses it, not tested afterward.",
+"C": "Confused look-alike, training question versus change request: she is asking for an access change, and \"Run the training loop\" says such requests are recorded and routed, not just answered.",
+"D": "Correct: \"Run the training loop\" says a change that affects access goes through the decision, change, build, and QC process."
+}
+},
+{
+"stem": "A multi-site clinic has 42 front-desk staff across three shifts. The client's training lead approved a role-based sampling and sign-off method for the check-in workflow, with a supervisor sign-off for each shift. Your observed sample passed both normal and exception scenarios. What should you do?",
+"options": {
+"A": "Record results under the approved sampling method and collect the shift sign-offs",
+"B": "Observe all 42 staff individually before recording any competence for the role group",
+"C": "Ask the practice manager to confirm the training lead may approve a sampling method",
+"D": "Record the role group as competent now and add shift sign-offs as supervisors send them"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Record competence, not attendance\" lets the client approve a role-based sampling and sign-off method, so you apply it and record the approval and evidence.",
+"B": "Too far: tracking each learner is the default, but \"Record competence, not attendance\" allows a client-approved sampling method instead, and this one is already approved.",
+"C": "Too far: double-checking authority sounds careful, but the training lead already approved the method, and \"Record competence, not attendance\" asks you to record that approval, not reopen it.",
+"D": "Right action, wrong time: recording the group is the goal, but the approved method includes the shift sign-offs, so under \"Record competence, not attendance\" you record it once they are in."
+}
+},
+{
+"stem": "| Queue design item, \"Pending review\" (portal intake forms) | Design |\n|---|---|\n| Who changes status to \"Reviewed\" | Front-desk staff |\n| Evidence that justifies the change | Required fields checked |\n| Who watches the queue | (not assigned) |\n| How aging work becomes visible | (not defined) |\n| Downtime handling | Paper intake log |\n\nYou are preparing the queue section of Cedar Point's front-desk class. Which gap should you raise with the practice manager before you train this queue?",
+"options": {
+"A": "Downtime, because downtime belongs in go-live readiness, not in this front-desk class",
+"B": "Evidence, because a required-field check does not show the form content is correct",
+"C": "Monitoring, because no one watches the queue and stalled work never becomes visible",
+"D": "Status, because front-desk staff should not mark their own review work as complete"
+},
+"key": "C",
+"feedback": {
+"A": "Right action, wrong time: Module 11 readiness checks downtime later, but \"Queues and work status\" trains downtime handling now, and this design already defines it.",
+"B": "True but does not answer: a field check does not prove content is correct, but \"Queues and work status\" asks only that the justifying evidence be defined, and judging clinical content is not front-desk work.",
+"C": "Correct: \"Queues and work status\" says to train who watches the queue and how stalled work becomes visible, and both are missing here.",
+"D": "Right rule, wrong facts: \"Queues and work status\" asks who changes each status, which is defined here; it does not require a separate person to mark the review."
+}
+},
+{
+"stem": "Cedar Point's training lead tells you a biller needs large-print job aids and extra time on competence checks. The biller's supervisor then emails you a note explaining the biller's eye condition \"for your file.\" What should you record?",
+"options": {
+"A": "The accommodation and the eye condition, so future trainers understand the need",
+"B": "The accommodation only, and keep no record of the biller's medical condition",
+"C": "The accommodation, and forward the supervisor's note to HR to keep on file",
+"D": "The accommodation and a short reason, such as \"low vision,\" not the diagnosis"
+},
+"key": "B",
+"feedback": {
+"A": "Habit answer: context feels helpful for later trainers, but \"Ask early, and know who decides\" says to record the accommodation, not the reason, so the condition stays out of your file.",
+"B": "Correct: \"Ask early, and know who decides\" says you record the accommodation and do not ask for or keep a learner's diagnosis.",
+"C": "Half right: recording the accommodation is correct, but passing the note on still handles and spreads the diagnosis, which \"Ask early, and know who decides\" says not to keep. Fix: record the accommodation only.",
+"D": "Half right: a short label feels like a fair middle ground, but it is still the reason, and \"Ask early, and know who decides\" says to record the accommodation, not the reason."
+}
+},
+{
+"stem": "You are preparing recorded training for a county health clinic, which is a public entity. A county IT analyst tells you the 2024 Title II web rule does not apply to vendor training videos. Who decides whether the rule covers your training content?",
+"options": {
+"A": "The county clinic's compliance lead for the project",
+"B": "The county's IT lead, who manages its web content",
+"C": "The vendor's accessibility team that made the videos",
+"D": "The client's HR accommodation owner for the class"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Ask early, and know who decides\" says the client's compliance lead decides whether the rule covers your training content.",
+"B": "Habit answer: IT often runs web content, but \"Ask early, and know who decides\" gives the coverage question to the client's compliance lead.",
+"C": "True but does not answer: the vendor's team knows the videos best, but \"Ask early, and know who decides\" places the coverage question with the client.",
+"D": "Confused look-alike, accommodation versus rule coverage: HR decides what one learner receives, while \"Ask early, and know who decides\" gives rule coverage to the compliance lead."
+}
+},
+{
+"stem": "| Accessibility check, check-in job aid | Result |\n|---|---|\n| Headings | Real headings, in order |\n| Images | Meaningful screenshots have alt text; borders marked decorative |\n| Steps | Numbered text steps beside each screenshot |\n| Table | Built as a table with a header row |\n| Text contrast | Light gray on white, 3 to 1 |\n\nYou wrote this job aid and ran your authoring tool's accessibility checker before sending it to Cedar Point. What should you do?",
+"options": {
+"A": "Send it as written, because a screen reader reads the text however light it looks",
+"B": "Ask the training lead to approve the gray text, since it matches the clinic's brand",
+"C": "Replace the screenshots with text-only steps so nothing depends on any image",
+"D": "Darken the text to at least 4.5 to 1 contrast, then send the job aid to the client"
+},
+"key": "D",
+"feedback": {
+"A": "True but does not answer: a screen reader does ignore color, but \"Make recordings and materials accessible\" sets contrast at 4.5 to 1 or more for people who read the page, so 3 to 1 still fails.",
+"B": "Too far: brand rules can matter, but \"Make recordings and materials accessible\" already sets the standard, and fixing your own job aid needs no client decision. Fix: darken the text.",
+"C": "Too far: text-only steps feel safest, but \"Make recordings and materials accessible\" keeps meaningful images with alt text, which this job aid has. Fix only the contrast.",
+"D": "Correct: \"Make recordings and materials accessible\" requires text contrast of at least 4.5 to 1, and the job aid is your material to fix."
+}
+},
+{
+"stem": "Cedar Point asks for Spanish versions of the check-in job aid, which includes your procedural steps and the clinic's approved privacy notice wording. The practice manager has approved your approach to translating procedural steps. What should you do?",
+"options": {
+"A": "Translate the whole job aid yourself, since the manager already approved the approach",
+"B": "Translate your steps and get the content owner's approval for the privacy wording",
+"C": "Have the vendor's translators do all of it, then ask the manager to review the result",
+"D": "Translate your steps now and leave the privacy notice in English until after go-live"
+},
+"key": "B",
+"feedback": {
+"A": "Right rule, wrong facts: the manager's approval does let you translate, but only your procedural steps; \"Use plain language\" says controlled content, such as privacy wording, needs its owner's approval.",
+"B": "Correct: \"Use plain language\" lets you translate your own steps under an approved approach, while privacy wording needs its owner's approval.",
+"C": "Half right: professional translation is reasonable, but the wrong person approves it. \"Use plain language\" says translated privacy wording needs its content owner's approval, not the manager's review.",
+"D": "Too weak: translating your steps is right, but leaving the notice in English shuts out Spanish-speaking staff. Fix: send the translated wording to its owner for approval, as \"Use plain language\" says."
+}
+}
+]

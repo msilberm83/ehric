@@ -1,0 +1,244 @@
+<h1>Module 9 — Answers: Check yourself, examples, knowledge check, spaced review</h1>
+<h2 id="answers-for-this-chapter">Answers for this chapter</h2>
+<h3 id="check-yourself">Check yourself</h3>
+<p><strong>How do you list every integration?</strong></p>
+<ol type="1">
+<li>Any six of: business purpose; source and destination; owner on each
+side; vendor and support contacts; contract or agreement; information
+sent and returned; trigger and frequency; identifiers and matching
+rules; standard and version; credentials and key owner; privacy and
+security needs; acknowledgements; failure behavior; monitoring owner;
+test environment; support plan.</li>
+<li>Public health links, such as an immunization registry or case
+reporting, are often missed in the order. Each needs its own
+registration and testing, so finding it late can delay go-live.</li>
+<li>Record the integration as not ready. Ask the client project owner to
+name the receiving owner. Do not name yourself.</li>
+</ol>
+<p><strong>Draw the data flow for each integration</strong></p>
+<ol type="1">
+<li>Source event, trigger, transformation, secure transport, destination
+processing, acknowledgement, reconciliation, exception queue.</li>
+<li>A marketing diagram shows what the product can do in general. The
+project record must show this clinic's systems, security boundary,
+timing, and the named person who owns each failure.</li>
+</ol>
+<p><strong>Clear the nontechnical dependencies</strong></p>
+<ol type="1">
+<li>Provider, receiver, need date, effect of delay, and escalation
+path.</li>
+<li>A shared log-in hides who did what. The audit trail can no longer
+show which person viewed or changed a record, and access cannot match
+each person's role.</li>
+<li>Store the key in the approved credential system, log only where it
+is stored, and tell the client's security owner. The security owner
+decides whether to replace the key.</li>
+</ol>
+<p><strong>Track e-prescribing readiness for controlled
+substances</strong></p>
+<ol type="1">
+<li>A third-party audit or certification report that each prescriber
+checks; identity proofing; a two-factor credential; and two-person
+access setup approved by a DEA registrant.</li>
+<li>Identity proofing and the credential belong to one person. Each
+prescriber applies and holds the token, so one prescriber can be ready
+while another is not.</li>
+<li>Decline. You are not a DEA registrant, and the approval must use a
+registrant's own two-factor credential. Show the gap on the tracker and
+ask the clinic to have its designated registrant approve the list.</li>
+</ol>
+<p><strong>How does each side know an item arrived?</strong></p>
+<ol type="1">
+<li>Transport (file arrived), syntax (format valid), and business
+(content accepted for processing).</li>
+<li>Users act on what they see. If they think "file arrived" means
+"accepted," they stop watching items that later fail.</li>
+<li>It should say who watches pending items, how long to wait, when to
+retry, and how to avoid sending a duplicate.</li>
+</ol>
+<p><strong>Test end to end, including failures</strong></p>
+<ol type="1">
+<li>Any five of: missing or invalid values; mismatched identifiers;
+duplicates; rejection and correction; delayed or missing response;
+unavailable endpoint; unauthorized access; changed or cancelled source
+item; downtime recovery.</li>
+<li>A message can arrive and still produce the wrong business result.
+Separate columns stop a delivery success from hiding a business
+failure.</li>
+</ol>
+<p><strong>Which interoperability standard does each exchange
+use?</strong></p>
+<ol type="1">
+<li>C-CDA sends whole clinical documents. FHIR sends small units called
+resources through web APIs.</li>
+<li>USCDI has several versions with different data elements. Without a
+version, you cannot tell which data the product can exchange.</li>
+</ol>
+<p><strong>Route interoperability rules to the people who
+decide</strong></p>
+<ol type="1">
+<li>It proves the product passed certification tests for the listed
+criteria and versions. It does not prove the client's setup is correct
+or that the client follows any rule.</li>
+<li>The client's privacy officer or compliance lead, with legal
+counsel.</li>
+<li>Log it as a change request. Route participation, agreements, and
+privacy review to the executive sponsor, privacy authority, and legal
+counsel. Network participation is not just a setting.</li>
+</ol>
+<p><strong>Set up revenue-cycle transactions</strong></p>
+<ol type="1">
+<li>The 270/271 pair handles eligibility. The 835 (ERA) explains
+payment.</li>
+<li>A 999 checks only the file's format. Individual claims may still be
+rejected on the 277CA.</li>
+</ol>
+<p><strong>Keep rejections and denials apart</strong></p>
+<ol type="1">
+<li>A rejection usually appears on a 277CA or clearinghouse report. A
+denial appears on the 835 with adjustment reason codes.</li>
+<li>They need different fixes, owners, and deadlines. Counting them
+together hides which work queue is behind and misleads the billing
+manager.</li>
+</ol>
+<p><strong>Track clearinghouse and payer enrollment
+separately</strong></p>
+<ol type="1">
+<li>Clearinghouse enrollment, payer claims (EDI) enrollment, ERA
+enrollment, and EFT enrollment.</li>
+<li>Claims go out, but remittances arrive on paper and payments may come
+by check. Log the gap as a dependency with the client's owner and a need
+date, and ask billing for an interim posting plan.</li>
+</ol>
+<p><strong>Govern electronic forms</strong></p>
+<ol type="1">
+<li>Any four of: owner and approver; version and effective date;
+purpose; prefill source; required fields; logic; signature rule;
+language needs; routing; record location; retention; change
+process.</li>
+<li>The clinic must be able to prove which wording a patient saw and
+signed. Without the version, a signed consent may not be
+defensible.</li>
+</ol>
+<p><strong>Control codes, values, and templates</strong></p>
+<ol type="1">
+<li>Any four of: business owner; source and version; active and inactive
+rules; effective dates; roles allowed to change it; downstream effect;
+test and approval; maintenance process.</li>
+<li>Near-duplicate values split reports and break automation that looks
+for one exact value.</li>
+<li>Teach that a template is a structure. The user must check that each
+default fits this patient before signing.</li>
+</ol>
+<p><strong>Configure payments safely</strong></p>
+<ol type="1">
+<li>Any five of: approved methods; success; decline; cancellation;
+timeout; duplicate prevention; partial payment; refund; correct account
+link; receipt; posting and reconciliation; access and audit;
+downtime.</li>
+<li>Payments involve money, card data, and contracts. Finance owns
+posting and reconciliation, and security owns how card data is
+protected.</li>
+</ol>
+<p><strong>Hand monitoring to operations</strong></p>
+<ol type="1">
+<li>Any five of: monitor and backup; dashboard or queue; review
+frequency; expected volume; error and aging limits; retry authority;
+vendor escalation; incident route; reconciliation; evidence; change
+review.</li>
+<li>The implementer leaves after go-live. A trained client owner with
+access and a backup keeps watching when the project ends.</li>
+</ol>
+<h3 id="worked-example-prompts">Worked example prompts</h3>
+<ol type="1">
+<li><em>Why check enrollment first?</em> A clean claim proves only that
+claims can go out. Payment, remittance, and EFT depend on separate
+enrollments, so the integration's full business result was not yet
+proven.</li>
+<li><em>Why ask the billing manager?</em> The billing manager owns
+posting and reconciliation decisions. The specialist's job is to record
+the gap, find the owner, and get the decision on record.</li>
+<li><em>What could go wrong?</em> The clinic would go live with
+remittances on paper and payments by check for a major payer. No one
+would have a plan to post them, and cash flow and reconciliation would
+suffer.</li>
+</ol>
+<h3 id="faded-example">Faded example</h3>
+<ol start="3" type="1">
+<li>Clinical leadership decides. <em>Produced:</em> a recorded decision
+that results failing the birth-date match go to an unmatched-results
+queue for staff review. <em>Why:</em> filing rules for clinical data are
+a clinical safety decision.</li>
+<li>The vendor changes the matching rule. QC retests the near-match case
+and reruns the earlier normal-result tests. <em>Produced:</em> retest
+and regression evidence. <em>Why:</em> a fix can break cases that passed
+before.</li>
+<li>The practice manager names the owner and backup for the unmatched
+queue. <em>Produced:</em> an operational owner record. <em>Why:</em> if
+nobody owns the receiving queue, the interface is not ready.</li>
+</ol>
+<h3 id="knowledge-check">Knowledge check</h3>
+<ol type="1">
+<li>A connection proves only that two systems can exchange data. The
+business workflow also needs correct meaning, matching, owners, failure
+handling, and reconciliation. A result can arrive and still file to the
+wrong patient.</li>
+<li>Transport acknowledgement says the item arrived. Business acceptance
+says the receiver accepted the content for processing. An item can pass
+transport and still be rejected, so each layer is tested and trained
+separately.</li>
+<li>A 999 reports whether the whole file met X12 format rules. A 277CA
+reports, claim by claim, whether each claim passed the payer's first
+checks or was rejected.</li>
+<li>A rejection happens before the payer decides the claim, so staff
+correct and resubmit it. A denial happens after the payer decides, so
+staff use the payer's corrected-claim, reopening, or appeal process.
+They go to different queues with different owners.</li>
+<li>Each step is a separate approval with its own timing. Claims can be
+approved while ERA or EFT is not, which means payments arrive on paper
+or by check. Tracking each step by payer and location shows the gap
+before go-live.</li>
+<li>USCDI has several versions with different data elements, so a
+version tells you what the product can exchange. Check the product's
+listing on the Certified Health IT Product List (CHPL) and record the
+criteria and versions.</li>
+<li>The client's privacy officer or compliance lead, with legal counsel,
+decides. The implementer records the request, routes it, and does not
+change the setting until the decision is made.</li>
+<li>Each endpoint can fail on its own side. If the receiving side has no
+owner, failures and unmatched items sit unseen, so the integration is
+not ready even when messages move.</li>
+<li>Each form, code list, and template has a named owner, a version, an
+approval, and a change rule. Limiting who can create values prevents
+near-duplicates. Regular review retires outdated content.</li>
+<li>A named, trained operational owner and backup with access to each
+queue. Thresholds, retry authority, escalation, reconciliation, and
+evidence rules must be recorded and handed over.</li>
+<li>Each prescriber needs identity proofing, a two-factor credential,
+and an approved place on the access list, after checking the
+application's audit report. The prescriber and the clinic complete these
+steps; the implementer tracks them as dated dependencies.</li>
+</ol>
+<h3 id="spaced-review">Spaced review</h3>
+<ol type="1">
+<li>Every difference between source and loaded counts must be explained
+by population, such as rejected, skipped, or duplicate records. "Within
+tolerance" is not an explanation. The data owner accepts only after the
+reconciliation is complete (Module 8).</li>
+<li>Do not delete them. The clinical authority sets the rule for uncoded
+entries, such as pre-visit review and reconciliation at the first visit.
+You flag and track them under that rule (Module 8).</li>
+<li>Closing the loop on results includes failures and unmatched results.
+The scenario should name who watches that queue. Clinical leadership or
+the practice manager names the owner; you do not (Module 6).</li>
+<li>Attendance is not competence. The approved evaluator must watch her
+complete a normal and an exception scenario on her own and record the
+result (Modules 5 and 6).</li>
+<li>Write the provider (the prescriber and the credential company), the
+receiver (the clinic and the project), the need date, the effect of
+delay (no controlled-substance e-prescribing at go-live), and the
+escalation path (Module 2).</li>
+<li>It is a remembered commitment. Record it as "to be confirmed" with
+the salesperson as owner and a due date. It is not in scope until
+someone with authority confirms it (Module 1).</li>
+</ol>

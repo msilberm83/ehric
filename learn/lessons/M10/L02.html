@@ -1,0 +1,238 @@
+<h1>Module 10, Lesson 2: Collect decision-support source information</h1>
+<h2 id="collect-decision-support-source-information">Collect
+decision-support source information</h2>
+<p>Many electronic health record (EHR) systems now include decision
+support, and some of it is AI. A federal rule tells the developer what
+it must disclose. Your job is to ask for those facts and record them.
+You collect them and pass them along. You do not judge them.</p>
+<h3 id="what-the-rule-covers">What the rule covers</h3>
+<p>The <strong>Office of the National Coordinator for Health Information
+Technology (ONC)</strong> runs the federal Health IT Certification
+Program. For a time it was called ASTP/ONC. A notice published April 1,
+2026, returned it to the name ONC.</p>
+<p>ONC's <strong>HTI-1</strong> final rule was published January 9,
+2024. It replaced the old clinical decision support criterion with a
+<strong>decision support interventions (DSI)</strong> criterion, 45 CFR
+170.315(b)(11). (CFR is the Code of Federal Regulations.) A
+<strong>DSI</strong> is technology that supports clinical decisions,
+such as an alert, a reminder, or a risk score. The rule names two
+kinds:</p>
+<ul>
+<li><strong>Evidence-based DSIs</strong> follow published research or
+guidelines. Example: a reminder that a patient with diabetes is due for
+an eye exam.</li>
+<li><strong>Predictive DSIs</strong> learn patterns from training data.
+They then produce a prediction, a category, or a recommendation.
+Example: a model that scores a patient's risk of a hospital
+admission.</li>
+</ul>
+<p>Certified developers had to meet the new criterion by December 31,
+2024. From January 1, 2025, only the DSI criterion counts toward the
+certified "Base EHR."</p>
+<h3 id="source-attributes">Source attributes</h3>
+<p><strong>Source attributes</strong> are the facts a developer must
+make available about each DSI it supplies. For evidence-based DSIs, they
+include:</p>
+<ul>
+<li>the citation, the developer, and the funding source;</li>
+<li>release dates;</li>
+<li>whether the DSI uses race, ethnicity, language, sex, date of birth,
+or social factors such as housing.</li>
+</ul>
+<p>For predictive DSIs, the list is longer. It includes:</p>
+<ul>
+<li>intended use, patients, and users;</li>
+<li>uses that are out of scope, and known risks;</li>
+<li>training data and inputs;</li>
+<li>how fairness was addressed;</li>
+<li>outside testing and performance results;</li>
+<li>how accuracy and fairness are checked over time, including in
+<strong>local data</strong> (the client's own patients).</li>
+</ul>
+<p>If some facts are not available, the product must say so. The
+certified software must let a small set of named client users view these
+facts in plain language.</p>
+<p>The rule covers DSIs the developer supplies in certified software. It
+does not cover a tool the clinic builds itself or a separate product
+that is not certified.</p>
+<h3 id="what-you-do">What you do</h3>
+<ol type="1">
+<li>List every vendor-supplied DSI the client plans to turn on. Mark
+which ones are predictive.</li>
+<li>Ask the vendor where the source attributes appear and which client
+role can view them.</li>
+<li>Copy the key facts into the inventory: intended patients and
+setting, out-of-scope uses, local testing status, and any "not
+available" fields.</li>
+<li>Flag mismatches. A model built for hospital inpatients may not fit
+an outpatient clinic.</li>
+<li>Take the record to the client's decision-support or AI governance
+owner. That owner decides whether, where, and for whom to turn on the
+DSI.</li>
+</ol>
+<figure style="margin:16px 0"><img src="../../img/M10-04.png" alt="Figure 10.4. Notice that "not available" fields are flagged in the inventory, not left out or assumed safe." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.4.</b> Notice that "not available" fields are flagged in the inventory, not left out or assumed safe.</figcaption></figure>
+You do not judge a model clinically fit. You do not turn on a predictive DSI because the software is certified. Certification means the facts are disclosed. It does not mean the model suits this clinic.
+
+<h3 id="rule-status">Rule status</h3>
+<p>In December 2025, ONC proposed the <strong>HTI-5</strong> rule. Among
+other changes, it would narrow the DSI criterion and remove the
+predictive "model card" source-attribute requirements. On September 30,
+2026, HTI-5 was still a proposal, and the current regulation still lists
+the source attributes. Check the rule's status at each project start. If
+the requirement is removed, keep asking for the same facts as good
+practice.</p>
+<blockquote>
+<p><strong>Rule:</strong> Certification means the facts are disclosed,
+not that the model fits this clinic.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What is the difference between an evidence-based DSI and a
+predictive DSI?</li>
+<li>Name four source attributes for a predictive DSI.</li>
+<li>The clinical lead asks you to turn on a certified risk score built
+for hospital patients. What would you do?</li>
+</ol>
+<h2 id="design-human-oversight">Design human oversight</h2>
+<p>"A person reviews it" is a weak control if that person lacks time,
+knowledge, or the power to say no. Real oversight is designed, not
+assumed.</p>
+<p><strong>Human in the loop</strong> means a person checks or approves
+AI output before it has an effect. It works only when the person
+has:</p>
+<ul>
+<li>authority to make the decision;</li>
+<li>enough knowledge and context to spot an error;</li>
+<li>time to review;</li>
+<li>access to the supporting information;</li>
+<li>a clear standard;</li>
+<li>the power to reject, correct, stop, or escalate;</li>
+<li>a record of the review when one is required.</li>
+</ul>
+<p>A person who clicks "approve" out of habit is not a control.</p>
+<p>Choose a review pattern for each use:</p>
+<ul>
+<li>review every output before action;</li>
+<li>review outputs above a set risk or confidence level;</li>
+<li>review exceptions only;</li>
+<li>review a sample of routine low-risk outputs;</li>
+<li>watch totals and trends only;</li>
+<li>forbid the AI from certain actions.</li>
+</ul>
+<figure style="margin:16px 0"><img src="../../img/M10-05.png" alt="Figure 10.5. Notice that higher-risk uses need review of every output, while lower-risk uses may need only monitoring." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.5.</b> Notice that higher-risk uses need review of every output, while lower-risk uses may need only monitoring.</figcaption></figure>
+Compare two uses. A portal reply that answers a question about symptoms needs a clinician to review every draft. A suggested document category for a routine form may need only a weekly sample. Both patterns match the reviewer's authority and time to the risk.
+
+<p>Base the pattern on risk and clinic policy. Review it again when the
+use, data, model, workflow, or failure history changes.</p>
+<blockquote>
+<p><strong>Rule:</strong> A reviewer counts as a control only with the
+authority, knowledge, time, and power to reject.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List four things a reviewer needs for oversight to work.</li>
+<li>Why is a reviewer with 30 seconds and one "approve" button not a
+real control?</li>
+<li>Which review pattern would you suggest for a low-risk document
+category suggestion, and why?</li>
+</ol>
+<h2 id="build-a-representative-evaluation">Build a representative
+evaluation</h2>
+<p>A demonstration shows the tool at its best. Your test must show how
+the tool performs on this clinic's real mix of work.</p>
+<p>Test the workflow as the clinic set it up, not a vendor
+demonstration. An <strong>evaluation set</strong> is the approved group
+of test cases you run through the tool. It should include:</p>
+<ul>
+<li>common cases;</li>
+<li>incomplete, unclear, and poor-quality input;</li>
+<li>important groups, languages, document types, or specialties;</li>
+<li>requests the tool should refuse;</li>
+<li>misleading content, where it applies;</li>
+<li>limits on protected information;</li>
+<li>failures that would cause serious harm;</li>
+<li>service outage and fallback;</li>
+<li>attempts to override instructions or expose restricted
+information;</li>
+<li>changes in workflow or model behavior.</li>
+</ul>
+<p>A <strong>threshold</strong> is the result a use must meet to pass.
+Set expected results and thresholds before you see the final results.
+Measures may include:</p>
+<ul>
+<li>accuracy, or agreement with approved answers;</li>
+<li>false positives and false negatives;</li>
+<li>completeness;</li>
+<li>made-up or unsupported statements;</li>
+<li>how often staff correct the output, and how long it takes;</li>
+<li>routing accuracy;</li>
+<li>forbidden disclosure;</li>
+<li>how often users override the output;</li>
+<li>speed and availability;</li>
+<li>the effect on the work.</li>
+</ul>
+<p>An average can hide a dangerous group or error type. Record results
+by category.</p>
+<figure style="margin:16px 0"><img src="../../img/M10-06.png" alt="Figure 10.6. Notice that the overall result passes while one category falls below its threshold." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.6.</b> Notice that the overall result passes while one category falls below its threshold.</figcaption></figure>
+### Keep a traceable record
+
+<p>For each run, record:</p>
+<ul>
+<li>system, model, and feature version, when available;</li>
+<li>setup and instruction (prompt) version;</li>
+<li>connected sources;</li>
+<li>test-set version;</li>
+<li>date and environment;</li>
+<li>evaluator and approved answer;</li>
+<li>output;</li>
+<li>result and error type;</li>
+<li>decision and threshold.</li>
+</ul>
+<p>AI services change. You may not be able to repeat every output
+exactly. You can still keep enough detail to compare behavior and spot
+<strong>drift</strong>, which is a slow change in performance over
+time.</p>
+<blockquote>
+<p><strong>Rule:</strong> Set thresholds before the final run, and
+report results by category.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Why must thresholds be set before the final run?</li>
+<li>Name five details you record for each evaluation run.</li>
+<li>Overall accuracy is 97%, but accuracy on Spanish-language documents
+is 81%. What would you report?</li>
+</ol>
+<h2 id="test-rules-based-automation-carefully">Test rules-based
+automation carefully</h2>
+<p>A rule that fires twice, fires late, or goes to the wrong queue can
+create hundreds of wrong tasks in a day. Small timing and routing errors
+grow fast.</p>
+<p>For each trigger, rule, and action, test that:</p>
+<ul>
+<li>the trigger fires once;</li>
+<li>the trigger does not fire when conditions are missing;</li>
+<li>repeated events do not create repeated work;</li>
+<li>timing and time zone are right;</li>
+<li>role and access are right;</li>
+<li>the right person or queue receives it;</li>
+<li>a cancelled or changed source item is handled;</li>
+<li>the next system confirms receipt;</li>
+<li>an unavailable service is handled;</li>
+<li>retry and backlog work;</li>
+<li>audit and monitoring work;</li>
+<li>the rule can be stopped or bypassed.</li>
+</ul>
+<p>Record how automations depend on each other. One status change may
+start several messages, tasks, or interface messages. A correction can
+start the chain again if you test only the first action.</p>
+<figure style="margin:16px 0"><img src="../../img/M10-07.png" alt="Figure 10.7. Notice that one status change starts several actions, and a correction can start them all again." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.7.</b> Notice that one status change starts several actions, and a correction can start them all again.</figcaption></figure>
+> **Rule:** Test every action a trigger starts, not only the first one.
+
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name five conditions you test for a rules-based automation.</li>
+<li>Why must you test what happens after a correction?</li>
+<li>A cancel-and-rebook test creates three open tasks instead of one.
+What would you do?</li>
+</ol>

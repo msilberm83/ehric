@@ -1,0 +1,242 @@
+[
+{
+"stem": "A proposal in the sales file lists five interfaces. The signed order does not mention the proposal or attach it. How should you treat the proposal's interface list?",
+"options": {
+"A": "As documented scope, because it is a written sales document the client received",
+"B": "As unconfirmed until sales or contracts says whether it forms part of the sale",
+"C": "As out of scope, because the signed order controls and does not name the interfaces",
+"D": "As in scope once the client sponsor confirms in writing that they relied on it"
+},
+"key": "B",
+"feedback": {
+"A": "Not best. Tempting because it is in writing (confused look-alike: written vs. documented), but a proposal the order does not mention is not automatically part of the sale (\"Sort each commitment: documented or remembered\").",
+"B": "Correct: a proposal the order does not mention is not automatically documented, so you ask sales or the contracts team whether it forms part of the sale (\"Sort each commitment: documented or remembered\").",
+"C": "Not best. Tempting because the signed order does come first (right rule, wrong facts), but calling it out of scope decides a commercial question you do not own; it stays to be confirmed (\"Sort each commitment: documented or remembered\").",
+"D": "Not best. Tempting because client reliance matters (half right: wrong authority), but only the people who manage the contract can confirm what the sale includes (\"Sort each commitment: documented or remembered\")."
+}
+},
+{
+"stem": "| Source | Lakeshore go-live support |\n|---|---|\n| Signed order, line 9 | Remote support, 5 days |\n| Proposal section 4 (attached to the signed order) | Onsite support, 3 days |\n\nYou are writing the Cedar Point handoff record and find these two entries. Both documents are part of the sale. What should you do?",
+"options": {
+"A": "Plan for onsite support, since it is the larger promise and protects the relationship",
+"B": "Plan for remote support, since the signed order takes priority over a proposal",
+"C": "Ask the client sponsor which support model they expected when they bought it",
+"D": "Log the conflict as an issue and have the commercial owner decide which controls"
+},
+"key": "D",
+"feedback": {
+"A": "Not best. Tempting because it keeps the client happy (the habit answer), but it quietly settles a contract conflict that the commercial owner must decide (\"Sort each commitment: documented or remembered\").",
+"B": "Not best. Tempting because signed documents do come first (right rule, wrong facts), but both are documented here, and you do not interpret which controls; the contracts or commercial owner does (\"Sort each commitment: documented or remembered\").",
+"C": "Not best. Tempting because the client's expectation is useful context (true but doesn't answer the question), but a conflict between documented sources is decided by the commercial owner (\"Sort each commitment: documented or remembered\").",
+"D": "Correct: when documented sources conflict, log an issue now and let the contracts or commercial owner decide which controls (\"Sort each commitment: documented or remembered\")."
+}
+},
+{
+"stem": "A sales representative's email promised Cedar Point weekend go-live support. It is logged as to be confirmed. Today the representative confirms she made the promise. The signed documents do not cover weekend support. What happens next?",
+"options": {
+"A": "The commercial owner decides whether an approved change is needed; it stays open",
+"B": "You move weekend support to in scope, since the sales owner has now confirmed it",
+"C": "You move weekend support to out of scope, since the signed documents do not list it",
+"D": "You ask the client sponsor to sign a note accepting weekend support as now in scope"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: a confirmed promise the signed documents do not cover goes to the commercial owner, who decides whether an approved change is needed; you plan on documented scope until then (\"Sort each commitment: documented or remembered\").",
+"B": "Not best. Tempting because the owner of the open item answered (right rule, wrong facts), but confirming that a promise was made does not make it approved scope (\"Sort each commitment: documented or remembered\").",
+"C": "Not best. Tempting because the signed documents control (too far), but the client may rely on the promise, so it stays open for a commercial decision rather than being dropped (\"Sort each commitment: documented or remembered\").",
+"D": "Not best. Tempting because it gets something in writing (confused look-alike: a client note vs. an approved change), but an approved change comes from the people with authority to change the contract (\"Sort each commitment: documented or remembered\")."
+}
+},
+{
+"stem": "Sales notes say the client asked about a check-in kiosk interface during the demo. The representative told them it was not included, and the client chose not to buy it. No one has promised it since. Where does the kiosk interface belong in the initial scope summary?",
+"options": {
+"A": "To be confirmed, with the sales representative as owner and a due date",
+"B": "In the risk log only, since the client may ask for the interface again",
+"C": "Out of scope, listed as an integration discussed but not purchased",
+"D": "Left off the summary, since nothing about it was purchased or promised"
+},
+"key": "C",
+"feedback": {
+"A": "Not best. Tempting because to be confirmed is right for remembered promises (right rule, wrong facts), but nothing here is open; the client already declined it (\"Write the initial scope summary\").",
+"B": "Not best. Tempting because a later request is possible (true but doesn't answer the question), but a known exclusion belongs in the out-of-scope list, where it protects both sides (\"Write the initial scope summary\").",
+"C": "Correct: an interface that was discussed but not bought is a known exclusion, and listing it protects both sides (\"Write the initial scope summary\").",
+"D": "Not best. Tempting because it was never sold (too weak), but leaving a discussed item off loses the protection that a written exclusion gives (\"Write the initial scope summary\")."
+}
+},
+{
+"stem": "| Field | Entry |\n|---|---|\n| Risk | The reference lab may not finish its interface build before test week |\n| Probability | Medium |\n| Impact | Interface testing and the go-live target move |\n| Response | Request the lab's build plan this week |\n\nYou review this risk entry in the Cedar Point control log. What must you add before the entry is complete?",
+"options": {
+"A": "An owner, a trigger that shows the risk is happening, and a review date",
+"B": "An owner, the options considered, and the reason the response was chosen",
+"C": "An owner, and a note of how and when the team will confirm the lab's plan",
+"D": "The lab as provider, the lab's contact, and the date the project needs it"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: a risk entry records probability, impact, owner, response, trigger, and review date; this one lacks the owner, trigger, and review date (\"Open the control logs and file each entry correctly\").",
+"B": "Not best. Tempting because it adds the owner (half right), but options and reason are decision-log fields (confused look-alike), and the trigger and review date are still missing (\"Open the control logs and file each entry correctly\").",
+"C": "Not best. Tempting because it adds the owner (half right), but how and when a belief is confirmed belongs to an assumption entry (confused look-alike) (\"Open the control logs and file each entry correctly\").",
+"D": "Not best. Tempting because the lab is another party (confused look-alike: risk vs. dependency), but provider and need date describe a dependency entry, and the risk still has no owner (\"Open the control logs and file each entry correctly\")."
+}
+},
+{
+"stem": "Cedar Point cannot test card payments until its bank issues a merchant test account. The bank has not been asked yet. How should you log this?",
+"options": {
+"A": "As a risk, with probability and impact, since the bank might be slow to respond",
+"B": "As an issue, since the test account is missing today and testing cannot start",
+"C": "As a dependency, naming the bank, who will request it, and the date it is needed",
+"D": "As an assumption, recording that the bank is expected to issue the account in time"
+},
+"key": "C",
+"feedback": {
+"A": "Not best. Tempting because a slow bank could become a risk later (true but doesn't answer the question), but the entry itself is work waiting on another party (\"Open the control logs and file each entry correctly\").",
+"B": "Not best. Tempting because \"has it already happened?\" seems to say yes (right rule, wrong facts), but nothing has gone wrong; an account nobody has requested yet is a wait, not a present problem (\"Open the control logs and file each entry correctly\").",
+"C": "Correct: work the project cannot finish until another party acts is a dependency, recorded with the provider, an owner, and a need date (\"Open the control logs and file each entry correctly\").",
+"D": "Not best. Tempting because the plan does expect the account (confused look-alike: assumption vs. dependency), but this is a known wait on the bank, not an unchecked belief (\"Open the control logs and file each entry correctly\")."
+}
+},
+{
+"stem": "On a planning call, the Cedar Point sponsor decides that both locations will use one shared set of appointment types. The call notes are informal. How should you record the decision?",
+"options": {
+"A": "In the meeting summary sent to all attendees, so everyone has the same record",
+"B": "In an email to the sponsor asking her to confirm the decision in a formal memo",
+"C": "In the issue log, closed as resolved, since the open question is now settled",
+"D": "In the decision log, with the options, decision-maker, reason, and affected work"
+},
+"key": "D",
+"feedback": {
+"A": "Not best. Tempting because sharing the outcome is good practice (the habit answer), but a summary does not keep the options, reason, and affected work that explain later why the build was set up this way (\"Open the control logs and file each entry correctly\").",
+"B": "Not best. Tempting because it seeks confirmation from the decision-maker (too far), but a formal memo adds a step the chapter does not require; the decision log is the record (\"Open the control logs and file each entry correctly\").",
+"C": "Not best. Tempting because closing the question is part of the work (half right), but the decision itself belongs in the decision log, where someone can find it months later (\"Open the control logs and file each entry correctly\").",
+"D": "Correct: the decision log holds the date, question, options, decision, decision-maker, reason, affected work, and evidence (\"Open the control logs and file each entry correctly\")."
+}
+},
+{
+"stem": "| Work item | Responsible | Accountable | Consulted |\n|---|---|---|---|\n| New-patient visit note workflow | Implementation specialist | Implementation specialist | Medical director |\n\nA colleague drafted this row of the Cedar Point responsibility chart. What should you change?",
+"options": {
+"A": "Make the medical director responsible, with you kept accountable for delivery",
+"B": "Make the medical director accountable, with you responsible for coordination",
+"C": "Make the practice administrator accountable, since she runs daily operations",
+"D": "Make the vendor clinical consultant accountable, since they know the product"
+},
+"key": "B",
+"feedback": {
+"A": "Not best. Tempting because it brings the medical director in (half right), but it reverses the roles; the clinical leader approves the result, and you coordinate (\"Know what you own and what others decide\").",
+"B": "Correct: clinical leaders own decisions within their professional authority, while the implementer makes sure the decision is assigned, made, recorded, and built (\"Know what you own and what others decide\").",
+"C": "Not best. Tempting because she owns operations (right rule, wrong facts), but a clinical workflow sits within clinical authority; she may be consulted (\"Know what you own and what others decide\").",
+"D": "Not best. Tempting because product knowledge helps (the habit answer: defer to the vendor), but it gives no authority over the client's clinical workflow (\"Know what you own and what others decide\")."
+}
+},
+{
+"stem": "| Purchased item | Owner |\n|---|---|\n| Signature pads | Dana |\n| Demographics conversion | Dana |\n| Staff training schedule | Dana |\n\nCedar Point is small, and the office manager, Dana, fills several roles. A colleague drafted this resource map. What should you do?",
+"options": {
+"A": "Record Dana's role for each item, such as accountable for conversion validation",
+"B": "Ask the sponsor to name a second person so Dana is not approving her own work",
+"C": "Replace Dana's name with role titles so the map does not depend on one person",
+"D": "Mark the items to be confirmed until Dana's workload is reviewed by the sponsor"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: one person may fill several roles on a small project, but you record the role each time, because a name alone is not a control (\"Turn each purchased item into a named resource\").",
+"B": "Not best. Tempting because separating doer and approver is a real rule (right rule, wrong facts), but nothing shows self-approval yet; recording each role is what would reveal it (\"Turn each purchased item into a named resource\").",
+"C": "Not best. Tempting because roles do need recording (half right), but the map needs a named person and a role; removing the name loses the person who acts (\"Turn each purchased item into a named resource\").",
+"D": "Not best. Tempting because workload is a real concern (too far), but it adds an approval step for a drafting fix you can make yourself (\"Turn each purchased item into a named resource\")."
+}
+},
+{
+"stem": "The Cedar Point order includes a custom dashboard of overdue preventive-care tasks. You are adding it to the resource map. What is the first question for product and development?",
+"options": {
+"A": "Which staff roles at each location will use the dashboard in daily work",
+"B": "Which clinical leader will approve the measures that the dashboard shows",
+"C": "What test evidence the quality-control lead will need before acceptance",
+"D": "Whether it is approved, feasible, estimated, and scheduled for delivery"
+},
+"key": "D",
+"feedback": {
+"A": "Not best. Tempting because user roles matter (right action, wrong time), but they belong to training and discovery, not to the first question for development (\"Turn each purchased item into a named resource\").",
+"B": "Not best. Tempting because clinical approval is a real question (half right: wrong resource), but it goes to the clinical leader, not to product and development (\"Turn each purchased item into a named resource\").",
+"C": "Not best. Tempting because acceptance evidence is needed (confused look-alike: QC's question vs. development's), but test evidence is the first question for quality control (\"Turn each purchased item into a named resource\").",
+"D": "Correct: for custom work, the first question to product and development is whether it is approved, feasible, estimated, and scheduled (\"Turn each purchased item into a named resource\")."
+}
+},
+{
+"stem": "The Cedar Point handoff has five minutes left. The representative closes with, \"Implementation will follow up with the client.\" No introduction has been agreed. What should you do before the call ends?",
+"options": {
+"A": "Accept the close and log the introduction as an open action for implementation",
+"B": "Agree who sends the client introduction, what it says, and by which date",
+"C": "Schedule a second handoff call next week to settle the introduction and actions",
+"D": "Ask the sales manager to assign the introduction after reviewing the handoff notes"
+},
+"key": "B",
+"feedback": {
+"A": "Not best. Tempting because it logs the item (too weak), but an action with no named person, content, or date is the same \"will follow up\" the chapter rejects (\"Run the handoff meeting in six parts\").",
+"B": "Correct: \"Implementation will follow up\" is not an action; the handoff ends with named actions, owners, and dates, including the client introduction (\"Run the handoff meeting in six parts\").",
+"C": "Not best. Tempting because it keeps the item on the calendar (right action, wrong time), but it delays a decision the two of you can make in the five minutes left (\"Run the handoff meeting in six parts\").",
+"D": "Not best. Tempting because the sales manager has authority over sales staff (too far), but it hands off a step the handoff meeting itself should settle (\"Run the handoff meeting in six parts\")."
+}
+},
+{
+"stem": "The Cedar Point handoff is on Thursday. On Monday you have only the signed order. What should you do now?",
+"options": {
+"A": "Read the signed order now and bring questions on the other records to Thursday",
+"B": "Ask the client sponsor to send their current workflows before the meeting",
+"C": "Ask sales now for the SOW, proposal, approved changes, and their sales notes",
+"D": "Ask your manager to move the handoff until the full record has been assembled"
+},
+"key": "C",
+"feedback": {
+"A": "Not best. Tempting because reading the order early is right (half right), but seeing the other records for the first time on the call leaves no time to spot gaps or conflicts (\"Collect the commercial record before the handoff\").",
+"B": "Not best. Tempting because workflows matter (right action, wrong time), but they come later, in discovery; the handoff starts from the commercial record held by sales (\"Collect the commercial record before the handoff\").",
+"C": "Correct: ask for the commercial record before the call, including the SOW, proposal, approved changes, and sales notes (\"Collect the commercial record before the handoff\").",
+"D": "Not best. Tempting because a complete record matters (too far), but there is time to request the records yourself, so moving the meeting is needless delay (\"Collect the commercial record before the handoff\")."
+}
+},
+{
+"stem": "Cedar Point's public website lists Saturday hours at Lakeshore. The sponsor's intake email lists weekday hours only. Operating hours will shape go-live support and training dates. What should you put in the client profile?",
+"options": {
+"A": "The hours the client project owner confirms, after you ask about the difference",
+"B": "The website hours, since a public listing is what patients rely on for visits",
+"C": "The sponsor's weekday hours, since her email is the client's own statement",
+"D": "Both sets of hours, logged as a risk to review when the training plan is built"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: a website gives context, but the client confirms the project facts, so you ask about the difference and record the confirmed hours (\"Build a one-page client and project profile\").",
+"B": "Not best. Tempting because patients see it (true but doesn't answer the question), but a website is not the source for the clinic's internal operations (\"Build a one-page client and project profile\").",
+"C": "Not best. Tempting because the client is the right source (half right), but two sources disagree, so you confirm the fact rather than pick one (\"Build a one-page client and project profile\").",
+"D": "Not best. Tempting because it keeps both visible (confused look-alike: risk vs. issue), but the conflict exists today and the profile needs the confirmed fact now, not at training planning (\"Build a one-page client and project profile\")."
+}
+},
+{
+"stem": "| Draft | Acceptance statement for demographics conversion |\n|---|---|\n| 1 | The conversion script runs to completion without errors in the test load |\n| 2 | The vendor reports that the expected number of records has been loaded |\n| 3 | The client data owner signs off on the conversion mapping document |\n| 4 | Sample migrated records reconcile to the approved source and mapping rules |\n\nYou are writing early acceptance evidence for Cedar Point's demographics conversion. Which draft best shows the conversion works?",
+"options": {
+"A": "Draft 1, because a clean script run shows the load completed as designed",
+"B": "Draft 2, because the vendor count confirms how many records were moved",
+"C": "Draft 3, because the data owner is the person who approves the conversion",
+"D": "Draft 4, because it checks sample records against the approved rules"
+},
+"key": "D",
+"feedback": {
+"A": "Not best. Tempting because a clean run is needed (true but doesn't answer the question), but it shows the process finished, not that the data is right (\"State how you will know each item works\").",
+"B": "Not best. Tempting because counts are a real check (half right), but a count shows volume, not that records match the source and mapping rules (\"State how you will know each item works\").",
+"C": "Not best. Tempting because the right person is approving (right result, wrong reason), but approving the mapping approves the design, not a converted result (\"State how you will know each item works\").",
+"D": "Correct: the chapter's acceptance example for conversion is that sample converted records match the approved source and mapping rules (\"State how you will know each item works\")."
+}
+},
+{
+"stem": "Which statement best describes the role of the signed order in an implementation?",
+"options": {
+"A": "It defines the final build, so discovery is used to confirm its line items",
+"B": "It records sales intent, so discovery sets the scope that the client receives",
+"C": "It controls what was sold, and discovery fits those items to the client's work",
+"D": "It controls what was sold, so the items it lists need no further confirmation"
+},
+"key": "C",
+"feedback": {
+"A": "Not best. Tempting because the order is the starting point (too strong), but it is the starting specification, not the final build; discovery shapes how items are built (\"Run the handoff meeting in six parts\").",
+"B": "Not best. Tempting because discovery does shape the work (too weak), but the order controls what was sold, so discovery cannot quietly expand or reduce it (\"Run the handoff meeting in six parts\").",
+"C": "Correct: the order is the commercial starting specification, and discovery shows how the purchased items fit the clinic's workflow, data, and duties (\"Run the handoff meeting in six parts\").",
+"D": "Not best. Tempting because the first half is right (half right), but undefined items, such as a bare \"data conversion,\" still need open questions confirmed (\"Run the handoff meeting in six parts\")."
+}
+}
+]

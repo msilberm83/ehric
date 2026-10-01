@@ -1,0 +1,146 @@
+<h1>Module 10, Lesson 4: Your turn: faded example</h1>
+<h2 id="your-turn-faded-example">Your turn: faded example</h2>
+<p><em>If you have done this task on a real project, try this first,
+then compare with the worked example.</em></p>
+<p>A two-location pediatric clinic wants an AI service to sort incoming
+scanned documents into categories: lab report, referral letter, school
+form, and other. The first three steps are done. Complete steps 4 to
+8.</p>
+<ol type="1">
+<li><strong>Did:</strong> wrote the use-case statement. "When a scanned
+document enters the intake queue, the AI service proposes a category.
+Front-desk staff confirm or correct it before routing. The office
+manager reviews corrections monthly." <strong>Produced:</strong> a
+signed statement. <strong>Why:</strong> it names the owner, data,
+action, result, and control.</li>
+<li><strong>Did:</strong> checked the workflow against the future-state
+map. Every category has an owner queue. <strong>Produced:</strong> a
+readiness check. <strong>Why:</strong> a category with no owner queue
+would route work to no one.</li>
+<li><strong>Did:</strong> classified the use as AI-enabled.
+<strong>Produced:</strong> the classification in the inventory.
+<strong>Why:</strong> the service may sort similar documents
+differently, so it needs thresholds, not a single expected result.</li>
+<li><strong>Did:</strong> ran the risk and authority review. Who must
+approve, and what is the biggest harm to check?
+<strong>Produced:</strong> ______ <strong>Why:</strong> ______</li>
+<li><strong>Did:</strong> reviewed the vendor and data terms. What must
+you find out, and who decides? <strong>Produced:</strong> ______
+<strong>Why:</strong> ______</li>
+<li><strong>Did:</strong> designed human oversight. Which review pattern
+fits, and what does the reviewer need? <strong>Produced:</strong> ______
+<strong>Why:</strong> ______</li>
+<li><strong>Did:</strong> built the evaluation set and thresholds. Which
+cases and categories must it include? <strong>Produced:</strong> ______
+<strong>Why:</strong> ______</li>
+<li><strong>Did:</strong> set up monitoring and the stop method. What
+measures and stop steps? <strong>Produced:</strong> ______
+<strong>Why:</strong> ______</li>
+</ol>
+<h2 id="field-assignment">Field assignment</h2>
+<p>Work from the Cedar Point Internal Medicine practice case. Do not use
+a real client, employer, or patient, even with names removed. Choose one
+rules-based automation and one AI use:</p>
+<ol type="1">
+<li>Write the use-case statements.</li>
+<li>Confirm the approved future workflow and the success measure.</li>
+<li>Complete the use-case inventory and the risk and authority
+review.</li>
+<li>Record the vendor, data, contract, security, and privacy decisions.
+If the AI use is vendor-supplied decision support, record its source
+attributes.</li>
+<li>Define human review, forbidden actions, fallback, and stop
+method.</li>
+<li>Build a representative test set and set thresholds in advance.</li>
+<li>Test normal, incomplete, exception, misleading, access, outage,
+duplicate, and recovery conditions.</li>
+<li>Record versions, results, corrections, and the release
+decision.</li>
+<li>Train users and reviewers.</li>
+<li>Start the monitoring and incident record, and complete the SAFER AI
+crosswalk.</li>
+</ol>
+<p><strong>Self-check rubric.</strong> Your work is ready when:</p>
+<ul class="task-list">
+<li><p><label><input type="checkbox" />each use-case statement names the
+owner, data, action, result, and control;</label></p></li>
+<li><p><label><input type="checkbox" />each use has a recorded decision
+by a named accountable owner, not by you;</label></p></li>
+<li><p><label><input type="checkbox" />thresholds are dated before the
+final test run, and results are shown by category;</label></p></li>
+<li><p><label><input type="checkbox" />each reviewer has the authority,
+time, and power to reject;</label></p></li>
+<li><p><label><input type="checkbox" />the stop method names a client
+role available 24/7, and the stop test is recorded;</label></p></li>
+<li><p><label><input type="checkbox" />the crosswalk is addressed to the
+client's AI governance owner, with no scores filled in by
+you.</label></p></li>
+</ul>
+<h2 id="knowledge-check">Knowledge check</h2>
+<ol type="1">
+<li>What information must a usable automation or AI use-case statement
+contain?</li>
+<li>Why should deterministic automation and AI be evaluated
+differently?</li>
+<li>What makes human oversight effective?</li>
+<li>Why must thresholds be defined before the final evaluation?</li>
+<li>What information should be recorded so behavior can be compared
+after a model or feature change?</li>
+<li>What conditions should trigger pause, rollback, or retirement?</li>
+<li>What source information must a certified EHR make available for a
+vendor-supplied predictive decision support intervention, and who
+decides whether to activate it?</li>
+<li>Which SAFER AI item is most often missed by a stop method that
+depends on the vendor?</li>
+</ol>
+<h2 id="spaced-review">Spaced review</h2>
+<ol type="1">
+<li>(Module 9) Cedar Point's lab interface returns a transport
+acknowledgement for a test order, but the order never appears in the
+lab's work queue. How do you record this test result, and why?</li>
+<li>(Module 9) The billing manager calls a claim with a 277CA error a
+"denial." How is a rejection different from a denial, and why does it
+matter for the work queue?</li>
+<li>(Module 7) The analyst who built a refill reminder rule also ran its
+tests. What must you add before the rule is released?</li>
+<li>(Module 6) During training, a nurse says the urgent symptom list in
+the triage protocol looks wrong. What do you do with this, and who
+decides?</li>
+<li>(Module 1) A sales note says the AI note tool was "promised free for
+year one," but the signed order does not list it. How do you classify
+this promise, and what do you record?</li>
+</ol>
+<h2 id="module-10-gate--automation-and-ai-controlled">Module 10 gate —
+automation and AI controlled</h2>
+<p><strong>Who must be in the room:</strong> the use owner, the client's
+AI governance owner, and the privacy and security owners.</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Write a use-case statement with
+owner, data, action, result, and control for every use.</label></li>
+<li><label><input type="checkbox" />Confirm each workflow is approved
+and that failures can be found and fixed.</label></li>
+<li><label><input type="checkbox" />Record vendor, contract, privacy,
+security, clinical, and other owner reviews.</label></li>
+<li><label><input type="checkbox" />Record DSI source attributes and
+send the gaps to the decision owner.</label></li>
+<li><label><input type="checkbox" />Name reviewers who have authority,
+context, time, and the power to reject.</label></li>
+<li><label><input type="checkbox" />Set thresholds before testing and
+meet them in every category.</label></li>
+<li><label><input type="checkbox" />Record versions, setup, results,
+defects, corrections, and decisions.</label></li>
+<li><label><input type="checkbox" />Train users and
+reviewers.</label></li>
+<li><label><input type="checkbox" />Assign monitoring, incident, pause,
+change, and retirement owners.</label></li>
+<li><label><input type="checkbox" />Test the 24/7 stop with a named
+client role.</label></li>
+<li><label><input type="checkbox" />Give the SAFER AI crosswalk to the
+client's AI governance owner.</label></li>
+</ul>
+<p><strong>Evidence to keep:</strong> use-case inventory, risk and
+authority review, vendor and data record, decision-support source
+record, evaluation plan and results, release approval, training record,
+monitoring and incident plan, and SAFER crosswalk. This evidence
+supports your practice work. The EHRIC capstone itself is the
+three-artifact project described in the capstone candidate packet.</p>

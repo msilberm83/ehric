@@ -1,0 +1,225 @@
+<h1>Module 5, Lesson 3: Run the training loop</h1>
+<h2 id="run-the-training-loop">Run the training loop</h2>
+<p>A class that only demonstrates leaves learners unable to act alone. A
+class that changes the build on request creates an untested system.</p>
+<p>This course uses a five-step loop: <strong>show → ask → set up as you
+go → practice → teach back and recover</strong>. It keeps configuration
+close to users while protecting the approved build.</p>
+<figure style="margin:16px 0"><img src="../../img/M05-04.png" alt="Figure 5.4. Notice that questions that need a decision leave the loop for the open-item register instead of changing the build." style="width:100%;max-width:1000px"><figcaption><b>Figure 5.4.</b> Notice that questions that need a decision leave the loop for the open-item register instead of changing the build.</figcaption></figure>
+**1. Show.** Demonstrate one complete scenario in the learner's role. Name the starting point, explain each decision, complete the work, and show the result and the next handoff. Keep the first demonstration clean.
+
+<p><strong>2. Ask.</strong> Ask learners how the approved workflow
+compares with their real work. This is a final check, not a new round of
+discovery. Answers may reveal a missed exception, role, form, or term.
+Each answer has a different owner, so do not solve them all by changing
+the build in class. You will sort them in "Route open items and request
+QC."</p>
+<p><strong>3. Set up through the controlled path.</strong> Some low-risk
+items may be approved for setup in class with the client. Examples are
+appointment labels, a noncritical queue view, or an approved template
+field. Configure the item, then record the decision and evidence. A
+change that affects access, clinical work, data, billing, integrations,
+automation, safety, security, or tested behavior is different. Record it
+and send it through the project's decision, change, build, and QC
+process.</p>
+<p><strong>4. Practice.</strong> Learners complete the scenario with
+guidance. Then they complete a similar scenario alone. Watching the
+instructor is not evidence of competence.</p>
+<p><strong>5. Teach back and recover.</strong> The learner explains the
+workflow to another person and handles an exception. This reveals
+memorized clicks. A learner who cannot spot a duplicate, missing
+approval, failed signature, or down interface is not ready for that
+workflow.</p>
+<blockquote>
+<p><strong>Rule:</strong> In class, change only approved low-risk items;
+everything else goes through the controlled path.</p>
+</blockquote>
+<p><strong>Example A.</strong> Staff ask to shorten an appointment
+label. Labels are on the approved low-risk list, so you change it
+together and record it. <strong>Example B.</strong> Staff ask for a new
+approval step on refills. That changes clinical work, so you log a new
+requirement. One rule decides both requests: is the item on the approved
+low-risk list?</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the five steps of the training loop in order.</li>
+<li>Why is "ask" a final check rather than new discovery?</li>
+<li>In class, a nurse asks you to remove a required field from the
+intake form. What would you do?</li>
+</ol>
+<h2 id="teach-the-general-workflow-families">Teach the general workflow
+families</h2>
+<p>These workflows run almost every clinic visit. If staff cannot do
+them, the clinic cannot open its doors on go-live day.</p>
+<h3 id="inquiry-and-first-contact">Inquiry and first contact</h3>
+<p>Teach how the clinic receives a phone, online, in-person, or referral
+inquiry. Cover what to collect, what not to collect yet, where to record
+it, how to route urgency, and who owns the next action.</p>
+<p>Clinical urgency and <strong>triage</strong> rules need clinical
+authority. Triage means deciding how urgent a patient's need is.
+Front-desk staff learn when and how to route. You do not train them to
+make clinical judgments.</p>
+<h3 id="scheduling">Scheduling</h3>
+<p>Cover booking, rescheduling, cancellation, the wait list, location
+and resource choice, reminders, recurring visits, and no-show follow-up.
+Teach the rules that keep the schedule reliable:</p>
+<ul>
+<li>required appointment types;</li>
+<li>duration and resource limits;</li>
+<li>time-zone and location handling;</li>
+<li>who may overbook;</li>
+<li>reminders and documentation;</li>
+<li>what happens downstream when a date changes.</li>
+</ul>
+<h3 id="intake">Intake</h3>
+<p>Teach the intake order, required fields, patient identity matching,
+duplicates, incomplete submissions, review, and routing. Have learners
+practice a clean intake and a difficult one. A system that works only
+when every field is perfect is not ready.</p>
+<h3 id="forms-and-signatures">Forms and signatures</h3>
+<p>Cover form choice, prefill, completion, signature, refusal or
+expiration, routing, storage, version, and retrieval. Confirm who may
+change a form and who approves its content. The team does not write
+consent, privacy, or financial language. It loads approved content and
+checks that the form behaves as intended.</p>
+<h3 id="queues-and-work-status">Queues and work status</h3>
+<p>A clinic may track arrival, rooming, ready-for-provider, and
+checkout. Other teams have their own queues.</p>
+<figure style="margin:16px 0"><img src="../../img/M05-05.png" alt="Figure 5.5. Notice that the board turns an item amber once it has waited past its limit." style="width:100%;max-width:1000px"><figcaption><b>Figure 5.5.</b> Notice that the board turns an item amber once it has waited past its limit.</figcaption></figure>
+Train:
+
+<ul>
+<li>who changes each status;</li>
+<li>what justifies the change;</li>
+<li>who watches the queue;</li>
+<li>how stalled work becomes visible;</li>
+<li>how work is reassigned;</li>
+<li>what happens during downtime.</li>
+</ul>
+<p>A queue should make work visible. It should not become a place where
+responsibility disappears.</p>
+<blockquote>
+<p><strong>Rule:</strong> Train front-desk staff to route clinical
+urgency, not to judge it.</p>
+</blockquote>
+<p><strong>Example A.</strong> A caller reports chest pain. The
+scheduler follows the approved script and transfers to the nurse line.
+<strong>Example B.</strong> A web inquiry mentions a new rash. The
+intake clerk flags it to the nurse queue instead of booking a routine
+visit. In both cases, the front desk routes, and a clinician
+decides.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the five general workflow families.</li>
+<li>Why should every family include an exception scenario?</li>
+<li>A draft objective asks schedulers to decide whether a symptom needs
+same-day care. What would you do?</li>
+</ol>
+<h2 id="record-competence-not-attendance">Record competence, not
+attendance</h2>
+<p>Attendance shows who sat in the room. It does not show who can do the
+work on go-live day.</p>
+<p><strong>Competence</strong> means the learner completed a normal
+scenario and an exception alone while someone watched. For each required
+learner, record:</p>
+<ul>
+<li>the release ID;</li>
+<li>the scenario and the exception;</li>
+<li>the result (pass, or needs recheck);</li>
+<li>who observed it, and the date.</li>
+</ul>
+<p>If a learner is not yet competent, schedule a recheck. Give extra
+practice privately, without public embarrassment.</p>
+<p>Do not use a fast learner as evidence that the whole role group is
+ready. Track each required learner. The client may approve a role-based
+sampling and sign-off method instead. If it does, record that
+approval.</p>
+<blockquote>
+<p><strong>Rule:</strong> Record competence for each required learner;
+attendance alone is not competence.</p>
+</blockquote>
+<p><strong>Example A.</strong> Four schedulers attend. Two pass both
+scenarios, one leaves before the exception, and one fails it. You record
+two as competent and schedule two rechecks. <strong>Example B.</strong>
+A billing class passes the normal claim scenario, but no one has tried a
+rejected claim. You add the exception before you record anyone as
+competent.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What four facts do you record for each competence result?</li>
+<li>Why is one excellent learner not evidence that the group is
+ready?</li>
+</ol>
+<h2 id="route-open-items-and-request-qc">Route open items and request
+QC</h2>
+<p>Training always raises questions. If they are not sorted and owned,
+defects reach go-live and decisions are made by whoever speaks
+loudest.</p>
+<p>Keep one visible <strong>open-item register</strong> during training.
+Every item needs a category, an owner, a due date, and closure
+evidence.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example</th>
+<th>Route</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training question</td>
+<td>"Where do I see unsigned forms?"</td>
+<td>Instructor answers and updates the job aid if needed</td>
+</tr>
+<tr>
+<td>Coaching need</td>
+<td>Learner misses the rebooking step</td>
+<td>Practice and competence recheck</td>
+</tr>
+<tr>
+<td>Defect</td>
+<td>A correctly completed form goes to the wrong queue</td>
+<td>Defect log and QC</td>
+</tr>
+<tr>
+<td>New requirement</td>
+<td>Team asks for a new approval step</td>
+<td>Requirements, decision, or change process</td>
+</tr>
+<tr>
+<td>Policy decision</td>
+<td>Staff disagree about who may override</td>
+<td>Accountable client authority</td>
+</tr>
+<tr>
+<td>Homework</td>
+<td>Client must provide approved template text</td>
+<td>Named owner and due date</td>
+</tr>
+</tbody>
+</table>
+<figure style="margin:16px 0"><img src="../../img/M05-07.png" alt="Figure 5.7. Notice that each kind of class question goes to a different route with its own owner." style="width:100%;max-width:1000px"><figcaption><b>Figure 5.7.</b> Notice that each kind of class question goes to a different route with its own owner.</figcaption></figure>
+Expect some configuration to stay as homework. Keep it specific. "Finish forms" cannot be managed. This entry can: "Client privacy lead sends approved Spanish privacy form v3 by October 4. Builder loads it by October 7. QC tests signing and routing by October 9."
+
+<p>Send all configuration completed or changed during training to
+<strong>quality control (QC)</strong>. QC is the team that tests the
+build before release. Write a QC request for each change, naming what
+changed, why, and which scenarios to retest.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every open item gets a category, an owner, a
+due date, and closure evidence.</p>
+</blockquote>
+<p><strong>Example A.</strong> A completed form lands in the billing
+queue. That is a defect, so it goes to the defect log and QC.
+<strong>Example B.</strong> A learner skips the insurance step. That is
+a coaching need, so the learner practices and is rechecked. The same
+symptom, "it went wrong in class," leads to different owners.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the six categories in the open-item register.</li>
+<li>Why does a correctly completed form that lands in the wrong queue go
+to QC, not to coaching?</li>
+<li>A homework entry reads "Clinic to finish forms before go-live." How
+would you rewrite it?</li>
+</ol>

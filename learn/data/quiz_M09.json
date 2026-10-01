@@ -1,0 +1,242 @@
+[
+{
+"stem": "Cedar Point Internal Medicine is connecting an e-signature service to its intake forms. The service's vendor sends its marketing product sheet and says it can serve as the data-flow diagram. Privacy and security review the integration next week. You own the integration records. What should you do?",
+"options": {
+"A": "Attach the product sheet, and add a note naming the clinic's failure owner for the e-signature flow",
+"B": "Draw the project data flow, labeling direction, timing, security boundary, and failure owner",
+"C": "Ask the vendor to draw the data flow, since the vendor knows how its own service moves data",
+"D": "Send the product sheet to privacy and security, and ask them to mark the gaps they find in it"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because naming the failure owner is required (half right), but a product sheet shows what the product can do, not this clinic's direction, timing, and security boundary (Section \"Draw the data flow for each integration\").",
+"B": "Correct: you draw one diagram per integration and label direction, timing, the security boundary, and the failure owner, so every reviewer discusses the same flow (Section \"Draw the data flow for each integration\").",
+"C": "Tempting because the vendor knows its product (habit answer), but the project diagram shows this clinic's flow and owners, and drawing it is your work (Section \"Draw the data flow for each integration\").",
+"D": "Tempting because reviewers are good at spotting gaps (right action, wrong time), but they need the project drawing first; a sales sheet cannot show this clinic's gaps (Section \"Draw the data flow for each integration\")."
+}
+},
+{
+"stem": "| Payment portal dependency | Provider | Need date | Status |\n|---|---|---|---|\n| Merchant account setup | Clinic finance | June 2 | Done |\n| Firewall allowlisting for payment API | Cedar Point IT | June 9 | Not requested |\n| Test credentials | Payment vendor | June 9 | In credential vault |\n\nEnd-to-end tests start June 10. You maintain the Cedar Point roadmap. The allowlisting row has no receiver, effect, or escalation recorded. What should you do?",
+"options": {
+"A": "Ask the payment vendor to confirm its addresses, then mark the allowlisting row as in progress",
+"B": "Escalate the row to the executive sponsor now, since a missed June 9 date delays the tests",
+"C": "Add the row to the risk log and review it at the weekly status meeting before June 9",
+"D": "Request the allowlisting from Cedar Point IT, and record its receiver, effect, and escalation"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the vendor's addresses are needed (half right), but only Cedar Point IT can change the firewall, and nothing has been requested from it (Section \"Clear the nontechnical dependencies\").",
+"B": "Tempting because the date is close (too far), but the request has not even been made; you can clear this dependency yourself before anyone escalates (Section \"Clear the nontechnical dependencies\").",
+"C": "Tempting because it tracks the item (confused look-alike: risk vs. dependency), but this is a known action with a date, so it needs a request now, not a watch (Section \"Clear the nontechnical dependencies\").",
+"D": "Correct: each dependency goes in the roadmap with provider, receiver, need date, effect, and escalation, and making the request is your work (Section \"Clear the nontechnical dependencies\")."
+}
+},
+{
+"stem": "The lab interface vendor suggests copying 200 real patient records from Cedar Point's production system into the test environment so that end-to-end results \"look realistic.\" Testing starts Monday. You run the integration tests. What should you do?",
+"options": {
+"A": "Decline the copy, and build synthetic test patients through the approved process",
+"B": "Allow the copy if the vendor masks names and birth dates before records reach test",
+"C": "Ask the privacy officer to approve the copy, since test has the same access controls",
+"D": "Allow the copy once the vendor signs a business associate agreement covering test"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: real patient records are not used in a test environment; you use synthetic data under the client's approved access and security process (Section \"Test end to end, including failures\").",
+"B": "Tempting because masking reduces exposure (half right), but masked records are still real patient records in a test environment (Section \"Test end to end, including failures\").",
+"C": "Tempting because it routes to a real authority (right rule, wrong facts), but the course rule is synthetic data in test; access controls do not change it (Section \"Test end to end, including failures\").",
+"D": "Tempting because a business associate agreement is the contract that lets a vendor handle patient data (confused look-alike), but it does not make real records acceptable test data (Section \"Test end to end, including failures\")."
+}
+},
+{
+"stem": "Cedar Point will send a referral note to an outside specialist as a whole clinical document at the moment of referral. Which standard defines the content of this kind of point-in-time document?",
+"options": {
+"A": "HL7 v2, the event-driven messaging standard used for registration and lab results",
+"B": "FHIR R4 with US Core, which sends patient data as small resources through web APIs",
+"C": "C-CDA, a library of templates for whole clinical documents sent at a point in time",
+"D": "Direct secure messaging, which sends encrypted referrals between trusted recipients"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because a referral is triggered by an event (right rule, wrong facts), but HL7 v2 sends registration, order, and result messages, not whole clinical documents (Section \"Which interoperability standard does each exchange use?\").",
+"B": "Tempting because FHIR is the newer standard in current certification (habit answer), but it exchanges small resources, not a whole-document snapshot (Section \"Which interoperability standard does each exchange use?\").",
+"C": "Correct: C-CDA templates cover whole documents, such as the referral note, sent as a snapshot when a patient moves between providers (Section \"Which interoperability standard does each exchange use?\").",
+"D": "Tempting because clinics do send referrals by Direct (confused look-alike: transport vs. document), but Direct carries the document; the document itself is often a C-CDA (Section \"Which interoperability standard does each exchange use?\")."
+}
+},
+{
+"stem": "Cedar Point is replacing its reference-lab results interface. The lab says the new interface is \"standard HL7, so it will match your old one.\" The old interface used HL7 v2 result messages. You are setting up the integration inventory and test plan. What should you do?",
+"options": {
+"A": "Reuse the old test scripts, and add new tests for message types the old interface lacked",
+"B": "Ask both parties for the interface specification, and record the standard and version",
+"C": "Ask the lab for a sample result file, and compare it by eye with the old interface's messages",
+"D": "Record the interface as HL7 v2, as the lab stated, and let end-to-end tests find differences"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because reusing proven tests saves time (habit answer), but many v2 interfaces are customized, so the old scripts may not match the new specification (Section \"Which interoperability standard does each exchange use?\").",
+"B": "Correct: you ask for the interface specification and record the standard, version, and guide for each exchange, which is your own work (Section \"Which interoperability standard does each exchange use?\").",
+"C": "Tempting because a sample is real evidence (half right), but a sample is not a specification you can build and test against (Section \"Which interoperability standard does each exchange use?\").",
+"D": "Tempting because testing will catch differences (right action, wrong time), but finding a mismatch in testing is late; the version and specification belong in the inventory first (Section \"Which interoperability standard does each exchange use?\")."
+}
+},
+{
+"stem": "Cedar Point will receive continuity-of-care documents from a local hospital. The vendor can set incoming medications and allergies to file straight into the chart without clinician review. The practice manager wants this to save staff time. Who decides?",
+"options": {
+"A": "Clinical leadership, who decide which incoming data a clinician reviews before filing",
+"B": "The practice manager, who owns the front-office workflow that receives the documents",
+"C": "The vendor, who states the product's capability and has certified the filing function",
+"D": "The privacy officer, who decides consent and sharing questions for incoming data"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: clinical leadership decides which incoming data files automatically and which a clinician reviews and reconciles first (Section \"Route interoperability rules to the people who decide\").",
+"B": "Tempting because the request saves her team time (habit answer), but owning the front-office workflow gives no authority over what enters the clinical record (Section \"Route interoperability rules to the people who decide\").",
+"C": "Tempting because the vendor does state capability (half right), but capability is not a clinical filing decision (Section \"Route interoperability rules to the people who decide\").",
+"D": "Tempting because incoming health data sounds like a privacy matter (confused look-alike: sharing vs. clinical review), but the privacy officer decides consent and sharing, not clinical review before filing (Section \"Route interoperability rules to the people who decide\")."
+}
+},
+{
+"stem": "| CCD exchange test, synthetic patients | Result |\n|---|---|\n| Expected data elements received | 12 of 12 |\n| Filed to correct patient (exact match) | Yes |\n| Near-match patient (same name, different birth date) | Not tested |\n| Clinician can see source and reconcile medications, allergies, problems | Not tested |\n\nThe vendor says the product is certified for this exchange, so it is ready. You run the Cedar Point tests. What should you do next?",
+"options": {
+"A": "Record the exchange as passed, and add the two untested rows to the post-go-live checklist",
+"B": "Ask clinical leadership whether the two untested rows are needed for this hospital's documents",
+"C": "Check the CHPL listing for this exchange, and attach it to the register entry as test evidence",
+"D": "Run the near-match and reconciliation tests now, and record both results before sign-off"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because it keeps the tests on a list (right action, wrong time), but a near-match misfile is a safety failure that must be tested before go-live (Section \"Route interoperability rules to the people who decide\").",
+"B": "Tempting because clinical leadership decides filing rules (right rule, wrong facts), but the test pattern already includes these steps; running them is not their decision (Section \"Route interoperability rules to the people who decide\").",
+"C": "Tempting because the CHPL is the right place to check certification (true but does not answer the question), but certification does not prove this clinic's setup works (Section \"Route interoperability rules to the people who decide\").",
+"D": "Correct: the clinical-exchange test includes a near-match patient and clinician reconciliation, and running it is your job (Section \"Route interoperability rules to the people who decide\")."
+}
+},
+{
+"stem": "| Item | Trace number | Amount |\n|---|---|---|\n| EFT deposit, May 14 | 7781204 | $2,418.60 |\n| 835 remittance A | 7781204 | $2,418.60 |\n| 835 remittance B | 7781377 | $2,418.60 |\n\nA Cedar Point billing specialist asks which remittance explains the May 14 deposit. Which answer is correct?",
+"options": {
+"A": "Remittance B, because its amount matches the deposit and it is the most recent 835",
+"B": "Neither one yet, because two 835s with the same amount need the payer to confirm",
+"C": "Remittance A, because the payer puts the 835 trace number in the matching EFT",
+"D": "Neither one, because an EFT is matched to its claims through the 277CA report"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because matching by amount is a common habit (habit answer), but equal amounts can be a coincidence; the trace number links a payment to its remittance (Section \"Set up revenue-cycle transactions\").",
+"B": "Tempting because asking the payer sounds careful (too far), but the trace numbers already answer the question (Section \"Set up revenue-cycle transactions\").",
+"C": "Correct: matching the EFT to its 835 by trace number is called reassociation (Section \"Set up revenue-cycle transactions\").",
+"D": "Tempting because the 277CA reports on each claim (confused look-alike), but it reports front-end claim acceptance, not payment matching (Section \"Set up revenue-cycle transactions\")."
+}
+},
+{
+"stem": "| Draft work queue | Feeds from | Owner | Aging rule |\n|---|---|---|---|\n| \"Claim problems\" | 277CA rejections and 835 denial codes | Billing team | 30 days |\n\nYou are reviewing the Cedar Point build before configuration sign-off. The billing manager has not reviewed this queue. What should you do?",
+"options": {
+"A": "Flag the combined queue, and ask the billing manager to set the queues, owners, and aging",
+"B": "Split the queue yourself into rejections and denials, each with the current 30-day rule",
+"C": "Keep the combined queue, and add a report column that counts rejections and denials apart",
+"D": "Ask the vendor to split the queue by source and set aging from its standard billing template"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: rejections and denials usually need different queues, owners, and aging rules, and the billing manager decides that design (Section \"Keep rejections and denials apart\").",
+"B": "Tempting because splitting is right in principle (half right), but the queue design and aging limits are the billing manager's decision (Section \"Keep rejections and denials apart\").",
+"C": "Tempting because reports must count them separately (true but does not answer the question), but one queue still mixes work with different fixes and deadlines (Section \"Keep rejections and denials apart\").",
+"D": "Tempting because vendor templates are a common shortcut (habit answer), but the billing manager, not the vendor, decides queues, owners, and aging (Section \"Keep rejections and denials apart\")."
+}
+},
+{
+"stem": "A 999 for a Cedar Point claim file comes back Rejected because the file broke an implementation-guide syntax rule. Under the CMS guidance in the chapter, who corrects it?",
+"options": {
+"A": "Billing staff, who correct the claim data and then resubmit each affected claim",
+"B": "Whoever prepares the file, since 999 problems are technical, not data problems",
+"C": "The clearinghouse, since it received the file and returned the 999 to the clinic",
+"D": "The credentialing lead, since a rejected file can mean payer enrollment is missing"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because billing staff do correct rejected claims (confused look-alike: 277CA vs. 999), but they fix 277CA data problems; a 999 rejection is a technical file problem (Section \"Set up revenue-cycle transactions\").",
+"B": "Correct: CMS says a 999 problem is technical, so it goes to whoever prepares the file (Section \"Set up revenue-cycle transactions\").",
+"C": "Tempting because the clearinghouse reported the problem (right rule, wrong facts), but reporting a problem is not preparing the file; the fix goes to the file's preparer (Section \"Set up revenue-cycle transactions\").",
+"D": "Tempting because enrollment gaps do block claims (confused look-alike), but a 999 reports format rules, not enrollment status (Section \"Set up revenue-cycle transactions\")."
+}
+},
+{
+"stem": "| Appointment type value | Created by | Scheduled visits |\n|---|---|---|\n| New Patient | Build team | 212 |\n| New patient | Front desk, Lakeshore | 48 |\n| New-Patient | Front desk, main | 31 |\n\nThe reporting analyst says new-patient volume is undercounted. The practice manager is the business owner for appointment types. You configure values for Cedar Point. What should you do?",
+"options": {
+"A": "Merge the two front-desk values into the build team's value tonight, since it is the standard",
+"B": "Ask the reporting analyst to group the three values together in each new-patient report",
+"C": "Retrain front-desk staff at both locations to pick the build team's value for new patients",
+"D": "Ask the practice manager to approve one value, and limit which roles can create new ones"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because merging fixes the data (half right), but changing values without the owner's approval skips governance, and staff can still create new duplicates (Section \"Control codes, values, and templates\").",
+"B": "Tempting because the report would add up (true but does not answer the question), but the near-duplicates stay and still break automation (Section \"Control codes, values, and templates\").",
+"C": "Tempting because staff created the values (confused look-alike: training gap vs. missing control), but without limits on who creates values, new near-duplicates will appear (Section \"Control codes, values, and templates\").",
+"D": "Correct: each code list needs a business owner, an approval, and a rule on who may change it, so near-duplicates stop (Section \"Control codes, values, and templates\")."
+}
+},
+{
+"stem": "While building Cedar Point's electronic financial-consent form, you notice the approved paper version uses long legal sentences. A front-desk lead suggests you simplify the wording in the electronic version so patients read it faster. What should you do?",
+"options": {
+"A": "Simplify the sentences that do not mention payment amounts, so the legal terms stay as approved",
+"B": "Add a plain-language summary above the approved wording, and keep the full legal text below it",
+"C": "Build the approved wording as written, and send the suggestion to the form's owner and approver",
+"D": "Ask the vendor's form designer to rewrite it using the plain-language consent template"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because it keeps the payment terms (half right), but all consent wording is controlled, and only its approver may change it (Section \"Govern electronic forms\").",
+"B": "Tempting because the approved text stays intact (right result, wrong path), but a summary is new consent wording that no one approved (Section \"Govern electronic forms\").",
+"C": "Correct: the project team converts approved content, and qualified client authorities approve any change to consent wording (Section \"Govern electronic forms\").",
+"D": "Tempting because vendor templates are a common shortcut (habit answer), but a vendor rewrite is still unapproved controlled wording (Section \"Govern electronic forms\")."
+}
+},
+{
+"stem": "| Template test: chronic care visit | Result |\n|---|---|\n| Required sections display | Pass |\n| Conditional diabetes section | Pass |\n| Last visit's assessment in new note | Carried forward unedited, no prompt to review |\n| Signature and routing | Pass |\n\nThe template owner approved the content. You are testing the template for Cedar Point. What should you record?",
+"options": {
+"A": "A failed carry-forward step and a defect, sent to the template owner for a decision",
+"B": "A pass, since the owner approved content that carries the last assessment forward",
+"C": "A pass, with a training slide that asks clinicians to edit any text carried forward",
+"D": "A pending result until the medical director says whether the carry-forward is safe"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: wrong carry-forward is a named test condition, so the step fails and you log it for the owner (Section \"Control codes, values, and templates\").",
+"B": "Tempting because the owner approved the content (right rule, wrong facts), but approved content does not make unreviewed carry-forward of an old assessment safe (Section \"Control codes, values, and templates\").",
+"C": "Tempting because teaching users to check defaults is right (half right), but training does not turn a failed test step into a pass (Section \"Control codes, values, and templates\").",
+"D": "Tempting because clinical safety sounds like a physician's call (too far), but whether the test met its expected result is a fact you record now (Section \"Control codes, values, and templates\")."
+}
+},
+{
+"stem": "| Payment test (test card, synthetic patient) | Expected | Actual |\n|---|---|---|\n| Approved card | 1 charge, posted, receipt | As expected |\n| Declined card | No charge, message shown | As expected |\n| Timeout, patient clicks Pay again | 1 charge | 2 charges, both posted |\n| Refund by front desk | Blocked; billing lead only | Blocked |\n\nYou are running the Cedar Point payment tests. What should you do?",
+"options": {
+"A": "Add a \"please wait, do not click again\" message to the page and pass the suite once it shows",
+"B": "Ask the finance owner to approve manual refunds for double charges until the vendor fixes it",
+"C": "Report the double charge to the vendor as a production incident and pause all payment testing",
+"D": "Log a duplicate-prevention defect for the timeout case, and retest that case after the fix"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because a clear message helps patients (habit answer), but it treats the symptom; the system still posts two charges (Section \"Configure payments safely\").",
+"B": "Tempting because finance owns refunds (half right), but a workaround accepts a known defect before it is fixed and tested (Section \"Configure payments safely\").",
+"C": "Tempting because a double charge is serious (too far), but this is a failed test, not a production incident; the other tests can go on (Section \"Configure payments safely\").",
+"D": "Correct: the timeout case produced two charges, so you record the defect and retest after the fix (Section \"Configure payments safely\")."
+}
+},
+{
+"stem": "The vendor's go-live plan for Cedar Point lists you, the implementer, as the person who monitors the clearinghouse rejection queue \"until further notice.\" Go-live is in three weeks. What should you do?",
+"options": {
+"A": "Accept the role for the first month, then hand it to a clinic owner chosen at that point",
+"B": "Arrange a Cedar Point operational owner with training, access, and a backup before go-live",
+"C": "Ask the vendor's support desk to watch the queue until the clinic decides on an owner",
+"D": "Ask the practice manager to watch the queue herself, since she runs daily operations"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because a short handover seems kind (right action, wrong time), but no owner is named, so you become the owner by default (Section \"Hand monitoring to operations\").",
+"B": "Correct: monitoring transfers to a trained operational role with access, a backup, and support before go-live (Section \"Hand monitoring to operations\").",
+"C": "Tempting because vendor support knows the clearinghouse (confused look-alike: escalation path vs. owner), but vendor support is an escalation path, not the client's queue owner (Section \"Hand monitoring to operations\").",
+"D": "Tempting because she is a client owner (half right), but the plan needs a trained owner with access and a backup, not a busy manager with no backup (Section \"Hand monitoring to operations\")."
+}
+}
+]

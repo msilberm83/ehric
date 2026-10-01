@@ -1,0 +1,432 @@
+[
+{
+"n": 1,
+"title": "Module 1 \u2014 Foundations, Handoff, and Initial Scope",
+"lessons": [
+{
+"file": "lessons/M01/L00_start_here.html",
+"title": "Module 1 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M01/L01.html",
+"title": "Module 1, Lesson 1: Know what you own and what others decide"
+},
+{
+"file": "lessons/M01/L02.html",
+"title": "Module 1, Lesson 2: Sort each commitment: documented or remembered"
+},
+{
+"file": "lessons/M01/L03.html",
+"title": "Module 1, Lesson 3: Turn each purchased item into a named resource"
+},
+{
+"file": "lessons/M01/L04.html",
+"title": "Module 1, Lesson 4: Knowledge check"
+},
+{
+"file": "lessons/M01/L98_answers.html",
+"title": "Module 1 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M01/L99_sources.html",
+"title": "Module 1 \u2014 Sources"
+}
+]
+},
+{
+"n": 2,
+"title": "Module 2 \u2014 Planning, Roadmapping, and the Internal Handoff",
+"lessons": [
+{
+"file": "lessons/M02/L00_start_here.html",
+"title": "Module 2 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M02/L01.html",
+"title": "Module 2, Lesson 1: Turn scope into workstreams"
+},
+{
+"file": "lessons/M02/L02.html",
+"title": "Module 2, Lesson 2: Map dependencies and the critical path"
+},
+{
+"file": "lessons/M02/L03.html",
+"title": "Module 2, Lesson 3: Set the operating rules before kickoff"
+},
+{
+"file": "lessons/M02/L98_answers.html",
+"title": "Module 2 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M02/L99_sources.html",
+"title": "Module 2 \u2014 Sources"
+}
+]
+},
+{
+"n": 3,
+"title": "Module 3 \u2014 The Client Kickoff and Working Schedule",
+"lessons": [
+{
+"file": "lessons/M03/L00_start_here.html",
+"title": "Module 3 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M03/L01.html",
+"title": "Module 3, Lesson 1: Is your own team ready before the client joins?"
+},
+{
+"file": "lessons/M03/L02.html",
+"title": "Module 3, Lesson 2: Say how firm each date is"
+},
+{
+"file": "lessons/M03/L03.html",
+"title": "Module 3, Lesson 3: Worked example: kickoff at a two-location outpatient clinic"
+},
+{
+"file": "lessons/M03/L98_answers.html",
+"title": "Module 3 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M03/L99_sources.html",
+"title": "Module 3 \u2014 Sources"
+}
+]
+},
+{
+"n": 4,
+"title": "Module 4 \u2014 Workflow Discovery and Future-State Design",
+"lessons": [
+{
+"file": "lessons/M04/L00_start_here.html",
+"title": "Module 4 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M04/L01.html",
+"title": "Module 4, Lesson 1: Start by asking to see real work"
+},
+{
+"file": "lessons/M04/L02.html",
+"title": "Module 4, Lesson 2: Ask about accessibility in discovery"
+},
+{
+"file": "lessons/M04/L03.html",
+"title": "Module 4, Lesson 3: Plan for sensitive records"
+},
+{
+"file": "lessons/M04/L04.html",
+"title": "Module 4, Lesson 4: Plan environments when the vendor has no separate test or training copy"
+},
+{
+"file": "lessons/M04/L05.html",
+"title": "Module 4, Lesson 5: Field assignment"
+},
+{
+"file": "lessons/M04/L98_answers.html",
+"title": "Module 4 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M04/L99_sources.html",
+"title": "Module 4 \u2014 Sources"
+}
+]
+},
+{
+"n": 5,
+"title": "Module 5 \u2014 General Workflow Training",
+"lessons": [
+{
+"file": "lessons/M05/L00_start_here.html",
+"title": "Module 5 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M05/L01.html",
+"title": "Module 5, Lesson 1: Tie training to the approved build"
+},
+{
+"file": "lessons/M05/L02.html",
+"title": "Module 5, Lesson 2: Prepare the training environment"
+},
+{
+"file": "lessons/M05/L03.html",
+"title": "Module 5, Lesson 3: Run the training loop"
+},
+{
+"file": "lessons/M05/L04.html",
+"title": "Module 5, Lesson 4: Worked example: front-desk training at Cedar Point"
+},
+{
+"file": "lessons/M05/L98_answers.html",
+"title": "Module 5 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M05/L99_sources.html",
+"title": "Module 5 \u2014 Sources"
+}
+]
+},
+{
+"n": 6,
+"title": "Module 6 \u2014 Specialized Workflow Training",
+"lessons": [
+{
+"file": "lessons/M06/L00_start_here.html",
+"title": "Module 6 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M06/L01.html",
+"title": "Module 6, Lesson 1: Name the domain authority"
+},
+{
+"file": "lessons/M06/L02.html",
+"title": "Module 6, Lesson 2: Ask disciplined questions about specialty work"
+},
+{
+"file": "lessons/M06/L03.html",
+"title": "Module 6, Lesson 3: Worked example: behavioral health note access"
+},
+{
+"file": "lessons/M06/L98_answers.html",
+"title": "Module 6 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M06/L99_sources.html",
+"title": "Module 6 \u2014 Sources"
+}
+]
+},
+{
+"n": 7,
+"title": "Module 7 \u2014 Advanced Workflows and Quality Control",
+"lessons": [
+{
+"file": "lessons/M07/L00_start_here.html",
+"title": "Module 7 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M07/L01.html",
+"title": "Module 7, Lesson 1: Decide what \"it works\" must mean"
+},
+{
+"file": "lessons/M07/L02.html",
+"title": "Module 7, Lesson 2: Design reproducible test cases"
+},
+{
+"file": "lessons/M07/L03.html",
+"title": "Module 7, Lesson 3: Choose and record a risk-based regression set"
+},
+{
+"file": "lessons/M07/L04.html",
+"title": "Module 7, Lesson 4: Your turn: faded example"
+},
+{
+"file": "lessons/M07/L98_answers.html",
+"title": "Module 7 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M07/L99_sources.html",
+"title": "Module 7 \u2014 Sources"
+}
+]
+},
+{
+"n": 8,
+"title": "Module 8 \u2014 Data Conversion and Transition",
+"lessons": [
+{
+"file": "lessons/M08/L00_start_here.html",
+"title": "Module 8 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M08/L01.html",
+"title": "Module 8, Lesson 1: Name who owns and approves the data"
+},
+{
+"file": "lessons/M08/L02.html",
+"title": "Module 8, Lesson 2: Map each field by meaning"
+},
+{
+"file": "lessons/M08/L03.html",
+"title": "Module 8, Lesson 3: Know why clinical lists need clinical validation"
+},
+{
+"file": "lessons/M08/L04.html",
+"title": "Module 8, Lesson 4: Worked example: Lakeshore conversion scope"
+},
+{
+"file": "lessons/M08/L98_answers.html",
+"title": "Module 8 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M08/L99_sources.html",
+"title": "Module 8 \u2014 Sources"
+}
+]
+},
+{
+"n": 9,
+"title": "Module 9 \u2014 Integrations and Configuration",
+"lessons": [
+{
+"file": "lessons/M09/L00_start_here.html",
+"title": "Module 9 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M09/L01.html",
+"title": "Module 9, Lesson 1: How do you list every integration?"
+},
+{
+"file": "lessons/M09/L02.html",
+"title": "Module 9, Lesson 2: How does each side know an item arrived?"
+},
+{
+"file": "lessons/M09/L03.html",
+"title": "Module 9, Lesson 3: Set up revenue-cycle transactions"
+},
+{
+"file": "lessons/M09/L04.html",
+"title": "Module 9, Lesson 4: Hand monitoring to operations"
+},
+{
+"file": "lessons/M09/L98_answers.html",
+"title": "Module 9 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M09/L99_sources.html",
+"title": "Module 9 \u2014 Sources"
+}
+]
+},
+{
+"n": 10,
+"title": "Module 10 \u2014 Workflow Automation and AI",
+"lessons": [
+{
+"file": "lessons/M10/L00_start_here.html",
+"title": "Module 10 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M10/L01.html",
+"title": "Module 10, Lesson 1: Start with the work, not the tool"
+},
+{
+"file": "lessons/M10/L02.html",
+"title": "Module 10, Lesson 2: Collect decision-support source information"
+},
+{
+"file": "lessons/M10/L03.html",
+"title": "Module 10, Lesson 3: Apply the domain controls"
+},
+{
+"file": "lessons/M10/L04.html",
+"title": "Module 10, Lesson 4: Your turn: faded example"
+},
+{
+"file": "lessons/M10/L98_answers.html",
+"title": "Module 10 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M10/L99_sources.html",
+"title": "Module 10 \u2014 Sources"
+}
+]
+},
+{
+"n": 11,
+"title": "Module 11 \u2014 The Operational System and Go-Live Readiness",
+"lessons": [
+{
+"file": "lessons/M11/L00_start_here.html",
+"title": "Module 11 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M11/L01.html",
+"title": "Module 11, Lesson 1: Walk the whole operating day"
+},
+{
+"file": "lessons/M11/L02.html",
+"title": "Module 11, Lesson 2: Set recovery objectives and get them approved"
+},
+{
+"file": "lessons/M11/L03.html",
+"title": "Module 11, Lesson 3: Build the command and communication plan"
+},
+{
+"file": "lessons/M11/L04.html",
+"title": "Module 11, Lesson 4: Worked example: clinic readiness"
+},
+{
+"file": "lessons/M11/L98_answers.html",
+"title": "Module 11 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M11/L99_sources.html",
+"title": "Module 11 \u2014 Sources"
+}
+]
+},
+{
+"n": 12,
+"title": "Module 12 \u2014 Go-Live, Stabilization, and the Capstone",
+"lessons": [
+{
+"file": "lessons/M12/L00_start_here.html",
+"title": "Module 12 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M12/L01.html",
+"title": "Module 12, Lesson 1: Confirm the decision still holds before activation"
+},
+{
+"file": "lessons/M12/L02.html",
+"title": "Module 12, Lesson 2: Use downtime or pause when a trigger occurs"
+},
+{
+"file": "lessons/M12/L03.html",
+"title": "Module 12, Lesson 3: Your turn: faded example"
+},
+{
+"file": "lessons/M12/L98_answers.html",
+"title": "Module 12 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M12/L99_sources.html",
+"title": "Module 12 \u2014 Sources"
+}
+]
+},
+{
+"n": 13,
+"title": "Module 13 \u2014 Post Go-Live: Optimization, Adoption, and Value",
+"lessons": [
+{
+"file": "lessons/M13/L00_start_here.html",
+"title": "Module 13 \u2014 Start here: outline and the problem"
+},
+{
+"file": "lessons/M13/L01.html",
+"title": "Module 13, Lesson 1: Confirm the steady-state handoff"
+},
+{
+"file": "lessons/M13/L02.html",
+"title": "Module 13, Lesson 2: Compare results with the pre-live baseline"
+},
+{
+"file": "lessons/M13/L03.html",
+"title": "Module 13, Lesson 3: Run or repeat the SAFER self-assessment"
+},
+{
+"file": "lessons/M13/L04.html",
+"title": "Module 13, Lesson 4: Spaced review"
+},
+{
+"file": "lessons/M13/L98_answers.html",
+"title": "Module 13 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+},
+{
+"file": "lessons/M13/L99_sources.html",
+"title": "Module 13 \u2014 Sources"
+}
+]
+}
+]

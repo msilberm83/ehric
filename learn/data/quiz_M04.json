@@ -1,0 +1,242 @@
+[
+{
+"stem": "A vendor template lays out a clinic's discovery sessions by product menu: scheduling screens, billing menus, and charting tabs. You are writing the discovery plan. What should you do?",
+"options": {
+"A": "Organize sessions by workflow, such as charge capture to patient balance",
+"B": "Keep the menu order, since staff will learn the new screens in that order",
+"C": "Keep the menu sessions, and add a final session to review the handoffs",
+"D": "Organize sessions by department, so each team describes its own steps"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: you own the discovery plan, and sessions built around one workflow from trigger to outcome expose the handoffs a product menu hides (\"Plan discovery by end-to-end workflow\").",
+"B": "Not best: this is the habit answer of following the vendor's screen order; it sounds efficient for training, but it makes people talk about screens, so the fix is to organize by workflow (\"Plan discovery by end-to-end workflow\").",
+"C": "Not best: this is too weak; a bolt-on handoff session shows you know handoffs matter, but it reviews them out of context, so the fix is to follow one workflow end to end in every session (\"Plan discovery by end-to-end workflow\").",
+"D": "Not best: this is half right; asking each team to describe its own work is good, but it splits the workflow where it crosses teams, so the fix is to organize sessions by workflow (\"Plan discovery by end-to-end workflow\")."
+}
+},
+{
+"stem": "A scheduler offers to project today's live schedule, with patient names, during a discovery workshop so the group can see real bookings. The workshop room is open to visiting staff. What should you do?",
+"options": {
+"A": "Accept, and ask the scheduler to show only the first hour of today's bookings",
+"B": "Accept, and ask the privacy officer to attend the session to supervise its use",
+"C": "Decline, and use made-up examples that show the same booking patterns",
+"D": "Decline, and postpone the session until the privacy officer approves a data plan"
+},
+"key": "C",
+"feedback": {
+"A": "Not best: this is too weak; showing less data sounds like minimum necessary, but any live patient data in an open workshop is still PHI, so the fix is made-up examples (\"Plan discovery by end-to-end workflow\").",
+"B": "Not best: this is half right; privacy is the right authority to involve, but a supervisor in the room does not stop PHI being shown, so the fix is made-up examples (\"Plan discovery by end-to-end workflow\").",
+"C": "Correct: discovery uses made-up or properly protected examples, and choosing them is within your authority, so you act now and the session goes ahead (\"Plan discovery by end-to-end workflow\").",
+"D": "Not best: this goes too far; declining is right, but waiting for privacy approval over-escalates a choice you can make, so the fix is to run the session today with made-up examples (\"Plan discovery by end-to-end workflow\")."
+}
+},
+{
+"stem": "In current-state discovery, you ask what happens when an outside lab result never arrives. The medical assistant says, \"Staff will figure it out.\" What should you do next?",
+"options": {
+"A": "Note it as a known gap, and plan to design the exception path during the build",
+"B": "Ask who notices the missing result, and record the approved path and its owner",
+"C": "Ask the practice manager to decide the missing-result path after discovery ends",
+"D": "Add an automated reminder for missing results to the future-state design now"
+},
+"key": "B",
+"feedback": {
+"A": "Not best: this is a right action at the wrong time; the exception does need a designed path, but it belongs in discovery, not the build, so the fix is to ask now who notices (\"Ask for the exceptions\").",
+"B": "Correct: \"staff will figure it out\" is not a process, so you gather the missing fact in the session (who notices stalled work) and record the approved path and owner (\"Ask for the exceptions\").",
+"C": "Not best: this is half right; the practice manager may own the decision, but waiting until after discovery leaves the map without an exception path, so the fix is to ask in the session (\"Ask for the exceptions\").",
+"D": "Not best: this is a right action at the wrong time; a reminder may be a good automation candidate, but automating before the path and its monitoring owner are decided can make a poor process fail faster (\"Design the future state\")."
+}
+},
+{
+"stem": "| Link | Entry for REQ-07 (duplicate-patient check at check-in) |\n|---|---|\n| Purchased outcome | Online intake with correct chart filing |\n| Configuration item | CFG-31 patient-match rule |\n| Training objective | TRN-12 front desk resolves a likely duplicate |\n| Test case | (blank) |\n| Approval | Pending |\n\nYou are reviewing a clinic's traceability record before approval. What is missing for REQ-07?",
+"options": {
+"A": "A workflow requirement, since the record shows no requirement link above CFG-31",
+"B": "An approval date, since \"Pending\" leaves the chain open at its final link",
+"C": "A vendor version note, since an update could change how the match rule works",
+"D": "A test case, so the team can prove the duplicate check works before approval"
+},
+"key": "D",
+"feedback": {
+"A": "Not best: this applies a real rule to the wrong facts; the chain does need a workflow requirement, but REQ-07 is that requirement, so that link is already present (\"Write requirements with evidence\").",
+"B": "Not best: this is a right step at the wrong time; approval is the last link, but you are reviewing before approval, so \"Pending\" is expected and the missing link is the test case it relies on (\"Write requirements with evidence\").",
+"C": "Not best: this is true but does not answer the question; version detail helps the build, but it is not a link in the traceability chain, so the fix is to add the blank test case (\"Write requirements with evidence\").",
+"D": "Correct: traceability runs from purchased outcome to requirement, configuration, training, test case, and approval, and the evidence that is missing is the test case (\"Write requirements with evidence\")."
+}
+},
+{
+"stem": "| WCAG 2.1 criterion | Vendor ACR conformance level |\n|---|---|\n| 1.1.1 Non-text Content | Supports |\n| 1.4.3 Contrast (Minimum) | Partially Supports |\n| 2.1.1 Keyboard | Supports |\n| 3.3.2 Labels or Instructions | Does Not Support |\n\nYou are reading a portal vendor's ACR for a clinic whose target is WCAG 2.1 AA. Which criteria should you record as gaps?",
+"options": {
+"A": "1.4.3 by itself, since form labels in 3.3.2 depend on the clinic's own build",
+"B": "1.4.3 and 3.3.2, plus 1.1.1, since text alternatives depend on configuration",
+"C": "1.4.3 and 3.3.2, since they are marked Partially Supports or Does Not Support",
+"D": "No criteria yet, since the ACR covers the base product and not the forms"
+},
+"key": "C",
+"feedback": {
+"A": "Not best: this applies a real rule to the wrong facts; configured forms do need their own testing, but the vendor marks 3.3.2 Does Not Support in the product itself, so it is a gap (\"What to ask the vendor for\").",
+"B": "Not best: this goes too far; configured content is checked by testing, but ACR gaps are the criteria the vendor marks as not fully supported, and 1.1.1 is marked Supports (\"What to ask the vendor for\").",
+"C": "Correct: read every criterion marked \"Partially Supports\" or \"Does Not Support,\" because those are the gaps you record (\"What to ask the vendor for\").",
+"D": "Not best: this is true but does not answer the question; the ACR does not prove the configured forms, but its listed product gaps still belong in the record (\"What to ask the vendor for\")."
+}
+},
+{
+"stem": "A clinic's compliance lead confirms a target of WCAG 2.1 Level AA. The vendor's ACR reports conformance to WCAG 2.2 Level AA. Which statement is correct?",
+"options": {
+"A": "Meeting 2.2 AA also meets 2.1 AA, but the configured forms still need testing",
+"B": "The ACR does not apply, since it reports against a different version of WCAG",
+"C": "The vendor should reissue the ACR against WCAG 2.1 before the team relies on it",
+"D": "The target should change to 2.2 AA, since W3C encourages the latest version"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: content that meets 2.2 also meets 2.1, and an ACR describes the product, not the configured forms, so testing is still needed (\"The standards you will hear about\").",
+"B": "Not best: this applies a real rule to the wrong facts; the version does matter, but WCAG versions build on each other, so a 2.2 report still speaks to a 2.1 target (\"The standards you will hear about\").",
+"C": "Not best: this is the habit answer of asking the vendor for more paperwork; it sounds careful, but a 2.2 report already covers 2.1, so the request adds delay and no evidence (\"The standards you will hear about\").",
+"D": "Not best: this is true but does not answer the question; W3C does encourage the latest version, but the client's compliance authority sets the target, and you do not change it (\"The standards you will hear about\")."
+}
+},
+{
+"stem": "Clinic staff ask you to build automatic routing of refill requests to nurses now. The refill workflow, its exception path, and who monitors the routing are not yet approved. What should you do?",
+"options": {
+"A": "Build the routing now in test, so staff can react to it during workflow design",
+"B": "Build it, and ask the nurse manager to monitor the queue until approval is done",
+"C": "Ask the nurse manager to approve the routing rule so the build can begin now",
+"D": "Keep it on the automation candidate list until the workflow and owner are set"
+},
+"key": "D",
+"feedback": {
+"A": "Not best: this is a right action at the wrong time; reacting to a test build can help later, but building now automates a workflow that is not yet decided, so the fix is to wait (\"Design the future state\").",
+"B": "Not best: this is half right; naming someone to monitor is part of the answer, but the workflow and exception path are still unapproved, so the fix is to wait until all are set (\"Design the future state\").",
+"C": "Not best: this confuses two look-alike approvals; approving one routing rule is not approving the workflow, exception path, and monitoring owner that automation needs first (\"Design the future state\").",
+"D": "Correct: here the right move is to wait; keep it on the candidate list and build no automation until the workflow, information, authority, exception path, and monitoring owner are approved (\"Design the future state\")."
+}
+},
+{
+"stem": "In a clinic's old system, front-desk staff could open full clinical notes. The office manager asks you to give them the same access in the new system \"to avoid complaints.\" What should you do?",
+"options": {
+"A": "Copy the old access for go-live, and review it with privacy after go-live",
+"B": "Ask what the role needs to view and change, and involve privacy and security",
+"C": "Remove clinical note access from the front-desk role, since it is not needed",
+"D": "Ask the office manager to approve the access, since she supervises the role"
+},
+"key": "B",
+"feedback": {
+"A": "Not best: this is the habit answer of copying the old system; it eases go-live, but it copies old mistakes, and access is reviewed before it is configured, not after (\"Control access by role\").",
+"B": "Correct: gather what each role needs to view, create, change, approve, export, or delete, and route the model to the privacy and security authorities who approve it (\"Control access by role\").",
+"C": "Not best: this is half right; removing the access may be the outcome, but you are the wrong person to decide it, so the fix is the role analysis and privacy and security approval (\"Control access by role\").",
+"D": "Not best: this is half right; seeking approval is right, but the office manager is the wrong approver, since privacy and security approve the access model (\"Control access by role\")."
+}
+},
+{
+"stem": "The vendor says its matching tool can merge a new intake with an existing chart automatically when it scores 95% or higher. Clinic staff have attached records to the wrong patient before. What should you plan?",
+"options": {
+"A": "Turn on automatic merging, and have staff review a weekly report of merges",
+"B": "Raise the threshold to 99%, and let the system merge records above that score",
+"C": "Have the identification authority approve the verification and merge steps",
+"D": "Have front-desk staff confirm each match, using the steps they use today"
+},
+"key": "C",
+"feedback": {
+"A": "Not best: this is a right step at the wrong time; reviewing merges is useful, but a weekly report comes after the system has already filed records, so the fix is human verification before the merge (\"Keep human authority\").",
+"B": "Not best: this is half right; a stricter threshold reduces errors, but it still leaves the merge decision to the system, so the fix is an approved human verification step (\"Keep human authority\").",
+"C": "Correct: automated matching alone is not enough, so route the verification and merge steps to the clinic's patient-identification authority for approval (\"Worked example: intake through check-in at a family medicine clinic\").",
+"D": "Not best: this is the habit answer of keeping today's routine; a human check is right, but today's steps produced wrong-chart filing, so the fix is the authority's approved steps (\"Worked example: intake through check-in at a family medicine clinic\")."
+}
+},
+{
+"stem": "| Item | From a therapist's visit |\n|---|---|\n| 1 | Her notes analyzing the counseling conversation, kept apart from the chart |\n| 2 | Medication prescribed |\n| 3 | Session start and stop times |\n| 4 | Summary of diagnosis and progress |\n\nUnder HIPAA, which item can be a psychotherapy note?",
+"options": {
+"A": "Item 1, since the notes analyze the session and sit apart from the chart",
+"B": "Item 2, since the prescription came out of the counseling session itself",
+"C": "Item 3, since the therapist records session times in her own notes",
+"D": "Item 4, since a progress summary describes what happened in therapy"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: psychotherapy notes are a mental health professional's notes on the contents of a counseling session, kept separate from the rest of the record (\"Psychotherapy notes\").",
+"B": "Not best: this applies a real rule to the wrong facts; the notes do come from the session, but medications are excluded by definition and belong in the regular record (\"Psychotherapy notes\").",
+"C": "Not best: this confuses look-alike records; who writes the times does not matter, because session start and stop times are excluded and belong in the regular record (\"Psychotherapy notes\").",
+"D": "Not best: this is true but does not answer the question; a progress summary does describe therapy, but summaries of diagnosis, treatment plan, and progress are excluded (\"Psychotherapy notes\")."
+}
+},
+{
+"stem": "A clinic physician prescribes medication for opioid use disorder. A nurse tells you, \"We're a Part 2 program, so you must lock those records in a separate section.\" What should you do?",
+"options": {
+"A": "Build a separate locked section now, since Part 2 records need segregation",
+"B": "Ask the privacy or legal authority whether Part 2 applies, and record it",
+"C": "Treat the clinic as not covered, since one physician is not a Part 2 program",
+"D": "Ask the prescribing physician whether her practice meets the Part 2 definition"
+},
+"key": "B",
+"feedback": {
+"A": "Not best: this is a right action at the wrong time; segregation may follow, but you do not build on an unconfirmed rule, and the 2024 rule changed when received records must be kept separate (\"Substance use disorder records (42 CFR Part 2)\").",
+"B": "Correct: only the client's privacy or legal authority can say whether the client, a unit, or a clinician is a Part 2 program, so you route the question and record the answer (\"Substance use disorder records (42 CFR Part 2)\").",
+"C": "Not best: this applies a rule to the wrong facts; identified staff can form a Part 2 program, and the implementer does not make that call, so the fix is to ask privacy or legal (\"Substance use disorder records (42 CFR Part 2)\").",
+"D": "Not best: this is half right; asking is right, but the physician is the wrong person to decide whether a federal rule applies, so the fix is to ask privacy or legal (\"Substance use disorder records (42 CFR Part 2)\")."
+}
+},
+{
+"stem": "Front-desk staff scan clinical history into the chart by picking a name from a list, without checking date of birth. Wrong-chart filing has happened. Staff ask to keep the step because it is familiar. How should you classify a change to this step?",
+"options": {
+"A": "Optional improvement, to avoid changing a familiar step while staff learn the system",
+"B": "Future phase, with an owner and review date after the system is stable",
+"C": "Necessary simplification, since the change removes a failed handoff at the desk",
+"D": "Required for safety, with the identification authority confirming the change"
+},
+"key": "D",
+"feedback": {
+"A": "Not best: this applies a real rule to the wrong facts; limiting change while staff learn is sound, but continuity does not cover an unsafe step, so the fix is to class it as required (\"Balance continuity and improvement\").",
+"B": "Not best: this is a right step at the wrong time; an owner and review date make deferral look controlled, but deferring a known safety problem keeps it in the live system (\"Balance continuity and improvement\").",
+"C": "Not best: this confuses two look-alike classes; it also enters the go-live plan, but the change adds a safety check rather than removing duplication, so it is required for safety (\"Balance continuity and improvement\").",
+"D": "Correct: a change needed for safety is in the \"required\" class once the approved authority confirms it, and it goes into the go-live plan (\"Balance continuity and improvement\")."
+}
+},
+{
+"stem": "A builder shows an early prototype of a clinic's intake form to settle a layout question. The training lead wants to use its screenshots in the approved training guide. What should you do?",
+"options": {
+"A": "Allow it, since the operations lead approved the layout the prototype shows",
+"B": "Keep it labeled as a prototype, and train from the stable approved release",
+"C": "Ask the operations manager to approve the prototype as the training version",
+"D": "Allow it, if the builder adds a version number to each prototype screenshot"
+},
+"key": "B",
+"feedback": {
+"A": "Not best: this applies a real rule to the wrong facts; an approved layout settles the design question, but it does not make an unfinished prototype approved training evidence (\"Hand the approved design into a controlled build\").",
+"B": "Correct: you act now and hold the line yourself; label prototypes as prototypes, and train only from the stable approved release (\"Hand the approved design into a controlled build\").",
+"C": "Not best: this is half right; seeking an owner's approval is proper, but it approves the wrong thing, since training material comes from the stable release after QC (\"Hand the approved design into a controlled build\").",
+"D": "Not best: this is true but does not answer the question; version numbers are part of controlled release, but numbering a screenshot does not turn a prototype into a stable release (\"Hand the approved design into a controlled build\")."
+}
+},
+{
+"stem": "| Control | Draft plan entry |\n|---|---|\n| Test patient names | \"ZZTEST, Adult\" and similar; two named builders may create them |\n| Reports and quality measures | Test patients included, to check report totals |\n| Claims | Clearinghouse test mode |\n| Cleanup | Inactivate test patients before go-live; data lead confirms |\n\nA clinic's vendor offers one production instance. You review this draft plan of compensating controls. Which entry should you correct?",
+"options": {
+"A": "Test patient names, since one builder alone should be able to create them",
+"B": "Claims, since one test claim should reach a payer to prove the billing path",
+"C": "Reports and quality measures, since test patients belong outside them",
+"D": "Cleanup, since the project owner rather than the data lead should confirm it"
+},
+"key": "C",
+"feedback": {
+"A": "Not best: this applies a real rule to the wrong facts; limiting who creates test patients is a recommended control, but two named builders already meets it (\"Plan environments when the vendor has no separate test or training copy\").",
+"B": "Not best: this goes too far; proving the full billing path sounds thorough, but claims stay in the clearinghouse's test mode so none reach a payer (\"Plan environments when the vendor has no separate test or training copy\").",
+"C": "Correct: test patients are kept out of reports, quality measures, and outgoing interfaces, even to check totals, so you correct this entry now (\"Plan environments when the vendor has no separate test or training copy\").",
+"D": "Not best: this confuses two look-alike duties; the project owner accepts the remaining risk, but cleanup only needs a named person who confirms it, which the draft has (\"Plan environments when the vendor has no separate test or training copy\")."
+}
+},
+{
+"stem": "| # | Acceptance scenario: referral to scheduled appointment |\n|---|---|\n| 1 | Common referral, booked in the first week |\n| 2 | Referral missing the insurance ID |\n| 3 | Patient declines the first offered date |\n| 4 | Booked appointment details sent to the specialist's office |\n\nYou are reviewing the scenario set before the approval walkthrough. Downtime does not apply to this workflow. Which scenario should you add?",
+"options": {
+"A": "A scheduler without rights tries to book a referral that needs approval",
+"B": "A system outage that interrupts a scheduler partway through a booking",
+"C": "A referral that arrives with the wrong date of birth for the patient",
+"D": "A booked appointment that the specialist's office does not confirm back"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: the set has normal, incomplete-information, exception, and handoff cases, but no access or approval case, so you add one (\"Validate with scenarios\").",
+"B": "Not best: this applies a real rule to the wrong facts; downtime and integration failure belong in the set when relevant, but the stem says downtime does not apply here (\"Validate with scenarios\").",
+"C": "Not best: this is true but does not answer the question; wrong information is a real risk, but scenario 2 already covers the incomplete or incorrect-information case (\"Validate with scenarios\").",
+"D": "Not best: this is true but does not answer the question; an unconfirmed booking is worth testing, but scenarios 3 and 4 already cover the exception and the handoff (\"Validate with scenarios\")."
+}
+}
+]

@@ -1,0 +1,223 @@
+<h1>Module 7, Lesson 1: Decide what "it works" must mean</h1>
+<h2 id="decide-what-it-works-must-mean">Decide what "it works" must
+mean</h2>
+<p>A team that says "it works" may mean five different things. If you do
+not agree on which one the requirement needs, a build can pass QC and
+still fail the clinic on day one.</p>
+<p><strong>Quality control (QC)</strong> is the planned checking that
+shows an approved workflow is built correctly and works under expected
+conditions. QC starts early. It runs after each build, training,
+conversion, integration, and automation step.</p>
+<p>"It works" can mean any of these:</p>
+<ul>
+<li>the screen loads;</li>
+<li>the normal path completes;</li>
+<li>the approved requirement is met;</li>
+<li>the correct person receives the next piece of work;</li>
+<li>the system blocks an action the user is not allowed to take;</li>
+<li>the record is complete and can be audited;</li>
+<li>an exception is caught and recovered;</li>
+<li>the workflow stays safe when an interface or service is down;</li>
+<li>trained users can do it the same way every time.</li>
+</ul>
+<p>QC uses the approved requirement and its acceptance evidence to pick
+the meaning that applies. A build can run without errors and still be
+wrong for the clinic. It can also follow the workflow and still break a
+security, privacy, billing, data, or safety control.</p>
+<figure style="margin:16px 0"><img src="../../img/M07-01.png" alt="Figure 7.1. Notice that a loading screen is the lowest meaning of "it works"; the approved requirement sets the level QC proves." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.1.</b> Notice that a loading screen is the lowest meaning of "it works"; the approved requirement sets the level QC proves.</figcaption></figure>
+> **Rule:** The approved requirement sets the level of "it works" that QC must prove.
+
+<p>Two examples show the rule:</p>
+<ul>
+<li><strong>Example A.</strong> A new-patient form loads and saves. The
+requirement says a signed copy must reach the front-desk queue. QC
+checks the queue, not just the save.</li>
+<li><strong>Example B.</strong> A refill request reaches the nurse
+inbox. The requirement says only nurses and providers may approve
+refills. QC also signs in as a medical assistant and confirms the
+approval button is blocked.</li>
+</ul>
+<p>In both cases, the screen "worked." Only the requirement told QC how
+far to test.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name three different meanings of "it works."</li>
+<li>A screen loads and saves with no error. Why might QC still fail
+it?</li>
+<li>What would you check before you agree that a referral workflow
+"works"?</li>
+</ol>
+<h2 id="finish-advanced-workflows-and-train-the-failure-path">Finish
+advanced workflows and train the failure path</h2>
+<p><em>These two steps are carried from Module 6. They finish training
+work before QC takes over the build.</em></p>
+<p>Staff who know only the normal path will repeat work, create
+duplicates, or assume a task is done when an interface fails. Advanced
+training prevents that.</p>
+<h3 id="specialty-configuration">Specialty configuration</h3>
+<p>Specialty workflows often add their own templates, terms, devices,
+results, rules, reports, or handoffs. Use the same method as in Modules
+4–6:</p>
+<ol type="1">
+<li>involve the person who does and owns the work;</li>
+<li>map normal and exception paths;</li>
+<li>find the source requirements and approvals;</li>
+<li>configure under change and access controls;</li>
+<li>train by role;</li>
+<li>test against approved scenarios;</li>
+<li>capture release evidence.</li>
+</ol>
+<p>A specialty name is not a workflow. "Cardiology," "pediatrics," or
+"behavioral health" names a field of care. It does not tell you how the
+work moves. You still need discovery.</p>
+<h3 id="interfaces-from-the-users-view">Interfaces from the user's
+view</h3>
+<p>An <strong>interface</strong> is a connection that sends information
+between two systems. Module 9 covers interface setup and testing. Here,
+you train users on what they see and do:</p>
+<ul>
+<li>what information leaves the clinic system;</li>
+<li>what result should come back;</li>
+<li>how long a normal response takes;</li>
+<li>where success, pending status, rejection, or failure shows on
+screen;</li>
+<li>who owns each side;</li>
+<li>what to do when the connection is slow or down;</li>
+<li>what users must never repeat, force, or bypass without
+approval.</li>
+</ul>
+<p>A user does not need to know every technical standard. The user does
+need to see that an item failed, avoid sending it twice, and send it to
+the right person.</p>
+<p>Common examples are claim and eligibility checks, lab and imaging
+orders and results, e-prescribing, payments, document signing, and data
+exchange with outside systems.</p>
+<figure style="margin:16px 0"><img src="../../img/M07-02.png" alt="Figure 7.2. Notice that each result state, not just success, has a next action users must be trained on." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.2.</b> Notice that each result state, not just success, has a next action users must be trained on.</figcaption></figure>
+> **Rule:** Train users on what failure looks like and what to do, not only on the normal path.
+
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List four things a user should know about an interface.</li>
+<li>Why is "behavioral health" not enough to start a specialty
+build?</li>
+<li>A medical assistant sees an eligibility check stuck on "pending" for
+an hour. What should training have taught her to do?</li>
+</ol>
+<h2 id="control-the-build-that-qc-receives">Control the build that QC
+receives</h2>
+<p>A test result is only true for the exact version and environment you
+tested. If you do not know what you tested, you cannot trust the
+result.</p>
+<p>A <strong>build</strong> is a set of configuration and setup work
+delivered as one version. An <strong>environment</strong> is a separate
+copy of the system, such as test, training, or production.
+<strong>Production</strong> is the live system used with real patients.
+<strong>Promotion</strong> means moving a tested version from one
+environment to the next.</p>
+<p>Before testing, confirm:</p>
+<ul>
+<li>the release purpose and the requirements or build items it
+includes;</li>
+<li>the source and target environments;</li>
+<li>what is included: configuration, packages, manual steps, vendor
+settings, data, interfaces, devices, automation, and documents;</li>
+<li>that the builder's own checks and technical review are done;</li>
+<li>the promotion method and its evidence;</li>
+<li>known limits and dependencies;</li>
+<li>the path for corrections and retests;</li>
+<li>who can approve the release for training, user acceptance,
+rehearsal, or production.</li>
+</ul>
+<p>If the team changes the build during testing, record the new version.
+Then decide which results are still valid. Do not carry a pass from one
+environment or version into another until you check the promotion and
+the affected behavior.</p>
+<p>Module 4 ("Hand the approved design into a controlled build") set out
+the blueprint, environments, and promotion path. This module applies
+that method to QC and release.</p>
+<figure style="margin:16px 0"><img src="../../img/M07-03.png" alt="Figure 7.3. Notice that each environment gets a named version and its own release approval before the build moves on." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.3.</b> Notice that each environment gets a named version and its own release approval before the build moves on.</figcaption></figure>
+> **Rule:** A pass belongs to one version in one environment until you prove otherwise.
+
+<ul>
+<li><strong>Example A.</strong> The referral module passed in test on
+build 5.1. In production, the vendor added a manual fax setting. You
+check the promotion and rerun the referral tests in production.</li>
+<li><strong>Example B.</strong> A new check-in form passed in test. The
+vendor then moved it to the training environment with an older form
+version by mistake. A short check after promotion catches the wrong
+version before class.</li>
+</ul>
+<p>Both cases show that a matching name or number is not proof. Only a
+check in the new place is proof.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What four facts identify the build QC receives?</li>
+<li>Why can't you carry a pass from test into production without a
+check?</li>
+<li>The builder changes a setting halfway through your test run. What do
+you do?</li>
+</ol>
+<h2 id="build-the-qc-plan-from-requirements">Build the QC plan from
+requirements</h2>
+<p>A QC plan tells you what to test and when testing is finished.
+Without it, you cannot show the client that the important risks were
+covered.</p>
+<p>For each module or workflow, gather:</p>
+<ul>
+<li>approved requirements;</li>
+<li>configuration and document versions;</li>
+<li>the role and access model;</li>
+<li>acceptance scenarios;</li>
+<li>data and environment needs;</li>
+<li>expected results;</li>
+<li>high-risk areas;</li>
+<li>required reviewers;</li>
+<li>entry and exit criteria;</li>
+<li>defect severity and release rules;</li>
+<li>where evidence is stored.</li>
+</ul>
+<p>Each test should link to a requirement, risk, control, or known way
+the workflow can fail. Free exploration can find useful defects. It
+cannot prove coverage on its own.</p>
+<h3 id="entry-criteria">Entry criteria</h3>
+<p><strong>Entry criteria</strong> are the conditions that must be true
+before work enters QC. Typical entry criteria are:</p>
+<ul>
+<li>the requirement and its approver are named;</li>
+<li>the build version is stable enough to test;</li>
+<li>the test environment and access are ready;</li>
+<li>approved test data is available;</li>
+<li>known limits are written down;</li>
+<li>expected results and evidence are defined.</li>
+</ul>
+<p>A changing, unfinished build wastes QC time. Its results cannot be
+repeated.</p>
+<h3 id="exit-criteria">Exit criteria</h3>
+<p><strong>Exit criteria</strong> are the conditions that must be true
+before a module is released:</p>
+<ul>
+<li>planned tests are complete;</li>
+<li>results and evidence are recorded;</li>
+<li>Critical and High defects are fixed or have a recorded decision
+under the approved release rules;</li>
+<li>fixes are retested;</li>
+<li>regression tests are chosen, run, and recorded;</li>
+<li>the proper authority approved any accepted limits;</li>
+<li>training materials and job aids are updated if behavior
+changed;</li>
+<li>the version is approved for the next stage.</li>
+</ul>
+<p>Exit criteria are release controls. Agree on them early. Near
+go-live, pressure makes every open item look small.</p>
+<blockquote>
+<p><strong>Rule:</strong> Agree entry and exit criteria before testing
+starts, not when the deadline arrives.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name three entry criteria and three exit criteria.</li>
+<li>Why can't free exploration alone prove coverage?</li>
+<li>A fix moved a step on a form, and the job aid still shows the old
+step. Which exit criterion is not met, and who should fix it if you own
+the training materials?</li>
+</ol>

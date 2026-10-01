@@ -1,0 +1,242 @@
+[
+{
+"stem": "| Journey step | Record created | Who acts next | Queue or reminder |\n|---|---|---|---|\n| Portal pre-visit intake | Health history form, stored to chart | Not named | None |\n| Arrival | Check-in status | Front desk | Arrival list |\n| Encounter | Visit note | Provider | Unsigned notes queue |\n\nThe implementer is walking a new-patient visit at Cedar Point Internal Medicine with the operations lead and the front-desk lead. The notes above cover the first three steps. What should the implementer do about the portal intake row?",
+"options": {
+"A": "Drop portal intake for go-live and collect the history on paper at check-in, since no one acts on it.",
+"B": "Tell the front desk to open each stored intake form at check-in until an owner is chosen after go-live.",
+"C": "Log it as a seam in the review and propose a queue and recipient role for the operations lead to approve.",
+"D": "Report the portal step to the executive sponsor as a go-live risk and ask the sponsor to assign an owner."
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because a form nobody acts on looks like waste to simplify (right rule, wrong facts), but \"Walk the whole operating day\" treats it as a seam to close with an owner and a queue, not a step to remove.",
+"B": "Tempting because it gets the forms read at once (the habit answer), but an informal habit with the owner left until after go-live is the seam itself; the chapter asks for a named owner and queue now.",
+"C": "Correct: \"Walk the whole operating day\" asks who owns the next action and what queue shows unfinished work, and the operations lead in the walk approves the fix you propose.",
+"D": "Tempting because an unowned step is a real risk (too far), but the operations lead is in the walk and owns this workflow, so sending an ordinary seam to the sponsor skips the person who can decide it."
+}
+},
+{
+"stem": "Two weeks before go-live, Cedar Point's clinical lead approves merging two referral status values, \"Sent\" and \"Faxed,\" into one because staff confuse them. The implementer owns the configuration and the test plan, and the change is built in the test system. What should the implementer do before the change is released?",
+"options": {
+"A": "Record the reason for the change and re-run the affected configuration, report, training, and acceptance tests.",
+"B": "Release the change now, since the clinical lead approved it and it removes a status rather than adding one.",
+"C": "Ask the executive sponsor to approve the change as well, since it was made late in the project schedule.",
+"D": "Hold the change until after go-live so the tested version stays frozen, then release it in the first week."
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Simplify without removing controls\" says to record the reason for a late workflow change and rerun the affected setup tests, training, and user acceptance before release; this is the implementer's own test plan.",
+"B": "Tempting because the owner approved it and it removes a step (right result, wrong reason), but removing a status can still break reports, queues, and job aids, so the chapter requires retesting before release.",
+"C": "Tempting because late changes feel like they need more sign-off (too far), but the change already has its owner's approval; what is missing is the recorded reason and the retests.",
+"D": "Tempting because freezing the tested build sounds safe (right action, wrong time), but it pushes a known source of confusion into go-live week; the chapter has you retest the change now."
+}
+},
+{
+"stem": "The Cedar Point team wants fewer clicks before go-live. Under the course's rule on simplifying, which item may the implementer propose to simplify?",
+"options": {
+"A": "The second identity check at check-in that repeats the one done when the visit was booked",
+"B": "The refund approval step that repeats the review already done when the payment was posted",
+"C": "The follow-up step that confirms an abnormal result was seen after the provider was notified",
+"D": "The repeat entry of a patient's address at scheduling and again on the intake form"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because it looks like duplicate work (confused look-alike: a repeated control versus repeated data entry), but identity checks are on the list \"Simplify without removing controls\" says to keep even when they add clicks.",
+"B": "Tempting because it looks like a second review of the same money (look-alike), but keeping payment posting apart from refund approval is separation of financial duties, a control the chapter keeps.",
+"C": "Tempting because the provider was already notified (right rule, wrong facts), but confirming the result was seen is test-result follow-up, which the chapter names as a control that stays.",
+"D": "Correct: the same data entered twice is the first kind of waste \"Simplify without removing controls\" lists, and no control depends on typing the address twice."
+}
+},
+{
+"stem": "| Alert | Trigger | Fired in test week | Acted on |\n|---|---|---|---|\n| Drug-allergy interaction | Any match in the allergy class | 1,240 | 31 |\n| Overdue mammogram reminder | Screening due date passed | 85 | 62 |\n\nIn a realistic-volume test at Cedar Point, providers overrode most drug-allergy alerts. The clinical lead owns this alert. What should the implementer do?",
+"options": {
+"A": "Raise the alert threshold in the test system so it fires only on severe matches, and record it in the change log.",
+"B": "Bring the volume and override data to the clinical lead and ask the lead to approve a revised threshold.",
+"C": "Keep the alert as it is for go-live and review its override rate with the clinical lead at the 30-day review.",
+"D": "Add the alert to provider training so that providers read each alert carefully before they override it."
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because it cuts the noise and leaves a record (half right: right fix, wrong owner), but \"Make reminders and queues accountable\" says the owner of each area approves its thresholds, so you do not change a clinical threshold first.",
+"B": "Correct: the chapter warns that low-value alerts teach users to ignore important ones, and the clinical lead who owns the alert approves the new threshold.",
+"C": "Tempting because it avoids a late change and involves the owner (right action, wrong time), but the chapter checks volume under realistic conditions before go-live; 1,240 alerts would train providers to ignore the 31 that matter.",
+"D": "Tempting because training is the usual fix for user behavior (confused look-alike: training gap versus a setup problem), but no training makes an alert useful when it fires 40 times for each action."
+}
+},
+{
+"stem": "| Field | Approved definition (clinical lead) | Report as built |\n|---|---|---|\n| Measure | Abnormal results not acknowledged within 2 business days | Same |\n| Clock starts | When the result is received in the EHR | When the test is ordered |\n| Population | Abnormal results, all providers | Abnormal results, all providers |\n\nThe implementer built this measure report for Cedar Point's readiness review and found the mismatch above. What should the implementer do?",
+"options": {
+"A": "Correct the report so the clock starts at result receipt, and check its counts against source records.",
+"B": "Ask the clinical lead to change the approved definition to the order date so it matches the built report.",
+"C": "Keep the report as built and footnote the order-date start, so readers know how the clock is counted.",
+"D": "Ask the clinical lead to confirm which start time is right before you change anything in the built report."
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Put quality measures inside the workflow\" says the implementer makes sure the approved definition is built correctly and can be traced to source data, so fixing this build error is the implementer's own work.",
+"B": "Tempting because it keeps the owner in charge of the definition (half right), but the definition is already approved; the report must match it, not the other way round.",
+"C": "Tempting because it is transparent (too weak), but a footnote leaves the report measuring something other than the approved definition, and the baseline would use the wrong clock.",
+"D": "Tempting because clinical measures need a qualified person (right rule, wrong facts), but the lead has already approved the start time; asking again delays a build fix the implementer owns."
+}
+},
+{
+"stem": "A Cedar Point measure for unsigned notes lists its purpose, numerator, denominator, source, owner, review cadence, and threshold. Which element must still be defined before the measure is ready?",
+"options": {
+"A": "A national benchmark figure to compare against the threshold",
+"B": "A target value the clinic hopes to reach by the 90-day review",
+"C": "The action taken when the result falls outside the threshold",
+"D": "The executive sponsor's approval of the review schedule"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because benchmarks help judge a result (true but does not answer the question), but the chapter's list does not require one; it requires the measure to drive an action when it crosses the threshold.",
+"B": "Tempting because improvement targets are common (confused look-alike: target versus threshold), but the measure already has a threshold; what is missing is what someone does when it is crossed.",
+"C": "Correct: \"Put quality measures inside the workflow\" lists the action when the measure is outside the threshold, along with evidence and how long it is kept.",
+"D": "Tempting because sponsors often sign off dashboards (too far), but the measure's owner sets and keeps the review schedule; the chapter adds no sponsor approval."
+}
+},
+{
+"stem": "Cedar Point's practice manager reviews the draft readiness package. She asks the implementer to add this line: \"The new system makes the practice audit-ready, so any future audit will pass without effort.\" The implementer writes the package. What should the implementer do?",
+"options": {
+"A": "Soften it to \"the new system will help the practice pass future audits\" and keep it in the package summary.",
+"B": "Ask the client's compliance owner to approve the line before it goes into the readiness package draft.",
+"C": "Add the line with a footnote that audit results also depend on how staff use the system after go-live.",
+"D": "Replace it with a line saying the practice can retrieve complete evidence for each approved purpose."
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because it drops \"without effort\" (half right), but it still promises an audit outcome; \"Build audit-ready evidence\" says audit-ready does not mean audits will pass, and you never promise that.",
+"B": "Tempting because compliance wording seems to need a compliance owner (too far), but no approval makes the promise accurate; the chapter says not to make it, and the wording is the implementer's to fix.",
+"C": "Tempting because the footnote adds an honest caveat (too weak), but the promise stays in the package, which the chapter tells you not to make.",
+"D": "Correct: the chapter defines audit-ready as the clinic being able to find complete, clear evidence for an approved purpose, and the implementer owns the package wording."
+}
+},
+{
+"stem": "| Requirement | Evidence | Location |\n|---|---|---|\n| Role access approved for billing staff | Approval emails from billing manager | Implementer's personal mailbox |\n| Conversion of active problems accepted | Signed acceptance form | Project record, folder 6 |\n| Defect D-41 closed | Retest result | Project record, folder 8 |\n\nThe implementer is building Cedar Point's audit index. What should the implementer do about the first row?",
+"options": {
+"A": "Note in the index that the implementer holds the emails and will forward them to anyone who asks.",
+"B": "Save the approval emails into the project record and update the index row to point to that location.",
+"C": "Ask the billing manager to approve the role access again on a form, and file that form instead.",
+"D": "Ask the practice's privacy official to decide where access approvals for billing staff should be kept."
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because it records where the evidence is (the habit answer), but \"Build audit-ready evidence\" says the answer must not live in personal email; someone who did not build the record cannot retrieve it.",
+"B": "Correct: the chapter lists access approvals as evidence to assemble where others can find them, and filing them is the implementer's own work.",
+"C": "Tempting because a signed form looks more formal (too far), but the approvals already exist; the chapter asks you to file and index them, not repeat them.",
+"D": "Tempting because access approvals touch privacy (right rule, wrong facts), but filing project evidence in the project record is the implementer's task, not a decision for the privacy official."
+}
+},
+{
+"stem": "| Function | RPO | RTO |\n|---|---|---|\n| Scheduling | 30 minutes | 6 hours |\n\nCedar Point's approved recovery record includes the row above. Scheduling fails at 10:00. What does this row tell staff to expect?",
+"options": {
+"A": "Up to 30 minutes of scheduling entries may need re-entry, and staff may work on paper for up to 6 hours.",
+"B": "Scheduling should be back within 30 minutes, and up to 6 hours of entries may need to be re-entered.",
+"C": "The last 30 minutes of entries are lost for good, and the vendor must restore scheduling within 6 hours.",
+"D": "Backups run every 6 hours, and staff should switch to paper if scheduling is down for over 30 minutes."
+},
+"key": "A",
+"feedback": {
+"A": "Correct: in \"Set recovery objectives and get them approved,\" the RPO is how much recent work may be lost and re-entered, and the RTO is how long staff may work on paper while the system recovers.",
+"B": "Tempting because both numbers appear (confused look-alike), but it swaps the terms: the RPO is about data loss and the RTO is about recovery time.",
+"C": "Tempting because the RPO does measure lost data (half right), but the chapter has staff re-enter that work from downtime forms, and the RTO is the client's approved tolerance, not a vendor duty.",
+"D": "Tempting because backup frequency drives the RPO (confused look-alike), but neither number is a backup schedule or a paper trigger; they are data-loss and recovery-time limits."
+}
+},
+{
+"stem": "| Recovery record field (e-prescribing) | Entry |\n|---|---|\n| RTO / RPO | 4 hours / 15 minutes, approved by clinical lead |\n| Recovery order and dependencies | After network and EHR core |\n| Last restore test | 3 weeks ago, 3 hours 10 minutes, passed |\n| Who may declare downtime and resume | Blank |\n| Backlog staff can re-enter | Blank |\n\nThe implementer is finishing Cedar Point's recovery record for e-prescribing. What should the implementer do next?",
+"options": {
+"A": "Mark the record complete, since the objectives are approved and the restore test met the 4-hour RTO.",
+"B": "Enter the implementer's own name as the person who declares downtime, since the implementer runs command.",
+"C": "Ask the governance owners to name who declares downtime and resumes, and to set the backlog limit.",
+"D": "Leave the two fields for the command center to settle on go-live day, once actual staffing is known."
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because the objectives are approved and the test passed (true but does not answer the question), but the chapter lists who may declare downtime, who may resume, and the re-entry backlog as parts of every recovery record.",
+"B": "Tempting because the implementer runs the command plan (half right: right field, wrong owner), but declaring downtime is an authority the client assigns through governance; you record it, you do not take it.",
+"C": "Correct: \"Set recovery objectives and get them approved\" requires these fields for each critical function, and the owners named in governance supply the decisions.",
+"D": "Tempting because staffing will be clearer later (right action, wrong time), but go-live day is too late to decide who may declare downtime; the chapter puts it in the record before go-live."
+}
+},
+{
+"stem": "Cedar Point's vendor cannot restore access to lab results in less than 10 hours. The clinical lead's limit is 4 hours. The implementer has set out the options: a higher service tier, a paper workaround, or accepting the gap. The executive sponsor says she will accept the gap herself to keep costs down. What should the implementer do?",
+"options": {
+"A": "Record the sponsor's acceptance as the approved decision, since the sponsor controls the project budget.",
+"B": "Take the gap to the clinical authority for a written decision, since it affects patient safety.",
+"C": "Choose the paper workaround and record it, since it costs nothing and keeps the clinical lead's limit.",
+"D": "Get the vendor's quote for a higher tier that meets 4 hours, and give it to the sponsor to approve."
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because the sponsor does decide most costs (right rule, wrong facts), but \"Set recovery objectives and get them approved\" says a gap that affects patient safety goes to the clinical authority, not only to the sponsor.",
+"B": "Correct: the chapter sends patient-safety gaps to the clinical authority for a written decision.",
+"C": "Tempting because the workaround is cheap and protects patients (half right: sensible option, wrong decision-maker), but choosing among the options is the owners' decision; you do not choose these values.",
+"D": "Tempting because a higher tier is one of the real options (half right), but it still leaves a patient-safety decision with the sponsor alone instead of the clinical authority."
+}
+},
+{
+"stem": "Under the current HIPAA Security Rule, testing the contingency plan is an \"addressable\" part. What does \"addressable\" require of the clinic?",
+"options": {
+"A": "The clinic may adopt the part if it wishes and needs no record if it decides not to.",
+"B": "The clinic must follow the part exactly as written, the same as a required part.",
+"C": "The clinic's cloud vendor must assess the part and keep the result for the clinic.",
+"D": "The clinic must assess the part and document the choice it makes about it."
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because \"addressable\" sounds optional (confused look-alike: addressable versus optional), but \"What the sources say\" says the organization must assess the part and record its choice.",
+"B": "Tempting because the proposed update would remove the difference (right rule, wrong time), but under the current rule addressable and required parts are still treated differently.",
+"C": "Tempting because a cloud vendor runs the backups (half right: right task, wrong owner), but the chapter places HIPAA compliance with the client's security official.",
+"D": "Correct: the chapter says the organization must assess an addressable part and record its choice."
+}
+},
+{
+"stem": "Cedar Point's security readiness checklist shows an open finding under Protect. Four admin accounts were created for go-live, and two belong to vendor staff who have finished their work. The vendor's project manager says the product is secure and the accounts pose no risk. The implementer owns the checklist. What should the implementer do?",
+"options": {
+"A": "Keep the finding open with its owner, and record the security official's decision on the two accounts.",
+"B": "Attach the vendor's statement that the product is secure as the evidence, and mark the finding closed.",
+"C": "Disable the two vendor admin accounts directly, then close the finding and note the action taken.",
+"D": "Move the finding to the first week after go-live, since admin accounts do not affect patient care."
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Check security readiness against a recognized framework\" says to record an open finding with its owner and the security official's decision.",
+"B": "Tempting because the vendor built the product (the habit answer: accept the vendor's word), but the chapter says not to mark a finding closed because the vendor says the product is secure.",
+"C": "Tempting because removing unused admin accounts is good practice (half right: right fix, wrong person), but you do not assess or act on security controls yourself; the security official decides.",
+"D": "Tempting because patient care comes first on day one (right action, wrong time), but a security finding is a readiness item like any other and stays on the dashboard before go-live."
+}
+},
+{
+"stem": "Cedar Point's go-live is ten days away. Two implementation trainers will work onsite at Lakeshore. The client has approved their dates and hours, but nobody has confirmed badges, workspace, or who pays for lodging. The implementer owns the support plan. What should the implementer do?",
+"options": {
+"A": "Book lodging now on the project card, log the cost, and settle who pays with the client after go-live.",
+"B": "Ask the trainers to arrive early on the first morning and arrange badges with the front desk then.",
+"C": "Confirm badges, workspace, and lodging cost with the client, and record the approvals before booking.",
+"D": "Send the open questions to the executive sponsor and wait for her to arrange badges and lodging."
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because it secures rooms and keeps a record (right action, wrong time), but \"Define go-live support\" says to confirm expense approval with the client before costs are incurred, not after go-live.",
+"B": "Tempting because the front desk can issue badges (the habit answer), but sorting out access on the first morning takes support time when users most need help; the chapter has you confirm it ahead.",
+"C": "Correct: the chapter says to confirm dates, badges, access, workspace, and expense approval with the client before costs are incurred, and this is the implementer's own plan.",
+"D": "Tempting because the sponsor can approve spending (too far), but these are routine confirmations the implementer makes with the client; waiting on the sponsor over-escalates your own plan."
+}
+},
+{
+"stem": "| Final QA check | Result |\n|---|---|\n| Build version in test system | 4.2 |\n| Build version approved for go-live | 4.3 |\n| Role and access behavior | Passed on 4.2 |\n| Downtime forms | Printed, current |\n\nThe QA lead runs Cedar Point's final review on the non-production system and finds the version gap above. Go-live is in six days. What should happen next?",
+"options": {
+"A": "Pass final QA and note in the report that role behavior was checked on 4.2, one version behind.",
+"B": "Load the approved 4.3 build into test and re-run the checks that the version change affects.",
+"C": "Ask the go/no-go leaders to accept the 4.2 results as a known limitation in the decision record.",
+"D": "Run the role and access checks on the production system on go-live morning, once 4.3 is live."
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because it is honest about the gap (too weak), but \"Run final QA on the non-production system\" confirms the approved build and setup version, so results on another version do not count.",
+"B": "Correct: the chapter requires final QA on the approved build, so the affected checks are repeated on 4.3.",
+"C": "Tempting because an accepted limit is a real go/no-go option (right rule, wrong facts), but this gap can be closed in six days, so asking leaders to accept it skips work the team can do.",
+"D": "Tempting because production is where 4.3 will run (right action, wrong time), but final QA happens before go-live on the non-production system, and failed sign-ins are a common day-one problem."
+}
+}
+]

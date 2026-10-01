@@ -1,0 +1,241 @@
+<h1>Module 8, Lesson 3: Know why clinical lists need clinical validation</h1>
+<h2 id="know-why-clinical-lists-need-clinical-validation">Know why
+clinical lists need clinical validation</h2>
+<p>Clinicians prescribe, order, and screen from converted medication,
+allergy, problem, and immunization lists. An error there can reach a
+patient on the first day.</p>
+<p>These lists are not ordinary fields. Drug-allergy and drug-drug
+checks read them. A list can match every count and still be unsafe. For
+example, an allergy may arrive as free text that the new system's alert
+logic cannot read. The prescriber then sees no warning at all.</p>
+<p><strong>Clinical validation</strong> means qualified clinicians
+confirm that converted clinical information is correct and safe to use
+for care. Technical reconciliation cannot do this. It shows that records
+moved, not that a clinician can rely on them.</p>
+<figure style="margin:16px 0"><img src="../../img/M08-06.png" alt="Figure 8.6. Notice that a free-text allergy can move over cleanly yet never trigger a drug-allergy warning." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.6.</b> Notice that a free-text allergy can move over cleanly yet never trigger a drug-allergy warning.</figcaption></figure>
+### Know what can go wrong
+
+<p>Check each clinical list for these common problems:</p>
+<ul>
+<li><strong>Medications:</strong> "active" and "inactive" mean different
+things in each system; dose, unit, route, or frequency is split or
+merged; drugs do not match a standard drug code.
+<strong>RxNorm</strong>, kept by the National Library of Medicine, gives
+standard names for clinical drugs.</li>
+<li><strong>Allergies:</strong> free-text substances do not code;
+reactions and severity are lost; "no known allergies" is confused with
+"not recorded." These are not the same. A blank list must never convert
+as "no known allergies."</li>
+<li><strong>Problems:</strong> active and resolved status are mixed up;
+old diagnoses come forward as active; free-text problems have no
+code.</li>
+<li><strong>Immunizations:</strong> dates are missing; vaccine names do
+not map to a <strong>CVX</strong> code (the vaccine code set from the
+Centers for Disease Control and Prevention, or <strong>CDC</strong>);
+old doses from elsewhere are confused with doses the clinic gave. CVX
+has codes for vaccines no longer made and for doses recorded without a
+known product. Use those codes instead of guessing a specific
+product.</li>
+</ul>
+<p>These four lists are data classes in the United States Core Data for
+Interoperability (<strong>USCDI</strong>). USCDI is the national
+standard set of data that health IT systems exchange.</p>
+<p>The Office of the National Coordinator for Health IT
+(<strong>ONC</strong>) publishes the <strong>SAFER Guides</strong>
+(Safety Assurance Factors for EHR Resilience). An <strong>EHR</strong>
+is an electronic health record. ONC's 2025 SAFER Guide on System
+Management calls for data-migration steps that protect data integrity.
+This matters most when data moves between EHRs, changes from free text
+to coded form, or gets new clinical codes.</p>
+<blockquote>
+<p><strong>Rule:</strong> A converted clinical list is not safe to use
+until qualified clinicians validate it.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> A patient's allergy to sulfa arrives as
+free text. The count matches, but the drug-allergy check stays silent
+when a sulfa drug is ordered.</li>
+<li><strong>Example B.</strong> A patient's old blood thinner was
+stopped two years ago but converts as "active." The count matches, but a
+prescriber may think the patient still takes it.</li>
+</ul>
+<p>In both cases the data moved correctly by count. Only a clinician
+could see that it was unsafe.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name one common problem for each of the four clinical lists.</li>
+<li>Why must a blank allergy list never convert as "no known
+allergies"?</li>
+<li>Why can't count reconciliation show that a converted allergy list is
+safe?</li>
+</ol>
+<h2
+id="use-three-clinical-safeguards-and-keep-decisions-with-the-clinical-authority">Use
+three clinical safeguards and keep decisions with the clinical
+authority</h2>
+<p>The safeguards below catch clinical errors before and at each
+patient's first visit. They only work if the right people own each
+decision.</p>
+<h3 id="the-three-safeguards">The three safeguards</h3>
+<p><strong>1. Flag; do not drop or guess.</strong> Each test conversion
+produces a <strong>flag report</strong>. It lists uncoded or free-text
+items, unmapped codes, conflicting statuses, duplicates, and impossible
+dates. Flagged items arrive in the new system clearly marked as legacy
+or unverified. Do not quietly drop them. Do not let anyone assign a code
+by guessing.</p>
+<p><strong>2. Prepare charts before visits.</strong> For patients with
+visits in the first weeks after go-live, clinical staff review the
+converted lists before the visit. Build a worklist from the flag report.
+The clinical owner decides the order of review. High-risk patients often
+come first, such as those on blood thinners or insulin, or with severe
+allergies.</p>
+<p><strong>3. Reconcile at the first visit.</strong> At each patient's
+first visit in the new system, the clinician checks the converted lists
+with the patient and marks them reviewed. This matches normal medication
+reconciliation. For example, The Joint Commission's 2026 ambulatory
+National Patient Safety Goals ask clinics to find out what medicines a
+patient takes and compare them with new ones. Staff can also compare
+immunization history with the state's immunization information system
+(<strong>IIS</strong>), where one is available. An IIS is a
+confidential, population-wide database of vaccine doses.</p>
+<p>During test conversions, clinicians also compare a sample of source
+charts with converted charts. Include high-risk patients and records
+with long lists.</p>
+<figure style="margin:16px 0"><img src="../../img/M08-07.png" alt="Figure 8.7. Notice that clinician review continues after go-live, ending when each chart is marked reviewed at the first visit." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.7.</b> Notice that clinician review continues after go-live, ending when each chart is marked reviewed at the first visit.</figcaption></figure>
+### Who decides
+
+<p>The <strong>clinical authority</strong> is the person named in the
+project's governance to make clinical decisions, such as the medical
+director or clinical lead. The clinical authority approves the
+<strong>clinical validation rule</strong>. The rule covers:</p>
+<ul>
+<li>which items are flagged;</li>
+<li>the sample size;</li>
+<li>what must be reviewed before a visit;</li>
+<li>how "reviewed" is recorded;</li>
+<li>what stays in the archive.</li>
+</ul>
+<p>The data owner accepts the converted data overall and relies on the
+clinical review for clinical lists. A pharmacist or nurse lead may
+advise.</p>
+<p>You coordinate. You produce the flag reports, build the worklists,
+schedule reviews, track completion, and report exceptions to the
+clinical authority. You do not decide whether a converted allergy is
+clinically correct. You do not recode free-text items or mark lists
+reviewed. The vendor does not decide either, even when it runs the
+conversion.</p>
+<h3 id="evidence-to-keep">Evidence to keep</h3>
+<ul>
+<li>the approved clinical validation rule, its version, and its
+approver;</li>
+<li>flag counts by type and list, for each test and the final
+conversion;</li>
+<li>the clinician sample results, with defects opened;</li>
+<li>pre-visit review completion by location;</li>
+<li>first-visit reconciliation rates after go-live;</li>
+<li>open clinical exceptions, each with an owner and due date.</li>
+</ul>
+<blockquote>
+<p><strong>Rule:</strong> You produce and track the clinical checks; the
+clinical authority decides what they mean.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the three clinical safeguards.</li>
+<li>Why does the implementer not recode free-text allergies, even when
+the right code seems obvious?</li>
+<li>Two weeks after go-live, one location has reconciled only 58% of
+first-visit lists against a 90% target. What do you do?</li>
+</ol>
+<h2 id="plan-the-cutover-and-a-real-fallback">Plan the cutover and a
+real fallback</h2>
+<p>Go-live weekend leaves little time to think. A written cutover plan
+decides in advance who does what, in what order, and what happens if the
+load fails.</p>
+<p><strong>Cutover</strong> is the planned switch from the old system to
+the new one. A <strong>freeze</strong> stops changes in the source so
+the final extract is complete. A <strong>delta</strong> is the set of
+changes made in the source after an extract. <strong>Fallback</strong>
+(or <strong>rollback</strong>) means returning to the old system if the
+new one cannot be used.</p>
+<p>The cutover plan states:</p>
+<ul>
+<li>the last date and time for work in the source;</li>
+<li>the freeze, read-only, or delta approach;</li>
+<li>the final extract and secure transfer;</li>
+<li>the mapping and script version;</li>
+<li>the load order;</li>
+<li>who reconciles and validates;</li>
+<li>time allowed for corrections;</li>
+<li>go/no-go criteria and who decides;</li>
+<li>the conditions for fallback;</li>
+<li>communications;</li>
+<li>source-system access after cutover;</li>
+<li>how work done during the switch is handled;</li>
+<li>how temporary files are destroyed;</li>
+<li>support and monitoring.</li>
+</ul>
+<p>Do not use "rollback" as a vague comfort. Define what can actually be
+reversed, how long it takes, what information would be lost or
+duplicated, who decides, and how users are told.</p>
+<figure style="margin:16px 0"><img src="../../img/M08-08.png" alt="Figure 8.8. Notice that fallback has a defined point after which it is no longer possible." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.8.</b> Notice that fallback has a defined point after which it is no longer possible.</figcaption></figure>
+### Handle deltas and work in progress
+
+<p>If users keep working in the source after an extract, decide how
+those changes reach the new system. Options include a final delta
+conversion, controlled manual entry, entry in both systems for a short
+approved period, or a cutover freeze. Each option has risk. Assign
+owners and a reconciliation step.</p>
+<blockquote>
+<p><strong>Rule:</strong> A fallback is real only when the plan says
+what can be reversed, how long it takes, and who decides.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> The plan says, "If the load fails, roll
+back." You add the details: the old system stays read-write until 6 a.m.
+Monday, any visits booked in the new system before then are listed for
+re-entry, and the sponsor decides.</li>
+<li><strong>Example B.</strong> Lakeshore staff will book appointments
+in the old system all weekend after Friday's extract. You add a delta
+step with an owner and a count check on Sunday night.</li>
+</ul>
+<p>Both plans seemed complete until someone asked, "What exactly
+happens?"</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Define freeze, delta, and fallback.</li>
+<li>Why is "we can always roll back" not a plan?</li>
+<li>You learn on Thursday that staff will keep working in the source
+after Friday's extract. What do you add to the plan?</li>
+</ol>
+<h2 id="archive-the-history-before-you-retire-the-source">Archive the
+history before you retire the source</h2>
+<p>Once the old system is gone, missing history cannot be recovered.
+Retirement must wait until the clinic can still reach everything it must
+keep.</p>
+<p>Before anyone retires the source, confirm:</p>
+<ul>
+<li>required information is converted or available in an approved
+archive;</li>
+<li>users know where old information lives;</li>
+<li>access, search, export, audit, legal hold, and retrieval work as
+required;</li>
+<li>contracts and licenses are handled;</li>
+<li>retention and disposal are approved;</li>
+<li>temporary copies are handled;</li>
+<li>the person who approves retirement is recorded.</li>
+</ul>
+<p>Do not re-type years of history without a proven need and an approved
+plan. Do not destroy or abandon it just because re-entry takes too
+long.</p>
+<blockquote>
+<p><strong>Rule:</strong> No source is retired until required history is
+reachable and the retirement owner has approved.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List four things to confirm before retiring a source.</li>
+<li>Why is re-typing all old history usually a poor choice?</li>
+<li>The old vendor's license ends in two weeks, and the archive search
+does not work yet. What do you do?</li>
+</ol>

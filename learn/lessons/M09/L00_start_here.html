@@ -1,0 +1,74 @@
+<h1>Module 9 — Start here: outline and the problem</h1>
+<h2 id="chapter-outline">Chapter outline</h2>
+<ol type="1">
+<li><strong>List every integration.</strong> Record its purpose, both
+endpoints, the owner on each side, and the agreement behind it. Ask
+about public health links. You produce an integration inventory and
+owner map.</li>
+<li><strong>Draw the data flow.</strong> Show what moves, in which
+direction, when, and who handles failures. You produce one data-flow
+diagram per integration.</li>
+<li><strong>Clear the nontechnical dependencies.</strong> Track
+contracts, enrollment, credentials, allowlisting, user accounts, and
+third-party dates. Keep secrets in the approved credential system. You
+produce dated dependency entries.</li>
+<li><strong>Track e-prescribing readiness for controlled
+substances.</strong> For each prescriber, track identity proofing, the
+two-factor credential, and the two-person access setup. You produce a
+prescriber readiness tracker.</li>
+<li><strong>Design acknowledgements and failure handling.</strong>
+Decide how each side knows an item arrived and was accepted. Decide what
+happens on rejection, delay, duplicates, and downtime. You produce a
+failure-response design.</li>
+<li><strong>Test end to end.</strong> Run normal and failure scenarios
+with synthetic data. Record transport, destination, and business results
+separately. You produce end-to-end test and reconciliation
+evidence.</li>
+<li><strong>Identify the interoperability standards in play.</strong>
+Name the standard and version for each clinical exchange.</li>
+<li><strong>Route the rules to the people who decide.</strong> Check
+certification evidence. Send information-blocking, network, and consent
+questions to the client's named authorities. You produce an
+interoperability source register.</li>
+<li><strong>Set up revenue-cycle transactions.</strong> Know what each
+claim transaction does. Keep rejections and denials apart.</li>
+<li><strong>Track enrollment step by step.</strong> Track clearinghouse
+enrollment and each payer's claims, remittance, and payment enrollment
+separately. You produce an enrollment tracker.</li>
+<li><strong>Govern forms, codes, and templates.</strong> Give each an
+owner, version, approval, and maintenance rule. You produce
+configuration governance records.</li>
+<li><strong>Configure payments safely.</strong> Bring in finance and
+security owners, test success and failure paths, and reconcile.</li>
+<li><strong>Hand monitoring to operations.</strong> Name who watches
+each queue, the thresholds, and the escalation path. You produce an
+operational monitoring plan.</li>
+</ol>
+<p><strong>You will produce:</strong></p>
+<ul>
+<li>an integration inventory, owner map, and data-flow diagrams;</li>
+<li>dated dependency entries and a prescriber readiness tracker;</li>
+<li>an interoperability source register and an enrollment tracker;</li>
+<li>end-to-end test and reconciliation evidence;</li>
+<li>configuration governance records and an operational monitoring
+plan.</li>
+</ul>
+<p><strong>Checked off when:</strong> every integration and
+configuration area has named owners, passed end-to-end and failure
+tests, approvals from the right authorities, and a trained operational
+owner.</p>
+<h2 id="the-problem">The problem</h2>
+<p>Cedar Point Internal Medicine goes live in five weeks. The vendor's
+interface lead reports that "all integrations are green." Every test
+message to the lab, the clearinghouse, and the pharmacy network returned
+"accepted."</p>
+<p>You look closer. In the lab test, two results for a synthetic patient
+filed to a different patient with the same name. One payer has approved
+claims but not electronic payment details. Dr. Okafor, a physician who
+treats chronic pain, has no credential yet to send controlled-substance
+prescriptions electronically. Nobody at the clinic has been named to
+watch the unmatched-results queue.</p>
+<p>Each connection works. The work behind it does not.</p>
+<p><em>Before you read on: If every test message returned "accepted,"
+what could still be wrong? Who must finish the steps that let Dr. Okafor
+send controlled-substance prescriptions electronically?</em></p>

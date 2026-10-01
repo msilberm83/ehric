@@ -1,0 +1,226 @@
+<h1>Module 5, Lesson 2: Prepare the training environment</h1>
+<h2 id="prepare-the-training-environment">Prepare the training
+environment</h2>
+<p>If you train on an unknown or unfinished build, the competence
+records prove nothing. Users may also confuse training data with real
+patients.</p>
+<p>An <strong>environment</strong> is one copy of the system with its
+own data and settings. <strong>Production</strong> is the live copy that
+holds real patient records. A <strong>release ID</strong> is the label
+that names the exact version of the build. <strong>Technical
+acceptance</strong> means the builder's planned checks passed for that
+release.</p>
+<p>Use a stable, approved environment that matches the build you teach.
+Label it clearly so users know whether they are in training, testing, or
+production.</p>
+<p>Before each session, confirm:</p>
+<ul>
+<li>the environment and release ID are recorded;</li>
+<li>builder checks and technical-acceptance criteria passed;</li>
+<li>user roles and logins work;</li>
+<li>integrations, or simulations of them, are available;</li>
+<li>sample records are <strong>synthetic</strong> (made up) or properly
+protected;</li>
+<li>devices and meeting technology work;</li>
+<li>the instructor can reset the scenario;</li>
+<li>known defects and approved workarounds are written down;</li>
+<li>job aids match the current workflow.</li>
+</ul>
+<p>Early demonstrations can happen before this check if you label them
+as demonstrations. Do not collect formal competence evidence against an
+unfinished or unidentified build.</p>
+<p>Do not train on live patient records for convenience. Do not put real
+passwords on a shared slide or worksheet. If the client authorizes a
+production demonstration, show the least information needed and follow
+its privacy and security rules.</p>
+<blockquote>
+<p><strong>Rule:</strong> Collect competence evidence only in an
+identified, technically accepted release.</p>
+</blockquote>
+<p><strong>Example A.</strong> The referral build finished last night
+and has no release ID. You run a labeled demonstration and hold the
+competence checks. <strong>Example B.</strong> The scheduling release is
+recorded and accepted. You run the class and record competence. The
+difference is whether the release is identified and accepted.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What does a release ID tell you?</li>
+<li>Why is competence evidence from an unidentified build weak?</li>
+<li>The class starts in an hour, and technical acceptance has not run.
+What would you do?</li>
+</ol>
+<h2 id="time-final-training-close-to-go-live">Time final training close
+to go-live</h2>
+<p>People forget software steps they do not use. Staff trained weeks
+before go-live may also learn screens that later change after QC, data
+conversion, or interface work. Their competence records then describe a
+build that no longer exists.</p>
+<h3 id="two-kinds-of-sessions">Two kinds of sessions</h3>
+<p>This course teaches training (Modules 5 and 6) before quality control
+(Module 7), data conversion (Module 8), and integrations (Module 9).
+That order is on purpose: training sessions reveal design problems. On a
+real project, keep two kinds of sessions apart.</p>
+<ul>
+<li><strong>Workflow validation sessions</strong> happen early. Key
+users and super users try the approved workflow in the build. Their goal
+is to find design problems, not to prove end-user competence.</li>
+<li><strong>Final end-user training</strong> happens close to go-live.
+It uses the tested release that will go live. This is where you collect
+competence evidence for go-live.</li>
+</ul>
+<h3 id="schedule-final-training-from-the-go-live-date">Schedule final
+training from the go-live date</h3>
+<p>Schedule final end-user training as close to go-live as the calendar
+allows. For providers, that is usually the last 2–4 weeks. Plan backward
+from the go-live date:</p>
+<ol type="1">
+<li>The release that will go live passes QC and is accepted.</li>
+<li>Super users train and pass their competence checks.</li>
+<li>End users train, by role, on that release.</li>
+<li>Anyone trained on an earlier release gets a refresher for each
+changed workflow.</li>
+<li>Go-live.</li>
+</ol>
+<p>Keep a short list of workflows that changed between releases. Refresh
+only the roles each change affects, and recheck those scenarios. The
+clinic agrees to the calendar. You recommend the timing and explain the
+risk. Before go-live, the readiness work in Module 11 checks that each
+user's training is current.</p>
+<blockquote>
+<p><strong>Rule:</strong> Hold final end-user training close to go-live,
+on the tested release that will go live.</p>
+</blockquote>
+<p><strong>Example A.</strong> Cedar Point's providers train three weeks
+before go-live, on the accepted go-live release. Their competence
+records name that release. <strong>Example B.</strong> Another clinic
+trained its schedulers nine weeks out. A later release changed the
+reschedule screen. You hold a 30-minute refresher for schedulers only
+and recheck the reschedule scenario.</p>
+<p>In both cases, competence must match the release that goes live.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What is the difference between a workflow validation session and
+final end-user training?</li>
+<li>Why should each competence record name the release?</li>
+<li>The practice manager wants all training finished eight weeks before
+go-live. What would you do?</li>
+</ol>
+<h2
+id="compensate-when-there-is-no-separate-training-environment">Compensate
+when there is no separate training environment</h2>
+<p>Without a separate training copy, learners may practice where real
+patients live. A mistake can then send a real reminder, prescription, or
+claim.</p>
+<p>Many large electronic health record (EHR) products give each client
+separate build, test, training, and production environments. Some
+smaller vendors give a clinic only one production copy. Others add a
+shared demonstration site.</p>
+<p>The 2025 SAFER Guide on System Management recommends a separate
+training environment that looks different on screen.
+<strong>SAFER</strong> stands for Safety Assurance Factors for EHR
+Resilience. These guides are national safety checklists for EHR use. The
+guide accepts that some work happens in production with test patients,
+under tight controls. You cannot create the missing environment, but you
+can make up for it. Module 4 covers the discovery questions. This
+section covers training.</p>
+<h3 id="know-the-options">Know the options</h3>
+<p>Ask the vendor which of these it supports. Then lay them out for the
+client:</p>
+<ul>
+<li><strong>Shared vendor demonstration site.</strong> Useful for early
+orientation. It rarely matches the client's approved build, so it is
+weak evidence of competence.</li>
+<li><strong>Pre-live production.</strong> Before real patient data is
+loaded, the client's own production copy can serve for training. It
+needs a cleanup plan before conversion. Check the timing: final training
+often falls after conversion has loaded real data.</li>
+<li><strong>The test environment, shared in time.</strong> If a test
+copy exists, schedule training when no test cycle is running. Freeze the
+build during each block and record the release ID.</li>
+<li><strong>Production with test patients after go-live.</strong> For
+late hires and refreshers, use named test patients in the live system.
+This carries the most risk and needs the most controls.</li>
+</ul>
+<h3 id="add-compensating-controls">Add compensating controls</h3>
+<p>A <strong>compensating control</strong> is a safeguard that reduces a
+risk you cannot remove. For any option that touches production, confirm
+these controls in writing:</p>
+<ul>
+<li>test patients have names no one could mistake for a real person,
+such as "ZZTEST, Scheduling One";</li>
+<li>only named staff with special permission can create test
+patients;</li>
+<li>outbound messages are off for test patients: reminders,
+e-prescriptions, lab orders, referrals, claims, and portal
+invitations;</li>
+<li>reports and quality measures leave out test patients;</li>
+<li>the screen shows which environment and patient type the learner is
+in;</li>
+<li>a cleanup check runs before real data loads and after each
+session;</li>
+<li>the environment record lists every way the training setup differs
+from the build you teach.</li>
+</ul>
+<figure style="margin:16px 0"><img src="../../img/M05-03.png" alt="Figure 5.3. Notice that every option short of a separate training environment needs compensating controls." style="width:100%;max-width:1000px"><figcaption><b>Figure 5.3.</b> Notice that every option short of a separate training environment needs compensating controls.</figcaption></figure>
+### Who decides
+
+<p>You own the analysis. You list the options, risks, and controls, and
+you record the release and environment each session uses. The vendor
+confirms what is technically possible. The client's accountable
+authority chooses the option, after hearing from the privacy and
+security leads. Record that decision before formal training starts. If
+no option can support competence evidence, say so in writing. Then plan
+a supervised recheck after go-live.</p>
+<blockquote>
+<p><strong>Rule:</strong> When training must touch production, the
+client decides in writing, and the controls are confirmed before the
+first session.</p>
+</blockquote>
+<p><strong>Example A.</strong> Cedar Point has one production copy with
+no patient data yet. The practice manager approves pre-live production
+with test-patient names and outbound messages off. <strong>Example
+B.</strong> A clinic that is already live needs to train a new hire. Its
+practice manager approves test patients in production with a cleanup
+check after each session. Different options, same rule: the client
+decides, and the controls come first.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four compensating controls for training in production.</li>
+<li>Why might pre-live production stop being an option for final
+training?</li>
+<li>You drafted strong controls, and the vendor says they work. What is
+still missing before training starts?</li>
+</ol>
+<h2 id="write-observable-learning-objectives">Write observable learning
+objectives</h2>
+<p>You cannot check "understands scheduling." If you cannot see the
+skill, you cannot record competence.</p>
+<p>An <strong>observable objective</strong> states what the learner will
+do in a practice scenario. Examples:</p>
+<ul>
+<li>create, reschedule, and cancel an appointment using the approved
+reason, location, and reminder workflow;</li>
+<li>complete an intake review, find missing information, and route the
+record to the correct queue;</li>
+<li>send a form for signature and resolve a rejected or expired
+request;</li>
+<li>recognize an interface or access failure and use the written
+escalation path.</li>
+</ul>
+<p>Each objective should produce visible evidence in a practice
+scenario.</p>
+<blockquote>
+<p><strong>Rule:</strong> Write what the learner will do, so you can
+watch it happen.</p>
+</blockquote>
+<p><strong>Example A.</strong> "Know the check-in screen" becomes "Check
+in a returning patient and update a changed address." <strong>Example
+B.</strong> "Understand forms" becomes "Send the intake packet for
+signature and resend an expired request." Each rewrite names an action
+you can watch.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Rewrite "understand cancellations" as an observable objective.</li>
+<li>Why does an observable objective make competence easier to
+record?</li>
+</ol>

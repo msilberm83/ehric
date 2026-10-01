@@ -1,0 +1,242 @@
+[
+{
+"stem": "| Readiness item (family medicine clinic, kickoff in 3 days) | Status |\n|---|---|\n| Controlling order and scope summary | Confirmed by sales and your manager |\n| Client project owner | Named: operations manager |\n| Roadmap and next steps | Draft v0.4, agreed internally |\n| Signature-pad compatibility | Unknown; device team will answer by November 6 |\n\nYour internal readiness review ends with the results shown. What should you do?",
+"options": {
+"A": "Reschedule the kickoff until the device team confirms the signature pads",
+"B": "Hold the kickoff and track the device question internally with the device team",
+"C": "Ask the device team to answer before the kickoff so the item can be closed",
+"D": "Hold the kickoff and name the device question as open with its November 6 date"
+},
+"key": "D",
+"feedback": {
+"A": "Not best. Tempting because an open device question feels risky (too strong), but rescheduling is for an unclear purchase, owner, or next step, and those are confirmed (\"Is your own team ready before the client joins?\").",
+"B": "Not best. Tempting because the device team owns the answer (too weak), but going ahead honestly means naming the open item to the client with its date (\"Is your own team ready before the client joins?\").",
+"C": "Not best. Tempting because a closed item is cleaner (right action, wrong time), but the device team has already set November 6; a minor gap can stay open if it is named and dated (\"Is your own team ready before the client joins?\").",
+"D": "Correct: with a minor gap, go ahead and name the open item with its decision date (\"Is your own team ready before the client joins?\")."
+}
+},
+{
+"stem": "In your readiness review, the vendor security lead says he plans to walk through the clinic's firewall settings and admin account names at the kickoff. About twenty client staff will attend. What should you do?",
+"options": {
+"A": "Keep it on the agenda, since the clinic's IT lead will want the detail early",
+"B": "Move the detail to a restricted session and note the topic at the kickoff",
+"C": "Ask the clinic sponsor whether the security detail may be shown at kickoff",
+"D": "Let him present it, since every attendee works for the clinic or the vendor"
+},
+"key": "B",
+"feedback": {
+"A": "Not best. Tempting because the IT lead does need it (true but doesn't answer the question), but that need does not make security detail suitable for a general meeting (\"Is your own team ready before the client joins?\").",
+"B": "Correct: the readiness review confirms what should not come up in a general meeting, and you can plan a restricted session yourself (\"Is your own team ready before the client joins?\").",
+"C": "Not best. Tempting because it defers to the client (too far), but deciding what stays out of a general meeting is part of your team's readiness review (\"Is your own team ready before the client joins?\").",
+"D": "Not best. Tempting because everyone is on the project (right rule, wrong facts), but a project role does not mean every attendee needs firewall and admin detail (\"Is your own team ready before the client joins?\")."
+}
+},
+{
+"stem": "At kickoff, a clinic must decide whether project documents may be kept on the client's file-sharing site or in the vendor's tool. Some documents will hold restricted information. The draft invite list has the sponsor, project owner, and workstream leads. Who else should you invite?",
+"options": {
+"A": "The client's privacy or security representative, whose authority covers it",
+"B": "The vendor's records manager, since the vendor tool will hold most documents",
+"C": "The client's IT help desk lead, since the file-sharing site is supported there",
+"D": "Nobody else, since the sponsor can approve storage choices for the client"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: invite privacy or security staff when a kickoff decision needs their authority; the decision decides the invitation (\"Who should be in the room?\").",
+"B": "Not best. Tempting because the vendor tool is involved (half right: wrong side), but the vendor does not hold the client's authority over where restricted information may live (\"Who should be in the room?\").",
+"C": "Not best. Tempting because IT supports the site (confused look-alike: supporting a tool vs. approving storage), but supporting a tool is not approving where restricted information may be kept (\"Who should be in the room?\").",
+"D": "Not best. Tempting because a small room is the goal (right rule, wrong facts), but the sponsor owns business priorities; restricted storage needs the privacy or security authority (\"Who should be in the room?\")."
+}
+},
+{
+"stem": "During the kickoff scope review, the clinic sponsor says she understood the purchase covered a second location. The signed order lists one location. Sales says the second site was never quoted. What should you do?",
+"options": {
+"A": "Send it to the change process as a new request, and continue the agenda",
+"B": "Add the second location as to be confirmed, with the sponsor as its owner",
+"C": "Log it as a misunderstanding of the sale for commercial resolution",
+"D": "Read the signed order line by line with the sponsor to settle it in the room"
+},
+"key": "C",
+"feedback": {
+"A": "Not best. Tempting because the site is not in the order (confused look-alike: new request vs. misunderstanding), but the sponsor believes it was bought, which makes it a misunderstanding of the sale (\"Confirm the outcome, the scope, and the reason for change\").",
+"B": "Not best. Tempting because to be confirmed fits open items (half right: wrong owner), but the sponsor cannot settle a commercial question; the sales or contracts owner does (\"Confirm the outcome, the scope, and the reason for change\").",
+"C": "Correct: a misunderstanding of the sale goes to the commercial owner, while a new request goes to the change process (\"Confirm the outcome, the scope, and the reason for change\").",
+"D": "Not best. Tempting because the order controls (the habit answer: settle it now), but the kickoff does not read the order line by line or restart the sales process (\"Confirm the outcome, the scope, and the reason for change\")."
+}
+},
+{
+"stem": "At kickoff, a clinic's operations director asks to review each of the 38 order lines before the team discusses anything else. The initial scope summary is on the screen. What should you do?",
+"options": {
+"A": "Ask her to correct the scope summary, and log any line questions as open items",
+"B": "Walk through the 38 lines as asked, since the order controls what was purchased",
+"C": "Ask the sales representative to take the 38 lines over from you at the kickoff",
+"D": "Move the line review to the end of the kickoff, after the roadmap and dates"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: the kickoff confirms the team's working understanding by asking the client to correct the summary, not by reading the order line by line (\"Confirm the outcome, the scope, and the reason for change\").",
+"B": "Not best. Tempting because the order does control (right rule, wrong facts), but reading it line by line restarts the sales process instead of confirming working scope (\"Confirm the outcome, the scope, and the reason for change\").",
+"C": "Not best. Tempting because sales knows the order (half right), but a line review led by sales still restarts the sales process inside the kickoff (\"Confirm the outcome, the scope, and the reason for change\").",
+"D": "Not best. Tempting because it protects the agenda (right action, wrong time), but dates discussed before scope is confirmed rest on a guess (\"Confirm the outcome, the scope, and the reason for change\")."
+}
+},
+{
+"stem": "| Draft working rule |\n|---|\n| 1. The client project owner coordinates client actions. |\n| 2. The implementation specialist coordinates the implementation plan. |\n| 3. Project decisions and concerns come through the project owner first. |\n\nYou drafted these rules for a clinic's kickoff. What should you change before the meeting?",
+"options": {
+"A": "Add that the sponsor approves each decision so authority stays at the top",
+"B": "Change rule 3 so decisions and concerns come through you as the implementer",
+"C": "Ask the sponsor to rewrite rule 3 before the kickoff, since it covers the client",
+"D": "Add a bypass so urgent safety, privacy, or security concerns go directly"
+},
+"key": "D",
+"feedback": {
+"A": "Not best. Tempting because it sounds like strong governance (too far), but accountable client leaders approve decisions in their own areas, not the sponsor for every decision (\"Name the team and the escalation bypass\").",
+"B": "Not best. Tempting because you coordinate the plan (half right), but it keeps a single route and still blocks direct access to safety, privacy, and security authorities (\"Name the team and the escalation bypass\").",
+"C": "Not best. Tempting because the rule affects the client (too far), but you drafted the rules and can fix them yourself before the meeting (\"Name the team and the escalation bypass\").",
+"D": "Correct: coordination needs a clear center, and escalation needs a clear bypass to safety, privacy, and security authorities (\"Name the team and the escalation bypass\")."
+}
+},
+{
+"stem": "The clinic cannot log in to the vendor's internal project management system. The vendor team will keep tasks and decisions there. The client wants its own shared tracker. What should you settle at kickoff?",
+"options": {
+"A": "That the client tracker is unofficial, so vendor records decide disputes",
+"B": "Which record is official and who keeps the other one matching it",
+"C": "That the client gets guest access to the vendor system before the next meeting",
+"D": "That both trackers are official, each one kept current by its own team"
+},
+"key": "B",
+"feedback": {
+"A": "Not best. Tempting because one record must be official (half right), but nobody is named to keep the trackers matching, so they drift and disputes follow (\"Agree the working rules\").",
+"B": "Correct: when separate internal and client tools are needed, decide which record is official and name who keeps the two in line (\"Agree the working rules\").",
+"C": "Not best. Tempting because one shared system is simpler (the habit answer), but you should not assume the client can use the vendor's internal system (\"Agree the working rules\").",
+"D": "Not best. Tempting because each team owns its own tool (half right), but two official records means no single version of the truth (\"Agree the working rules\")."
+}
+},
+{
+"stem": "| Training subject | Roles invited |\n|---|---|\n| Scheduling | Front desk, schedulers |\n| Clinical documentation | Physicians, nurses, medical assistants |\n| Charge entry and claim review | Physicians |\n\nYou are reviewing a clinic's recurring training calendar from kickoff. Billing staff enter and review charges today. What should you change?",
+"options": {
+"A": "Add a recorded charge-entry session that billing staff may watch if they wish",
+"B": "Ask the billing manager to train her staff separately after the go-live date",
+"C": "Add billing staff to the charge-entry subject in the recurring training rhythm",
+"D": "Keep the calendar, since physicians can pass charge entry on to billing staff"
+},
+"key": "C",
+"feedback": {
+"A": "Not best. Tempting because recordings are allowed where policy permits (right rule, wrong facts), but an optional recording does not give a required role reliable attendance (\"Set installation and training dates\").",
+"B": "Not best. Tempting because the billing manager knows her staff (right action, wrong time), but training after go-live leaves a required role untrained on the first day (\"Set installation and training dates\").",
+"C": "Correct: the schedule confirms which roles attend each subject, and the rhythm must cover every required role (\"Set installation and training dates\").",
+"D": "Not best. Tempting because it saves training time (the habit answer), but the people who do the work need the training themselves (\"Set installation and training dates\")."
+}
+},
+{
+"stem": "| Date | Clinic calendar |\n|---|---|\n| November 14 | Flu vaccine clinic, every staff member on site, extended hours |\n| November 28\u201330 | Month-end billing close |\n| December 5 | No events |\n\nAt kickoff you proposed November 14 for the environment install, which needs the clinic's IT contact on site for four hours. The project owner shares this calendar. What should you do?",
+"options": {
+"A": "Keep November 14, since the IT contact is not part of the vaccine clinic",
+"B": "Ask the sponsor to choose an install date after reviewing the clinic events",
+"C": "Book November 29, since the billing close does not involve the IT contact",
+"D": "Move the install to December 5, after confirming the IT contact can attend"
+},
+"key": "D",
+"feedback": {
+"A": "Not best. Tempting because the install needs only IT (right rule, wrong facts), but the vaccine clinic involves every staff member, so the date is a blackout period (\"Set installation and training dates\").",
+"B": "Not best. Tempting because the client owns its calendar (too far), but setting the install date around the clinic's blackout periods is your scheduling work (\"Set installation and training dates\").",
+"C": "Not best. Tempting because billing close seems unrelated to IT (half right), but month-end close is still a blackout period, and you have not confirmed the IT contact is free (\"Set installation and training dates\").",
+"D": "Correct: confirm blackout periods and the responsible contact, then book a date outside them (\"Set installation and training dates\")."
+}
+},
+{
+"stem": "The kickoff is scheduled to end in five minutes. The clinic has not named a data owner for conversion, and the test export request depends on that person. What should you do?",
+"options": {
+"A": "Settle who the data owner is before closing, even if the meeting runs over",
+"B": "End on time, and list the data owner as an open question in the read-back",
+"C": "End on time, and email the sponsor tonight asking her to name the data owner",
+"D": "Name yourself as interim data owner so the export request can go out today"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: end on time if you can, but do not leave a key ownership question open just to protect the calendar (\"Close, record, and issue the kickoff record\").",
+"B": "Not best. Tempting because open questions are read back (right rule, wrong facts), but this ownership gap blocks the export, and the people who can close it are in the room (\"Close, record, and issue the kickoff record\").",
+"C": "Not best. Tempting because the sponsor can name the owner (right action, wrong time), but the decision-makers are present now, and an email delays a blocking question (\"Close, record, and issue the kickoff record\").",
+"D": "Not best. Tempting because it keeps the export moving (the habit answer: fill the gap yourself), but the data owner is a client role the implementer cannot hold (\"Name the team and the escalation bypass\")."
+}
+},
+{
+"stem": "Your kickoff with a clinic ended Thursday afternoon. Your manager suggests holding the decision and action record until Wednesday so the vendor team can polish it. When should the record go out?",
+"options": {
+"A": "Wednesday, after the vendor team has finished its internal review of the text",
+"B": "Next week, once the client project owner has edited the draft for accuracy",
+"C": "By Friday, with the dates placed on the shared calendar at the same time",
+"D": "At the next status meeting, where the client team can review it in the room"
+},
+"key": "C",
+"feedback": {
+"A": "Not best. Tempting because a polished record looks better (the habit answer), but polishing does not justify missing the one-business-day limit (\"Close, record, and issue the kickoff record\").",
+"B": "Not best. Tempting because accuracy matters (half right), but the read-back at the meeting was the client's accuracy check, and the record goes out within one business day (\"Close, record, and issue the kickoff record\").",
+"C": "Correct: issue the decision and action record within one business day and place the dates on the shared calendar (\"Close, record, and issue the kickoff record\").",
+"D": "Not best. Tempting because review together sounds thorough (right action, wrong time), but waiting lets memories drift and leaves the team without its actions and dates (\"Close, record, and issue the kickoff record\")."
+}
+},
+{
+"stem": "At kickoff, two front-desk leads disagree on whether the intake form should ask for a preferred pharmacy. The operations manager, who owns the intake workflow, is present and has the current form data. What should you do?",
+"options": {
+"A": "Assign the question for analysis and set a decision date for next week",
+"B": "Restate the options and effects, and ask the operations manager to decide now",
+"C": "Record both views and ask the sponsor to decide at the next status meeting",
+"D": "Send the question to the medical director, since pharmacy data is clinical"
+},
+"key": "B",
+"feedback": {
+"A": "Not best. Tempting because assigning analysis is one of the six steps (right rule, wrong facts), but it is for when authority or evidence is missing, and both are present (\"Handle disagreement without hiding it\").",
+"B": "Correct: decide now when the right people and evidence are present, after restating the point and recording the options and effects (\"Handle disagreement without hiding it\").",
+"C": "Not best. Tempting because it records both sides (half right), but it sends the decision to the wrong person and delays a decision the owner can make now (\"Handle disagreement without hiding it\").",
+"D": "Not best. Tempting because pharmacy choice touches care (confused look-alike: clinical data vs. intake workflow), but the intake workflow belongs to the operations manager, who is present (\"Handle disagreement without hiding it\")."
+}
+},
+{
+"stem": "What should you state in the opening of a kickoff meeting?",
+"options": {
+"A": "The roadmap and go-live date, so the client sees the path before the scope",
+"B": "The purpose, the planned length, and the decisions the meeting will reach",
+"C": "The full resource map, with each future contributor introduced by name",
+"D": "Each attendee's role on the project and what each person will own"
+},
+"key": "B",
+"feedback": {
+"A": "Not best. Tempting because dates matter most to clients (right action, wrong time), but the roadmap comes after scope and team in the fixed order (\"Run the meeting in a fixed order\").",
+"B": "Correct: the opening states the purpose, the planned length, and the decisions the meeting must reach (\"Open and state the purpose\").",
+"C": "Not best. Tempting because people like introductions (the habit answer), but the full resource list goes in the project materials, not into the meeting (\"Who should be in the room?\").",
+"D": "Not best. Tempting because roles must be confirmed (right action, wrong time), but that is the team-and-authority section, which comes after scope (\"Run the meeting in a fixed order\")."
+}
+},
+{
+"stem": "| # | Log item |\n|---|---|\n| 1 | Vendor internal: build lead swaps two configuration tasks in sprint order |\n| 2 | Vendor internal: QC tool license renewal is due next month |\n| 3 | Vendor internal: template naming convention not yet agreed |\n| 4 | Client must sign payer enrollment forms by November 20 or claim testing moves |\n\nYou are choosing which log items to review at a clinic's kickoff. Which item belongs on the agenda?",
+"options": {
+"A": "Item 1, because the sprint order changes the build plan the client will see",
+"B": "Item 2, because a lapsed QC license could delay testing later in the project",
+"C": "Item 3, because template names will appear in the screens the client uses",
+"D": "Item 4, because it needs client action by a date to protect claim testing"
+},
+"key": "D",
+"feedback": {
+"A": "Not best. Tempting because the client sees the roadmap (true but doesn't answer the question), but internal task order needs no client awareness, action, or authority (\"State risks so someone can act\").",
+"B": "Not best. Tempting because it could affect testing (right rule, wrong facts), but the vendor manages its own licenses; the client has nothing to do (\"State risks so someone can act\").",
+"C": "Not best. Tempting because users will see the names (half right), but an internal naming convention is not a client decision (\"State risks so someone can act\").",
+"D": "Correct: the kickoff reviews items that need the client's awareness, action, or authority, and this one needs a client signature by a date (\"State risks so someone can act\")."
+}
+},
+{
+"stem": "The sales representative asks for 30 minutes of a clinic's 90-minute kickoff to demonstrate new portal features. The agenda is already full. What should you do?",
+"options": {
+"A": "Keep the kickoff agenda, and offer a separate session for the demonstration",
+"B": "Add the demonstration, since it helps the client staff see the system's value",
+"C": "Shorten the working rules section to make room for the portal demonstration",
+"D": "Ask the sponsor whether she would prefer the demonstration or the working rules"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: a kickoff is not a product demonstration, so you protect its purpose by moving the demo to another session (\"Is your own team ready before the client joins?\").",
+"B": "Not best. Tempting because staff buy-in matters (true but doesn't answer the question), but the kickoff exists to set shared facts, authority, decisions, and dates (\"Is your own team ready before the client joins?\").",
+"C": "Not best. Tempting because it keeps the meeting length (half right), but working rules are a required section and should not give way to a demonstration (\"Agree the working rules\").",
+"D": "Not best. Tempting because it defers to the client (too far), but running the kickoff agenda is your job, and a required section is not a trade the sponsor needs to make (\"Is your own team ready before the client joins?\")."
+}
+}
+]

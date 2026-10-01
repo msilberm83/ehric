@@ -1,0 +1,242 @@
+[
+{
+"stem": "Cedar Point's 06:30 pre-start check confirmed the go-live decision. At 06:55 the practice administrator, the authorized decision-maker, told the implementer by phone to activate. The system went live at 07:00. At 09:00 the implementer sees that the activation entry in the issue record is blank. The implementer runs the record. What should the implementer do?",
+"options": {
+"A": "Ask the practice administrator for a signed memo approving go-live before the activation entry is filled in.",
+"B": "Record that the administrator authorized activation by phone at 06:55, with go-live at 07:00.",
+"C": "Leave the entry blank, since the go/no-go record already shows the decision approved at last week's meeting.",
+"D": "Ask the vendor's go-live leader to fill in the entry, since the vendor's team switched the system on at 07:00."
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because a signature feels like stronger evidence (too far), but \"Confirm the decision still holds before activation\" asks you to record the time and the person who authorized activation, not to collect a new approval after the fact.",
+"B": "Correct: the chapter says to record the time and the person who authorizes activation, and the implementer runs that record.",
+"C": "Tempting because the go/no-go decision is on file (confused look-alike: go/no-go approval versus activation authorization), but they are separate facts, and the chapter asks for the activation to be recorded.",
+"D": "Tempting because the vendor team did the switch (half right: right entry, wrong source), but switching the system on is not authorizing it; the record names who authorized activation."
+}
+},
+{
+"stem": "Which item belongs on the final pre-start check before activation?",
+"options": {
+"A": "The cutover rehearsal record showing the steps fit the approved window",
+"B": "The baseline values captured for each agreed quality measure",
+"C": "The agenda and measures for the first-week follow-up review",
+"D": "The current list of accepted limitations and the controls for each"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because rehearsal timing feeds the go-live decision (right action, wrong time), but it is go/no-go evidence from Module 11, not an item on the final pre-start check.",
+"B": "Tempting because baselines must exist before go-live (right action, wrong time), but they are captured during readiness, not confirmed at the moment of activation.",
+"C": "Tempting because follow-up is planned in advance (right action, wrong time), but the first-week review belongs to \"Follow up on a schedule,\" after go-live.",
+"D": "Correct: \"Confirm the decision still holds before activation\" lists the current accepted limitations and controls as part of the final pre-start check."
+}
+},
+{
+"stem": "| Field | Entry |\n|---|---|\n| Issue ID and time | IS-08, 08:20 |\n| Reporter | Front desk, Lakeshore |\n| Description | \"Card scan won't attach for [patient full name], [date of birth], [Social Security number], [insurance member ID]\" |\n\nThe implementer runs Cedar Point's central issue record, which many go-live staff and vendor analysts can read. This entry was just added. What should the implementer do?",
+"options": {
+"A": "Edit the entry to keep only the details needed to work it, such as chart number, and remove the rest.",
+"B": "Lock the entry so only the command lead can read it, and keep the details for the vendor's analysis.",
+"C": "Leave the entry as it is, since everyone with access to the issue record is part of the go-live team.",
+"D": "Move the issue to a private chat with the reporter, so the patient details stay out of the shared record."
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Open one command function and one issue record\" asks for a description and evidence without restricted information that is not needed, and the implementer maintains the record.",
+"B": "Tempting because it limits who can see the details (half right), but the unneeded identifiers stay in the record, and the rest of the command team loses sight of the issue.",
+"C": "Tempting because every reader is on the team (the habit answer), but the chapter limits the record to what is needed to work the issue.",
+"D": "Tempting because it protects the patient's details (right goal, wrong channel), but the chapter says chat does not replace the issue record."
+}
+},
+{
+"stem": "| ID | Report | Reach |\n|---|---|---|\n| IS-14 | Check-in screen slow, about 20 seconds per patient | Both locations, all front-desk staff |\n| IS-15 | Allergy list from one patient showing on another patient's chart | One chart reported so far |\n| IS-16 | Report header shows the old clinic logo | Billing office |\n\nThree reports arrive within ten minutes on Cedar Point's go-live morning. Using the course's triage order, which should the command team work first, and why?",
+"options": {
+"A": "IS-14, because it affects every front-desk user at both of the clinic's locations",
+"B": "IS-15, because it has the smallest reach and can be contained before the others",
+"C": "IS-15, because wrong allergy data is a safety and data-integrity risk",
+"D": "IS-14, because a slow check-in screen blocks required work for the day"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because reach is a real triage question (right rule, wrong order), but it is the second question in \"Triage each report by impact\"; safety and data-integrity risk comes first.",
+"B": "Tempting because it picks the right report (right result, wrong reason), but triage does not rank by ease of containment; IS-15 comes first because of its safety risk.",
+"C": "Correct: the first triage question is whether there is an immediate safety or data-integrity risk, even when only one report has arrived.",
+"D": "Tempting because blocked work is a triage question (right rule, wrong facts), but slow work is not blocked work, and safety risk outranks it anyway."
+}
+},
+{
+"stem": "On go-live day 2, a Lakeshore medical assistant asks the command team whether medical assistants may now pend refill requests for providers to sign, since the new system allows it. Floor support confirms the system works as built. How should the implementer classify and route this report?",
+"options": {
+"A": "As a defect, logged for the vendor to block medical assistants from pending refill requests.",
+"B": "As a training gap, answered by floor support showing the assistant how to pend a refill.",
+"C": "As a build question, sent to the build team to decide what medical assistants may do with refills.",
+"D": "As a policy question, sent to the clinical lead to decide, with the answer shared with staff."
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the system may allow more than it should (confused look-alike: defect versus policy question), but it works as built, so there is no defect; \"Triage each report by impact\" gives the two different owners.",
+"B": "Tempting because floor support answers most how-to questions (confused look-alike: training gap), but she is asking whether it is allowed, not how to do it.",
+"C": "Tempting because the build team set the permissions (half right: right topic, wrong owner), but the build team does not decide clinical role policy.",
+"D": "Correct: the chapter separates policy questions from defects and training gaps, and a clinical role question belongs to the clinical authority."
+}
+},
+{
+"stem": "On go-live morning, a Cedar Point provider reports that \"the lab order button is missing.\" Floor support finds that she has not opened the new order panel she practiced in training. The build matches the approved design, and no one else has reported it. The implementer leads floor support. What should the implementer do?",
+"options": {
+"A": "Log a defect for the build team to move the order button to the place the provider expected it.",
+"B": "Have floor support show her the order panel, and log it in the record as a support question.",
+"C": "Ask the clinical lead to decide whether to change the order screen before day two.",
+"D": "Raise it at the end-of-day huddle as a possible usability problem for the vendor to investigate."
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because \"missing\" sounds like a build failure (confused look-alike: defect versus unfamiliarity), but one report against a build that matches the approved design is unfamiliarity.",
+"B": "Correct: \"Triage each report by impact\" separates unfamiliarity from defects, and coaching the user while recording the question is floor support's own work.",
+"C": "Tempting because screen design is a clinical decision (too far), but one unfamiliar user does not justify a design change; the chapter looks for a pattern across trained users first.",
+"D": "Tempting because usability does matter (right action, wrong time), but waiting for the huddle leaves the provider stuck, and nothing yet suggests a pattern."
+}
+},
+{
+"stem": "| Emergency change field | Entry |\n|---|---|\n| Issue | Lakeshore lab orders print at the main clinic |\n| Change | Update one routing rule for Lakeshore lab orders |\n| Approver | Blank |\n| Tested before release | In test system, passed |\n| Prior version preserved | No |\n| Users told | Draft message ready |\n\nThe vendor analyst wants to release this change to production now. The implementer manages Cedar Point's go-live change record. What should happen before release?",
+"options": {
+"A": "Name and record the approver, and save the current routing rule so it can be restored if needed.",
+"B": "Release now, since the change was tested and is limited to a single routing rule at one location.",
+"C": "Release now and add the approver and backup to the record later, once the printers work again.",
+"D": "Run a full regression test on all routing rules in test before asking anyone to approve it."
+},
+"key": "A",
+"feedback": {
+"A": "Correct: the emergency change path in \"Control changes made during go-live\" names the approver and keeps the prior version or a fallback before release.",
+"B": "Tempting because the change is small and tested (the habit answer under go-live pressure), but a small change still needs an approver and a fallback.",
+"C": "Tempting because it gets the printers working first (right action, wrong time), but the approver and fallback come before release, not after.",
+"D": "Tempting because regression testing is a real step (too far), but the path asks for a proportionate assessment of downstream effect, not a full regression run before anyone approves."
+}
+},
+{
+"stem": "| Workflow | Expected | Completed | Pending with reason |\n|---|---|---|---|\n| Appointments | 160 scheduled | 152 seen | 8 no-shows recorded |\n| Scanned documents | 75 received | 75 indexed | 0 |\n| Claims | 142 visits checked out | 131 claims created | 6 held for coding review |\n| Downtime visits awaiting entry | 0 | 0 | 0 |\n\nThis is Cedar Point's day-1 reconciliation. Which result needs an issue logged today?",
+"options": {
+"A": "Appointments, because 8 scheduled patients were not seen on go-live day one",
+"B": "Claims, because 6 checked-out visits are held for coding review with no claim yet",
+"C": "Claims, because 5 checked-out visits have no claim and no recorded reason",
+"D": "Downtime entry, since a zero count may mean paper visits were not logged"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because 8 visits are missing (right rule, wrong facts), but all 8 are explained as recorded no-shows, so the row reconciles.",
+"B": "Tempting because it picks the right row (right result, wrong reason), but the 6 held claims have a recorded reason; the gap is the 5 visits nobody can explain.",
+"C": "Correct: 142 minus 131 and 6 leaves 5 visits unexplained, the kind of silent gap \"Reconcile each operating period\" exists to catch.",
+"D": "Tempting because silent failures can hide behind zeros (right rule, wrong facts), but no downtime occurred, so a zero count is expected."
+}
+},
+{
+"stem": "At Cedar Point's day-3 huddle, the team notes that 40 outbound referral messages are stuck in the interface queue. The interface owner expects a fix tomorrow afternoon. The sponsor wants the status to say \"green\" so staff stay confident. The implementer writes the status. What should the status say?",
+"options": {
+"A": "Green, with the referral queue raised with the interface owner privately after the huddle.",
+"B": "The referral backlog, its overnight risk, the owner and fix time, and the next update time.",
+"C": "Green for clinical work, with a technical note on the referral queue sent to IT staff only.",
+"D": "Nothing yet, until the sponsor decides how the referral backlog should be described to staff."
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because the owner is already working it (the habit answer: keep staff calm), but \"Run the end-of-day huddle\" asks the status to show open issues and overnight risk.",
+"B": "Correct: the chapter lists critical and high issues with their controls, decisions needed, next actions, and the next update time in the status.",
+"C": "Tempting because it does report the queue somewhere (half right), but stuck referrals affect patient care, and splitting them into a technical note hides a known risk.",
+"D": "Tempting because the sponsor leads the clinic's message (too far), but the facts are known and the implementer writes the status; holding it delays a daily report."
+}
+},
+{
+"stem": "| Huddle item | Note |\n|---|---|\n| Claim rejections, Lakeshore | 12 today; vendor says \"probably the payer ID table, should be fixed now\" |\n| Fix confirmed? | No test claim sent yet |\n\nThe implementer records decisions at Cedar Point's end-of-day huddle. How should the claim rejection item be recorded?",
+"options": {
+"A": "As resolved, since the vendor named a likely cause and reported making a fix in the afternoon.",
+"B": "As closed for the huddle, with the vendor case number noted so billing can follow up if needed.",
+"C": "As a vendor-owned item, removed from the huddle list until the vendor reports back on its fix.",
+"D": "As open, with the fix marked unconfirmed until an owner tests a claim by a set time."
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the vendor sounds confident (the habit answer: accept the vendor's word), but \"Run the end-of-day huddle\" says to separate facts from guesses, and \"probably fixed\" is a guess until a claim is tested.",
+"B": "Tempting because it keeps a link for follow-up (half right), but closing an untested fix records a guess as a fact.",
+"C": "Tempting because the vendor is doing the work (half right: right worker, wrong record), but removing the item hides overnight risk the huddle must track with an owner and a time.",
+"D": "Correct: the chapter asks you to separate facts from guesses and to record owners and due times."
+}
+},
+{
+"stem": "On go-live day 2, Cedar Point's results interface stops filing results to charts. The approved plan says results move to paper if the interface is down for more than 30 minutes. It has been down for 50 minutes. The practice manager says paper would slow the schedule and asks to keep working while IT investigates. The implementer runs the command function. What should happen?",
+"options": {
+"A": "Invoke the approved procedure through its named authority, tell users, and record paper work.",
+"B": "Keep working in the system while IT investigates, and recheck result filing each half hour.",
+"C": "Ask the vendor how long the fix will take, and move to paper if it will take over 2 hours.",
+"D": "Ask the sponsor to approve a waiver of the 30-minute rule for today, given the full schedule."
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Use downtime or pause when a trigger occurs\" says to invoke the approved procedure when its condition occurs, tell users, and record work done outside the system.",
+"B": "Tempting because IT is already on it (the habit answer: protect the schedule), but the chapter says staying on an unsafe workflow to protect the schedule is not a successful go-live.",
+"C": "Tempting because a short fix might make paper unnecessary (right rule, wrong facts), but the approved trigger has already been met; a vendor estimate does not replace it.",
+"D": "Tempting because the sponsor has authority over the project (too far), but a same-day waiver sets aside the approved procedure the chapter says to follow."
+}
+},
+{
+"stem": "Which of these is a valid exit criterion for stabilization, as the course describes it?",
+"options": {
+"A": "The planned two-week stabilization period has passed on the calendar",
+"B": "Daily support tickets have fallen for five days in a row at each site",
+"C": "Temporary workarounds are removed or formally accepted by an owner",
+"D": "Users have attended refresher training on workflows changed during go-live"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because most plans set an end date (the habit answer), but \"End stabilization on evidence, not the calendar\" says the date alone does not end stabilization.",
+"B": "Tempting because support volume is one listed criterion (half right), but a falling ticket count alone does not prove that an unmonitored process works.",
+"C": "Correct: the chapter lists removing or formally accepting temporary workarounds as an exit criterion.",
+"D": "Tempting because training is on the list (confused look-alike: attendance versus competence), but the criterion is that required users show competence or have a remediation plan."
+}
+},
+{
+"stem": "| Closure item | Status |\n|---|---|\n| Scope delivered, changed, or deferred | Confirmed |\n| Implementation team admin accounts (3) | Still active |\n| Test patient records in production | 4 remain |\n| Client acknowledgement | Requested |\n\nThe implementer is completing Cedar Point's closure record. The project created the accounts and test records listed above. What should the implementer do?",
+"options": {
+"A": "Close the project now and leave the accounts active in case the clinic needs help in the next month.",
+"B": "Remove or transfer the accounts and test records, record the result, and then complete closure.",
+"C": "Ask the clinic's IT lead to decide after closure whether the accounts and test data can stay.",
+"D": "List the accounts and test records as open risks in the closure record and send it for sign-off."
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because it keeps help close at hand (the habit answer), but \"Close the implementation\" requires temporary access to be removed or transferred.",
+"B": "Correct: the chapter confirms that temporary access, data, and accounts are removed or transferred at closure, and these belong to the project.",
+"C": "Tempting because IT owns accounts after transfer (right action, wrong time), but closure itself checks these items, so deciding afterward skips the check.",
+"D": "Tempting because closure does name every open item and its owner (right rule, wrong facts), but that rule is for work the client will own; these are project items the team cleans up."
+}
+},
+{
+"stem": "A Cedar Point implementer named Jamie Rivera has earned the EHRIC. Which line may Jamie use on a professional profile?",
+"options": {
+"A": "Holder of the Electronic Health Record Implementation Certificate",
+"B": "Certified Electronic Health Record Implementation Specialist",
+"C": "Jamie Rivera, EHRIC, Electronic Health Record Implementer",
+"D": "Licensed EHR Implementation Specialist (EHRIC program)"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"The certificate\" gives this wording as the accurate way to describe the credential.",
+"B": "Tempting because \"certified\" is how many credentials are described (confused look-alike: certificate versus certification), but the chapter says holders are not \"certified.\"",
+"C": "Tempting because professionals often list credentials after their names (the habit answer), but the chapter says not to add letters such as \"EHRIC\" after your name.",
+"D": "Tempting because it names the program accurately (half right), but the credential is not a license, and holders must not imply licensure."
+}
+},
+{
+"stem": "A candidate is drafting capstone Artifact C, the go/no-go decision record. The case facts say the restore test was run. They do not say whether anyone accepted the result. What should the candidate write?",
+"options": {
+"A": "Record the restore test as accepted, since a test that was run would normally be reviewed by its owner.",
+"B": "Leave the restore test out of the record, since the case gives too little detail to judge it either way.",
+"C": "Record acceptance of the restore test as open, and name the owner who should make that decision.",
+"D": "Ask the reviewer for the missing fact in a note, and hold the artifact until the reviewer replies."
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because a run test is usually reviewed (the habit answer: fill a gap with what normally happens), but \"The capstone\" rules say not to invent approvals.",
+"B": "Tempting because it avoids guessing (too weak), but the rules ask you to show what is unresolved, with its effect and owner.",
+"C": "Correct: \"The capstone\" says to record anything not stated as approved as open and name who should decide.",
+"D": "Tempting because asking seems careful (too far), but the rules already tell you how to handle a missing approval, so the artifact does not need to wait."
+}
+}
+]

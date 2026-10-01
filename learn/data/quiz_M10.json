@@ -1,0 +1,242 @@
+[
+{
+"stem": "Proposed automation: \"When a refill request arrives for a drug on the approved protocol list, the system sends it to the pharmacy.\"\n\n| Readiness check | Finding |\n|---|---|\n| Trigger reliable | Yes, requests arrive in one queue |\n| Information available | Yes |\n| Current manual step | Nurse checks last lab date before approving |\n| Automation design | Skips the nurse lab check |\n| Stop or bypass | Defined |\n\nYou are completing the readiness check for Cedar Point. What should you record?",
+"options": {
+"A": "Ready, since the trigger, information, and stop method all pass the readiness check",
+"B": "Ready, with the nurse lab check moved to a review of refills after they are sent",
+"C": "Not ready, since the design removes a safety control rather than repetitive work",
+"D": "Not ready until the vendor confirms the protocol list matches the pharmacy's list"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because most rows pass (true but does not answer the question), but passing some checks does not offset a design that removes a control (Section \"Improve the workflow before automating it\").",
+"B": "Tempting because the lab check survives (half right), but a check after the refill is sent comes too late to stop it (Section \"Improve the workflow before automating it\").",
+"C": "Correct: automation should remove useful work, not a control such as the nurse's lab check (Section \"Improve the workflow before automating it\").",
+"D": "Tempting because list matching is a real concern (true but does not answer the question), but the vendor's answer would not restore the removed lab check (Section \"Improve the workflow before automating it\")."
+}
+},
+{
+"stem": "Which of these proposed Cedar Point uses is rules-based automation rather than an AI-enabled feature?",
+"options": {
+"A": "Escalating a task to the nurse lead once it has been open for 48 hours",
+"B": "Routing each scanned fax to a queue based on the category it proposes",
+"C": "Drafting a reply to a patient's portal question about parking hours",
+"D": "Summarizing a new patient's intake answers for the clinician's review"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: overdue-task escalation follows set logic, so the same input always gives the same output (Section \"Separate rules-based automation from AI\").",
+"B": "Tempting because work-queue routing is a rules-based use (confused look-alike), but proposing the category is AI, and the routing depends on it (Section \"Separate rules-based automation from AI\").",
+"C": "Tempting because a parking question is low risk (right result, wrong reason), but risk does not decide the type; drafting text is AI with variable output (Section \"Separate rules-based automation from AI\").",
+"D": "Tempting because a clinician reviews it (half right), but review is a control, not a type; summarizing intake is AI (Section \"Separate rules-based automation from AI\")."
+}
+},
+{
+"stem": "The vendor's admin console for Cedar Point lists nine automation and AI features that are turned on. The vendor says this console list is the use-case inventory. You are responsible for the inventory. What should you do?",
+"options": {
+"A": "Use the console list as the inventory, since it shows each feature that is turned on",
+"B": "Ask the vendor to export the console list with versions, and file it as the inventory",
+"C": "Use the console list for go-live, and add owners and stop methods during stabilization",
+"D": "Build a row for each use with its owner, purpose, data, reviewer, and stop method"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the list is accurate (habit answer), but a setting shows a feature is on, not why, who owns it, or how to stop it (Section \"Build the use-case inventory\").",
+"B": "Tempting because versions are an inventory field (half right), but owners, purpose, reviewers, and stop methods are still missing (Section \"Build the use-case inventory\").",
+"C": "Tempting because it plans to finish the rows (right action, wrong time), but the clinic cannot govern or stop uses at go-live without them (Section \"Build the use-case inventory\").",
+"D": "Correct: each use gets an inventory row covering owner, purpose, data, review point, fallback, and stop method (Section \"Build the use-case inventory\")."
+}
+},
+{
+"stem": "A vendor AI feature suggests procedure codes from the visit note. The coding lead has not been involved. The practice manager asks you to approve it for go-live, saying it is \"just suggestions.\" What should you do?",
+"options": {
+"A": "Approve the feature, since coders can change any suggested code before claims go out",
+"B": "Record it as high impact, and route approval to qualified coding and compliance owners",
+"C": "Approve it for one provider as a trial, and review the coding results after one month",
+"D": "Ask the coding lead to test the suggestions, and approve the feature if they match hers"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because coders can correct codes (habit answer), but output that can enter a billing record needs an accountable owner's decision, not yours (Section \"Run the risk and authority review\").",
+"B": "Correct: coding output can affect billing records, so qualified coding and compliance reviewers approve it (Section \"Billing help\").",
+"C": "Tempting because a small trial limits harm (half right), but a trial is still an approval you do not hold the authority to give (Section \"Run the risk and authority review\").",
+"D": "Tempting because it brings in the coding lead (half right), but you would still be the one approving, and compliance is left out (Section \"Billing help\")."
+}
+},
+{
+"stem": "| Evaluation record, intake classifier | Entry |\n|---|---|\n| Model version at release | 3.2 |\n| Test set | Version 2, 300 synthetic intakes |\n| Thresholds | Set before the final run |\n| Results by category | On file |\n\nThe vendor announces that the classifier will update to version 4.0 on June 1. The Cedar Point monitoring plan includes model change review. What should you do?",
+"options": {
+"A": "Let the update run, since the vendor tested version 4.0 before it announced the change",
+"B": "Ask the AI governance owner to decide whether to accept version 4.0 before any testing",
+"C": "Run test set 2 on version 4.0 in test, and compare it with the recorded results",
+"D": "Rerun test set 2 after the June 1 update, and compare it with the recorded results"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because vendors do test updates (habit answer), but the vendor's testing is not an evaluation of Cedar Point's setup (Section \"Monitor after release\").",
+"B": "Tempting because the owner decides (right owner, wrong time), but the owner needs your comparison before deciding (Section \"Monitor after release\").",
+"C": "Correct: the recorded versions and test set let you compare behavior before the change reaches users (Section \"Keep a traceable record\").",
+"D": "Tempting because it is the right comparison (right action, wrong time), but running it after the update means users meet version 4.0 untested (Section \"Keep a traceable record\")."
+}
+},
+{
+"stem": "Under HTI-1, which vendor-supplied feature is a predictive decision support intervention?",
+"options": {
+"A": "A model that scores each patient's risk of an emergency visit within 90 days",
+"B": "A reminder that a patient with diabetes is due for an annual foot exam",
+"C": "An alert, based on published research, for a known drug-allergy interaction",
+"D": "A score that flags patients who meet published criteria for high fall risk"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: predictive DSIs learn patterns from training data and produce a prediction such as a risk score (Section \"What the rule covers\").",
+"B": "Tempting because it looks ahead to a due date (confused look-alike), but a guideline-based reminder is an evidence-based DSI (Section \"What the rule covers\").",
+"C": "Tempting because alerts feel automated and smart (habit answer), but an alert built on published research is evidence-based (Section \"What the rule covers\").",
+"D": "Tempting because it produces a score (right result, wrong reason), but it follows published criteria rather than learning from training data, so it is evidence-based (Section \"What the rule covers\")."
+}
+},
+{
+"stem": "Cedar Point's clinical lead built a spreadsheet risk score for care-management outreach. She asks whether the HTI-1 source-attribute rules apply to it, as they do to the vendor's certified decision support. What is the correct answer?",
+"options": {
+"A": "Yes, the clinic must publish source attributes for each risk score it uses in care",
+"B": "No, the rule covers developer-supplied DSIs, but the score still goes in the inventory",
+"C": "No, and since the rule does not apply, the score can skip the risk and authority review",
+"D": "Yes, because the clinic uses the score inside workflows that run on a certified EHR"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because disclosure is good practice (right rule, wrong facts), but the source-attribute duty falls on developers of certified health IT, not on the clinic (Section \"What the rule covers\").",
+"B": "Correct: HTI-1 does not cover a tool the clinic builds itself, but every use still belongs in the inventory and review (Section \"What the rule covers\").",
+"C": "Tempting because the first half is right (half right), but the inventory and risk review apply to every automation or AI use (Section \"Build the use-case inventory\").",
+"D": "Tempting because the EHR is certified (right rule, wrong facts), but using a tool alongside it does not bring the tool under the developer's duty (Section \"What the rule covers\")."
+}
+},
+{
+"stem": "An AI feature proposes categories for Cedar Point's incoming nonclinical faxes, such as vendor invoices and marketing. The approved risk review rates it as low-risk office work. The practice manager proposes sampling 10% of outputs weekly, plus review of exceptions. Which statement fits the chapter?",
+"options": {
+"A": "Each output must be reviewed before routing, since AI output can vary for similar faxes",
+"B": "Sampling can start after a month of full review shows staff agree with most outputs",
+"C": "The vendor should set the sample rate, since it knows the model's error rates best",
+"D": "Sampling can fit if the approved risk review supports it and the pattern is reassessed"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because AI output does vary (right rule, wrong facts), but the chapter warns against one review rule for every use; low-risk office suggestions may use sampling (Section \"Separate rules-based automation from AI\").",
+"B": "Tempting because evidence before relaxing review sounds careful (habit answer), but the pattern rests on the approved risk review, which already supports sampling here (Section \"Design human oversight\").",
+"C": "Tempting because the vendor has error data (half right), but the review pattern follows the client's risk review and policy (Section \"Design human oversight\").",
+"D": "Correct: low-risk office suggestions may use sampling or exception review when the approved risk review supports it, and the pattern is reviewed again when things change (Section \"Design human oversight\")."
+}
+},
+{
+"stem": "| Intake summary evaluation | Cases | Unsupported statements | Threshold (set first) |\n|---|---|---|---|\n| English intake forms | 260 | 3 (1.2%) | 2% or less |\n| Spanish intake forms | 40 | 2 (5.0%) | 2% or less |\n| Overall | 300 | 5 (1.7%) | 2% or less |\n\nThe vendor reports that the feature passed on the overall rate. What should the Cedar Point release summary say?",
+"options": {
+"A": "The feature passes, since the overall 1.7% rate is under the threshold set first",
+"B": "It passes for both languages, with Spanish forms added to monitoring after release",
+"C": "Spanish forms fail their threshold, so release for those forms needs a decision",
+"D": "The Spanish sample is small, so that result is set aside and the forms retested"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because the overall threshold was set first (right rule, wrong facts), but an average can hide a failing group, so results are judged by category (Section \"Build a representative evaluation\").",
+"B": "Tempting because monitoring is a real control (right action, wrong time), but monitoring after release does not fix a category that failed before release (Section \"Build a representative evaluation\").",
+"C": "Correct: the Spanish category is above its threshold set in advance, and the summary must show that (Section \"Build a representative evaluation\").",
+"D": "Tempting because small samples are less certain (true but does not answer the question), but setting aside a bad result hides the very group problem the evaluation was built to find (Section \"Build a representative evaluation\")."
+}
+},
+{
+"stem": "| Evaluation record field | Entry |\n|---|---|\n| Feature version | 2.1 |\n| Prompt or instruction version | (blank) |\n| Test-set version | (blank) |\n| Date and environment | May 4, test |\n| Results by category | Attached |\n\nThe release meeting for this Cedar Point AI feature is next week. You keep the evaluation record, and the run details are in your test log. What should you do?",
+"options": {
+"A": "Fill in the prompt and test-set versions from the run log before the release meeting",
+"B": "Send the record to the meeting as it is, since the results by category are attached",
+"C": "Ask the vendor to rerun the full evaluation so that it creates a complete new record",
+"D": "Ask the AI governance owner whether the two missing fields are needed for release"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: prompt and test-set versions are required record fields, and completing the record is your job (Section \"Keep a traceable record\").",
+"B": "Tempting because results by category are the key evidence (half right), but without versions no one can compare behavior later or spot drift (Section \"Keep a traceable record\").",
+"C": "Tempting because a fresh run sounds thorough (too far), but the details already exist in your test log (Section \"Keep a traceable record\").",
+"D": "Tempting because the owner decides on release (right owner, wrong question), but the chapter already lists these fields, so completing them is yours (Section \"Keep a traceable record\")."
+}
+},
+{
+"stem": "| Test case, overdue-task escalation rule | Run? |\n|---|---|\n| Task open past 48 hours escalates once | Yes, passed |\n| Task closed before 48 hours does not escalate | No |\n| Task reassigned, then overdue: one escalation only | No |\n| Escalation service down, then restored: backlog sent | No |\n\nThe vendor says the Cedar Point rule is ready because the main case passed. You are testing it. What should you do?",
+"options": {
+"A": "Record the rule as ready, since the core 48-hour escalation worked in the main case",
+"B": "Record it as ready, and add duplicate and outage checks to the monitoring plan",
+"C": "Ask the nurse lead to decide which of the three open cases are needed for go-live",
+"D": "Run the no-trigger, duplicate, and outage cases before recording the rule as ready"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because a rule is deterministic (right rule, wrong facts), but one passing case does not cover no-trigger, duplicate, or recovery behavior (Section \"Test rules-based automation carefully\").",
+"B": "Tempting because monitoring catches problems (right action, wrong time), but duplicates and outages are tested before release, not found by users (Section \"Test rules-based automation carefully\").",
+"C": "Tempting because the nurse lead owns the work (too far), but these cases are standard tests for every rule, so you run them (Section \"Test rules-based automation carefully\").",
+"D": "Correct: test that the trigger does not fire when conditions are missing, that repeats create no extra work, and that retry and backlog work (Section \"Test rules-based automation carefully\")."
+}
+},
+{
+"stem": "During the ambient documentation pilot, a Cedar Point behavioral health clinician asks to use the tool in psychotherapy sessions. Who decides whether the tool may be used in these visits?",
+"options": {
+"A": "The privacy officer alone, since psychotherapy audio is especially sensitive PHI",
+"B": "The privacy officer and clinical lead, who decide use in sensitive visits",
+"C": "The implementer, since the implementer sets which visit types are turned on",
+"D": "The clinician, since the clinician signs the note and is responsible for it"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because privacy is a central concern (half right), but the clinical lead decides with the privacy officer (Section \"Ambient documentation\").",
+"B": "Correct: for sensitive visits such as psychotherapy, the privacy officer and the clinical lead decide (Section \"Ambient documentation\").",
+"C": "Tempting because you configure visit types (confused look-alike: building a setting vs. deciding it), but that gives you no authority over sensitive-visit use (Section \"Ambient documentation\").",
+"D": "Tempting because the clinician owns the signed note (right rule, wrong facts), but owning the note is not deciding where the tool is allowed (Section \"Ambient documentation\")."
+}
+},
+{
+"stem": "The ambient tool vendor offers a setting that sends billing codes suggested from the draft note straight to Cedar Point's charge queue before the clinician signs. The billing manager likes the idea. No separate approval or validation exists. What should you do?",
+"options": {
+"A": "Turn the setting on, since the billing manager owns the charge workflow it feeds",
+"B": "Turn the setting on, since coders review charges before any claim goes to a payer",
+"C": "Leave it off unless the clinic separately approves and validates that billing use",
+"D": "Turn it on for the pilot providers, and review the charges weekly with billing"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because the billing manager does own the charge queue (half right), but unreviewed drafts may not start billing work without separate approval and testing (Section \"Ambient documentation\").",
+"B": "Tempting because coders are a later check (habit answer), but a later review does not replace approval and testing of unsigned drafts feeding charges (Section \"Ambient documentation\").",
+"C": "Correct: unreviewed draft content does not start billing or other high-impact work unless separately approved and tested (Section \"Ambient documentation\").",
+"D": "Tempting because a limited pilot with review sounds controlled (too weak), but it still lets unsigned drafts feed charges without approval (Section \"Ambient documentation\")."
+}
+},
+{
+"stem": "Cedar Point's sponsor asks you to fill in the clinic's SAFER Organizational Responsibilities self-assessment scores, saying you know the AI work best. You have finished the module's AI work. What should you do?",
+"options": {
+"A": "Complete the crosswalk and give it to the AI governance owner, who uses the guide",
+"B": "Score the self-assessment, since you hold the most current evidence on AI controls",
+"C": "Score the AI items, since the other practices fall outside this module's work",
+"D": "Score the self-assessment with the sponsor present, so a client leader signs each score"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: you hand the completed crosswalk to the AI governance owner and do not score the self-assessment yourself (Section \"Check the plan against the 2025 SAFER Guides\").",
+"B": "Tempting because you do hold the evidence (habit answer), but holding evidence does not make you the owner of the client's self-assessment (Section \"Check the plan against the 2025 SAFER Guides\").",
+"C": "Tempting because it limits you to your own work (half right), but scoring any part is still scoring the client's self-assessment (Section \"Check the plan against the 2025 SAFER Guides\").",
+"D": "Tempting because a client leader signs off (half right), but you would still be doing the scoring, and the governance owner, not the sponsor, decides how to use the guide (Section \"Check the plan against the 2025 SAFER Guides\")."
+}
+},
+{
+"stem": "After review, Cedar Point's AI governance owner decides to wait a year before adopting the ambient scribe, citing limited evidence for small clinics. The vendor's sales representative urges you to change the owner's mind. What should you do?",
+"options": {
+"A": "Ask the sponsor to confirm the decision, since the feature is already in the signed order",
+"B": "Log the decision to wait as a risk, since it delays the efficiency the clinic paid for",
+"C": "Ask the vendor to present new evidence to the owner before the decision is final",
+"D": "Record the decision to wait in the inventory and decision log like any other decision"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the order includes the feature (too far), but waiting is a fair client decision, and an order does not require turning a feature on (Section \"Check the plan against the 2025 SAFER Guides\").",
+"B": "Tempting because delay has a cost (confused look-alike: decision vs. risk), but a recorded owner decision is not a risk to manage (Section \"Check the plan against the 2025 SAFER Guides\").",
+"C": "Tempting because new evidence could matter (right action, wrong owner), but reopening a recorded decision on a vendor's behalf is not your role (Section \"Check the plan against the 2025 SAFER Guides\").",
+"D": "Correct: the SAFER guide says small clinics may choose to wait for better evidence, and you record that decision (Section \"Check the plan against the 2025 SAFER Guides\")."
+}
+}
+]

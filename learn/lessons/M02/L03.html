@@ -1,0 +1,247 @@
+<h1>Module 2, Lesson 3: Set the operating rules before kickoff</h1>
+<h2 id="set-the-operating-rules-before-kickoff">Set the operating rules
+before kickoff</h2>
+<p>If the team agrees how it works only after problems start, each
+problem becomes an argument about process. Write a short operating plan
+before kickoff.</p>
+<p><strong>Communication.</strong> Define the core-team meeting, client
+status meeting, workstream meetings, and reporting frequency. Tie each
+meeting to decisions and work that cannot be handled by email. Include
+<strong>staff change communication</strong>: how clinic staff will hear
+why the clinic is changing and what comes next. A named client leader
+owns it.</p>
+<p><strong>Status.</strong> Use a simple status model with
+definitions:</p>
+<ul>
+<li><strong>Green:</strong> work is on plan, and no unresolved risk
+threatens a milestone.</li>
+<li><strong>Amber:</strong> a risk or issue could affect scope, date,
+safety, cost, or adoption, and it has an active response.</li>
+<li><strong>Red:</strong> a required outcome or milestone cannot be met
+without a decision or change.</li>
+</ul>
+<p>Status should describe the project, not reward hope.</p>
+<p><strong>Escalation.</strong> Define what is escalated, to whom, and
+how fast. Safety, privacy, security, regulatory, financial, scope, and
+critical-path concerns should not wait for the next status meeting.</p>
+<p><strong>Change control.</strong> <strong>Change control</strong> is
+the process for requesting, analyzing, approving, scheduling, and
+communicating changes. Every material change shows its effect on scope,
+time, cost, resources, risk, training, testing, and earlier decisions.
+Work does not enter the build just because someone mentioned it in a
+meeting.</p>
+<figure style="margin:16px 0"><img src="../../img/M02-07.png" alt="Figure 2.7. Notice that a change enters the build only after it is analyzed and approved." style="width:100%;max-width:1000px"><figcaption><b>Figure 2.7.</b> Notice that a change enters the build only after it is analyzed and approved.</figcaption></figure>
+**Record rules.** Define where decisions, status, documents, test evidence, and restricted information belong. Do not use the project board in place of approved storage for protected data.
+
+<blockquote>
+<p><strong>Rule:</strong> No change enters the build until its effects
+are analyzed and the right person approves it.</p>
+</blockquote>
+<p><strong>Example A.</strong> At a status meeting, the sponsor asks to
+add online bill pay to the patient portal. The order does not include
+it. You open a change request and analyze its effects before any build
+work.</p>
+<p><strong>Example B.</strong> The medical director asks to add an
+<strong>artificial intelligence (AI)</strong> tool that drafts replies
+to portal messages. You open a change request. It covers the intended
+use, the patient data the tool would receive, the vendor, privacy and
+security review, clinical approval, testing, training, monitoring, and
+cost. Planning continues on the purchased scope. Module 10 covers how AI
+uses are approved.</p>
+<p>The requests differ, but both go through the same control before
+anything is built.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Define Green, Amber, and Red in one line each.</li>
+<li>Who owns staff change communication, and why not you?</li>
+<li>A request comes up in a meeting and everyone agrees. Why is it still
+not ready to build?</li>
+</ol>
+<h2 id="worked-example-an-unsupported-target-date">Worked example: an
+unsupported target date</h2>
+<p>Cedar Point Internal Medicine wants both locations live in January.
+The sponsor has told staff the date. Three dependencies are open.
+Billing setup is not one item: the clearinghouse account is active, but
+the claim and ERA enrollments with the payers are not signed. The
+signature pads have not been checked. The source vendor has not agreed
+to an export date.</p>
+<ol type="1">
+<li><strong>Agreed the rollout approach.</strong> The implementer asked
+the sponsor whether both locations go live together. <em>Produced:</em>
+a recorded decision, "both locations at once," made by the sponsor.
+<em>Why:</em> the choice sets how training, support, and conversion are
+planned.</li>
+<li><strong>Planned backward from January.</strong> <em>Produced:</em> a
+date check. Correction, training, and testing fit only if the final
+conversion is done by mid-December. <em>Why:</em> this shows what the
+date really requires.</li>
+<li><strong>Split billing into separate dependencies.</strong>
+<em>Produced:</em> roadmap entries for the clearinghouse connection,
+each payer's claim enrollment, and each payer's ERA enrollment. The
+billing manager owns each, with a need date. <em>Why:</em>
+"clearinghouse setup complete" was hiding the payer-side waits.</li>
+<li><strong>Wrote each open dependency in full.</strong>
+<em>Produced:</em> entries for the signature-pad check and the export,
+each with an owner, need date, and effect of delay, and a decision date
+before kickoff. <em>Why:</em> a full entry can be chased and escalated;
+"pending" cannot.</li>
+<li><strong>Found the critical path.</strong> <em>Produced:</em> the
+chain export → test conversion → correction → final conversion → client
+validation, marked as critical. <em>Why:</em> any slip in this chain
+moves go-live, so it gets the closest review.</li>
+<li><strong>Labeled the date.</strong> <em>Produced:</em> January shown
+as a target pending validation, not as a commitment. <em>Why:</em> the
+sponsor told staff a date the plan does not yet support.</li>
+<li><strong>Showed the sponsor the options.</strong> <em>Produced:</em>
+a short decision note: act earlier on the export, add resources, go live
+by phase, reduce scope, or move the date. <em>Why:</em> the sponsor
+decides; the implementer makes the trade-offs visible.</li>
+</ol>
+<p><em>Why do you think the implementer agreed the rollout approach
+before checking the date?</em></p>
+<p><em>Why was January labeled a target, even though the sponsor had
+announced it?</em></p>
+<p><em>Why did the implementer give options to the sponsor instead of
+choosing one?</em></p>
+<h2 id="your-turn-faded-example">Your turn: faded example</h2>
+<p><em>If you have done this task on a real project, try this first,
+then compare with the worked example.</em></p>
+<p>A one-location dermatology clinic wants to go live on March 2. The
+order includes the EHR, a patient portal, a lab results interface, and
+conversion of appointments and patient demographics. Configuration will
+be complete on January 19. Testing, training, readiness review, and
+correction need 7 weeks. The lab has not issued a test account. The
+clinic manager says March 2 "is in the contract." The order calls it a
+"target date."</p>
+<ol type="1">
+<li><strong>Agreed the rollout approach.</strong> Done. One location, so
+the clinic goes live all at once. The sponsor confirmed this.</li>
+<li><strong>Planned backward from March 2.</strong> Done. January 19
+plus 7 weeks is March 9, one week after the target.</li>
+<li><strong>Labeled the date.</strong> Your turn:
+____________________</li>
+<li><strong>Wrote the lab dependency in full.</strong> Your turn:
+____________________</li>
+<li><strong>Named the critical path.</strong> Your turn:
+____________________</li>
+<li><strong>Showed the sponsor the options.</strong> Your turn:
+____________________</li>
+</ol>
+<h2 id="field-assignment">Field assignment</h2>
+<p>Build the preliminary roadmap for the Cedar Point Internal Medicine
+practice case:</p>
+<ol type="1">
+<li>Enter the 13 module phases, grouped into the four stages, each
+ending at its gate.</li>
+<li>Record the rollout approach and who chose it.</li>
+<li>Create the workstreams, deliverables, milestones, and gates.</li>
+<li>Tie each purchased item to roadmap work.</li>
+<li>Add owners, accountable approvers, dependencies, evidence, and
+dates. List the clearinghouse account and each payer enrollment as
+separate dependencies.</li>
+<li>Identify at least one critical-path sequence.</li>
+<li>Label important dates by their basis: contractual, operational,
+external, resource-based, estimated, or target.</li>
+<li>Add the provider champion and super users to the responsibility
+table, marked "to be named by the clinic" where the case does not name
+them.</li>
+<li>Draft the internal handoff for each required resource team, and
+record acknowledgements, declined dates, and escalations.</li>
+<li>Add the communication (including staff change communication),
+status, escalation, record, and change-control rules.</li>
+</ol>
+<p>Where the case does not give a fact, record it as open and name the
+role that would know. Use only the practice case. Never place real
+patient, client, or employer information in course work.</p>
+<p><strong>Self-check rubric.</strong> Your work is ready when you can
+answer yes to each item:</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Every purchased item appears in a
+workstream, and the roadmap uses the 13 phases in four
+stages.</label></li>
+<li><label><input type="checkbox" />Each major deliverable has one
+owner, one accountable approver, a date, and acceptance
+evidence.</label></li>
+<li><label><input type="checkbox" />Each important date has a basis
+label, and the go-live date is not shown as validated if planning is
+still open.</label></li>
+<li><label><input type="checkbox" />Each dependency names its provider,
+receiver, need date, and effect of delay, with payer enrollments listed
+separately.</label></li>
+<li><label><input type="checkbox" />Each resource team's handoff is
+acknowledged, or the gap is escalated.</label></li>
+<li><label><input type="checkbox" />The operating plan defines status
+colors, escalation, change control, and a named owner for staff change
+communication.</label></li>
+</ul>
+<p><strong>Link to the capstone:</strong> The capstone does not include
+a roadmap artifact. The dependency, authority, and status skills in this
+module support all three capstone artifacts, especially artifact C
+(go/no-go decision record). See the capstone candidate packet.</p>
+<h2 id="knowledge-check">Knowledge check</h2>
+<ol type="1">
+<li>Why is a milestone different from a task?</li>
+<li>What makes a target date credible?</li>
+<li>How can the implementer identify a likely critical-path item?</li>
+<li>Why is "clearinghouse setup complete" not the same as billing
+ready?</li>
+<li>What must an internal-handoff request contain to be actionable?</li>
+<li>Why does QC need the scope and acceptance evidence before
+configuration is complete?</li>
+<li>What information should a material change request analyze?</li>
+</ol>
+<p>Write your answers before you look at the model answers at the end of
+this chapter.</p>
+<h2 id="spaced-review">Spaced review</h2>
+<p>These questions bring back Module 1. Answer them without looking
+back.</p>
+<ol type="1">
+<li>A practice administrator emails you: "Sales promised us a fax
+interface." The signed order does not list one. Where does the fax
+interface go in your plan, and who owns the next step?</li>
+<li>Your control log says: "The clinic may lose its office manager
+before go-live." Another entry says: "The order lists one location; the
+SOW lists two." Classify each entry, and explain how you decided.</li>
+<li>While building workstreams, you find an outcome with no success
+measure: "fewer missed appointments." What do you add, and who owns
+it?</li>
+<li>A resource-map row lists the vendor trainer as both responsible and
+accountable for staff competence. What is wrong, and how would you fix
+it?</li>
+</ol>
+<h2 id="module-2-gate--preliminary-plan-ready-for-kickoff">Module 2 gate
+— preliminary plan ready for kickoff</h2>
+<p><strong>Bring:</strong> the Module 1 handoff record, scope summary,
+and resource map. <strong>In the room:</strong> implementer and internal
+resource leads; the sponsor for date and rollout decisions.</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Place every purchased item in a
+workstream, or record its disposition.</label></li>
+<li><label><input type="checkbox" />Enter the 13 module phases in four
+stages, each with its gate.</label></li>
+<li><label><input type="checkbox" />Give each major deliverable an
+owner, an accountable approver, dependencies, dates, and acceptance
+evidence.</label></li>
+<li><label><input type="checkbox" />Write milestones as approved
+results.</label></li>
+<li><label><input type="checkbox" />Record the rollout approach and who
+chose it.</label></li>
+<li><label><input type="checkbox" />Label each important date by its
+basis; show go-live as a target until the plan supports it.</label></li>
+<li><label><input type="checkbox" />Give each critical-path and
+high-impact dependency an active owner and an escalation
+date.</label></li>
+<li><label><input type="checkbox" />List the clearinghouse account and
+each payer enrollment as separate dependencies, where billing is in
+scope.</label></li>
+<li><label><input type="checkbox" />Record the clinic's provider
+champion and super users, or a date by which the clinic will name
+them.</label></li>
+<li><label><input type="checkbox" />Get acknowledgement from each
+internal resource team, or escalate the gap.</label></li>
+<li><label><input type="checkbox" />Document communication, staff change
+communication, status, escalation, record, and change-control
+rules.</label></li>
+</ul>
+<p><strong>Pass when</strong> every box is checked. The plan is then
+ready to present at kickoff (Module 3).</p>

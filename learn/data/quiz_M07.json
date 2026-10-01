@@ -1,0 +1,242 @@
+[
+{
+"stem": "| Test or requirement, eligibility check, build 6.1 | What was checked | Result |\n|---|---|---|\n| E-01 | Screen opens; request sends | Pass |\n| E-02 | Active coverage response returns and displays | Pass |\n| R-40 | \"Rejected responses route to the billing work queue with the reason\" | No test linked |\n\nThe QC lead at Cedar Point Internal Medicine says eligibility \"works\" and wants to move it to training. You own the QC plan. What should you do?",
+"options": {
+"A": "Move it to training now and add a rejection test in the next QC cycle",
+"B": "Ask the billing lead to try a rejected response during user acceptance testing",
+"C": "Ask the vendor for its standard test results on rejected-response routing",
+"D": "Add a test for rejected responses routing to billing before it is marked ready"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the rejection test does get added (right action, wrong time), but training would start before the approved requirement R-40 is proven, and the requirement sets what \"it works\" must mean (Section: Decide what \"it works\" must mean).",
+"B": "Tempting because the billing lead knows the work (confused look-alike: UAT vs. QC), but user acceptance answers a different question; QC must first prove R-40 with a planned test (Section: Keep user acceptance separate from QC).",
+"C": "Tempting because written test results look like evidence (the habit answer: accepting the vendor's word), but they come from the vendor's standard setup, not Cedar Point's build 6.1 and its routing rule (Section: Control the build that QC receives).",
+"D": "Correct: the approved requirement sets the level of \"it works\" that QC must prove, and R-40 has no test yet. You own the QC plan, so you add the test now (Section: Decide what \"it works\" must mean)."
+}
+},
+{
+"stem": "During advanced training at Cedar Point, a medical assistant sends a synthetic e-prescription. The status stays \"Pending\" for two minutes, so she sends it twice more. The training plan covers only the success screen. What should you add to the training?",
+"options": {
+"A": "A job aid telling staff to resend any e-prescription pending over two minutes",
+"B": "What each status means, how long a reply takes, and what must not be resent",
+"C": "An overview of how the e-prescribing network routes messages to pharmacies",
+"D": "A step telling staff to phone the pharmacy whenever a prescription is pending"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because it gives staff a clear action (the habit answer), but resending a pending item is the very behavior that creates duplicate prescriptions (Section: Interfaces from the user's view).",
+"B": "Correct: interface training shows where each status appears, how long a normal response takes, and what users must never repeat (Section: Interfaces from the user's view).",
+"C": "Tempting because understanding the connection seems to build trust (true but does not answer the question), but users do not need the technical standard; they need to recognize a failure and avoid duplicates (Section: Interfaces from the user's view).",
+"D": "Tempting because it reacts to the pending state (too far), but a two-minute wait may be normal, and a blanket phone rule is an unapproved workflow, not the approved route to the queue owner (Section: Interfaces from the user's view)."
+}
+},
+{
+"stem": "Halfway through QC of the referral module on build 4.2, the builder fixes two routing rules in the test environment without telling anyone. You discover the change the next morning. What should you do?",
+"options": {
+"A": "Record the new version and assess which earlier results still remain valid",
+"B": "Rerun the tests for the two fixed rules and keep the other results under 4.2",
+"C": "Restart the full QC run from the beginning on the changed build to be safe",
+"D": "Ask the project manager to freeze the build, then keep testing as planned"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: when the build changes during testing, you record the new version and decide which results are still valid. That is your QC work (Section: Control the build that QC receives).",
+"B": "Tempting because it reruns the tests most likely affected (half right), but the results would be filed under a version that no longer exists; record the new version first, then decide which results still hold (Section: Control the build that QC receives).",
+"C": "Tempting because a clean restart removes all doubt (too far), but it throws away results the change did not touch; the chapter asks you to assess validity, not discard everything (Section: Control the build that QC receives).",
+"D": "Tempting because a freeze prevents more surprises (right action, wrong time), but it ignores the change already made; earlier results may no longer apply to the build you are testing (Section: Control the build that QC receives)."
+}
+},
+{
+"stem": "| QC entry criterion, forms module, build 6.0 | Status |\n|---|---|\n| Requirement and approver identified | Yes |\n| Build version stable | Yes, frozen Monday |\n| Test environment and access | Ready |\n| Test data | Synthetic patients loaded |\n| Known limitations documented | Yes |\n| Expected results defined | Not yet written for 9 of 20 tests |\n\nThe builder asks you to start QC on the forms module today. What should you do?",
+"options": {
+"A": "Start the 20 tests and write each expected result down as you run it",
+"B": "Ask the QC lead to waive the expected-results criterion for this module",
+"C": "Hold those 9 tests until expected results are written, and start the other 11",
+"D": "Hold the 20 tests until each expected result is written and approved by QC"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because it keeps the schedule (the habit answer), but an expected result written while watching the output just describes what happened, so the test cannot fail (Section: Entry criteria).",
+"B": "Tempting because the QC lead runs QC (half right: right person, wrong fix), but entry criteria are agreed before testing to resist this pressure, and a waiver does not make the 9 tests checkable (Section: Entry criteria).",
+"C": "Correct: entry criteria require defined expected results, so the 11 ready tests start now and the other 9 wait (Section: Entry criteria).",
+"D": "Tempting because it applies the criterion strictly (too far), but the other 11 tests meet every entry criterion, so holding them adds delay without reducing risk (Section: Entry criteria)."
+}
+},
+{
+"stem": "A tester spent two days exploring the scheduling module freely and found six defects. The practice manager says this proves the module was fully tested. According to this module, why is that not enough?",
+"options": {
+"A": "Exploration does not record steps that another tester could repeat later",
+"B": "Exploration finds defects but cannot show that tests cover every requirement",
+"C": "Two days is too short to explore a module the size of scheduling in full depth",
+"D": "Exploration tends to follow the normal path, so exception paths go untested"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because reproducibility matters (confused look-alike: test design vs. coverage), but defects found by exploring are logged with steps like any other; the gap is that nothing links the work to requirements (Section: Build the QC plan from requirements).",
+"B": "Correct: free exploration can find useful defects, but it cannot prove coverage on its own, because its tests are not traced to requirements, risks, or controls (Section: Build the QC plan from requirements).",
+"C": "Tempting because more time seems to help (right rule, wrong facts), but no amount of free exploration proves coverage without tracing tests to requirements and risks (Section: Build the QC plan from requirements).",
+"D": "Tempting because exploration can drift toward the normal path (true but does not answer the question), but a skilled explorer may test exceptions; the real limit is that no one can show which requirements were covered (Section: Build the QC plan from requirements)."
+}
+},
+{
+"stem": "| Test case T-77 | Entry |\n|---|---|\n| Test ID and requirement | T-77, R-22 (unsigned forms queue) |\n| Environment and build | (blank) |\n| Role | (blank) |\n| Steps | Open queue; select form; send reminder |\n| Expected result | Reminder sent; form stays in queue |\n| Actual result | Pass |\n\nAnother tester must rerun T-77 next week after a fix. What must be added first?",
+"options": {
+"A": "An expected result for when the reminder fails to send to the patient",
+"B": "The name of the person who approved requirement R-22 for the build",
+"C": "The tester's name and the date on which the test was last run",
+"D": "The environment, build version, and role with its starting access"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because failure paths matter (true but does not answer the question), but that would be a new test case; T-77 still cannot be repeated without its missing setup fields (Section: Design reproducible test cases).",
+"B": "Tempting because a named approver is an entry criterion (right rule, wrong facts), but the requirement link R-22 is already present, and an approver's name does not help anyone repeat the steps (Section: Build the QC plan from requirements).",
+"C": "Tempting because tester and date are fields of a reproducible test case (half right), but they record who ran it; the next tester still would not know which environment, build, or role to use (Section: Design reproducible test cases).",
+"D": "Correct: a reproducible test case names the environment, build version, and role with starting access, so another person can repeat it and get the same result (Section: Design reproducible test cases)."
+}
+},
+{
+"stem": "A requirement says the billing role may issue refunds but may not approve its own refunds. Which test type does this module use for that requirement?",
+"options": {
+"A": "Permission and segregation testing",
+"B": "Reporting and audit evidence testing",
+"C": "Functional testing of refunds",
+"D": "Workflow and approval testing"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: permission and segregation tests check that each role can do what it should and is blocked from what it should not see or approve (Section: Design reproducible test cases).",
+"B": "Tempting because refunds need an audit trail (confused look-alike), but reporting and audit tests check that reports and audit evidence match activity; they do not check that the role is blocked (Section: Design reproducible test cases).",
+"C": "Tempting because issuing a refund is a configured function (half right), but a functional test asks whether the function gives the expected result, not whether a role is kept from approving its own work (Section: Design reproducible test cases).",
+"D": "Tempting because approval is a workflow step (confused look-alike), but a workflow test checks that work moves through roles and queues; blocking a role from its own approval is segregation (Section: Design reproducible test cases)."
+}
+},
+{
+"stem": "| Defect D-305 | Entry |\n|---|---|\n| Summary | Outbound referral fax fails on first send for Lakeshore |\n| Actual result | Referral completes only after staff resend it by hand from the fax queue |\n| Safety, privacy, or financial harm found | None |\n| Builder note | \"Complex fix, about three weeks. Suggest High.\" |\n\nYou are recording severity under the approved model. Which severity should you record?",
+"options": {
+"A": "Low, because the referral still reaches the receiving office in the end",
+"B": "High, as the builder suggests, because a required referral step fails",
+"C": "Medium, because the referral completes only with a real workaround",
+"D": "Critical, because a lost referral could delay a patient's specialist care"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because the outcome is eventually reached (too weak), but Low is for cosmetic issues with no real effect, and a manual resend is a real effect on staff work (Section: Rate defects by impact).",
+"B": "Tempting because the first send does fail (right rule, wrong facts), but High means a required workflow cannot complete, and this one completes with a resend; the builder's three-week estimate is effort, not impact (Section: Rate defects by impact).",
+"C": "Correct: Medium is a workflow that completes only with a real workaround, and no safety, privacy, or financial harm was found (Section: Rate defects by impact).",
+"D": "Tempting because delayed specialist care can harm patients (too far), but the record shows no harm found and the referral still goes out, so the Critical threshold is not met (Section: Rate defects by impact)."
+}
+},
+{
+"stem": "Before rerunning any tests after a change, you review what the change touches to decide which tests to rerun. What does the FDA guidance cited in this module call that step?",
+"options": {
+"A": "Regression testing of the change",
+"B": "A retest of the original failure",
+"C": "Change impact analysis of the build",
+"D": "Regression analysis of the change"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the review leads straight into regression testing (confused look-alike), but regression testing is the rerun itself; the review that picks which tests to rerun comes first (Section: Retest the fix, then run regression tests).",
+"B": "Tempting because a retest also follows a fix (confused look-alike), but a retest asks only whether the original failure is fixed (Section: Retest the fix, then run regression tests).",
+"C": "Tempting because it describes the review in general terms (true but does not answer the question), but the question asks for the FDA guidance's term, which the chapter gives as regression analysis (Section: Retest the fix, then run regression tests).",
+"D": "Correct: the FDA guidance calls the review of what a change touches regression analysis, and it comes before regression testing (Section: Retest the fix, then run regression tests)."
+}
+},
+{
+"stem": "Cedar Point's IT team will move all front-desk computers to a new browser version next week. No EHR configuration will change. The check-in module passed QC last month. What should you do?",
+"options": {
+"A": "Rerun sign-in, printing, scanning, and signature steps on the new browser",
+"B": "Rerun the core set on the new browser once the vendor certifies the version",
+"C": "Ask the vendor to confirm the new browser version is supported for the EHR",
+"D": "Rerun the full check-in QC plan on the new browser before the change goes live"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: a browser change is an environment change, and the regression table sends you first to sign-in, printing, scanning, signature, and device steps (Section: When to run regression tests).",
+"B": "Tempting because the core set runs after changes (right action, wrong time), but waiting on certification delays testing, and the core set does not target the device and printing steps a browser change touches (Section: When to run regression tests).",
+"C": "Tempting because vendor support matters (the habit answer: accepting the vendor's word), but a support statement is not test evidence that Cedar Point's computers, printers, and signature pads still work (Section: When to run regression tests).",
+"D": "Tempting because more testing feels safer (too far), but a risk-based set targets what the change touches; the full plan spends time without focusing on the steps most likely to break (Section: Choose and record a risk-based regression set)."
+}
+},
+{
+"stem": "A fix changes role settings for Cedar Point's behavioral health notes. You drafted a regression set that includes sensitive-record access tests, and the QC lead has agreed to it. Who confirms the tests in the sensitive-record area?",
+"options": {
+"A": "The QC lead, who has already agreed to the set",
+"B": "The privacy officer, as the specialist owner",
+"C": "The release owner, who accepts leftover risk",
+"D": "The implementer, who proposed the regression set"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because the QC lead agrees the set (half right), but agreeing the overall set is not the same as confirming tests in a controlled specialist area (Section: Choose and record a risk-based regression set).",
+"B": "Correct: specialist owners, such as privacy leads, confirm the tests in their own areas (Section: Choose and record a risk-based regression set).",
+"C": "Tempting because the release owner approves the version (confused look-alike), but that role accepts the risk of tests not rerun; it does not confirm specialist tests (Section: Choose and record a risk-based regression set).",
+"D": "Tempting because you do own the proposed set (right rule, wrong facts), but specialist owners confirm tests in their areas, and sensitive-record access belongs to privacy (Section: Choose and record a risk-based regression set)."
+}
+},
+{
+"stem": "Cedar Point's practice manager emails you: \"Front desk tried check-in on the test system. UAT passed.\" No other record exists. The release decision for check-in is Friday. What should you do?",
+"options": {
+"A": "File the email as acceptance, since the practice manager is an authorized user",
+"B": "Attach the QC results to the email so the record shows what was tested",
+"C": "Record each scenario, participant, environment, and result with the client",
+"D": "Ask the practice manager to reply in writing that the scenarios passed"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because she can accept for the front desk (right rule, wrong facts), but a general email cannot show which scenarios, users, environment, or results were involved (Section: Keep user acceptance separate from QC).",
+"B": "Tempting because QC results are real evidence (confused look-alike: QC vs. UAT), but they cannot show what the front desk tried or accepted (Section: Keep user acceptance separate from QC).",
+"C": "Correct: UAT evidence records the scenario, participant, environment, expected and actual results, findings, and approval (Section: Keep user acceptance separate from QC).",
+"D": "Tempting because it gets a firmer statement in writing (too weak), but it is still a general claim with no scenarios, participants, or results anyone can check (Section: Keep user acceptance separate from QC)."
+}
+},
+{
+"stem": "During QC, a tester finds that any scheduler can double-book a provider. The approved requirement does not say who may double-book. The QC lead proposes failing the test and setting the rule to supervisors only. What should you do?",
+"options": {
+"A": "Record the finding and send the double-booking policy to the client's authority",
+"B": "Accept the QC lead's rule, since QC sets the expected result for each test",
+"C": "Pass the test, since nothing in the approved requirement forbids double-booking",
+"D": "Fail the test and limit double-booking to supervisors until the client decides"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: QC should not approve business policy for the client, so the double-booking rule goes to the client's authority (Section: Keep user acceptance separate from QC).",
+"B": "Tempting because QC does define expected results (right rule, wrong facts), but expected results come from approved requirements; QC does not write business policy for the client (Section: Keep user acceptance separate from QC).",
+"C": "Tempting because QC tests against the requirement (too weak), but a silent requirement is a gap to resolve, not a pass (Section: Decide what \"it works\" must mean).",
+"D": "Tempting because the limit sounds safe and temporary (right action, wrong time), but configuring it sets the policy before the client's authority has decided (Section: Keep user acceptance separate from QC)."
+}
+},
+{
+"stem": "| Module | Build | QC status | Open Critical / High defects | Release owner | Release state |\n|---|---|---|---|---|---|\n| Intake | (blank) | Passed | 0 | Practice manager | Proposed for training |\n| Results | 6.2 | Passed | 1 High, no decision | Medical director | Proposed for training |\n| Forms | 6.2 | Passed | 0 | (blank) | Proposed for training |\n| Scheduling | 6.2 | Passed | 0 | Practice manager | Proposed for training |\n\nYou maintain Cedar Point's module readiness table. Which module is ready for its release decision?",
+"options": {
+"A": "Intake, because QC passed and it has no open Critical or High defects",
+"B": "Results, because QC passed and its build version is identified",
+"C": "Forms, because a release owner can be named at the release meeting",
+"D": "Scheduling, because its build, QC, owner, and defects are all clear"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because its QC and defect columns look clean (half right), but no build is recorded, and a pass belongs to an identified version (Section: Control the build that QC receives).",
+"B": "Tempting because its build and QC status are complete (half right), but exit criteria require each High defect to be fixed or to have a recorded decision, and this one has none (Section: Build the QC plan from requirements).",
+"C": "Tempting because naming an owner seems a formality (right action, wrong time), but the readiness table needs an accountable release owner before anyone can make the decision (Section: Run QC after every module).",
+"D": "Correct: Scheduling shows an identified build, passed QC, no open Critical or High defects, and a named release owner (Section: Run QC after every module)."
+}
+},
+{
+"stem": "The forms module build finished yesterday. Training starts in two days. The practice manager suggests skipping QC because \"the class will find any problems.\" You run QC for the project. What should you do?",
+"options": {
+"A": "Agree, and log each problem the class finds as a defect for the builder",
+"B": "Run QC on the forms before training, and route class findings into the cycle",
+"C": "Ask the sponsor to decide whether QC can be skipped for this one module",
+"D": "Delay training until regression tests have run on the other trained modules"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because class findings would still be logged (the habit answer), but training must not become the first planned test; learners would practice on an untested build (Section: Run QC after every module).",
+"B": "Correct: every module goes through the QC cycle before training, and anything training finds goes back through the cycle (Section: Run QC after every module).",
+"C": "Tempting because skipping a control sounds like a sponsor-level decision (too far), but running QC after each module is your planned work; nobody needs to approve doing it (Section: Run QC after every module).",
+"D": "Tempting because broad testing seems safe (too far), but the cycle asks for QC on this module before training, not a delay to retest modules that did not change (Section: Run QC after every module)."
+}
+}
+]

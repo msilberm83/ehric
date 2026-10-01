@@ -1,0 +1,233 @@
+<h1>Module 5, Lesson 1: Tie training to the approved build</h1>
+<h2 id="tie-training-to-the-approved-build">Tie training to the approved
+build</h2>
+<p>Training that is not tied to the approved build fails in two ways.
+Users reach go-live unable to do required work, or they spend class time
+on features no one approved.</p>
+<p>Training is not a tour of the software. A tour answers, "What does
+this button do?" Implementation training answers a different question:
+"How does this role complete its work in the approved system, and what
+happens when the normal path fails?"</p>
+<p>Build training from the <strong>traceability record</strong> you
+created in Module 4. That record links each purchased outcome to the
+work that delivers it:</p>
+<blockquote>
+<p>purchased outcome → workflow requirement → configuration item →
+training objective → test case → approval</p>
+</blockquote>
+<figure style="margin:16px 0"><img src="../../img/M05-01.png" alt="Figure 5.1. Notice the broken link: an approved requirement with no training objective is a gap to close." style="width:100%;max-width:1000px"><figcaption><b>Figure 5.1.</b> Notice the broken link: an approved requirement with no training objective is a gap to close.</figcaption></figure>
+Check the chain in both directions. Every training objective should point back to an approved requirement. Every approved requirement should point forward to a training objective.
+
+<blockquote>
+<p><strong>Rule:</strong> Every training objective traces to an approved
+requirement, and every approved requirement has a training
+objective.</p>
+</blockquote>
+<p><strong>Example A.</strong> A draft front-desk class at Cedar Point
+includes a 20-minute tour of the reporting menu. No front-desk
+requirement uses reports. You cut the tour.</p>
+<p><strong>Example B.</strong> An approved requirement says incomplete
+intake packets go to the review queue. No session teaches it. You add an
+objective and a practice scenario.</p>
+<p>Both examples break the same chain. One has training with no
+requirement. The other has a requirement with no training.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the six links in the traceability chain.</li>
+<li>Why is an approved requirement with no training objective a go-live
+risk?</li>
+<li>A provider asks you to add a demonstration of a feature the clinic
+did not buy. What would you do?</li>
+</ol>
+<h2 id="plan-by-role">Plan by role</h2>
+<p>One long class for everyone wastes time. It also teaches people
+screens they cannot use and skips the work they must do.</p>
+<p>Group learners by the work they do and the access they will have. A
+<strong>role group</strong> is a set of users who share tasks and
+permissions. A clinic might use these role groups:</p>
+<ul>
+<li>scheduling and front desk;</li>
+<li>clinical support;</li>
+<li>providers;</li>
+<li>billing and revenue cycle;</li>
+<li>records, privacy, and administration;</li>
+<li>supervisors and report users.</li>
+</ul>
+<p>Some workflows cross roles. Train the <strong>handoff</strong>, the
+point where work passes from one role to another, from both sides. The
+scheduler should know what the clinical team needs. The receiver should
+know how to return incomplete work without losing it.</p>
+<p>For each role group, list:</p>
+<ul>
+<li>tasks they must perform;</li>
+<li>decisions they are allowed to make;</li>
+<li>information they may access;</li>
+<li>required prerequisites;</li>
+<li>normal and exception scenarios;</li>
+<li>competence evidence;</li>
+<li>the recheck process.</li>
+</ul>
+<figure style="margin:16px 0"><img src="../../img/M05-02.png" alt="Figure 5.2. Notice that each role trains on its own workflows, and arrows mark where work passes between roles." style="width:100%;max-width:1000px"><figcaption><b>Figure 5.2.</b> Notice that each role trains on its own workflows, and arrows mark where work passes between roles.</figcaption></figure>
+The client approves the role and access model. Training must not teach users to work around permissions they were not given.
+
+<blockquote>
+<p><strong>Rule:</strong> Group learners by the work they do and the
+access they will have.</p>
+</blockquote>
+<p><strong>Example A.</strong> At Cedar Point main, the scheduler books
+a new-patient visit. In the same session, she learns what the medical
+assistant needs before rooming. <strong>Example B.</strong> At
+Lakeshore, a biller learns how to send a claim question back to the
+front desk without deleting the visit. In both cases, each side learns
+its part of the same handoff.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List four things you identify for each role group.</li>
+<li>Why do you train a cross-role handoff from both sides?</li>
+<li>A supervisor asks you to show front-desk staff how to edit a field
+their role cannot change. What would you do?</li>
+</ol>
+<h2 id="train-super-users-first">Train super users first</h2>
+<p>At a small clinic, super users are the support on the floor on
+go-live day. They are also the first help desk afterward. If no one is
+chosen and trained early, the vendor's support team is spread too
+thin.</p>
+<p>A <strong>super user</strong> is a clinic staff member who gets extra
+training early and helps peers in class and at go-live. A
+<strong>provider champion</strong> is a provider who speaks for the
+change with other providers and helps answer their questions.</p>
+<h3 id="the-clinic-chooses-you-ask-early">The clinic chooses; you ask
+early</h3>
+<p>Ask the client's sponsor to name a provider champion. Also ask for at
+least one super user for each role and location. Add more for large
+groups or extra shifts. Suggest people whom peers already trust and ask
+for help. Availability alone is a weak reason to choose someone.</p>
+<p>Ask the clinic to protect each super user's hours. Someone must cover
+their usual work while they train and support others. This cover is
+called <strong>backfill</strong>. If the clinic has not named super
+users yet, raise it with the sponsor now. Record each name, role,
+location, shift, and protected hours on a <strong>super-user
+roster</strong>.</p>
+<h3 id="train-and-check-them-before-other-staff">Train and check them
+before other staff</h3>
+<p>Train super users before the end-user sessions, on the same release.
+Check their competence the same way you check everyone else. Then add
+three skills:</p>
+<ul>
+<li>answer common questions from the approved job aid;</li>
+<li>sort a question into the open-item register (see "Route open items
+and request QC");</li>
+<li>know when to escalate and to whom.</li>
+</ul>
+<p>Super users then help in later sessions and stand beside their peers
+at go-live. They follow the approved workflow. They do not approve
+clinical, privacy, or billing decisions.</p>
+<blockquote>
+<p><strong>Rule:</strong> The clinic chooses its super users; you train
+and check them before anyone else.</p>
+</blockquote>
+<p><strong>Example A.</strong> Cedar Point names its front-desk lead at
+main and its most experienced scheduler at Lakeshore. You train both a
+week before the front-desk sessions. They co-lead practice in those
+sessions.</p>
+<p><strong>Example B.</strong> Another clinic offers its newest hire
+because "she has time." You explain what makes a good super user and ask
+the practice manager to reconsider. The clinic still makes the
+choice.</p>
+<p>In both cases, you help the clinic choose well, and you train the
+chosen people first.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Who chooses super users, and what do you record on the roster?</li>
+<li>Why should super users train before other staff?</li>
+<li>The practice manager says super users can study during lunch, with
+no cover for their work. What would you do?</li>
+</ol>
+<h2 id="plan-for-every-learner">Plan for every learner</h2>
+<p>A learner who cannot reach the training cannot show competence. The
+clinic also has a legal duty to accommodate employees with
+disabilities.</p>
+<p>Adults arrive with different product experience, confidence,
+language, access needs, and job knowledge. Keep the competence standard
+the same. Change the route to it.</p>
+<p>Useful methods include:</p>
+<ul>
+<li>short demonstrations followed right away by practice;</li>
+<li>role-specific job aids;</li>
+<li>screenshots or steps that match the current release;</li>
+<li>repeated sessions for shifts or locations;</li>
+<li>office hours or a practice lab;</li>
+<li>recordings, if the client's policy allows them;</li>
+<li>extra practice and a private recheck.</li>
+</ul>
+<h3 id="ask-early-and-know-who-decides">Ask early, and know who
+decides</h3>
+<p>During planning, ask the client's training lead whether any learner
+needs an accommodation. An <strong>accommodation</strong> is a change in
+how a learner receives training or shows competence. Examples are a sign
+language interpreter or a large-print job aid.</p>
+<p>Under federal guidance, the employer must provide reasonable
+accommodations so employees with disabilities can take part in training.
+That duty stays with the employer when an outside vendor teaches the
+class. So the client's human resources (HR) or accommodation owner
+decides what is provided. You make sure your materials and sessions can
+deliver it. Record the accommodation, not the reason. Do not ask for or
+keep a learner's diagnosis.</p>
+<p>Some clients are public bodies, such as a county clinic. Ask its
+compliance lead which accessibility rules apply. A 2024 U.S. Department
+of Justice rule sets a standard for state and local government web
+content and apps. The standard is the <strong>Web Content Accessibility
+Guidelines (WCAG)</strong> 2.1, Level AA. An April 2026 rule moved the
+deadlines to April 26, 2027 for larger public bodies and April 26, 2028
+for smaller ones. The client's compliance lead decides whether the rule
+covers your training content.</p>
+<h3 id="make-recordings-and-materials-accessible">Make recordings and
+materials accessible</h3>
+<ul>
+<li><strong>Captions.</strong> WCAG treats captions on recorded video as
+a basic, Level A need. Captions show what is said, who is speaking, and
+meaningful sounds, such as an alert tone. Automatic captions often
+garble drug names and product terms. Correct them before you
+publish.</li>
+<li><strong>Transcripts.</strong> Offer a text transcript. If a step is
+only visible, say it aloud: "I am selecting the Lakeshore
+location."</li>
+<li><strong>Live sessions.</strong> Confirm captions or an interpreter
+before the session starts.</li>
+<li><strong>Screen-reader-friendly job aids.</strong> A <strong>screen
+reader</strong> is software that reads the screen aloud. Use real
+headings in order. Give each meaningful image alternative text. Build
+tables as tables, with header rows. Keep text contrast at least 4.5 to
+1. Put every step in text, not only in a screenshot.</li>
+</ul>
+<p>Check each job aid with the accessibility checker in your authoring
+tool before you send it.</p>
+<figure style="margin:16px 0"><img src="../../img/M05-06.png" alt="Figure 5.6. Notice that the job aid with headings, numbered steps, and alt text works for more readers than screenshots alone." style="width:100%;max-width:1000px"><figcaption><b>Figure 5.6.</b> Notice that the job aid with headings, numbered steps, and alt text works for more readers than screenshots alone.</figcaption></figure>
+### Use plain language
+
+<p>Write job aids in plain language. Use short sentences, common words,
+and the active voice. Say who does what: "You select the reason," not
+"The reason is selected." Use one term for one thing across the class,
+the job aid, and the screen. Add a short glossary. Give extra practice
+time instead of faster explanations.</p>
+<p>The client may ask for translated job aids. Controlled content, such
+as consent or privacy wording, needs its owner's approval. You may
+translate your own procedural steps if the client approves the approach.
+The competence check is the same in every language.</p>
+<blockquote>
+<p><strong>Rule:</strong> Change the route to competence for each
+learner; keep the standard the same.</p>
+</blockquote>
+<p><strong>Example A.</strong> A medical assistant who is hard of
+hearing gets corrected captions on the refill video. <strong>Example
+B.</strong> Night-shift staff get a repeat session at 7 a.m. Both
+learners pass the same competence check as everyone else.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Who decides what accommodation a learner receives, and what do you
+record?</li>
+<li>Why must you correct automatic captions before you publish a
+recording?</li>
+<li>A job aid uses three names for the same screen and no text steps.
+What would you change?</li>
+</ol>

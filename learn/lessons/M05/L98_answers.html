@@ -1,0 +1,165 @@
+<h1>Module 5 — Answers: Check yourself, examples, knowledge check, spaced review</h1>
+<h2 id="answers-for-this-chapter">Answers for this chapter</h2>
+<h3 id="check-yourself">Check yourself</h3>
+<p><strong>Tie training to the approved build.</strong> (1) Purchased
+outcome, workflow requirement, configuration item, training objective,
+test case, approval. (2) Users reach go-live without knowing how to do
+work the clinic approved, so the work fails or staff invent a
+workaround. (3) Leave it out of the session. If the provider wants the
+feature, log it as a new requirement or scope question for its
+owner.</p>
+<p><strong>Plan by role.</strong> (1) Any four of: tasks, allowed
+decisions, information they may access, prerequisites, normal and
+exception scenarios, competence evidence, recheck process. (2) Work is
+lost at handoffs. The sender must know what the receiver needs, and the
+receiver must know how to return incomplete work. (3) Do not teach the
+workaround. The client approved the access model. If the supervisor
+thinks the role needs the permission, log it as a decision for the
+access owner.</p>
+<p><strong>Train super users first.</strong> (1) The clinic chooses. You
+record each name, role, location, shift, and protected hours. (2) They
+must be competent before they can help in later sessions and support
+peers at go-live. (3) Explain that super users need protected time and
+backfill to learn and support others. Ask the practice manager to decide
+on cover, and record the decision and any risk.</p>
+<p><strong>Plan for every learner.</strong> (1) The client's HR or
+accommodation owner decides. You record the accommodation, not the
+reason or diagnosis. (2) Automatic captions often garble drug and
+product names, so learners who rely on them get wrong information. (3)
+Use one name for the screen everywhere, add numbered text steps, and add
+a short glossary.</p>
+<p><strong>Prepare the training environment.</strong> (1) The exact
+version of the build being taught. (2) You cannot tell which build the
+learner proved competence on, so the record may not match what goes
+live. (3) Run the session as a labeled demonstration and hold the
+competence checks until acceptance is recorded.</p>
+<p><strong>Time final training close to go-live.</strong> (1) Validation
+sessions are early, with key users, to find design problems. Final
+training is close to go-live, on the tested release, and produces
+competence evidence. (2) Screens can change between releases. The record
+must show the learner proved competence on the release that goes live.
+(3) Explain the risk of forgetting and of later changes. Recommend
+validation sessions now and final training in the last weeks, with
+refreshers for changes. The clinic decides; record the decision.</p>
+<p><strong>Compensate when there is no separate training
+environment.</strong> (1) Any four: obvious test-patient names, limited
+creation rights, outbound messages off, reports exclude test patients,
+on-screen environment label, cleanup checks, a record of differences.
+(2) Final training often comes after conversion has loaded real patient
+data, so the copy is no longer pre-live. (3) The client's accountable
+authority must choose the option, after hearing from privacy and
+security, and you must record that decision.</p>
+<p><strong>Write observable learning objectives.</strong> (1) For
+example: "Cancel an appointment with the approved reason and send the
+cancellation notice." (2) It names an action you can watch, so you can
+judge pass or recheck.</p>
+<p><strong>Run the training loop.</strong> (1) Show, ask, set up through
+the controlled path, practice, teach back and recover. (2) The workflow
+is already approved. Class time confirms it and surfaces gaps; it does
+not reopen design. (3) A required field affects data and tested
+behavior, so it is not a low-risk item. Log it and route it to the
+decision and change process.</p>
+<p><strong>Teach the general workflow families.</strong> (1) Inquiry and
+first contact, scheduling, intake, forms and signatures, queues and work
+status. (2) Real work is not always clean. Staff must recover from
+duplicates, missing data, and failures without inventing a process. (3)
+Rewrite it so schedulers route the caller by the approved script.
+Clinical urgency is a clinical decision.</p>
+<p><strong>Record competence, not attendance.</strong> (1) Release ID,
+scenario and exception, result, and observer with date. (2) Readiness
+belongs to each learner. Others in the group may not be able to do the
+work.</p>
+<p><strong>Route open items and request QC.</strong> (1) Training
+question, coaching need, defect, new requirement, policy decision,
+homework. (2) The learner did the work right, so the build is wrong.
+Practice cannot fix it; a tested fix can. (3) Name each owner, step,
+date, and check, for example: "Practice manager sends approved forms by
+May 6; builder loads by May 8; QC tests by May 10."</p>
+<h3 id="worked-example-prompts">Worked example prompts</h3>
+<ol type="1">
+<li>Super users must be competent before they can co-lead practice and
+answer peers. Training them first also tests the session plan before the
+larger groups.</li>
+<li>The learner completed the form correctly, so the fault is in the
+build. Only a tested fix through QC removes it.</li>
+<li>Their earlier result was on the faulty routing. Competence must
+match the corrected release that will go live.</li>
+</ol>
+<h3 id="faded-example">Faded example</h3>
+<ol start="4" type="1">
+<li>List the options still open (test environment shared in time, if one
+exists, or production with test patients) and the controls for each:
+obvious test names, limited creation rights, outbound messages off,
+reports exclude test patients, on-screen label, cleanup checks. The
+clinic's accountable authority decides after hearing privacy and
+security. You produce a written environment decision.</li>
+<li>Train the super user first, on the go-live release, then the medical
+assistants in the last two to three weeks. You produce a training
+schedule and competence records. The super user can then help in class
+and on go-live day.</li>
+<li>A real message from a test patient is a defect in the controls, with
+possible privacy impact. Stop the exercise, log a high-priority defect,
+tell the privacy lead, and send it to QC before training continues.</li>
+<li>Release ID, scenario and exception, result, observer, and date for
+each learner, plus rechecks for anyone not yet competent.</li>
+</ol>
+<h3 id="knowledge-check">Knowledge check</h3>
+<ol type="1">
+<li>Staff need to do their own work, not learn every menu. Role-based
+training covers the tasks, decisions, and access each role has,
+including handoffs to other roles. It also avoids teaching screens a
+role cannot use.</li>
+<li>Attendance shows someone was in the room. Competence shows the
+person completed a normal scenario and an exception alone while someone
+watched. Only competence shows readiness for go-live.</li>
+<li>Only items on the approved low-risk list are set up in class, and
+each is recorded and sent to QC. Anything that affects access, clinical
+work, data, billing, integrations, safety, or tested behavior goes
+through decision, change, build, and QC.</li>
+<li>Approved scenarios reflect real work the client agreed to. They keep
+training tied to the traceability record, so learners practice what will
+actually happen after go-live.</li>
+<li>The client's qualified owners approve controlled form content, such
+as consent or privacy wording. Accountable clinical, privacy, or billing
+leaders approve professional workflow decisions. The implementer loads
+approved content and checks its behavior.</li>
+<li>The learner, alone, recognizes the exception (such as a duplicate or
+failed signature), takes the approved recovery steps, and explains why.
+A teach-back adds evidence that the learner understands rather than
+memorizes.</li>
+<li>Competence is only meaningful for a known build. Recording the
+environment and release shows learners proved competence on what will go
+live, and shows who needs a refresher if it changes.</li>
+<li>The client's accountable authority decides, after hearing from
+privacy and security. You document the options, the risks, and controls
+such as test-patient naming, outbound messages off, report exclusion,
+on-screen labels, and cleanup checks.</li>
+<li>The client's HR or accommodation owner decides. You record the
+accommodation provided, not the reason, and make sure your materials can
+deliver it.</li>
+<li>People forget steps they do not use, and screens can change after
+QC, conversion, or interface work. Final training close to go-live, on
+the tested release, gives competence records that match what goes
+live.</li>
+<li>The clinic chooses super users, ideally people peers trust, with
+protected time. They are trained first so they can help in later
+sessions and support peers at go-live.</li>
+</ol>
+<h3 id="spaced-review">Spaced review</h3>
+<ol type="1">
+<li>Record where the requirement comes from and who confirms it (Module
+4, separate policy from habit). Do not build it as law, and do not drop
+it, until the source is confirmed.</li>
+<li>It is an optional improvement, or a future phase if deferred with an
+owner and review date. It does not feed the go-live plan (Module
+4).</li>
+<li>A target date can move through normal planning. Plan backward from
+the new date to check whether review, training, and correction time
+still fit, and raise any conflict with the sponsor (Module 2).</li>
+<li>"Unlimited training" is remembered, not documented. Log it in the
+commitments table with an owner and due date to confirm with sales and
+the client (Module 1).</li>
+<li>The record must go out within one business day. Without it,
+decisions, owners, and dates are not confirmed in writing, and people
+work from memory (Module 3).</li>
+</ol>

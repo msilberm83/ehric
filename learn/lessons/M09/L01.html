@@ -1,0 +1,226 @@
+<h1>Module 9, Lesson 1: How do you list every integration?</h1>
+<h2 id="how-do-you-list-every-integration">How do you list every
+integration?</h2>
+<p>An unlisted integration has no owner, no test, and no one watching it
+after go-live. It fails quietly, and the clinic finds out from an angry
+patient or a missing payment.</p>
+<p>An <strong>integration</strong> lets two systems or services exchange
+information or actions. <strong>Configuration</strong> shapes the
+purchased system around approved workflows. Both make a project
+valuable. Both can also spread errors at scale if no one owns them.</p>
+<p>An integration is not just "connected" or "not connected." It is a
+shared workflow. It has two or more <strong>endpoints</strong> (the
+systems at each end). It also has transport, meaning, security, timing,
+failure handling, and human owners.</p>
+<figure style="margin:16px 0"><img src="../../img/M09-01.png" alt="Figure 9.1. Notice that an integration has human owners at each end and someone watching the queue between them." style="width:100%;max-width:1000px"><figcaption><b>Figure 9.1.</b> Notice that an integration has human owners at each end and someone watching the queue between them.</figcaption></figure>
+For each integration, record these facts in the **integration inventory**:
+
+<ul>
+<li>business purpose;</li>
+<li>source and destination;</li>
+<li>owner on each side;</li>
+<li>vendor and support contacts;</li>
+<li>contract, enrollment, or agreement;</li>
+<li>information sent and returned;</li>
+<li>trigger and frequency;</li>
+<li>identifiers and matching rules;</li>
+<li>format or connector, with its standard and version;</li>
+<li>access, credentials, and key owner;</li>
+<li>privacy, security, and retention needs;</li>
+<li>expected acknowledgements and timing;</li>
+<li>error, retry, duplicate, and downtime behavior;</li>
+<li>monitoring and reconciliation owner;</li>
+<li>test environment and scenarios;</li>
+<li>go-live and support plan.</li>
+</ul>
+<p>Ask whether the clinic sends data to public health. Two examples are
+the state immunization registry and electronic case reporting of certain
+diseases. Each one is a separate integration. Each has its own
+registration and its own testing.</p>
+<blockquote>
+<p><strong>Rule:</strong> If no one owns the receiving end, the
+integration is not ready, even when a test message moves.</p>
+</blockquote>
+<p>Compare two cases. At a family practice, lab results reach the
+electronic health record (<strong>EHR</strong>), but no one at the
+clinic owns the unmatched-results queue. Results pile up unseen. At a
+pediatric clinic, immunizations flow to the state registry, but no one
+owns the registry's error report. Rejected shots never reach the
+registry. In both cases, the data moved, but no person owned what
+happened at the receiving end.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name six facts the integration inventory records for each
+integration.</li>
+<li>Why should you ask about public health links when the order does not
+list them?</li>
+<li>A test message moved, but the receiving owner is "TBD." What would
+you do?</li>
+</ol>
+<h2 id="draw-the-data-flow-for-each-integration">Draw the data flow for
+each integration</h2>
+<p>Privacy, security, clinical, and technical reviewers each see a
+different part of an integration. A shared drawing lets them discuss the
+same flow and spot the gap no one owns.</p>
+<p>Draw one simple diagram per integration. Follow the item from start
+to finish:</p>
+<blockquote>
+<p>source event → trigger → transformation → secure transport →
+destination processing → acknowledgement → reconciliation → exception
+queue</p>
+</blockquote>
+<figure style="margin:16px 0"><img src="../../img/M09-02.png" alt="Figure 9.2. Notice that a failed acknowledgement drops into an exception queue that has a named owner." style="width:100%;max-width:1000px"><figcaption><b>Figure 9.2.</b> Notice that a failed acknowledgement drops into an exception queue that has a named owner.</figcaption></figure>
+An **exception queue** is a work list that holds items that failed or need a person to review them.
+
+<p>Label these parts on the drawing:</p>
+<ul>
+<li>systems and vendors;</li>
+<li>information categories;</li>
+<li>direction;</li>
+<li>timing;</li>
+<li>identifiers;</li>
+<li>security boundary;</li>
+<li>logging;</li>
+<li>human review or approval;</li>
+<li>failure owner.</li>
+</ul>
+<p>A connector's sales description is not a project data-flow record. It
+shows what the product can do. Your diagram shows what this clinic's
+flow will do and who acts when it fails.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every data-flow diagram names the person who
+owns the failure branch.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List the eight steps of the data-flow chain in order.</li>
+<li>Why is a vendor's marketing diagram not enough as the project's
+data-flow record?</li>
+</ol>
+<h2 id="clear-the-nontechnical-dependencies">Clear the nontechnical
+dependencies</h2>
+<p>Many integrations are late because of a contract or an account, not
+because of code. These items depend on outside people, so they need
+dates early.</p>
+<p>Common dependencies include:</p>
+<ul>
+<li>vendor agreements;</li>
+<li><strong>business associate agreements</strong>, the contracts that
+let a vendor handle the clinic's protected health information;</li>
+<li>clearinghouse and payer enrollment (see "Track clearinghouse and
+payer enrollment separately");</li>
+<li>network or exchange agreements;</li>
+<li>merchant or bank setup;</li>
+<li>e-signature or document-service accounts;</li>
+<li>approval to use a vendor's interface;</li>
+<li>test credentials;</li>
+<li>firewall changes or <strong>allowlisting</strong> (adding an address
+to an approved list so traffic can pass);</li>
+<li>identity-provider setup for single sign-on;</li>
+<li>user accounts for each person;</li>
+<li>client certificates or encryption keys;</li>
+<li>third-party project dates.</li>
+</ul>
+<p>Put each one in the roadmap's dependency record. Give it a provider,
+a receiver, a need date, the effect of delay, and an escalation
+path.</p>
+<p><strong>Give every user an account of their own.</strong> Each person
+who will use the system needs their own log-in with the approved role
+from the Module 4 design. Shared log-ins hide who did what and break the
+audit trail. Account creation depends on the client's user list and its
+information technology (IT) owner, so track it as a dependency with a
+date. In Module 11, every user signs in with their own account before
+go-live.</p>
+<p><strong>Keep secrets in the approved credential system.</strong>
+Secrets include passwords, tokens, certificates, and production keys.
+Never place them in email, meeting notes, screenshots, test logs, or
+course work. If a vendor sends you a key by email, store it in the
+approved system and tell the client's security owner. The security owner
+decides whether to replace the key.</p>
+<blockquote>
+<p><strong>Rule:</strong> A secret lives only in the approved credential
+system, and the log records where it is stored, not what it is.</p>
+</blockquote>
+<p>Compare two cases. A vendor emails a production key and asks you to
+paste it into the shared test log. A clinic manager writes a temporary
+password on a sticky note for a new nurse. Different people, same
+problem: a secret left the approved system and anyone nearby can now use
+it.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What five details does each dependency entry need?</li>
+<li>Why is a shared log-in a problem, even when everyone on the team is
+trusted?</li>
+<li>A vendor emails you a production key. What do you do, and whom do
+you tell?</li>
+</ol>
+<h2 id="track-e-prescribing-readiness-for-controlled-substances">Track
+e-prescribing readiness for controlled substances</h2>
+<p>A prescriber who is not set up cannot send a controlled-substance
+prescription electronically on day one. The setup is done person by
+person, it depends on outside companies, and it can take weeks.</p>
+<p><strong>Electronic prescribing of controlled substances
+(EPCS)</strong> means sending prescriptions for drugs such as opioids
+electronically. The <strong>Drug Enforcement Administration
+(DEA)</strong>, the federal agency that regulates controlled substances,
+sets the rules. Under DEA rules, EPCS is allowed but not required. Some
+state rules may differ. The clinic's compliance owner confirms whether
+EPCS is required for its prescribers.</p>
+<p>Before any prescriber signs a controlled-substance prescription
+electronically, DEA rules require four things.</p>
+<ol type="1">
+<li><strong>A checked application.</strong> A qualified third party must
+audit the e-prescribing application, or an approved certification body
+must certify it. The vendor gives the clinic a copy of that report. Each
+prescriber must confirm the report shows the application meets DEA rules
+before first use. Your job is to get the report from the vendor and give
+it to the clinic.</li>
+<li><strong>Identity proofing.</strong> <strong>Identity
+proofing</strong> means proving a person is who they say they are. Each
+prescriber applies to a federally approved <strong>credential service
+provider</strong> or certification authority. This is an outside company
+that checks identity to a federal standard. Remote proofing is allowed.
+A practice registered with DEA as an institution may proof its own
+prescribers during credentialing. Someone it names must check each
+prescriber's government photo ID.</li>
+<li><strong>A two-factor credential.</strong> <strong>Two-factor
+authentication</strong> means signing with two of three things:
+something you know (a password), something you have (a hard token kept
+apart from the computer), and something you are (such as a fingerprint).
+The hard token must meet a named federal security standard. The
+prescriber keeps sole possession of it and never shares it. If the token
+is lost or stolen, the prescriber must report it within one business
+day.</li>
+<li><strong>Two-person access setup.</strong> At least two people manage
+who may sign controlled-substance prescriptions. One person enters which
+prescribers are allowed. A second person approves that list with their
+own two-factor credential. That second person must be a DEA registrant,
+meaning a prescriber with an active DEA registration.</li>
+</ol>
+<p>Keep a <strong>prescriber readiness tracker</strong> with one row per
+prescriber. Use columns for the audit report received, identity
+proofing, credential issued, and access approved. Add a need date for
+each. Log any gap as a dependency in the dependency record.</p>
+<p>You track; you do not complete. The prescriber and the clinic do the
+proofing and hold the credentials. You never hold a prescriber's token
+or password, and you never act as the second approver.</p>
+<blockquote>
+<p><strong>Rule:</strong> Track each prescriber's identity proofing,
+two-factor credential, and access approval by date, but let the
+prescriber and clinic do the work.</p>
+</blockquote>
+<p>Compare two cases. At an internal medicine clinic, one physician has
+finished identity proofing, but no second registrant has approved the
+access list. At a family practice, the access list is approved, but a
+new nurse practitioner has not started proofing. In both cases, one
+missing step stops controlled-substance prescriptions for that person.
+The tracker shows the gap weeks ahead.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List the four things DEA rules require before a prescriber signs a
+controlled-substance prescription electronically.</li>
+<li>Why is EPCS readiness tracked per prescriber and not once for the
+whole clinic?</li>
+<li>The practice manager asks you to approve the access list so the
+project can stay on time. What would you do?</li>
+</ol>

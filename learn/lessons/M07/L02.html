@@ -1,0 +1,266 @@
+<h1>Module 7, Lesson 2: Design reproducible test cases</h1>
+<h2 id="design-reproducible-test-cases">Design reproducible test
+cases</h2>
+<p>A test that another person cannot repeat gives you a result nobody
+can check. Reproducible tests let the builder see the failure and let QC
+prove the fix.</p>
+<p>A reproducible test case contains:</p>
+<ul>
+<li>a test ID and the requirement it covers;</li>
+<li>its purpose or risk;</li>
+<li>the environment and build version;</li>
+<li>the role and starting access;</li>
+<li>test data or preconditions;</li>
+<li>steps;</li>
+<li>the expected result;</li>
+<li>the actual result;</li>
+<li>pass or fail;</li>
+<li>evidence;</li>
+<li>tester and date.</li>
+</ul>
+<figure style="margin:16px 0"><img src="../../img/M07-04.png" alt="Figure 7.4. Notice that one test case traces back to its requirement and forward to its evidence and any defect." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.4.</b> Notice that one test case traces back to its requirement and forward to its evidence and any defect.</figcaption></figure>
+Use the test types that fit the workflow. Each type asks one question.
+
+<table>
+<thead>
+<tr>
+<th>Test type</th>
+<th>The question it asks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Functional</td>
+<td>Does the configured function give the expected result?</td>
+</tr>
+<tr>
+<td>Workflow</td>
+<td>Does work move through roles, queues, decisions, and follow-up
+correctly?</td>
+</tr>
+<tr>
+<td>Permission and segregation</td>
+<td>Can each role do what it should, and is it blocked from what it
+should not see or approve?</td>
+</tr>
+<tr>
+<td>Data integrity</td>
+<td>Are values created, changed, sent, calculated, and shown correctly,
+with no duplicates or loss?</td>
+</tr>
+<tr>
+<td>Interface</td>
+<td>Do sample transactions complete both ways, including acknowledgment,
+rejection, correction, retry, and duplicate prevention?</td>
+</tr>
+<tr>
+<td>Form and document</td>
+<td>Does the approved version show, prefill, route, sign, store, and
+retrieve as expected?</td>
+</tr>
+<tr>
+<td>Reporting and audit</td>
+<td>Can the clinic produce the approved reports and audit evidence, and
+do they match source activity?</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Are response times for key tasks acceptable at the clinic's busiest
+hour?</td>
+</tr>
+<tr>
+<td>Usability and accessibility</td>
+<td>Can the intended role finish the task correctly under real
+conditions and approved accessibility needs?</td>
+</tr>
+<tr>
+<td>Downtime and recovery</td>
+<td>Can users follow the approved backup process, keep required
+information, and catch up after the system returns?</td>
+</tr>
+<tr>
+<td>Regression</td>
+<td>Did a change break something that passed before? (See "Retest the
+fix, then run regression tests.")</td>
+</tr>
+</tbody>
+</table>
+<p>An <strong>acknowledgment</strong> is the message a receiving system
+sends back to confirm it got a transaction. Performance testing matters
+most for cloud systems. A slow network at a busy front desk can look
+like a system failure.</p>
+<blockquote>
+<p><strong>Rule:</strong> Write every test so another person can repeat
+it and get the same result.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List six parts of a reproducible test case.</li>
+<li>Why would you test response time at the clinic's busiest hour
+instead of after hours?</li>
+<li>Which test type would you use to confirm a front-desk role cannot
+approve a refund?</li>
+</ol>
+<h2 id="rate-defects-by-impact">Rate defects by impact</h2>
+<p>Severity decides what blocks a release. If the team rates by effort
+or by who made the mistake, a dangerous defect can pass as "minor."</p>
+<p>A <strong>defect</strong> is a result that does not match the
+approved requirement. <strong>Severity</strong> is how much harm the
+defect can cause. Define the severity model before testing. One useful
+starting model:</p>
+<ul>
+<li><strong>Critical:</strong> a real risk of serious harm to safety,
+privacy, security, money, legal standing, data, or production. It blocks
+release until it is fixed or formally handled by the authorized
+body.</li>
+<li><strong>High:</strong> a required workflow or control cannot
+complete. It normally blocks release of the affected scope.</li>
+<li><strong>Medium:</strong> the workflow completes only with a real
+workaround, or it behaves wrongly in a way that is not critical.</li>
+<li><strong>Low:</strong> a minor wording, layout, or cosmetic issue
+with no real effect on the outcome.</li>
+</ul>
+<p><strong>Priority</strong> is the order in which the team works on
+defects. Priority can differ from severity. An easy fix to a Critical
+defect is still Critical. A hard fix to a cosmetic defect is still
+Low.</p>
+<figure style="margin:16px 0"><img src="../../img/M07-05.png" alt="Figure 7.5. Notice that an easy fix can still be Critical, because severity measures impact, not effort." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.5.</b> Notice that an easy fix can still be Critical, because severity measures impact, not effort.</figcaption></figure>
+A useful defect record includes:
+
+<ul>
+<li>a short title;</li>
+<li>environment and version;</li>
+<li>preconditions and role;</li>
+<li>steps to reproduce;</li>
+<li>expected and actual behavior;</li>
+<li>evidence;</li>
+<li>impact and severity;</li>
+<li>the linked requirement or test;</li>
+<li>owner and target date;</li>
+<li>the version that holds the fix;</li>
+<li>retest and regression results;</li>
+<li>who may close it.</li>
+</ul>
+<p>Do not close a defect because someone says it is fixed. Retest the
+original failure. Then run regression tests on the behavior around
+it.</p>
+<blockquote>
+<p><strong>Rule:</strong> Severity measures harm, not effort to fix.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> Converted patients with a penicillin
+allergy show "No allergies on file" on the prescribing screen. The fix
+takes ten minutes. It is still Critical, because a prescriber could
+order penicillin.</li>
+<li><strong>Example B.</strong> A logo on the printed visit summary is
+slightly off-center. Fixing it needs a vendor patch. It is still Low,
+because no outcome changes.</li>
+</ul>
+<p>The shared rule: rate what could happen to the patient or clinic, not
+how hard the fix is.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What is the difference between severity and priority?</li>
+<li>A builder says, "It's a one-line fix, so call it Low." Why might you
+disagree?</li>
+<li>What two checks must happen before a defect closes?</li>
+</ol>
+<h2 id="retest-the-fix-then-run-regression-tests">Retest the fix, then
+run regression tests</h2>
+<p>A fix can break something else. If you only check the original
+failure, a new problem can reach training or go-live unseen.</p>
+<p>A <strong>regression</strong> is something that used to work and
+stops working after a change. <strong>Regression testing</strong> means
+rerunning tests that passed before and comparing the new result with the
+old one. The U.S. Food and Drug Administration (<strong>FDA</strong>)
+software validation guidance describes it this way. The FDA also names
+the step before it, <strong>regression analysis</strong>: reviewing what
+a change touches to decide which tests to rerun.</p>
+<p>A <strong>retest</strong> asks, "Is the original failure fixed?" A
+regression test asks, "Did the fix, or any other change, break something
+else?" A defect is not ready to close until both answers are
+recorded.</p>
+<h3 id="when-to-run-regression-tests">When to run regression tests</h3>
+<p>Run them whenever something changes in a version you already
+tested:</p>
+<table>
+<thead>
+<tr>
+<th>Change</th>
+<th>Examples</th>
+<th>What to rerun first</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Defect fix</td>
+<td>Corrected routing rule, template, or role</td>
+<td>Tests that use the same rule, template, role, or queue</td>
+</tr>
+<tr>
+<td>Configuration change</td>
+<td>New value list, order set, alert, or form version</td>
+<td>Workflows that show, use, or report that item</td>
+</tr>
+<tr>
+<td>Vendor upgrade or patch</td>
+<td>New build, hotfix, or version update</td>
+<td>Core set plus every area named in the release notes</td>
+</tr>
+<tr>
+<td>Interface change</td>
+<td>New mapping, code set, endpoint, or partner upgrade</td>
+<td>Both directions: send, acknowledge, reject, result, duplicate
+check</td>
+</tr>
+<tr>
+<td>Data change</td>
+<td>Test conversion load, code-set update</td>
+<td>Records, lists, and reports that read the changed data</td>
+</tr>
+<tr>
+<td>Environment change</td>
+<td>New device, browser, operating system, or network</td>
+<td>Sign-in, printing, scanning, signature, and device steps</td>
+</tr>
+<tr>
+<td>Promotion</td>
+<td>Moving a tested version to training or production</td>
+<td>A short check of the core set in the new environment</td>
+</tr>
+</tbody>
+</table>
+<p>The Office of the National Coordinator for Health IT
+(<strong>ONC</strong>) publishes the <strong>SAFER Guides</strong>
+(Safety Assurance Factors for EHR Resilience). Its 2025 guide on System
+Management recommends this discipline for electronic health records
+(<strong>EHRs</strong>). Test updates and local changes alone and with
+connected systems. Test before go-live and again in production. Retest
+interfaces before and after go-live and after hardware or software
+updates.</p>
+<p>Some small vendors have no separate test environment. Then some
+checks must run in production. Use clearly named test patients that no
+one could mistake for real patients, as the same SAFER Guide advises.
+Follow the approved plan from Module 4.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every change gets a retest of the fix and a
+regression check of what the change touches.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> The reference lab upgrades its own
+system. Nothing changes in the clinic's setup. You still rerun interface
+tests both ways, because the partner's side changed.</li>
+<li><strong>Example B.</strong> The vendor fixes an allergy banner for
+one role. The retest passes. You still test other roles and screens that
+use the same setting.</li>
+</ul>
+<p>In both cases the clinic's own screens looked unchanged. The change
+sat somewhere else.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What question does a retest answer, and what question does a
+regression test answer?</li>
+<li>A partner lab upgrades its system, but nothing changes on your side.
+Why do you still run regression tests?</li>
+<li>Name four kinds of change that should trigger regression tests.</li>
+</ol>

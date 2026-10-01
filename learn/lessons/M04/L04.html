@@ -1,0 +1,254 @@
+<h1>Module 4, Lesson 4: Plan environments when the vendor has no separate test or training copy</h1>
+<h2
+id="plan-environments-when-the-vendor-has-no-separate-test-or-training-copy">Plan
+environments when the vendor has no separate test or training copy</h2>
+<p>Testing and training in the live system can put fake data into real
+patient records, reports, and claims. You need a plan before that can
+happen.</p>
+<p>An <strong>environment</strong> is a separate copy of the system.
+<strong>Production</strong> is the live system with real patients. A
+<strong>test</strong> environment is where changes are tried. A
+<strong>training</strong> environment is where staff practice. Some
+vendors also have a <strong>build</strong> environment for configuration
+work.</p>
+<p>The <strong>SAFER Guides</strong> (Safety Assurance Factors for EHR
+Resilience) are safety self-assessment guides from the <strong>Office of
+the National Coordinator for Health Information Technology
+(ONC)</strong>. The 2025 SAFER Guide on system management recommends a
+separate, visually distinct production environment, plus other
+environments for build, testing, and training. Many small vendors cannot
+offer this. They may give you one live instance, or one shared
+<strong>sandbox</strong> (a practice copy).</p>
+<p>Do not assume the environments exist. Ask during discovery and record
+the answer in the <strong>environment plan</strong>. If something is
+missing, log it as a risk with an owner.</p>
+<p>First ask the vendor what is possible: a temporary sandbox, a second
+tenant, or a demo database. If nothing is available, propose
+<strong>compensating controls</strong>: safeguards that reduce a risk
+when the usual control is missing. Examples:</p>
+<ul>
+<li><strong>Test patients in production, tightly controlled.</strong>
+Use names no one could mistake for a real patient, such as "ZZTEST,
+Adult." Limit who can create them. SAFER recommends both points.</li>
+<li><strong>Keep test data out of real work.</strong> Exclude test
+patients from reports, quality measures, and outgoing interfaces. Keep
+claims in the <strong>clearinghouse's</strong> test mode, so none reach
+a payer. (A clearinghouse is a company that checks claims and passes
+them to payers.)</li>
+<li><strong>Build before real data arrives.</strong> Before data
+conversion loads real patients, the new production system can act as the
+test system. Plan the most testing for that window.</li>
+<li><strong>Save before you change.</strong> Export or document the
+configuration before each change, so it can be restored.</li>
+<li><strong>Use change windows.</strong> Make changes when the clinic is
+closed, with a named approver and a quick check afterward.</li>
+<li><strong>Plan the cleanup.</strong> Say how test patients and
+training data will be made inactive before or after go-live, and who
+confirms it.</li>
+<li><strong>Document the differences.</strong> Where a sandbox exists
+but differs from production, record its version and the
+differences.</li>
+</ul>
+<p>The client's project owner accepts the remaining risk, with privacy
+and security input. You write the plan and the controls. You do not
+accept the risk for the client. Module 5 covers training without a
+separate training environment, and Module 7 covers testing.</p>
+<blockquote>
+<p><strong>Rule:</strong> Log a missing environment as a risk, propose
+controls, and let the client's owner accept what remains.</p>
+</blockquote>
+<figure style="margin:16px 0"><img src="../../img/M04-08.png" alt="Figure 4.8. Notice that without separate environments, test patients sit inside production behind compensating controls." style="width:100%;max-width:1000px"><figcaption><b>Figure 4.8.</b> Notice that without separate environments, test patients sit inside production behind compensating controls.</figcaption></figure>
+**Check yourself**
+
+<ol type="1">
+<li>Name four compensating controls for a single production
+instance.</li>
+<li>Why should test patients have names no one could mistake for a real
+patient?</li>
+<li>Real data loads in six weeks and there is no test environment. When
+do you plan most testing, and why?</li>
+</ol>
+<h2 id="validate-with-scenarios">Validate with scenarios</h2>
+<p>A diagram can look complete and still fail on a real case. Walking
+scenarios finds the steps nobody drew.</p>
+<p>An <strong>acceptance scenario</strong> is a short, realistic case
+that the team walks through to prove the workflow works. For each
+workflow, include:</p>
+<ul>
+<li>a common normal case;</li>
+<li>an incomplete or incorrect-information case;</li>
+<li>an exception;</li>
+<li>an access or approval case;</li>
+<li>a downstream handoff;</li>
+<li>downtime or integration failure, when relevant.</li>
+</ul>
+<p>Ask each participant to explain:</p>
+<ul>
+<li>what they do;</li>
+<li>what they see;</li>
+<li>what record is created;</li>
+<li>who receives the next action;</li>
+<li>how stalled work becomes visible.</li>
+</ul>
+<p>Update the map and requirements until the group can complete the
+scenario without inventing steps.</p>
+<p>The approved scenarios become the base for configuration
+demonstrations, training exercises, QC checks, and UAT. Reusing them
+keeps the project from testing a different workflow than the one the
+client approved.</p>
+<blockquote>
+<p><strong>Rule:</strong> Approve a workflow only after the group walks
+its scenarios without inventing steps.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List the six kinds of acceptance scenario.</li>
+<li>Why reuse the same scenarios in training, QC, and UAT?</li>
+<li>During a walkthrough, a scheduler says, "I'd just call someone."
+What does that tell you, and what do you do?</li>
+</ol>
+<h2 id="run-the-approval-meeting">Run the approval meeting</h2>
+<p>An approval that no one can trace to a version and an owner is weak
+evidence. If a dispute comes later, the project cannot show what was
+agreed.</p>
+<p>At the end of discovery, review:</p>
+<ul>
+<li>the current-state map;</li>
+<li>the future-state map;</li>
+<li>requirements;</li>
+<li>role and access decisions;</li>
+<li>accessibility and sensitive-record decisions;</li>
+<li>exception and downtime paths;</li>
+<li>acceptance scenarios;</li>
+<li>open questions and deferred improvements;</li>
+<li>effects on scope, schedule, data, integrations, training, and
+support.</li>
+</ul>
+<p>Ask the accountable decision-maker to approve the future workflow or
+name corrections. Record the version and the date.</p>
+<blockquote>
+<p><strong>Rule:</strong> An approval names the accountable owner, the
+version, and the date.</p>
+</blockquote>
+<p>Compare two records. One says "Operations lead said 'looks good' at
+the walkthrough." It does not show which version she saw. Another says
+"Operations lead approved map v4 in writing on October 24." The shared
+rule: approval is a record, not a mood.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List five items to review in the approval meeting.</li>
+<li>Why is "looks good" in a meeting weak evidence?</li>
+<li>The accountable owner approved v3, then v4 added two corrections.
+What do you need before you record approval?</li>
+</ol>
+<h2
+id="worked-example-intake-through-check-in-at-a-family-medicine-clinic">Worked
+example: intake through check-in at a family medicine clinic</h2>
+<p>A family medicine clinic bought online intake. Patients now fill out
+paper forms, and front-desk staff type them into the practice-management
+system. Scanned histories are sometimes attached to the wrong record
+when names are similar. Here is what the implementation specialist
+did.</p>
+<ol type="1">
+<li><p><strong>Planned discovery by workflow.</strong> The specialist
+split the work into seven parts: reminder and pre-visit intake; identity
+check and possible duplicates; form review and missing information;
+signatures and consent; arrival and routing; clinical-team receipt; and
+exception and downtime paths. <em>Produced:</em> a discovery plan with
+sessions, participants, and decision owners. <em>Why:</em> each part has
+its own handoffs and decision owner.</p></li>
+<li><p><strong>Watched real work.</strong> A front-desk worker checked
+in two made-up patients while the specialist watched. The worker showed
+how she picks a record when two names are alike. <em>Produced:</em>
+observation notes with no real patient data. <em>Why:</em> the written
+procedure did not show the wrong-record risk.</p></li>
+</ol>
+<p><em>Why do you think the specialist watched the front desk before
+meeting the practice manager about the design?</em></p>
+<ol start="3" type="1">
+<li><p><strong>Mapped the current state.</strong> The specialist drew a
+swimlane map with lanes for patient, front desk, and nurse. It showed
+the re-entry step, the scan step, and three exceptions: similar names,
+an unsigned form, and downtime. <em>Produced:</em> a current-state map
+the front desk and manager validated. <em>Why:</em> the design needed a
+shared picture of today.</p></li>
+<li><p><strong>Separated policy from habit.</strong> Staff said every
+insurance card "must" be photocopied. The specialist recorded the step
+as unconfirmed and asked the billing lead for its source.
+<em>Produced:</em> an entry in the decision record with an owner and
+date. <em>Why:</em> the source decides whether the step stays.</p></li>
+<li><p><strong>Wrote a requirement with evidence.</strong> "At check-in,
+the system requires the approved patient-identification steps before the
+visit proceeds. The clinic's patient-identification authority approves
+the steps. UAT tests a correct match, a likely duplicate, and a
+mismatch." <em>Produced:</em> requirement INT-04, traced to the
+purchased intake outcome. <em>Why:</em> it can be built, tested, and
+approved.</p></li>
+</ol>
+<p><em>Why do you think the requirement names three UAT cases instead of
+just "test check-in"?</em></p>
+<ol start="6" type="1">
+<li><p><strong>Asked about accessibility.</strong> The compliance lead
+confirmed WCAG 2.1 Level AA as the target. The vendor's ACR showed
+"Partially Supports" for custom forms. <em>Produced:</em> an
+accessibility entry with a plan to test the configured intake form.
+<em>Why:</em> the ACR covers the product, not the clinic's own
+form.</p></li>
+<li><p><strong>Designed the future state.</strong> Approved intake
+answers fill the right fields, so re-entry stops. Automated matching
+alone is not enough; staff must confirm the match by the approved steps.
+The specialist classed "stop re-entry" as a necessary simplification.
+<em>Produced:</em> future-state map v1. <em>Why:</em> the change removes
+a failed handoff, while the human check keeps patient safety.</p></li>
+</ol>
+<p><em>Why do you think the design did not let automated matching decide
+the patient's record on its own?</em></p>
+<ol start="8" type="1">
+<li><p><strong>Walked scenarios.</strong> The group walked two people
+with similar names, a returning patient with changed information, an
+unsigned form, and system downtime. The downtime case showed no paper
+backup form, so the map was updated. <em>Produced:</em> map v2 and five
+acceptance scenarios. <em>Why:</em> the scenarios found a missing step
+before the build.</p></li>
+<li><p><strong>Got approval and handed off.</strong> The operations lead
+approved map v2 in writing, with the date. The specialist wrote the
+solution blueprint and build inventory, each item traced to a
+requirement. <em>Produced:</em> a versioned approval and a build
+handoff. <em>Why:</em> builders work only from approved, traced
+requirements.</p></li>
+</ol>
+<h2 id="your-turn-faded-example">Your turn: faded example</h2>
+<p><em>If you have done this task on a real project, try this first,
+then compare with the worked example.</em></p>
+<p>A small cardiology practice bought an EHR with a lab interface. Its
+workflow to redesign is "test result to review, communication, and
+closure." Today, results arrive by fax, and a nurse files them in a
+paper tray.</p>
+<ol type="1">
+<li><p><strong>Planned discovery by workflow.</strong> The specialist
+planned sessions for result arrival, provider review, patient
+communication, and closure. <em>Produced:</em> a discovery plan with the
+nurse lead, two cardiologists, and the practice manager as decision
+owner for workflow. <em>Why:</em> the workflow crosses roles from
+arrival to closure.</p></li>
+<li><p><strong>Watched real work.</strong> The nurse showed how she
+sorts faxed results and flags abnormal ones with a sticky note.
+<em>Produced:</em> observation notes with no real patient data.
+<em>Why:</em> the paper tray hides results that nobody has
+reviewed.</p></li>
+<li><p><strong>Mapped the current state.</strong> <em>Produced:</em> a
+swimlane map with lanes for lab, nurse, cardiologist, and patient. One
+exception: a result for a patient with no scheduled follow-up.
+<em>Why:</em> the group needed a shared picture before design.</p></li>
+<li><p><strong>Asked for the exceptions.</strong> <em>List three more
+exception questions to ask:</em> __________.</p></li>
+<li><p><strong>Wrote a requirement with evidence.</strong> <em>Write one
+requirement for abnormal results:</em> __________.</p></li>
+<li><p><strong>Classified a proposed change.</strong> A cardiologist
+wants to add a patient-facing results video library before go-live.
+<em>Class and reason:</em> __________.</p></li>
+<li><p><strong>Walked scenarios.</strong> <em>List four scenarios to
+walk:</em> __________.</p></li>
+<li><p><strong>Got approval.</strong> <em>What must the approval record
+show?</em> __________.</p></li>
+</ol>

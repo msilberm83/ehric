@@ -1,0 +1,277 @@
+<h1>Module 7, Lesson 3: Choose and record a risk-based regression set</h1>
+<h2 id="choose-and-record-a-risk-based-regression-set">Choose and record
+a risk-based regression set</h2>
+<p>You rarely have time to rerun every test after every change. A
+planned set protects the riskiest work first and shows the release owner
+what was left out.</p>
+<h3 id="choose-the-set">Choose the set</h3>
+<ol type="1">
+<li><strong>Start from the change record.</strong> Write down what
+changed, in which build, and why.</li>
+<li><strong>Trace what it touches.</strong> Use your QC plan's links
+from requirements to configuration, roles, queues, interfaces, and
+reports.</li>
+<li><strong>Add the neighbors.</strong> Include tests that share a part
+with the change, such as the same role, template, rule, or code
+table.</li>
+<li><strong>Keep a core set.</strong> The <strong>core set</strong> is a
+short, approved list of the highest-risk workflows. Examples are patient
+identification, results routing, medication and allergy display,
+sensitive-record access, and claim creation. Run it after every build or
+upgrade.</li>
+<li><strong>Rank by risk.</strong> Weigh how likely the change is to
+affect a workflow against the harm if it breaks. Safety, privacy, data,
+and money come first.</li>
+<li><strong>Record what you left out.</strong> List the tests you chose
+not to rerun and why.</li>
+</ol>
+<p>You own the proposed regression set. It is your professional work.
+You do not need permission to run more regression tests. The QC lead
+agrees on the set. Specialist owners, such as privacy or clinical leads,
+confirm tests in their areas. The <strong>release owner</strong> is the
+named client or project person who approves a version for its next
+stage. The release owner accepts any risk from tests not rerun.</p>
+<p>When a defect is found, add a test for it to the regression set. Then
+the same failure cannot quietly return in a later build.</p>
+<figure style="margin:16px 0"><img src="../../img/M07-06.png" alt="Figure 7.6. Notice that a change triggers a retest of the fix, its shared parts, and the core set, with exclusions explained." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.6.</b> Notice that a change triggers a retest of the fix, its shared parts, and the core set, with exclusions explained.</figcaption></figure>
+### Keep the evidence
+
+<p>A regression record shows:</p>
+<ul>
+<li>the change or build ID and what changed;</li>
+<li>the regression set, with the reason each test was chosen;</li>
+<li>environment, build, tester, and date for each rerun;</li>
+<li>the new result beside the earlier passing result;</li>
+<li>any new defects, linked to the change that caused them;</li>
+<li>tests not rerun, the reason, and who accepted that risk.</li>
+</ul>
+<p>Keep earlier test cases and results. Without them, you have nothing
+to compare. The FDA guidance notes that checking a system again after a
+change is much harder without them.</p>
+<h3 id="short-example">Short example</h3>
+<p>At Cedar Point, a fix corrects Lakeshore lab results that were going
+to the wrong provider. The retest passes. The implementer's regression
+set adds main-location routing, covering-provider routing,
+abnormal-result flags, the nurse result inbox, and the lab interface
+acknowledgment. The covering-provider test now fails. The implementer
+opens a new High defect and links it to the fix. The module stays
+unreleased until the test passes.</p>
+<blockquote>
+<p><strong>Rule:</strong> You choose the regression set; the release
+owner accepts what you left out.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What are the six steps for choosing a regression set?</li>
+<li>Why should a new test be added each time a defect is found?</li>
+<li>You left two tests out because of time. What must the regression
+record show before the release decision?</li>
+</ol>
+<h2 id="protect-qc-independence">Protect QC independence</h2>
+<p>People who built a feature tend to test what they meant to build, not
+what they built. Independent review catches what the builder cannot
+see.</p>
+<p>QC needs enough independence to challenge the result. That does not
+always mean a separate department, especially in a small organization.
+It does mean a reviewer who is not relying only on memory of the build.
+The reviewer must also be able to report findings without pressure to
+protect the schedule.</p>
+<p>When the same person must build and test, add controls:</p>
+<ul>
+<li>peer review;</li>
+<li>approved test scripts;</li>
+<li>recorded evidence;</li>
+<li>client user acceptance;</li>
+<li>specialist approval for controlled areas;</li>
+<li>a release decision by someone other than the builder.</li>
+</ul>
+<p>The project plan should name who does configuration testing,
+independent QC, user acceptance, security review, and final release.
+Each answers a different question.</p>
+<blockquote>
+<p><strong>Rule:</strong> When the builder also tests, add controls and
+give the release decision to someone else.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> Cedar Point has one configuration
+analyst. She builds and tests the Lakeshore check-in forms. A second
+analyst reviews her scripts and evidence, and the project manager makes
+the release decision.</li>
+<li><strong>Example B.</strong> A vendor builder tests his own lab-order
+set. The clinic's nurse lead runs the approved scenarios, and the
+clinical lead approves release.</li>
+</ul>
+<p>Neither project had a QC department. Both still had a second reviewer
+and a separate release decision.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List four controls you can add when the builder also tests.</li>
+<li>Why is a separate QC department not always required?</li>
+<li>Your only analyst built the referral forms and wants to approve
+their release. What do you do?</li>
+</ol>
+<h2 id="run-qc-after-every-module">Run QC after every module</h2>
+<p>If QC waits until the end, defects get buried under later work and
+become harder to find. Testing after each module keeps problems
+small.</p>
+<p>This course places QC after each module. Use a repeating cycle:</p>
+<blockquote>
+<p>build → builder check → QC → correct → retest and regression →
+approve → train or release</p>
+</blockquote>
+<p>Training may reveal a new requirement or defect. Send it back through
+the cycle. Do not let training become the first planned test. Do not
+assume a passed configuration stays valid after later changes.</p>
+<figure style="margin:16px 0"><img src="../../img/M07-07.png" alt="Figure 7.7. Notice that a defect found in training goes back through correction and retest, not straight to release." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.7.</b> Notice that a defect found in training goes back through correction and retest, not straight to release.</figcaption></figure>
+Keep a module readiness table:
+
+<table>
+<thead>
+<tr>
+<th>Module / workflow</th>
+<th>Approved requirement version</th>
+<th>Build version</th>
+<th>QC status</th>
+<th>Training status</th>
+<th>Open Critical / High defects</th>
+<th>Accountable release owner</th>
+<th>Release state</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>This table becomes a main input to go-live readiness in Module
+11.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every module goes through the full QC cycle
+before it is trained or released.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Put the seven stages of the QC cycle in order.</li>
+<li>Why is training a poor place for the first planned test?</li>
+<li>A defect found in training is fixed. Where does it go next in the
+cycle?</li>
+</ol>
+<h2 id="keep-user-acceptance-separate-from-qc">Keep user acceptance
+separate from QC</h2>
+<p>QC and user acceptance answer different questions. If you merge them,
+a client user may approve something only a privacy or safety owner can
+approve.</p>
+<p>QC checks requirements, risks, and expected behavior through planned
+tests. <strong>User acceptance testing (UAT)</strong> is when authorized
+client users confirm they can use the built workflow to do the approved
+work.</p>
+<p>Both matter. QC should not approve business policy for the client. A
+client user should not waive a security or safety control they have no
+authority to waive.</p>
+<p>Use the acceptance scenarios from discovery. Record the scenario,
+participant, environment, expected result, actual result, findings, and
+approval. A general "UAT passed" email is weak evidence, because no one
+can see what was tested.</p>
+<figure style="margin:16px 0"><img src="../../img/M07-08.png" alt="Figure 7.8. Notice that QC and user acceptance ask different questions and need their own evidence." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.8.</b> Notice that QC and user acceptance ask different questions and need their own evidence.</figcaption></figure>
+> **Rule:** A user can accept a workflow but cannot waive a control they do not own.
+
+<ul>
+<li><strong>Example A.</strong> In UAT, the front-desk lead finds that
+schedulers can see behavioral-health visit reasons. She says it is fine.
+You record the finding and send the access question to the privacy
+officer.</li>
+<li><strong>Example B.</strong> In UAT, the billing lead wants a claim
+edit turned off to save time. You record the request and send it to the
+billing compliance owner.</li>
+</ul>
+<p>Both users were real client representatives. Neither owned the
+control they wanted to change.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What question does QC answer, and what question does UAT
+answer?</li>
+<li>Why is a "UAT passed" email weak evidence?</li>
+<li>A nurse in UAT accepts a workflow that lets her see psychotherapy
+notes. What do you do?</li>
+</ol>
+<h2 id="record-the-release-decision">Record the release decision</h2>
+<p>A tested version is not ready until someone with authority approves
+it for a named next stage. Without a recorded decision, nobody knows
+which version training or go-live is using.</p>
+<p>A <strong>release decision</strong> approves one identified version
+for one purpose: training, UAT, rehearsal, or production. The release
+owner makes it, using the evidence from QC, regression, and UAT. You
+prepare the record. It shows:</p>
+<ul>
+<li>the version and environment;</li>
+<li>the release purpose;</li>
+<li>exit criteria met or not met;</li>
+<li>open Critical and High defects, each with its recorded
+decision;</li>
+<li>tests not rerun and who accepted that risk;</li>
+<li>accepted limits and who approved them;</li>
+<li>the decision, the decider, and the date.</li>
+</ul>
+<p>Then update the module readiness table.</p>
+<blockquote>
+<p><strong>Rule:</strong> Each tested version needs a recorded release
+decision for a named purpose.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What does a release decision approve?</li>
+<li>Why must the record name a release purpose and not just
+"approved"?</li>
+</ol>
+<h2 id="worked-example-a-pending-eligibility-check">Worked example: a
+pending eligibility check</h2>
+<p>Cedar Point's advanced front-desk training includes an insurance
+eligibility check. An <strong>eligibility check</strong> is a request to
+the payer asking whether a patient's coverage is active. Here is how the
+implementer handled a failure found in training.</p>
+<ol type="1">
+<li><strong>Ran the failure scenario, not just the normal one.</strong>
+Staff sent a synthetic eligibility request. The normal response appeared
+correctly. In the delayed-response scenario, the request stayed
+"pending." The queue did not show how long it had waited, and no one was
+assigned to watch it. <em>Produced:</em> a training observation in the
+open-item register. <em>Why:</em> the failure path is part of the
+workflow, so it must be practiced.</li>
+<li><strong>Sorted the finding.</strong> The implementer saw that no
+requirement said who watches pending checks. That made it a missing
+requirement, not a training question or coaching need.
+<em>Produced:</em> a new-requirement entry with the billing owner named.
+<em>Why:</em> more training cannot fix a rule that does not exist.</li>
+<li><strong>Sent the decision to its owner.</strong> The client billing
+owner approved a rule: any check pending over 30 minutes goes to the
+billing lead's queue with an alert. <em>Produced:</em> an approved
+requirement, version 1.1. <em>Why:</em> the client owns business policy;
+the implementer does not invent it.</li>
+</ol>
+<p><em>Why do you think the implementer sent this to the billing owner
+instead of writing the 30-minute rule herself?</em></p>
+<ol start="4" type="1">
+<li><strong>Built the change under control.</strong> The builder added
+the queue view and alert in build 6.2. <em>Produced:</em> an updated
+build and promotion record. <em>Why:</em> QC results apply only to an
+identified version.</li>
+<li><strong>Tested against the new requirement.</strong> QC tested
+success, rejection, delayed response, duplicate prevention, access, and
+acknowledgment. <em>Produced:</em> six test cases with results and
+evidence. <em>Why:</em> each test type covers a different way the
+workflow can fail.</li>
+</ol>
+<p><em>Why did QC test duplicate prevention when the problem was a
+pending response?</em></p>
+<ol start="6" type="1">
+<li><strong>Ran a regression set.</strong> The implementer reran the
+core set and the claim-submission tests that share the billing queue.
+All passed. <em>Produced:</em> a regression record with earlier results
+attached. <em>Why:</em> the new queue and alert could affect other
+billing work.</li>
+<li><strong>Updated training and released.</strong> The job aid and the
+training scenario were updated. The release owner approved build 6.2 for
+training. <em>Produced:</em> a release decision record and an updated
+readiness table. <em>Why:</em> exit criteria require training materials
+to match changed behavior.</li>
+</ol>
+<p><em>Why was the job aid updated before the release decision, not
+after?</em></p>

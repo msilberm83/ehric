@@ -1,0 +1,242 @@
+[
+{
+"stem": "The vendor's migration plan for Cedar Point Internal Medicine says the legacy database and its backup tapes will be destroyed 30 days after go-live \"as standard practice.\" No client owner has reviewed this step. You coordinate the conversion. What should you do?",
+"options": {
+"A": "Take the destruction step to Cedar Point's records and legal owners for a retention decision",
+"B": "Ask the vendor to send Cedar Point a final export of the database before destroying the tapes",
+"C": "Ask the vendor to extend the period to 90 days so that staff have longer to find old records",
+"D": "Ask the data owner to sign the vendor's plan, since the data owner accepts the converted data"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: how long records are kept and when they are destroyed belong to the client's records, legal, and other owners; running the migration does not give the vendor that authority (Section: Name who owns and approves the data).",
+"B": "Tempting because a final export protects the data (half right), but it still accepts a destruction date that no retention owner has approved (Section: Name who owns and approves the data).",
+"C": "Tempting because more time feels safer (the habit answer: adjusting the vendor's plan), but a longer period is still a vendor-set destruction rule that no retention owner has approved (Section: Name who owns and approves the data).",
+"D": "Tempting because the data owner does sign off on converted data (confused look-alike: data owner vs. records owner), but retention and destruction need the records and legal owners (Section: Name who owns and approves the data)."
+}
+},
+{
+"stem": "During discovery at Lakeshore, a medical assistant mentions a spreadsheet that tracks patients waiting on outside referrals. It is not in your source inventory. The inventory draft goes to the data owner on Friday. You own the inventory. What should you do?",
+"options": {
+"A": "Ask the vendor whether its standard extract tool can read the spreadsheet before you list it",
+"B": "Ask the sponsor whether local trackers belong in the conversion scope before you list it",
+"C": "Add the spreadsheet to your inventory with its owner, volume, format, and access limits",
+"D": "Note it in discovery notes and add it once its owner confirms the sheet is still in use"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because the extract method is a real inventory field (right action, wrong time), but whether a tool can read the file comes after the source is listed (Section: Inventory every source).",
+"B": "Tempting because scope does need approval (right action, wrong time), but scope is decided after sources are inventoried, and listing a source is your own work (Section: Set honest expectations and define scope).",
+"C": "Correct: spreadsheets and local trackers are named sources, and each is recorded with its owner, volume, format, and access limits (Section: Inventory every source).",
+"D": "Tempting because confirming the source sounds careful (too weak), but the inventory exists to capture every possible source with its owner now, so the Friday draft does not miss it (Section: Inventory every source)."
+}
+},
+{
+"stem": "The approved conversion scope for Cedar Point covers demographics, future appointments, and open balances from the last three years. The vendor's technical lead asks you to arrange a full export of the legacy database, including all billing history and staff messages, \"just in case\" it is needed later. You coordinate extraction requests. What should you do?",
+"options": {
+"A": "Arrange the full export, since any extra data in staging can be deleted after the final load",
+"B": "Limit the request to the approved scope and send it through the approved secure method",
+"C": "Ask the privacy officer to approve the full export before the vendor starts extracting it",
+"D": "Ask the data owner to widen the approved scope so that the full export fits inside it"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because disposal of temporary copies is part of the plan (right rule, wrong facts), but deleting later does not justify copying protected data the work does not need (Section: Inventory every source).",
+"B": "Correct: do not collect a broad export \"just in case\"; use the approved secure method and limit access to the work needed. That is within your coordinating role (Section: Inventory every source).",
+"C": "Tempting because privacy does approve data handling (too far), but routing an unneeded export for approval still collects data the approved work does not require (Section: Inventory every source).",
+"D": "Tempting because the data owner approves scope (half right), but scope follows need and approval, not a vendor's wish for a convenient export (Section: Define the scope)."
+}
+},
+{
+"stem": "The legacy practice system calculates account aging buckets (0\u201330, 31\u201360, 61\u201390 days). The new system calculates aging with different rules. What does the chapter say the team must decide for a value like this?",
+"options": {
+"A": "Map it to the new aging field, since both systems use the same three buckets",
+"B": "Exclude it, since the new system makes its own aging once balances are loaded",
+"C": "Keep it as history, since history preserves the original figures for staff",
+"D": "Choose whether to move, recalculate, keep as history, or leave it out by rule"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the bucket labels match (the habit answer: mapping by name), but each system may calculate the value differently, so matching labels do not make the mapping safe (Section: Sort the information into categories).",
+"B": "Tempting because exclusion is one valid treatment (right result, wrong reason), but it must be decided and approved, not assumed because the new system recalculates (Section: Sort the information into categories).",
+"C": "Tempting because keeping history is one valid treatment (half right), but the team must choose among the options by rule, not default to one (Section: Sort the information into categories).",
+"D": "Correct: for derived or calculated values, the team decides whether to move the value, recalculate it, keep it as history, or leave it out (Section: Sort the information into categories)."
+}
+},
+{
+"stem": "| Test conversion 2, scanned documents | Result |\n|---|---|\n| Documents extracted | 8,400 |\n| Documents loaded | 8,400 |\n| Sample opened and readable | 50 of 50 |\n| Sample linked to the correct patient | 46 of 50 |\n| Vendor status | \"Documents reconciled\" |\n\nYou are preparing the Cedar Point test-run report. What should you do?",
+"options": {
+"A": "Open a defect for the 4 misattached documents and add relationship checks to the next run",
+"B": "Accept the run, since the load counts match and the 50 sample documents opened",
+"C": "Ask the data owner to decide whether 92% correct linking is acceptable for go-live",
+"D": "Ask the vendor to reattach the 4 sample documents by hand before the next test run"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: a conversion can keep every value and still fail if links are wrong, so the misattached documents are a defect you record and test again (Section: Sort the information into categories).",
+"B": "Tempting because counts match and every file opened (true but does not answer the question), but readable files do not prove the documents belong to the right patient (Section: Reconcile and validate with the owners).",
+"C": "Tempting because owners do validate what they understand (right action, wrong time), but wrong-patient documents are a defect to trace and fix first, not a rate to accept (Section: Reconcile and validate with the owners).",
+"D": "Tempting because it fixes the visible errors quickly (the habit answer), but fixing four sample items by hand hides a mapping problem that may affect many unsampled documents (Section: Run repeated test conversions)."
+}
+},
+{
+"stem": "| Draft scope row | Entry |\n|---|---|\n| Population | \"Active patients\" |\n| Definition | (blank) |\n| Treatment | Convert to structured fields |\n| Approver | (blank) |\n\nThe vendor proposes defining active patients as \"any patient with a visit in the last five years.\" Mapping starts next week at Cedar Point. What should you do?",
+"options": {
+"A": "Use the vendor's five-year rule, since the vendor has run many similar conversions",
+"B": "Bring the five-year proposal to the data owner to define and approve the population",
+"C": "Set a three-year rule yourself, since you coordinate scope and know the workflows",
+"D": "Ask the clinical authority to approve the definition, since it affects patient care"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because the vendor's experience is real (the habit answer: accepting the vendor's word), but vendor experience does not replace the client's approval of the population (Section: Define the scope).",
+"B": "Correct: \"active patients\" needs a written definition, and the data owner approves the population (Section: Define the scope).",
+"C": "Tempting because you do coordinate scope (half right), but the population is the data owner's to approve (Section: Define the scope).",
+"D": "Tempting because conversion does affect care (confused look-alike: clinical validation rule vs. population), but the clinical authority approves the clinical validation rule, not the conversion population (Section: Who decides)."
+}
+},
+{
+"stem": "Profiling at Cedar Point finds 310 pairs of likely duplicate patients with the same name and birth date. The vendor offers to merge each pair automatically during transformation to save time before test conversion 2. What should you do?",
+"options": {
+"A": "Let the vendor merge the pairs in transformation, since name and birth date both match",
+"B": "Merge the pairs that also share an address and phone, and record each in the log",
+"C": "Ask the front desk to merge the pairs in the legacy system before the final extract runs",
+"D": "Send the pairs through Cedar Point's approved patient-identification process for review"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because two matching identifiers look convincing (the habit answer), but merging the wrong patients puts one person's history in another's chart, and matching name and birth date does not prove they are the same person (Section: Profile and clean the source).",
+"B": "Tempting because a stricter match rule with a log sounds controlled (half right), but it is still your rule, not the clinic's approved patient-identification process with qualified reviewers (Section: Profile and clean the source).",
+"C": "Tempting because fixing data in the source is a valid place for a correction (right rule, wrong facts), but only under the approved process with qualified review, not as a front-desk task (Section: Profile and clean the source).",
+"D": "Correct: matching and merging use the clinic's approved patient-identification process and qualified reviewers (Section: Profile and clean the source)."
+}
+},
+{
+"stem": "| Run | Mapping version | Note |\n|---|---|---|\n| Test 1, technical sample | 1.0 | Complete, reconciled |\n| Test 2, representative | 1.1, edited during run | Vendor changed 3 rules mid-run; no new version |\n| Test 3, full volume | \u2014 | Not started |\n\nThe vendor wants to schedule the Cedar Point production load next. You coordinate the conversion. What should you do?",
+"options": {
+"A": "Hold the full-volume rehearsal next under version 1.1, since test 2's fixes worked",
+"B": "Accept test 2 and record the three edited rules as version 1.1 in the workbook later",
+"C": "Rerun test 2 under a new controlled version, then hold the full-volume rehearsal",
+"D": "Ask the sponsor to decide whether a full-volume rehearsal is needed before go-live"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because it does keep the full-volume rehearsal (half right), but version 1.1 was edited mid-run, so no one can show which rules produced test 2's result (Section: Run repeated test conversions).",
+"B": "Tempting because it does record a version (too weak), but labeling afterward does not show which rules produced which result (Section: Run repeated test conversions).",
+"C": "Correct: each run uses one controlled mapping version, and a corrected full-volume rehearsal comes before production (Section: Run repeated test conversions).",
+"D": "Tempting because skipping a step sounds like a sponsor decision (too far), but the full-volume rehearsal is a standard step you plan as coordinator (Section: Run repeated test conversions)."
+}
+},
+{
+"stem": "During test conversion 1, you see that the vendor posted the rejected-records error file, which lists patient names and birth dates, in the project's shared chat channel. The approved security plan says error files stay in the encrypted staging folder with role-based access. What should you do?",
+"options": {
+"A": "Have the file removed from chat, kept only in staging, and reported on the incident route",
+"B": "Ask the vendor to delete the post and send future error files by secure email instead",
+"C": "Ask the vendor to password-protect the file and post it again in the same chat channel",
+"D": "Ask the sponsor whether the chat channel can be added to the approved staging locations"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: the security plan defines how error files are protected and names the incident route, so you act on it now (Section: Protect the data).",
+"B": "Tempting because it removes the exposure (half right), but secure email is not the approved location, and the exposure still needs the incident route (Section: Protect the data).",
+"C": "Tempting because a password adds protection (too weak), but it does not move the file back to the approved, role-controlled staging folder (Section: Protect the data).",
+"D": "Tempting because changing the plan sounds like proper approval (right action, wrong time), but it bends the plan to fit the exposure and skips the incident route the plan already defines (Section: Protect the data)."
+}
+},
+{
+"stem": "Cedar Point plans to use a cloud storage provider for encrypted conversion staging files that contain protected health information. The provider will not hold the encryption key. Which statement matches the chapter?",
+"options": {
+"A": "It is not a business associate, because it cannot read the encrypted information",
+"B": "It becomes a business associate if it keeps the files after the project has ended",
+"C": "It is covered by the EHR vendor's agreement, because the vendor chose the provider",
+"D": "It may still be a business associate, so privacy and legal review are both needed"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because encryption without a key does protect the data (right rule, wrong facts), but the chapter says a provider that stores the information may still be a business associate (Section: Protect the data).",
+"B": "Tempting because short-term staging feels temporary (true but does not answer the question), but status depends on storing the information at all, not on how long (Section: Protect the data).",
+"C": "Tempting because the vendor arranged the storage (confused look-alike: vendor's agreement vs. client's agreements), but the client and its business associates decide and document their own duties (Section: Protect the data).",
+"D": "Correct: a cloud provider that stores electronic protected health information may be a business associate even if it has no key, so current HHS guidance and privacy and legal review apply (Section: Protect the data)."
+}
+},
+{
+"stem": "| Open balances, test conversion 3 | Source | Loaded |\n|---|---|---|\n| Patient accounts with a balance | 3,120 | 3,120 |\n| Total open balance | $412,880.15 | $409,615.40 |\n\nThe vendor reports that the open-balance population reconciled because the account counts match. You are preparing the report for the Cedar Point data owner. What should you do?",
+"options": {
+"A": "Report the population as reconciled, since each account with a balance was loaded",
+"B": "Open a defect for the $3,264.75 gap and trace it before the validation session",
+"C": "Ask the finance owner to post an adjustment in the new system to close the gap",
+"D": "Ask the vendor to adjust the loaded balances so that the two totals agree again"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because the account counts do match (true but does not answer the question), but a control total that does not match shows a problem (Section: Reconcile and validate with the owners).",
+"B": "Correct: the totals differ by $3,264.75, so you record a defect and find the cause before the owners validate (Section: Reconcile and validate with the owners).",
+"C": "Tempting because the finance owner has authority over balances (half right), but a balancing adjustment hides the cause and leaves the converted accounts unexplained (Section: Reconcile and validate with the owners).",
+"D": "Tempting because it makes the totals agree quickly (the habit answer), but forcing a match without a traced cause is not reconciliation (Section: Reconcile and validate with the owners)."
+}
+},
+{
+"stem": "The vendor proposes validating converted future appointments at Cedar Point with a 2% random sample. The appointments include about 400 visits for patients on anticoagulants at Lakeshore. Who should approve the sampling or full-review rule?",
+"options": {
+"A": "The vendor conversion lead, since the vendor sees the error rates across runs",
+"B": "The implementer, since the implementer schedules and coordinates validation",
+"C": "The data and domain owners, setting it by risk and organizational policy",
+"D": "The executive sponsor, since the sponsor approves the overall go-live plan"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because the vendor has the most run data (the habit answer: accepting the vendor's word), but the vendor executes the conversion and does not set the client's validation approach (Section: Reconcile and validate with the owners).",
+"B": "Tempting because you do coordinate validation (half right), but the data and domain owners approve the sampling approach (Section: Reconcile and validate with the owners).",
+"C": "Correct: the sampling or full-review rule is set by risk and clinic policy, and the data and domain owners approve it (Section: Reconcile and validate with the owners).",
+"D": "Tempting because the sponsor approves go-live (too far), but that role does not make the sponsor owner of the validation rule (Section: Reconcile and validate with the owners)."
+}
+},
+{
+"stem": "| Clinician sample, test 2 (synthetic) | Source medication list | Converted list |\n|---|---|---|\n| Patient 1 | Warfarin 5 mg daily, active | Warfarin 5 mg daily, active |\n| Patient 2 | Metformin, discontinued 2024 | Metformin, active |\n| Patient 3 | Lisinopril 10 mg daily, active | Lisinopril 10 mg, active (frequency blank) |\n\nYou coordinate clinical validation at Cedar Point. What should you do with these results?",
+"options": {
+"A": "Open defects for patients 2 and 3 and report them to the clinical authority",
+"B": "Edit patients 2 and 3 in the test system so that they match the source lists",
+"C": "Pass the sample, since each source medication arrived on the converted list",
+"D": "Ask the clinical lead to review patients 2 and 3 and decide if they are safe"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: status confusion and lost frequency are known medication problems, and you open defects and report exceptions to the clinical authority (Section: Who decides).",
+"B": "Tempting because the right values are known (the habit answer), but hand-editing test records hides the mapping defect, and changing clinical lists is not your call (Section: Who decides).",
+"C": "Tempting because every drug arrived (true but does not answer the question), but a converted list can match every count and still be unsafe (Section: Know why clinical lists need clinical validation).",
+"D": "Tempting because clinical review is the right instinct (half right), but these are mapping errors to log as defects first; you report them to the clinical authority rather than ask for a safety ruling on bad data (Section: Who decides)."
+}
+},
+{
+"stem": "Cedar Point's medical director approved clinical validation rule v1.0, which requires clinicians to compare 100 source charts with converted charts. The vendor proposes cutting the sample to 30 charts to save time, and the data owner agrees. What should you do?",
+"options": {
+"A": "Apply the smaller sample, since the data owner accepts the converted data overall",
+"B": "Keep 100 charts and tell the vendor the rule cannot change once it is approved",
+"C": "Ask the nurse lead to approve the change, since she advises on clinical review",
+"D": "Take the change to the medical director, who approved the validation rule"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the data owner agreed (right rule, wrong facts), but the data owner relies on clinical review for clinical lists and does not approve the clinical rule (Section: Who decides).",
+"B": "Tempting because holding the approved rule sounds safe (too far), but an approved rule can change through the authority who owns it (Section: Who decides).",
+"C": "Tempting because the nurse lead knows clinical review (confused look-alike: adviser vs. approver), but a pharmacist or nurse lead may advise; the named clinical authority approves (Section: Who decides).",
+"D": "Correct: the clinical authority approves the clinical validation rule, including its sample size (Section: Who decides)."
+}
+},
+{
+"stem": "| Retirement checklist, Cedar Point legacy system | Status |\n|---|---|\n| Required history converted or in approved archive | Done |\n| Staff told where history lives | Done |\n| Archive retrieval for legal-hold records | Not tested |\n| Retention and disposition | Approved by records manager |\n| Retirement authority | Not documented |\n\nThe legacy license renews in 10 days, and the sponsor wants to let it lapse. You own the checklist. What should you do?",
+"options": {
+"A": "Let the license lapse, since history is archived and retention is already approved",
+"B": "Test legal-hold retrieval and get retirement authority recorded before it lapses",
+"C": "Ask the vendor to keep a full backup of the legacy system in case records are needed",
+"D": "Ask the sponsor to renew for a full year and revisit retirement at the 90-day review"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because two key items are done (half right), but retrieval for legal-hold records must work and the retirement approver must be recorded before the source is retired (Section: Archive the history before you retire the source).",
+"B": "Correct: you close the two open checklist items, because history must be reachable and the retirement owner must approve before the source is retired (Section: Archive the history before you retire the source).",
+"C": "Tempting because a backup keeps the data (the habit answer), but an unplanned vendor backup is not an approved archive and leaves retirement authority unrecorded (Section: Archive the history before you retire the source).",
+"D": "Tempting because more time removes the pressure (too far), but a year's delay avoids the decision instead of finishing checks that can be done in 10 days (Section: Archive the history before you retire the source)."
+}
+}
+]

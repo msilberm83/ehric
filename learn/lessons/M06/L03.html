@@ -1,0 +1,165 @@
+<h1>Module 6, Lesson 3: Worked example: behavioral health note access</h1>
+<h2 id="worked-example-behavioral-health-note-access">Worked example:
+behavioral health note access</h2>
+<p>Cedar Point adds a licensed clinical social worker at Lakeshore. The
+approved design gives her a separate psychotherapy note type. Only she
+can open it.</p>
+<ol type="1">
+<li><strong>Confirmed the decision owners.</strong> You checked the
+decision record. The behavioral health lead and the privacy officer had
+approved the note type and access. <em>Produced:</em> an authority list
+for the workflow. <em>Why:</em> you build and train only what the owners
+approved.</li>
+<li><strong>Wrote access scenarios.</strong> You wrote a scenario for
+each role and output: provider, medical assistant, front desk, release
+of information, and the portal. <em>Produced:</em> an approved access
+test set. <em>Why:</em> protection must be proven for every path a note
+can take.</li>
+<li><strong>Ran the medical assistant scenario.</strong> In class, a
+medical assistant prepared the next day's charts using synthetic
+records. She could see the title and date of the psychotherapy note,
+though not its text. <em>Produced:</em> an observation in the class
+notes. <em>Why:</em> real tasks expose gaps that a feature list
+misses.</li>
+<li><strong>Stopped and sorted the finding.</strong> The design said
+only the author can open the note. It did not say whether others may see
+that it exists. You logged a decision item for the privacy officer and a
+possible defect for the builder. The class went on with other scenarios.
+<em>Produced:</em> two register entries. <em>Why:</em> a gap in the
+design needs the owner's decision before anyone changes the build.</li>
+<li><strong>Got the decision.</strong> The privacy officer and
+behavioral health lead decided that no other role may see the title.
+<em>Produced:</em> a recorded decision. <em>Why:</em> access to
+protected notes is their call, not yours.</li>
+<li><strong>Requested the fix and the retest.</strong> The builder
+changed the view. QC retested the medical assistant, provider,
+front-desk, and release-of-information roles. QC also checked that the
+note stays out of the portal and the release packet. <em>Produced:</em>
+a QC request and test evidence. <em>Why:</em> one fix can break another
+path, so every role and output is retested.</li>
+<li><strong>Rechecked the learner.</strong> The medical assistant
+repeated the scenario on the fixed release. <em>Produced:</em> an
+updated competence record showing the recheck. <em>Why:</em> her earlier
+result was on a build that no longer exists.</li>
+</ol>
+<p><em>Prompt 1: Why did you log both a decision item and a possible
+defect, instead of only a defect?</em></p>
+<p><em>Prompt 2: Why did QC retest roles that had passed
+before?</em></p>
+<p><em>Prompt 3: Why did the class continue with other scenarios after
+the finding?</em></p>
+<h2 id="your-turn-faded-example">Your turn: faded example</h2>
+<p><em>If you have done this task on a real project, try this first,
+then compare with the worked example.</em></p>
+<p>Clinical staff at a family clinic practice a synthetic after-hours
+triage request. The approved protocol sends urgent items to an on-call
+pool. In the training build, every item goes to the daytime queue.</p>
+<ol type="1">
+<li><strong>Stopped the scenario.</strong> The instructor paused the
+exercise when the urgent item landed in the daytime queue.
+<em>Produced:</em> a note of the scenario, release, and result.
+<em>Why:</em> continuing would teach the wrong routing.</li>
+<li><strong>Classified the finding.</strong> The approved protocol
+already states the rule, so the build does not match an approved design.
+<em>Produced:</em> a high-priority defect entry. <em>Why:</em> no new
+decision is needed; the build is wrong.</li>
+<li><strong>Your step:</strong> What does the class use for the rest of
+the exercise, and why?</li>
+<li><strong>Your step:</strong> Who confirms the expected rule, and who
+fixes the build?</li>
+<li><strong>Your step:</strong> What must QC retest before the scenario
+is used again?</li>
+<li><strong>Your step:</strong> What happens to the learners who
+practiced on the faulty build?</li>
+</ol>
+<h2 id="field-assignment">Field assignment</h2>
+<p>Choose one specialized healthcare workflow from the practice case,
+Cedar Point Internal Medicine (main clinic and Lakeshore). Use synthetic
+data only. Do not use a real client, employer, or patient.</p>
+<ol type="1">
+<li>Name the domain authority and the approved evaluator.</li>
+<li>Confirm the approved workflow, configuration, access, scenarios, and
+QC readiness.</li>
+<li>Write at least five observable, role-based objectives.</li>
+<li>Trace the downstream effect from start to finish.</li>
+<li>Run normal, incomplete, exception, access, and downtime or failure
+scenarios.</li>
+<li>Record attendance, independent performance, exception response, and
+remediation.</li>
+<li>Route every defect, decision, change, and homework item.</li>
+<li>Get domain approval and QC evidence.</li>
+</ol>
+<p><strong>Self-check rubric.</strong> Your work is ready when:</p>
+<ul class="task-list">
+<li><p><label><input type="checkbox" />each workflow has a named domain
+authority and approved evaluator;</label></p></li>
+<li><p><label><input type="checkbox" />the scenario set includes normal,
+exception, access, and failure cases;</label></p></li>
+<li><p><label><input type="checkbox" />each scenario names who notices a
+missed handoff and what QC will check;</label></p></li>
+<li><p><label><input type="checkbox" />the evaluator, not you, made each
+competence decision;</label></p></li>
+<li><p><label><input type="checkbox" />every finding is routed by what
+it changes, with an owner and date;</label></p></li>
+<li><p><label><input type="checkbox" />domain approval and QC evidence
+are on file.</label></p></li>
+</ul>
+<h2 id="knowledge-check">Knowledge check</h2>
+<ol type="1">
+<li>What does the implementation specialist own during specialized
+workflow design and training?</li>
+<li>Why must clinical triage content be owned by qualified clinical
+leadership?</li>
+<li>Why should the course avoid describing a note as automatically
+billable?</li>
+<li>Who decides whether a clinic keeps separate psychotherapy notes, and
+what does the implementer own once that is decided?</li>
+<li>Why should specialized scenarios follow information downstream?</li>
+<li>Who decides whether a learner is clinically competent?</li>
+</ol>
+<h2 id="spaced-review">Spaced review</h2>
+<ol type="1">
+<li>(Module 5) Cedar Point's nurses trained on release 3.1. The go-live
+release, 3.3, changed the refill screen. What do you do before
+go-live?</li>
+<li>(Module 5) The clinic offers its newest receptionist as the only
+super user "because she has time." What do you say, and who makes the
+final choice?</li>
+<li>(Module 3) A provider at kickoff asks for a patient-education module
+that was not in the scope summary. How do you handle it?</li>
+<li>(Module 2) The lab interface must be tested before training, but the
+lab has not issued test credentials. How do you write this dependency so
+it can be managed?</li>
+<li>(Module 1) Sales says it promised "a dedicated trainer for each
+location." The signed order does not mention it. What do you do?</li>
+</ol>
+<h2 id="module-6-gate--specialized-workflows-ready">Module 6 gate —
+specialized workflows ready</h2>
+<p><strong>Who must be in the room:</strong> the domain authorities, the
+approved evaluators, and the privacy officer for any sensitive-record
+workflow. <strong>What to bring:</strong> the authority list, the
+approved scenario sets, the competence records, the open-item register,
+and the QC evidence.</p>
+<ul class="task-list">
+<li><p><label><input type="checkbox" />Confirm a domain authority
+approved each workflow and its scenarios.</label></p></li>
+<li><p><label><input type="checkbox" />Confirm configuration and access
+passed QC before training.</label></p></li>
+<li><p><label><input type="checkbox" />Confirm final training used the
+tested release that will go live.</label></p></li>
+<li><p><label><input type="checkbox" />Run normal, exception, and
+failure scenarios for each required role.</label></p></li>
+<li><p><label><input type="checkbox" />Get the approved evaluator's
+competence, remediation, and recheck results.</label></p></li>
+<li><p><label><input type="checkbox" />Keep every clinical, billing,
+privacy, and security decision with its owner.</label></p></li>
+<li><p><label><input type="checkbox" />Test sensitive-record access,
+such as behavioral health notes, for each role and
+output.</label></p></li>
+<li><p><label><input type="checkbox" />Route every finding through
+decision, change, defect, build, and QC controls.</label></p></li>
+<li><p><label><input type="checkbox" />Show each downstream handoff and
+its evidence.</label></p></li>
+<li><p><label><input type="checkbox" />File domain approvals and QC
+evidence.</label></p></li>
+</ul>

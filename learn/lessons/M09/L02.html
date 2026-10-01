@@ -1,0 +1,232 @@
+<h1>Module 9, Lesson 2: How does each side know an item arrived?</h1>
+<h2 id="how-does-each-side-know-an-item-arrived">How does each side know
+an item arrived?</h2>
+<p>A message can arrive and still fail. If no one knows the difference,
+a missing lab result or claim stays missing until a patient or payer
+complains.</p>
+<p>An <strong>acknowledgement</strong> is a reply that says what
+happened to an item. For each exchange, answer these questions:</p>
+<ul>
+<li>How does the sender know the item left?</li>
+<li>How does the receiver know it arrived?</li>
+<li>How does the business user know the work is complete?</li>
+<li>What does a rejection look like?</li>
+<li>What happens when no reply arrives?</li>
+<li>Who watches pending and failed items?</li>
+<li>When may someone retry an item, and how?</li>
+<li>How are duplicates prevented or fixed?</li>
+<li>How does work continue during downtime?</li>
+<li>How is delayed work reconciled after recovery?</li>
+</ul>
+<p>Acknowledgements come in layers. A <strong>transport</strong>
+acknowledgement says a file arrived. A <strong>syntax</strong>
+acknowledgement says its format was valid. A <strong>business</strong>
+acknowledgement says the receiver accepted the content for processing.
+Each layer has its own meaning and owner.</p>
+<figure style="margin:16px 0"><img src="../../img/M09-03.png" alt="Figure 9.3. Notice that "file arrived" is not "business accepted"; each layer has its own reply and owner." style="width:100%;max-width:1000px"><figcaption><b>Figure 9.3.</b> Notice that "file arrived" is not "business accepted"; each layer has its own reply and owner.</figcaption></figure>
+> **Rule:** A transport reply shows the item arrived, not that the receiver accepted it.
+
+<p>Compare two cases. A lab interface returns "accepted" for every
+result, but two results file to the wrong patient. A claims file returns
+"accepted," but three claims inside it are later rejected. In both
+cases, the first "accepted" was only about delivery. Train and test the
+layers separately.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the three layers of acknowledgement.</li>
+<li>Why must users learn what each acknowledgement means?</li>
+<li>No reply has arrived for a claim after the expected time. What
+should the design already say about this?</li>
+</ol>
+<h2 id="test-end-to-end-including-failures">Test end to end, including
+failures</h2>
+<p>A connector test proves two systems can talk. Only an end-to-end test
+proves the clinic's work gets done, including on a bad day.</p>
+<p>The implementation gate needs end-to-end business tests. Connector
+tests alone are not enough. Include these scenarios:</p>
+<ul>
+<li>normal transactions;</li>
+<li>missing or invalid required values;</li>
+<li>mismatched identifiers;</li>
+<li>duplicate submission;</li>
+<li>rejection and correction;</li>
+<li>delayed or missing response;</li>
+<li>unavailable endpoint;</li>
+<li>unauthorized access;</li>
+<li>changed or cancelled source item;</li>
+<li>downstream posting or routing;</li>
+<li>reconciliation and audit evidence;</li>
+<li>recovery after downtime.</li>
+</ul>
+<p>For each test, record the source result, transport result,
+destination result, and business result. Also record the
+acknowledgement, timing, and evidence. Test both directions when
+information comes back.</p>
+<p><strong>Synthetic data</strong> is made-up data built for testing.
+Never use real patient records in a test environment. Use synthetic data
+and the client's approved access and security process. In this course,
+all practice work uses the casebook or the practice case.</p>
+<blockquote>
+<p><strong>Rule:</strong> A test passes only when the business result is
+correct, not when the message moves.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name five failure scenarios an end-to-end test plan should
+include.</li>
+<li>Why do you record transport and business results in separate
+columns?</li>
+</ol>
+<h2 id="which-interoperability-standard-does-each-exchange-use">Which
+interoperability standard does each exchange use?</h2>
+<p>Two products can both "support HL7" and still not work together.
+Knowing the standard and its version lets you ask the right question
+before testing fails.</p>
+<p><strong>Interoperability</strong> means systems can exchange health
+information and use what they receive. You do not need to build
+interfaces. You need to know what each standard is for, ask which one
+each exchange uses, and record its version.</p>
+<p><strong>HL7 Version 2 (v2).</strong> HL7 (Health Level Seven) is the
+group that publishes these standards. HL7 v2 is an event-driven
+messaging standard. A registration, an order, or a finished lab result
+triggers a message. Common message types are <strong>ADT</strong>
+(admit, discharge, transfer, and registration), orders, and
+<strong>ORU</strong> results. HL7 v2 is still common for registration,
+lab, and scheduling interfaces. Many v2 interfaces are customized, so
+two "HL7 interfaces" may not match. Ask for the interface
+specification.</p>
+<p><strong>C-CDA.</strong> The <strong>Consolidated Clinical Document
+Architecture</strong> is a library of templates for whole clinical
+documents. Examples are the Continuity of Care Document
+(<strong>CCD</strong>), the referral note, and the discharge summary. A
+C-CDA is a snapshot sent at one point in time, often when a patient
+moves between providers. The current HL7 release is 5.0.0.</p>
+<p><strong>HL7 FHIR R4 and US Core.</strong> <strong>FHIR</strong> (Fast
+Healthcare Interoperability Resources) exchanges data through web APIs.
+An <strong>API</strong> (application programming interface) is a defined
+way for one program to request data from another. FHIR sends small units
+called <em>resources</em>, such as a patient, a medication, or a lab
+result. Release 4 (<strong>R4</strong>) is the FHIR version used in
+current US certification. <strong>US Core</strong> is the HL7 guide that
+sets the minimum US rules on top of R4.</p>
+<p><strong>USCDI.</strong> The <strong>United States Core Data for
+Interoperability</strong> is a named list of data types, such as
+allergies, medications, problems, and lab results. Certified health IT
+must be able to exchange it. USCDI version 3 became the required
+baseline for certification on January 1, 2026. Developers may adopt
+newer versions early through a federal process called the Standards
+Version Advancement Process (<strong>SVAP</strong>). USCDI v6 was
+approved for that process in 2026. So "supports USCDI" means little
+without a version number.</p>
+<p><strong>SMART on FHIR.</strong> SMART App Launch is an HL7 guide
+built on OAuth 2.0, a common standard for granting access. It lets an
+approved app connect to an EHR's FHIR API with limited permissions
+called <em>scopes</em>. An app can open inside the EHR or on its own,
+such as a patient's phone app.</p>
+<p><strong>Direct secure messaging.</strong> Direct works like email,
+but each message is encrypted and sent only between known, trusted
+recipients. Clinics use it to send referrals, results, and care
+summaries, often as a C-CDA. Each user or location has a Direct
+address.</p>
+<figure style="margin:16px 0"><img src="../../img/M09-04.png" alt="Figure 9.4. Notice that each standard moves a different kind of information, so name the right one for each exchange." style="width:100%;max-width:1000px"><figcaption><b>Figure 9.4.</b> Notice that each standard moves a different kind of information, so name the right one for each exchange.</figcaption></figure>
+For each clinical exchange, record four things:
+
+<ul>
+<li>the standard, its version, and its implementation guide;</li>
+<li>the trading partner;</li>
+<li>whether incoming data files automatically;</li>
+<li>whether a clinician reviews it first.</li>
+</ul>
+<blockquote>
+<p><strong>Rule:</strong> For each clinical exchange, write down the
+standard and its version.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Which standard sends whole clinical documents, and which sends small
+units through web APIs?</li>
+<li>Why does "supports USCDI" need a version number?</li>
+</ol>
+<h2 id="route-interoperability-rules-to-the-people-who-decide">Route
+interoperability rules to the people who decide</h2>
+<p>National rules shape how an EHR shares information. A wrong setting
+can break a federal rule, so you must know who decides, even though you
+never decide.</p>
+<p>Rules change often. Confirm current versions at the start of each
+project.</p>
+<p><strong>ONC Health IT Certification Program.</strong> The
+<strong>Office of the National Coordinator for Health Information
+Technology (ONC)</strong> runs this voluntary federal program. Approved
+bodies test products against published criteria. Certified products
+appear on the <strong>Certified Health IT Product List (CHPL)</strong>.
+Programs run by the Centers for Medicare &amp; Medicaid Services
+(<strong>CMS</strong>) encourage or require certified technology. Ask
+the vendor for the product's CHPL listing and the criteria and versions
+it covers. Then check the listing yourself. Certification shows the
+product <em>can</em> do certain things. It does not prove the client's
+setup is correct.</p>
+<p><strong>The HTI-1 rule.</strong> ONC's HTI-1 final rule took effect
+March 11, 2024. It set USCDI v3 as the certification baseline from
+January 1, 2026. It added transparency rules for decision support,
+covered in Module 10. It also revised the information-blocking
+rules.</p>
+<p><strong>Information blocking.</strong> The 21st Century Cures Act
+bans <strong>information blocking</strong>. This is a practice likely to
+interfere with access to, exchange of, or use of <strong>electronic
+health information (EHI)</strong>. A practice is allowed when the law
+requires it or an exception applies. The rule covers health care
+providers, developers of certified health IT, and health information
+networks. Exceptions include preventing harm, privacy, security,
+infeasibility, and system performance. Providers found to have blocked
+information can face penalties. Setup choices can raise the question.
+Examples are delaying results in the patient portal, turning off an
+export, or refusing an app connection.</p>
+<p><strong>TEFCA and QHINs.</strong> The <strong>Trusted Exchange
+Framework and Common Agreement (TEFCA)</strong> is a nationwide
+framework for sharing records. <strong>Qualified Health Information
+Networks (QHINs)</strong> are the networks that connect to each other
+under it. Exchange purposes include treatment, payment, operations,
+public health, benefits decisions, and patient access. A clinic usually
+joins through its vendor or a network, which means signing
+agreements.</p>
+<p><strong>Payer interoperability rules.</strong> CMS rule CMS-0057-F
+requires some payers, such as Medicare Advantage and Medicaid plans, to
+build data-sharing and prior authorization APIs. Operational
+requirements began January 1, 2026. Most API requirements apply from
+January 1, 2027. The clinic is not the regulated party, but its prior
+authorization workflow may change.</p>
+<p><strong>Who decides:</strong></p>
+<ul>
+<li>The client's privacy officer or compliance lead, with legal counsel,
+decides information-blocking, consent, and sharing questions.</li>
+<li>Clinical leadership decides which incoming data files automatically
+and which a clinician reviews first.</li>
+<li>The executive sponsor, with legal counsel, decides network
+participation and signs agreements.</li>
+<li>The vendor states product capability and certification, with
+evidence.</li>
+<li>You record, test, and route. You do not decide whether a practice is
+information blocking.</li>
+</ul>
+<p>Record each exchange in an <strong>interoperability source
+register</strong>. This is a table with one row per exchange.</p>
+<figure style="margin:16px 0"><img src="../../img/M09-05.png" alt="Figure 9.5. Notice that one register row ties each exchange to its standard, agreement, decision owner, and test evidence." style="width:100%;max-width:1000px"><figcaption><b>Figure 9.5.</b> Notice that one register row ties each exchange to its standard, agreement, decision owner, and test evidence.</figcaption></figure>
+**Test a clinical exchange this way.** Send and receive a CCD for a synthetic patient. Check that each expected item arrived and filed to the right patient. Test a near-match patient, such as the same name with a different birth date. Confirm that a clinician can see where incoming data came from. Confirm the clinician can reconcile medications, allergies, and problems before they join the chart.
+
+<blockquote>
+<p><strong>Rule:</strong> You record, test, and route each sharing
+question; the client's named leaders decide it.</p>
+</blockquote>
+<p>Compare two cases. A practice manager asks you to hold lab results
+from the portal for seven days. A physician asks you to turn off the
+chart export because "patients don't need it." Both requests could be
+information blocking. In both cases you record the request and route it
+to the privacy or compliance authority before you change anything.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What does a CHPL listing prove, and what does it not prove?</li>
+<li>Who decides whether a portal delay could be information
+blocking?</li>
+<li>The practice manager calls TEFCA "just a setting" and asks you to
+switch it on. What would you do?</li>
+</ol>

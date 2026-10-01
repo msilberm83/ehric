@@ -1,0 +1,261 @@
+<h1>Module 10, Lesson 3: Apply the domain controls</h1>
+<h2 id="apply-the-domain-controls">Apply the domain controls</h2>
+<p>Each kind of AI use has its own typical errors. A note tool fails
+differently from a scheduling assistant, so each needs its own test
+cases and limits.</p>
+<h3 id="ambient-documentation">Ambient documentation</h3>
+<p>An <strong>ambient documentation</strong> tool listens to a visit and
+drafts a note. Define:</p>
+<ul>
+<li>which visits and roles may use it;</li>
+<li>how patients are told or asked for consent, under clinic
+policy;</li>
+<li>how audio and transcripts are handled and kept;</li>
+<li>where drafts go and who reviews, corrects, and signs them;</li>
+<li>what happens downstream, and the fallback.</li>
+</ul>
+<p>Test for missing facts and for words credited to the wrong speaker.
+Test for negation errors, such as "no chest pain" written as "chest
+pain." Also test for medication and measurement errors, unrelated
+content, text carried forward from templates, and unsupported
+statements.</p>
+<p>The tool creates a draft. The clinician stays responsible for the
+signed note. Unreviewed drafts must not start clinical, billing, or
+other high-impact work unless the clinic has approved and tested that
+step separately.</p>
+<p>Some visits need extra care: behavioral health and psychotherapy
+visits, substance use disorder treatment, and confidential visits with
+minors. Ask whether the tool may be used in them at all, and how drafts
+and audio are protected. The privacy officer and the clinical lead
+decide. Module 4, "Plan for sensitive records," lists the questions to
+ask.</p>
+<h3 id="intake-and-triage-help">Intake and triage help</h3>
+<p>AI may summarize, pull out facts, translate, sort, or suggest
+routing. Qualified clinical leaders decide which decisions it may affect
+and what needs a person right away. Test incomplete, conflicting,
+urgent, out-of-scope, other-language, and misleading input. Make failed
+or uncertain routing visible.</p>
+<h3 id="scheduling">Scheduling</h3>
+<p>AI may propose times, answer routine questions, or handle approved
+rescheduling. Test identity, permission, location, time zone, resources,
+urgency, cancellation, double booking, accessibility, and escalation. A
+chat tool must not decide clinical priority outside approved rules.</p>
+<h3 id="billing-help">Billing help</h3>
+<p>AI may sort work, find patterns, summarize rejected claims, or draft
+follow-up letters. Qualified billing, finance, compliance, or clinical
+reviewers approve the actions and content. Test unsupported advice,
+wrong source data, the wrong account, repeated actions, differences
+between payers, access, and audit.</p>
+<blockquote>
+<p><strong>Rule:</strong> An AI draft never replaces the signature or
+decision of the person who owns the work.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four errors to test in an ambient documentation tool.</li>
+<li>Why must unreviewed AI drafts not start billing work?</li>
+<li>Who decides whether an ambient tool may be used in psychotherapy
+visits?</li>
+</ol>
+<h2 id="monitor-after-release">Monitor after release</h2>
+<p>A use that passed testing can get worse after release. Models change,
+workflows change, and staff stop checking closely.</p>
+<p>Before go-live, assign:</p>
+<ul>
+<li>an owner and a reviewer;</li>
+<li>volume and use measures;</li>
+<li>quality and error measures;</li>
+<li>correction and override measures;</li>
+<li>checks by group or category where needed;</li>
+<li>privacy, security, and incident signals;</li>
+<li>speed and availability measures;</li>
+<li>a review schedule;</li>
+<li>thresholds for investigation, pause, rollback, or retirement;</li>
+<li>a review of model or vendor changes.</li>
+</ul>
+<p>Give users a way to report corrections and incidents without fear of
+blame. Hidden corrections make performance look better while risk
+grows.</p>
+<p>Compare two signals. At one clinic, corrections fall slowly while
+review time stays the same, which may be real improvement. At another
+clinic, corrections fall the same week a "accept all" button appears and
+review time drops. That is a sign staff stopped checking. In both cases,
+read corrections together with how carefully staff review.</p>
+<blockquote>
+<p><strong>Rule:</strong> Assign a monitoring owner and pause thresholds
+before release, not after the first problem.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four measures in a monitoring plan.</li>
+<li>Why can a drop in corrections be bad news?</li>
+<li>What would you do if a vendor announces a new model version next
+week?</li>
+</ol>
+<h2 id="check-the-plan-against-the-2025-safer-guides">Check the plan
+against the 2025 SAFER Guides</h2>
+<p>The clinic needs to show that its AI use follows a recognized safety
+practice. A short crosswalk shows where your work already covers it and
+where gaps remain.</p>
+<p>The <strong>SAFER Guides</strong> (Safety Assurance Factors for EHR
+Resilience) are free self-assessment checklists from ONC. They help a
+clinic check that its EHR is used safely. The 2025 set has eight
+guides:</p>
+<ul>
+<li>High Priority Practices;</li>
+<li>Organizational Responsibilities;</li>
+<li>Contingency Planning;</li>
+<li>System Management;</li>
+<li>Patient Identification;</li>
+<li>Computerized Provider Order Entry with Decision Support;</li>
+<li>Test Results Reporting and Follow-Up;</li>
+<li>Clinician Communication.</li>
+</ul>
+<p>The Organizational Responsibilities guide now has a recommended
+practice on AI (practice 1.9). It says AI developers, EHR vendors, and
+healthcare organizations share responsibility for AI safety. The guide
+is a self-assessment tool, not a law. The client's safety or AI
+governance owner decides how to use it.</p>
+<p>Use this crosswalk to show where this module's work covers each item.
+Give the completed crosswalk to the AI governance owner. Do not score
+the client's self-assessment yourself.</p>
+<table>
+<thead>
+<tr>
+<th>SAFER 1.9 item (paraphrased)</th>
+<th>Where this module covers it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A team from several fields, with AI expertise, reviews new AI
+requests and monitors AI in use</td>
+<td>Run the risk and authority review; Monitor after release</td>
+</tr>
+<tr>
+<td>The team keeps an inventory of AI in use: start date, version,
+responsible people, last review, authorized users and purpose,
+training-data source, outside testing</td>
+<td>Build the use-case inventory; Collect decision-support source
+information</td>
+</tr>
+<tr>
+<td>Test performance on local data before routine clinical use, then
+check regularly for drift, bias, or decline</td>
+<td>Build a representative evaluation; Monitor after release</td>
+</tr>
+<tr>
+<td>Patients and clinicians know, when possible, that AI is in use;
+consent where the clinic requires it</td>
+<td>Run the risk and authority review (Authority); Ambient
+documentation</td>
+</tr>
+<tr>
+<td>People who take responsibility review AI recommendations before they
+reach patients</td>
+<td>Design human oversight</td>
+</tr>
+<tr>
+<td>A log of AI use: version, date and time, patient, clinical user,
+input, and output</td>
+<td>Keep a traceable record; Monitor after release</td>
+</tr>
+<tr>
+<td>Training for clinicians on known and possible AI risks</td>
+<td>Field assignment step 9; Module 5 and 6 training methods</td>
+</tr>
+<tr>
+<td>Clear written steps and authority for IT staff to turn off AI, 24
+hours a day, 7 days a week</td>
+<td>Build the use-case inventory (fallback and stop method)</td>
+</tr>
+<tr>
+<td>Downtime steps for work that depends on AI</td>
+<td>Build a representative evaluation (service outage and fallback);
+Module 11 downtime planning</td>
+</tr>
+<tr>
+<td>A clear process to report, study, and reduce AI safety issues</td>
+<td>Monitor after release (correction and incident route)</td>
+</tr>
+</tbody>
+</table>
+<figure style="margin:16px 0"><img src="../../img/M10-08.png" alt="Figure 10.8. Notice that each SAFER AI item maps to a section of this module, including the 24/7 stop." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.8.</b> Notice that each SAFER AI item maps to a section of this module, including the 24/7 stop.</figcaption></figure>
+Two items need extra care. The first is the 24/7 stop. A stop that only the vendor's weekday support desk can perform does not meet it. Name the client's on-call role, write the steps, and test them before go-live. The second is the use log. Ask the vendor what the product logs and for how long. The client's privacy and security owners decide what logging is required.
+
+<p>The guide also says small clinics may choose to wait for better
+evidence before using AI. Waiting is a fair decision for the client to
+make. Record it like any other decision.</p>
+<blockquote>
+<p><strong>Rule:</strong> You fill in the crosswalk, and the client's
+governance owner does the self-assessment.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What is the AI practice number in the Organizational
+Responsibilities guide?</li>
+<li>Why does a vendor-only weekday stop fail the 24/7 item?</li>
+<li>The practice manager asks you to score the clinic's SAFER
+self-assessment. What would you do?</li>
+</ol>
+<h2 id="worked-example-ambient-note-pilot">Worked example: ambient note
+pilot</h2>
+<p>A three-provider family medicine clinic wants to turn on an ambient
+note tool for every provider at once. Here is how the implementation
+specialist handled it.</p>
+<ol type="1">
+<li><strong>Did:</strong> wrote the use-case statement and proposed a
+pilot with three providers for six weeks instead of a full launch.
+<strong>Produced:</strong> a signed use-case statement and pilot scope.
+<strong>Why:</strong> a small pilot limits harm while the team gathers
+evidence.</li>
+<li><strong>Did:</strong> ran the risk and authority review with the
+clinical, privacy, security, legal, records, billing, and technical
+owners. <strong>Produced:</strong> a decision record naming who approved
+each area. <strong>Why:</strong> each owner decides their own area, and
+the specialist only coordinates.</li>
+<li><strong>Did:</strong> sent the vendor's data terms and business
+associate agreement to the privacy and contract owners.
+<strong>Produced:</strong> a vendor and data decision record.
+<strong>Why:</strong> visit audio is PHI, so those owners must approve
+how the vendor keeps and uses it.</li>
+<li><strong>Did:</strong> built an evaluation set covering different
+visit types, accents, interpreter-assisted visits, interruptions,
+negation, medications, measurements, follow-up instructions, and a
+service outage. The clinical lead set thresholds before the run.
+<strong>Produced:</strong> test set version 1 with thresholds by
+category. <strong>Why:</strong> thresholds set after the results can be
+bent to fit them.</li>
+</ol>
+<p><em>Prompt 1: Why do you think the specialist built the evaluation
+set before choosing the pilot providers' start date?</em></p>
+<ol start="5" type="1">
+<li><strong>Did:</strong> set the review pattern: providers correct and
+sign every draft before it is used, and drafts cannot trigger billing.
+<strong>Produced:</strong> a review pattern in the inventory.
+<strong>Why:</strong> the clinician stays responsible for the signed
+note.</li>
+<li><strong>Did:</strong> ran the pilot and reviewed corrections by
+category each week. <strong>Produced:</strong> a correction log by visit
+type. <strong>Why:</strong> an overall rate could hide one bad visit
+type.</li>
+<li><strong>Did:</strong> found that in interpreter-assisted visits the
+tool often credited the interpreter's words to the patient. The
+specialist took the finding to the clinical lead. The clinical lead
+excluded interpreter-assisted visits until a vendor fix passes
+retesting. <strong>Produced:</strong> a recorded limitation and the
+lead's decision. <strong>Why:</strong> limiting clinical use is a
+clinical decision.</li>
+</ol>
+<p><em>Prompt 2: Why did the clinical lead, not the specialist, decide
+to exclude interpreter-assisted visits?</em></p>
+<ol start="8" type="1">
+<li><strong>Did:</strong> updated training and added a monitoring check
+for wrong-speaker corrections. <strong>Produced:</strong> revised
+training material and a new monitoring measure with an owner.
+<strong>Why:</strong> staff need to know the limit, and the team needs
+to see if the problem returns.</li>
+</ol>
+<p><em>Prompt 3: Why does the new monitoring measure track wrong-speaker
+corrections by visit type instead of one overall correction
+rate?</em></p>

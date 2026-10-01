@@ -1,0 +1,242 @@
+[
+{
+"stem": "Three weeks after stabilization exit, a Lakeshore medical assistant texts the implementer that the label printer at her station prints blank labels. The clinic's help desk is the approved support route. The implementer knows the fix is a two-minute printer setting. What should the implementer do?",
+"options": {
+"A": "Fix the printer setting remotely now, since it is quick and the implementer still has remote access.",
+"B": "Tell the assistant to call the help desk next time, and fix the printer this once as a courtesy.",
+"C": "Ask the vendor's support desk to open a case and fix the printer setting under the clinic's contract.",
+"D": "Log the request, send it through the help desk route, and tell the operating owner it came to you."
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because it helps the user in two minutes (the habit answer), but \"Confirm the steady-state handoff\" warns that quiet fixes keep the clinic dependent on you and hide its support load.",
+"B": "Tempting because it also teaches the right route (half right), but the courtesy fix is still a quiet fix the help desk and owner never see.",
+"C": "Tempting because vendor cases are a real support route (right rule, wrong facts), but the clinic's named contact opens vendor cases, and a printer setting goes to the help desk first.",
+"D": "Correct: the chapter says to log the request, send it through the approved route, and tell the operating owner."
+}
+},
+{
+"stem": "What does the steady-state handoff note state?",
+"options": {
+"A": "The support tasks the clinic now owns, with the named owner of each queue and report",
+"B": "The support tasks the implementer still performs, the ones stopped, and each stop date",
+"C": "The requests users still sent to the implementer, and the route each one was sent to",
+"D": "The vendor's contracted response times, set beside the clinic's own internal support targets"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because it describes the clinic's side of the handoff (confused look-alike: the Module 12 transfer record), but the handoff note records the implementer's own remaining and stopped tasks.",
+"B": "Correct: \"Confirm the steady-state handoff\" says the dated note states which tasks you still do under the contract, which you stopped, and when each stopped.",
+"C": "Tempting because the chapter does ask you to log and route such requests (true but does not answer the question), but that log is not what the handoff note states.",
+"D": "Tempting because response times are part of the support model (confused look-alike), but they belong in the service-level table from \"Set the support model and service levels.\""
+}
+},
+{
+"stem": "Cedar Point's practice administrator asks the implementer to add \"Vendor responds to severity 3 issues within 2 hours\" to the service-level table. The vendor contract sets no severity 3 response time. The clinic approves the table. What should the implementer do?",
+"options": {
+"A": "Leave the vendor term blank for severity 3, and offer to record any clinic target as internal.",
+"B": "Add the 2-hour vendor response as requested, since the clinic is the one that approves the table.",
+"C": "Ask the vendor's support manager to agree to 2 hours by email and add it to the table as a vendor term.",
+"D": "Enter 2 hours as an internal target for the vendor, since internal targets do not need a contract."
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Set the support model and service levels\" says to keep vendor terms and internal targets apart and not to promise a vendor response the contract does not contain.",
+"B": "Tempting because the clinic does approve the table (right rule, wrong facts), but its approval cannot create a vendor obligation.",
+"C": "Tempting because it gets the vendor's agreement in writing (half right), but an email from a support manager is not a contract term, and contract changes belong to the commercial owners.",
+"D": "Tempting because internal targets need no contract (confused look-alike), but internal targets are goals for the clinic's own staff, not promises from the vendor."
+}
+},
+{
+"stem": "| Severity | Example | Update | Owner |\n|---|---|---|---|\n| 1 | Clinic cannot see patients | Hourly | IT lead |\n| 2 | One workflow blocked | Daily | App owner |\n| 3 | Workaround exists | Weekly | Help desk |\n| 4 | Question or request | On close | Help desk |\n\nCedar Point's approved service-level table is shown above. At 10:00, Lakeshore cannot send any prescriptions electronically. Scheduling, notes, and orders still work, and no workaround for e-prescribing has been approved. How should the ticket be set, and why?",
+"options": {
+"A": "Severity 1, owned by the IT lead, with hourly updates, since no prescriptions can go out",
+"B": "Severity 2, owned by the app owner, with daily updates, since one workflow is blocked",
+"C": "Severity 3, owned by the help desk, with weekly updates, since staff can phone them in",
+"D": "Severity 2, owned by the help desk, with daily updates, since it takes the first call"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because a whole function is down (too far), but the clinic can still see patients, so the severity 1 example in \"Set the support model and service levels\" does not fit.",
+"B": "Correct: in the approved table, one blocked workflow with no approved workaround is severity 2, owned by the app owner with daily updates.",
+"C": "Tempting because phoning prescriptions is a common fallback (right rule, wrong facts), but severity 3 requires a workaround, and none has been approved.",
+"D": "Tempting because it picks the right severity (half right), but the help desk takes first calls while the table names the app owner for severity 2."
+}
+},
+{
+"stem": "| Lakeshore claims, June | Count |\n|---|---|\n| Submitted | 1,000 |\n| Rejected at clearinghouse or payer front-end edits | 60 |\n| Adjudicated by payer | 940 |\n| Denied after adjudication | 47 |\n\nThe billing lead owns Cedar Point's claim measures and counts claims, not dollars. What is Lakeshore's first-pass claim acceptance rate for June?",
+"options": {
+"A": "89.3 percent, counting front-end rejections and payer denials together",
+"B": "95.0 percent, counting payer denials against the adjudicated claims",
+"C": "94.0 percent, counting the claims that passed front-end edits",
+"D": "95.3 percent, counting denied claims against claims submitted"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because both are \"failed claims\" (confused look-alike: rejection versus denial), but \"Choose adoption measures the clinic can own\" keeps the two claim measures separate.",
+"B": "Tempting because it uses the right denominator for denials (confused look-alike), but that is the complement of the initial denial rate, not first-pass acceptance.",
+"C": "Correct: the chapter defines first-pass acceptance as claims passing clearinghouse and payer front-end edits, so 940 of 1,000.",
+"D": "Tempting because it uses claims submitted (half right: right denominator, wrong numerator), but payer denials belong to the initial denial rate, not first-pass acceptance."
+}
+},
+{
+"stem": "| Initial denial rate | Baseline (old system) | 60 days |\n|---|---|---|\n| Value | 8.0% | 5.5% |\n| Method | Denied dollars \u00f7 gross revenue | Denied claims \u00f7 claims adjudicated |\n\nThe implementer is preparing Cedar Point's 60-day review packet. The billing lead owns this measure. What should the implementer do with this row?",
+"options": {
+"A": "Flag that the periods use different denominators, and ask the billing lead to approve one method for both.",
+"B": "Report the drop from 8.0 to 5.5 percent as an improvement, since both figures are initial denial rates.",
+"C": "Recalculate the baseline by claim count with the implementer's own method, then report the comparison.",
+"D": "Remove the denial measure from this packet and report it again once 90 days of new data are available."
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Choose adoption measures the clinic can own\" says the baseline and the review must use the same denominator, and the billing lead approves the definition.",
+"B": "Tempting because both rows carry the same name (the habit answer), but they use different denominators, so the drop cannot be compared as it stands.",
+"C": "Tempting because it makes the numbers comparable (half right), but billing measures need the qualified owner's approval of the definition, not the implementer's own method.",
+"D": "Tempting because more data seems safer (right action, wrong time), but waiting does not fix the mismatch, and dropping the measure hides it."
+}
+},
+{
+"stem": "Cedar Point's practice manager wants to post a weekly chart in the staff break room. It would rank each medical assistant by name on how often they use the old paper intake workaround. She asks the implementer to build the report. What should the implementer do?",
+"options": {
+"A": "Build the report and post it, since the workaround count is an approved adoption measure on the sheet.",
+"B": "Build the report with initials in place of names, so staff can be compared without being named.",
+"C": "Build it as a private report for the practice manager only, and leave the break-room posting out.",
+"D": "Raise with clinic leadership how individual-level data may be used and shared before building it."
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the measure is approved (right rule, wrong facts), but approving a clinic-level measure does not settle individual-level use; \"Read adoption numbers with care\" says it must not become hidden staff surveillance.",
+"B": "Tempting because it seems to protect staff (half right), but initials still identify people in a small clinic, and the decision on individual-level use is clinic leadership's.",
+"C": "Tempting because it limits who sees the data (half right), but it still uses individual-level data before leadership has approved how it is used and shared.",
+"D": "Correct: the chapter says clinic leadership approves how data about individual staff is used and shared."
+}
+},
+{
+"stem": "Cedar Point bought the system partly to shorten check-in time. Nobody measured check-in time before go-live. At the 60-day review, the sponsor asks the implementer to estimate the old check-in time from front-desk staff's memory, so the packet can show a before-and-after comparison. What should the implementer do?",
+"options": {
+"A": "Collect estimates from each front-desk staff member and report their average as the old baseline.",
+"B": "Use a check-in time from another clinic on the same old system as a stand-in for the baseline.",
+"C": "State that no baseline exists, and report the current check-in time as the start of a new trend.",
+"D": "Ask the vendor for a national average check-in time to use as Cedar Point's pre-live baseline."
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because staff know the old workflow well (the habit answer), but \"Compare results with the pre-live baseline\" says not to build a baseline afterward from memory.",
+"B": "Tempting because it uses the same old system (right rule, wrong facts), but another clinic is a different population, and the comparison needs the same population in both periods.",
+"C": "Correct: the chapter says that if there is no baseline, say so, and do not rebuild one from memory.",
+"D": "Tempting because a national figure sounds objective (confused look-alike: benchmark versus baseline), but it is not Cedar Point's own population or definition."
+}
+},
+{
+"stem": "| Measure | Baseline | 90 days | Note |\n|---|---|---|---|\n| Schedule fill rate | 91% | 94% | Same definition |\n| First-pass claim acceptance | 93% | 89% | Same definition; two new payers added in month 2 |\n\nThe sponsor's draft benefits summary for the board lists only the schedule fill rate. The implementer prepares the comparison. What should the implementer do?",
+"options": {
+"A": "Keep the summary as drafted, and send the claim result to the billing lead separately.",
+"B": "Report both results, with the new payers noted beside the drop in claim acceptance.",
+"C": "Report both results, and state that the system caused the rise in schedule fill rate.",
+"D": "Report the claim result only after the billing lead finds the cause of the drop."
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because the billing lead does need the result (half right), but \"Compare results with the pre-live baseline\" says to keep a result even when it is unfavorable.",
+"B": "Correct: the chapter says to keep unfavorable results and report changes such as payer mix beside them.",
+"C": "Tempting because it reports both results (half right), but the chapter says not to claim the system caused a change unless the evidence supports it.",
+"D": "Tempting because an explained result is more useful (right action, wrong time), but holding it back still leaves it out of this comparison."
+}
+},
+{
+"stem": "| ID | Request |\n|---|---|\n| R-1 | Providers ask how to forward a result to a colleague; the feature exists |\n| R-2 | The approved recall letter prints the wrong clinic address |\n| R-3 | Add a sleep medicine clinic with its own scheduling templates; not in the contract |\n| R-4 | Billing asks whether self-pay patients must sign a cost estimate |\n\nThese requests reached Cedar Point's optimization intake this week. Which one should go to the account owner?",
+"options": {
+"A": "R-3, because adding a clinic the contract does not cover is new scope",
+"B": "R-2, because any change to an approved letter design falls outside scope",
+"C": "R-4, because a new signing step for self-pay patients changes the contract",
+"D": "R-1, because teaching a feature outside the training plan is extra work"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Run the optimization backlog\" sorts work outside the contract as new scope, and new scope goes to the account owner.",
+"B": "Tempting because the letter design was approved (confused look-alike: defect versus new scope), but a letter that does not do what was approved is a defect.",
+"C": "Tempting because a new step sounds like a change (confused look-alike), but whether patients must sign an estimate is a policy question for a clinic authority.",
+"D": "Tempting because it is unplanned work (right rule, wrong facts), but the feature exists and works, so this is a training gap."
+}
+},
+{
+"stem": "A Cedar Point super user at Lakeshore asks the implementer for rights to edit the medical assistant intake template, so she can fix small wording issues her peers report. The application owner manages template changes. What should the implementer tell her?",
+"options": {
+"A": "Grant her edit rights for the intake template, and ask her to log each wording change she makes.",
+"B": "Ask the practice manager to decide whether super users at Lakeshore may edit clinic templates.",
+"C": "Super users report these issues through intake, and the application owner decides on changes.",
+"D": "Make each wording fix she reports yourself, since you still have build rights under the contract."
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because logging keeps a record (half right), but \"Keep the super-user network going\" says super users coach and report; they do not approve configuration changes.",
+"B": "Tempting because the practice manager often manages super users (right rule, wrong facts), but the role is already written down, and template changes belong with the application owner.",
+"C": "Correct: the chapter says super users coach and report issues, and do not approve configuration or clinical content.",
+"D": "Tempting because the fixes are small and you can make them (the habit answer), but quiet fixes skip intake and change control, which \"Run the optimization backlog\" applies to every approved change."
+}
+},
+{
+"stem": "Cedar Point's vendor will release version 25.1 next week. The release notes list changes to the visit note template. Cedar Point has no separate test environment, and the application owner has approved the release date. What should the implementer plan for testing?",
+"options": {
+"A": "Skip regression testing for this release, since there is no test environment to run it in.",
+"B": "Ask the vendor to test the note template changes, and accept the vendor's report as the test.",
+"C": "Postpone the release until the clinic buys a separate test environment from the vendor.",
+"D": "Use the agreed compensating controls, and run the regression set right after the release."
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the usual place to test is missing (too weak), but \"Manage vendor releases and upgrades\" still requires regression testing without a test environment.",
+"B": "Tempting because the vendor knows its own change (the habit answer: accept the vendor's word), but the vendor's testing does not replace the clinic's regression set on its own workflows.",
+"C": "Tempting because a test environment is the ideal (too far), but the release date is approved, and the chapter gives a route for clinics without one.",
+"D": "Correct: the chapter says that without a test environment you use the compensating controls from Module 4 and test right after release."
+}
+},
+{
+"stem": "Cedar Point reports under MIPS for the 2026 performance year. The clinic's team has finished its post-live SAFER High Priority Practices self-assessment. The practice manager asks the implementer to submit the attestation, since the implementer organized the session. Who decides how and when Cedar Point attests?",
+"options": {
+"A": "The clinic's quality or compliance owner, with the implementer supplying the session record",
+"B": "The implementer, since the implementer organized the session and holds the rating record",
+"C": "The clinical lead, since the clinical lead led the clinic's team in rating each practice",
+"D": "The executive sponsor, since attesting commits the clinic and the sponsor signs for the project"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Run or repeat the SAFER self-assessment\" says the clinic's quality or compliance owner decides how and when it attests.",
+"B": "Tempting because the implementer holds the record (right rule, wrong facts), but organizing the session does not make the implementer the attestation owner.",
+"C": "Tempting because the clinical lead did the rating (confused look-alike: rating versus attesting), but the chapter gives the attestation decision to the quality or compliance owner.",
+"D": "Tempting because the sponsor signs major project records (too far), but the chapter names the quality or compliance owner for attestation."
+}
+},
+{
+"stem": "| Draft lesson |\n|---|\n| \"Lakeshore's front-desk lead did not test the scanner drivers, so card scans failed on day one.\" |\n\nThe implementer is recording lessons from the Cedar Point engagement. How should this lesson be rewritten?",
+"options": {
+"A": "\"Front-desk leads must be held accountable for testing their own equipment before go-live.\"",
+"B": "\"Test scanner drivers on every front-desk workstation before go-live; owner: deployment lead.\"",
+"C": "\"Card scans failed on day one at Lakeshore; see the issue log for the details and people involved.\"",
+"D": "\"Lakeshore front-desk lead: test scanner drivers before the next go-live; owner: Lakeshore manager.\""
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because it sounds like accountability (the habit answer), but it still points at individuals, which \"Hold a lessons session\" says not to do.",
+"B": "Correct: the chapter asks for each lesson as a specific practice with an owner, without blaming individuals.",
+"C": "Tempting because it is factual and points to evidence (true but does not answer the question), but it restates the event instead of recording a practice with an owner.",
+"D": "Tempting because it has a practice and an owner (half right), but it still singles out one person and ties the lesson to one site instead of the method."
+}
+},
+{
+"stem": "At the 60-day review, the governance group ranks a fix to Lakeshore's referral queue third on the backlog. The vendor's account manager asks the implementer to tell the sponsor the fix could move to first if the clinic signs for the analytics module this month. What should the implementer do?",
+"options": {
+"A": "Pass the message to the sponsor, since the account manager owns sales and is the one making the offer.",
+"B": "Move the fix to first place, since faster delivery helps the clinic whether or not it buys the module.",
+"C": "Decline to link the fix to a purchase, and leave the backlog ranking with the governance group.",
+"D": "Ask the governance group to vote on whether to accept the account manager's offer this month."
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because buying questions do go to the account owner (right rule, wrong facts), but \"Handle renewal and expansion talk honestly\" says never to tie a fix or a priority to a purchase, whoever proposes it.",
+"B": "Tempting because a faster fix helps the clinic (right result, wrong reason), but the governance group decides the order, not the implementer.",
+"C": "Correct: the chapter says never to tie a fix, a date, or a priority to a purchase, and the governance group owns the ranking.",
+"D": "Tempting because the governance group does own priorities (half right), but putting the offer to a vote still ties a priority to a purchase."
+}
+}
+]

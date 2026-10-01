@@ -1,0 +1,195 @@
+<h1>Module 8, Lesson 4: Worked example: Lakeshore conversion scope</h1>
+<h2 id="worked-example-lakeshore-conversion-scope">Worked example:
+Lakeshore conversion scope</h2>
+<p>Cedar Point bought a conversion of demographics and future
+appointments for Lakeshore. Here is how the implementer handled what
+discovery found.</p>
+<ol type="1">
+<li><strong>Compared the purchase with discovery.</strong> Discovery
+showed that open referrals, unreviewed results, and active balances also
+matter for safe, continuous care and billing. They were not all in the
+purchased conversion. <em>Produced:</em> a gap list of three
+populations. <em>Why:</em> safe go-live depends on work in progress, not
+just on what was sold.</li>
+<li><strong>Opened decision items instead of adding work
+quietly.</strong> The implementer logged each gap as a scope and
+decision item, with an owner. <em>Produced:</em> decision log entries
+for the clinical, billing, data, privacy, and commercial owners.
+<em>Why:</em> adding work silently would change the scope without
+approval.</li>
+</ol>
+<p><em>Why do you think the implementer did not simply add open
+referrals to the next test load?</em></p>
+<ol start="3" type="1">
+<li><strong>Got a treatment decision for each population.</strong> The
+owners decided: open referrals move by controlled manual entry,
+unreviewed results stay in a read-only archive with a nurse review
+worklist, and active balances convert as a single opening balance per
+patient. <em>Produced:</em> an approved scope decision. <em>Why:</em>
+each population carries a different risk and a different owner.</li>
+<li><strong>Built test cases from the hardest records.</strong> Test
+conversions included likely duplicate patients, similar names, changed
+addresses, appointments at both locations, missing provider values, and
+linked documents. <em>Produced:</em> a test-conversion plan with named
+sample records. <em>Why:</em> easy records pass; the hard ones show
+where mapping breaks.</li>
+</ol>
+<p><em>Why did the test set include patients with similar names and
+changed addresses?</em></p>
+<ol start="5" type="1">
+<li><strong>Ran test conversion 1 and reconciled.</strong> The
+implementer explained every count difference and opened defects for the
+rest. <em>Produced:</em> a test-run report with reconciliation.
+<em>Why:</em> an unexplained difference may hide lost records.</li>
+<li><strong>Got the validation rule approved.</strong> The data owner
+and the clinical safety representative approved the validation rule
+together. <em>Produced:</em> an approved, versioned validation rule.
+<em>Why:</em> the data owner accepts the data overall, but clinical
+lists need clinical approval.</li>
+</ol>
+<p><em>Why did the clinical representative need to approve the rule, not
+just the data owner?</em></p>
+<h2 id="your-turn-faded-example">Your turn: faded example</h2>
+<p><em>If you have done this task on a real project, try this first,
+then compare with the worked example.</em></p>
+<p>Lakeshore keeps scanned documents in a separate document system:
+consent forms, outside records, and letters. They must reach the new EHR
+or an approved archive.</p>
+<ol type="1">
+<li><strong>Inventory the source.</strong> Owner: Lakeshore practice
+manager. About 42,000 PDF files, 2017 to now. Indexed only by patient
+name and birth date.</li>
+<li><strong>Classify it.</strong> Documents and scanned items. The link
+to each patient is a relationship that must be kept.</li>
+<li><strong>Profile it.</strong> 1,150 files match two patients or no
+patient by name and birth date.</li>
+<li><strong>Decide the treatment.</strong> What treatment do you propose
+for the 1,150 files, and who approves it? ____________</li>
+<li><strong>Write the mapping row.</strong> How will each matched
+document link to the right patient in the new system? ____________</li>
+<li><strong>Plan validation.</strong> Which checks prove documents are
+linked to the right patient and visible only to the right roles?
+____________</li>
+<li><strong>Set the retirement condition.</strong> What must be true
+before the old document system is turned off? ____________</li>
+</ol>
+<h2 id="field-assignment">Field assignment</h2>
+<p>Build a conversion plan for the Cedar Point Internal Medicine
+practice case (fictional; two locations, Cedar Point main and
+Lakeshore). Use a simulated source with synthetic data only. Do not use
+a real client, employer, or patient.</p>
+<ol type="1">
+<li>Inventory sources, owners, formats, populations, risks, access, and
+retention needs.</li>
+<li>Classify structured data, documents, manual information, derived
+values, relationships, audit history, and exclusions.</li>
+<li>Define the approved treatment for each category.</li>
+<li>Profile a sample or simulated source.</li>
+<li>Build at least fifteen mapping rows with transformation and
+validation rules.</li>
+<li>Write the secure-transfer and staging plan.</li>
+<li>Plan at least two test conversions before production.</li>
+<li>Define count, total, field, relationship, scenario, access, and
+client validation.</li>
+<li>Draft a clinical validation rule for medications, allergies,
+problems, and immunizations for the clinical authority to approve, with
+the flag report, pre-visit worklist, and first-visit reconciliation
+tracking.</li>
+<li>Write production cutover, delta, fallback, communication, archive,
+and retirement steps.</li>
+<li>Role-play the required data, clinical, privacy and security, and
+release approvals.</li>
+</ol>
+<p><strong>Self-check rubric.</strong> Your work is ready when:</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />every source and category has an
+owner and an approved treatment;</label></li>
+<li><label><input type="checkbox" />every mapping row has a definition,
+rule, version, and approver, and no row maps by name alone;</label></li>
+<li><label><input type="checkbox" />your test-run report explains every
+count difference;</label></li>
+<li><label><input type="checkbox" />your clinical validation rule names
+the clinical authority and covers flags, pre-visit review, and
+first-visit reconciliation;</label></li>
+<li><label><input type="checkbox" />your fallback says what can be
+reversed, how long it takes, what is lost, and who decides;</label></li>
+<li><label><input type="checkbox" />no source is retired without
+approved access to required history.</label></li>
+</ul>
+<p><strong>Capstone link:</strong> capstone Artifact C (the go/no-go
+decision record) draws on readiness evidence that includes conversion
+results. Its instructions are in the capstone candidate packet. Build it
+from the packet's facts, not from this chapter's examples.</p>
+<h2 id="knowledge-check">Knowledge check</h2>
+<ol type="1">
+<li>Why are discrete, manual, and scanned categories useful but
+insufficient by themselves?</li>
+<li>What is the risk of mapping fields by name alone?</li>
+<li>What should happen when there is no safe destination field?</li>
+<li>Why must converted relationships be validated as well as
+values?</li>
+<li>What is the difference between technical reconciliation and client
+validation?</li>
+<li>What must be defined before the team can rely on a fallback or
+rollback plan?</li>
+<li>Why can a converted allergy list pass count reconciliation and still
+be unsafe?</li>
+<li>Who approves the clinical validation rule, and what does the
+implementer do and not do?</li>
+</ol>
+<h2 id="spaced-review">Spaced review</h2>
+<p>These questions come from earlier modules. Answer them without
+looking back.</p>
+<ol type="1">
+<li><em>(Module 7)</em> The vendor fixes a mapping row in version 3.3 so
+stopped medications no longer convert as active. The clinical sample now
+looks right. What else must you run before the defect closes, and
+why?</li>
+<li><em>(Module 7)</em> Mapping version 3.2 passed all checks in the
+test environment. The production load will use version 3.3. Can you
+reuse the 3.2 results? Explain.</li>
+<li><em>(Module 5)</em> In a training class on converted data, a learner
+opens a patient's scanned history and finds another patient's documents.
+How do you sort this item, and where does it go?</li>
+<li><em>(Module 4)</em> The old system holds psychotherapy notes for
+Lakeshore's social worker. Who decides who may see them in the new
+system, and what is your job?</li>
+<li><em>(Module 2)</em> The old system's vendor will provide the final
+export but has not agreed to a date. How do you record this on the
+roadmap?</li>
+</ol>
+<h2 id="module-8-gate--conversion-ready-for-production-planning">Module
+8 gate — conversion ready for production planning</h2>
+<p><strong>Bring:</strong> source inventory, mapping workbook, test-run
+reports, validation records, clinical validation rule, cutover plan.
+<strong>In the room:</strong> data owner, clinical authority, privacy or
+security lead.</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Inventory sources, populations,
+owners, formats, access, and retention needs.</label></li>
+<li><label><input type="checkbox" />Get approved scope and treatment for
+every included and excluded category.</label></li>
+<li><label><input type="checkbox" />Version and approve every mapping
+and transformation rule.</label></li>
+<li><label><input type="checkbox" />Define secure transfer, staging,
+access, logging, error handling, and disposal of temporary
+copies.</label></li>
+<li><label><input type="checkbox" />Complete representative test
+conversions with every count difference explained.</label></li>
+<li><label><input type="checkbox" />Pass data, document, relationship,
+access, audit, and business-scenario validation.</label></li>
+<li><label><input type="checkbox" />Record acceptance or open defects
+from the client data and domain owners.</label></li>
+<li><label><input type="checkbox" />Get the clinical authority's
+approval of the clinical validation rule: flags, pre-visit review, and
+first-visit reconciliation.</label></li>
+<li><label><input type="checkbox" />Document cutover, delta, fallback,
+archive, and source-retirement rules.</label></li>
+<li><label><input type="checkbox" />Confirm proper authority and access
+to required history before any source is retired or
+destroyed.</label></li>
+</ul>
+<p><strong>Evidence to keep:</strong> source inventory, scope decision,
+mapping workbook, security plan, test-run reports, reconciliation,
+client validation, clinical validation rule and results, defect record,
+and cutover and transition plan.</p>

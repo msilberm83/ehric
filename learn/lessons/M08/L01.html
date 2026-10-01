@@ -1,0 +1,300 @@
+<h1>Module 8, Lesson 1: Name who owns and approves the data</h1>
+<h2 id="name-who-owns-and-approves-the-data">Name who owns and approves
+the data</h2>
+<p>Data conversion touches clinical, billing, privacy, and legal rules.
+If no one with authority approves each choice, the vendor or the
+implementer ends up deciding things they do not own.</p>
+<p><strong>Data conversion</strong> moves selected information from the
+old system into the new one. It must keep the information's meaning,
+links, access rules, and required history. It is not a file copy. Every
+field and document carries context: who it belongs to, when it was made,
+how it was used, who may see it, and how long the clinic must keep
+it.</p>
+<p>The <strong>source</strong> is the old system or file the data comes
+from. The <strong>destination</strong> is the new system.</p>
+<p>Name the people who can answer and approve:</p>
+<ul>
+<li>what information exists;</li>
+<li>what is in scope;</li>
+<li>which source is the trusted one;</li>
+<li>what must stay accessible;</li>
+<li>what may be changed during conversion;</li>
+<li>how accuracy will be checked;</li>
+<li>who may see the information;</li>
+<li>when the source can become read-only or be retired;</li>
+<li>which laws, contracts, professional rules, payer rules, or policies
+affect how long records are kept.</li>
+</ul>
+<p>Each person has a different job:</p>
+<ul>
+<li><strong>You</strong> coordinate the conversion.</li>
+<li>The client's <strong>data owner</strong> accepts the business
+meaning and completeness of the converted data.</li>
+<li><strong>Technical specialists</strong> extract, transform, load, and
+reconcile the data.</li>
+<li><strong>Privacy, security, records, clinical, legal, billing, and
+other leaders</strong> approve their own areas.</li>
+</ul>
+<p>Do not let the vendor decide how long records are kept or when they
+are destroyed. Running the migration does not give the vendor that
+authority.</p>
+<blockquote>
+<p><strong>Rule:</strong> The vendor moves the data; the client's named
+owners decide what it means and what is kept.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> The vendor suggests deleting old fax
+logs because "nobody reads them." You send the question to the records
+owner, who decides under the clinic's retention policy.</li>
+<li><strong>Example B.</strong> A billing specialist on the vendor team
+wants to drop balances under $5. You send it to the client's billing
+owner, who approves or rejects the rule.</li>
+</ul>
+<p>In both cases, the person doing the technical work was not the person
+with authority.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four questions an owner must answer before conversion.</li>
+<li>Why shouldn't the vendor decide when old records are destroyed?</li>
+<li>A vendor engineer offers to "clean up" duplicate patients during the
+load. What do you do?</li>
+</ol>
+<h2 id="inventory-every-source">Inventory every source</h2>
+<p>Information hides in more places than the main system. A source you
+miss becomes a gap staff discover after go-live.</p>
+<p>List every source that may hold needed information:</p>
+<ul>
+<li>the current application's database;</li>
+<li>older legacy systems;</li>
+<li>shared drives and document stores;</li>
+<li>scanned charts;</li>
+<li>paper records;</li>
+<li>spreadsheets and local trackers;</li>
+<li>email or messaging systems;</li>
+<li>outside portals;</li>
+<li>device or specialty systems;</li>
+<li>billing, accounting, or payment systems;</li>
+<li>archived exports and backup media;</li>
+<li>interfaces that create or change records.</li>
+</ul>
+<p>For each source, record:</p>
+<ul>
+<li>owner and technical contact;</li>
+<li>system and version;</li>
+<li>data categories;</li>
+<li>rough volume and date range;</li>
+<li>format and export method;</li>
+<li>data quality concerns;</li>
+<li>identifiers and links to other records;</li>
+<li>access limits;</li>
+<li>retention and legal-hold needs;</li>
+<li>planned destination or archive;</li>
+<li>extraction date and what it depends on;</li>
+<li>who will validate it.</li>
+</ul>
+<p>A <strong>legal hold</strong> is an instruction to keep certain
+records because of a lawsuit or investigation.</p>
+<p>Do not collect a broad export "just in case." Use the approved secure
+method, and limit access to the work needed.</p>
+<figure style="margin:16px 0"><img src="../../img/M08-01.png" alt="Figure 8.1. Notice that every data source has a named owner before anyone pulls data from it." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.1.</b> Notice that every data source has a named owner before anyone pulls data from it.</figcaption></figure>
+> **Rule:** Every source gets an owner, a format, and a planned destination before anyone extracts it.
+
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List six kinds of sources a clinic might have.</li>
+<li>Why is a broad "just in case" export a problem?</li>
+<li>The front desk keeps a spreadsheet of patients waiting for
+referrals. What do you record about it?</li>
+</ol>
+<h2 id="sort-the-information-into-categories">Sort the information into
+categories</h2>
+<p>Different kinds of information need different treatment. If you treat
+everything as simple fields, documents lose their links and history
+loses its meaning.</p>
+<p>A simple starting framework sorts information into three groups:
+discrete data, manual entry, and scanned items. Those groups are still
+useful. A real conversion needs more detail.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>What it is</th>
+<th>What to decide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structured data</td>
+<td>Values in defined fields: names, IDs, dates, codes, balances,
+appointments, providers</td>
+<td>How each field maps. Matching names do not mean matching
+meaning.</td>
+</tr>
+<tr>
+<td>Documents and scanned items</td>
+<td>Signed forms, letters, images, old charts</td>
+<td>How each is indexed, linked to the right record, secured, found, and
+kept. A file with no useful labels may be saved but impossible to
+find.</td>
+</tr>
+<tr>
+<td>Manual or unstructured information</td>
+<td>Paper, narrative notes, local logs</td>
+<td>What staff need for ongoing work, who enters it, how it is checked,
+and whether the source stays available instead.</td>
+</tr>
+<tr>
+<td>Derived or calculated values</td>
+<td>Balances, aging, scores, quality measures, calculated dates</td>
+<td>Whether to move the value, recalculate it, keep it as history, or
+leave it out. Each system may calculate it differently.</td>
+</tr>
+<tr>
+<td>Relationships and identifiers</td>
+<td>Patient to visit, order to result, claim to payment, document to
+record</td>
+<td>How links are kept. Every value can be right and the conversion
+still fail if the links are wrong.</td>
+</tr>
+<tr>
+<td>Audit and history</td>
+<td>Created dates, authors, changes, signatures, approvals, access
+events</td>
+<td>What must stay in the new system, in an approved archive, or
+both.</td>
+</tr>
+<tr>
+<td>Excluded information</td>
+<td>Old temporary fields, duplicates, unsupported custom items,
+out-of-scope content</td>
+<td>Why it is left out, and how the client can still reach it or dispose
+of it under an approved rule.</td>
+</tr>
+</tbody>
+</table>
+<p>For paper charts, agree a scanning plan. Decide which items get
+scanned before go-live, who labels and links them, and what stays on
+paper.</p>
+<figure style="margin:16px 0"><img src="../../img/M08-02.png" alt="Figure 8.2. Notice that information is sorted by how it must be treated, not by where it sits today." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.2.</b> Notice that information is sorted by how it must be treated, not by where it sits today.</figcaption></figure>
+> **Rule:** Classify information by how it must be treated, not by where it sits today.
+
+<ul>
+<li><strong>Example A.</strong> An old system stores a "balance due" for
+each patient. The new system calculates balances from transactions. The
+billing owner decides to keep the old figure as history and recalculate
+the live balance.</li>
+<li><strong>Example B.</strong> Lakeshore has 8 years of scanned consent
+forms indexed only by patient name. The team plans to link each form by
+a validated patient ID, not by name.</li>
+</ul>
+<p>Both items looked simple in the old system. Each needed its own
+treatment.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the seven categories in this section.</li>
+<li>Why can a conversion fail even when every single value is
+correct?</li>
+<li>A clinic wants every old visit balance loaded as the live balance.
+What question do you raise, and with whom?</li>
+</ol>
+<h2 id="set-honest-expectations-and-define-scope">Set honest
+expectations and define scope</h2>
+<p>Clients often assume "everything will move." If you do not correct
+that early, every gap found later looks like a broken promise.</p>
+<p>Tell the client early, in words like these:</p>
+<blockquote>
+<p>"Not every item will move as the same kind of searchable data. Fields
+that look alike may not mean the same thing. We will convert the
+approved information through tested mappings. We will keep required
+history in the new system or in an approved archive. We will write down
+what changes and what stays outside the new system."</p>
+</blockquote>
+<p>This is more accurate than promising that everything will move. It is
+also better than assuming all history should stay in the old system. The
+right choice depends on need, risk, retention, access, cost, and
+approval.</p>
+<h3 id="define-the-scope">Define the scope</h3>
+<p>For each category, choose a treatment:</p>
+<ul>
+<li>convert to a structured field;</li>
+<li>convert as a document or attachment;</li>
+<li>summarize, or have staff enter an approved subset by hand;</li>
+<li>keep in a searchable, approved archive;</li>
+<li>keep the source open read-only for a set time;</li>
+<li>leave out under an approved disposal rule;</li>
+<li>move it in a later phase.</li>
+</ul>
+<p>Record date ranges, patient groups, status filters, locations,
+departments, and special groups. "Active patients" needs a definition.
+"Recent records" needs a date rule. The data owner approves the
+population.</p>
+<p>Plan for work in progress. Upcoming appointments, open orders,
+unreviewed results, active claims, unpaid balances, open tasks, pending
+signatures, and open messages may need different treatment from closed
+history.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every category gets an approved treatment, and
+every population gets a written definition.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List five possible treatments for a category of information.</li>
+<li>Why does "active patients" need a written definition?</li>
+<li>The practice manager says, "Just bring everything over." What do you
+say, and what do you ask for?</li>
+</ol>
+<h2 id="profile-and-clean-the-source">Profile and clean the source</h2>
+<p>You cannot map data you have not measured. Profiling shows problems
+before they reach the new system, where they are harder to find and
+fix.</p>
+<p><strong>Profiling</strong> means measuring the source data before
+mapping. Useful checks include:</p>
+<ul>
+<li>record counts;</li>
+<li>missing required values;</li>
+<li>duplicates and likely duplicates;</li>
+<li>invalid dates or codes;</li>
+<li>mixed formats;</li>
+<li>documents or transactions with no matching record;</li>
+<li>odd characters, or values too long for the new field;</li>
+<li>inactive and closed groups;</li>
+<li>two records sharing one identifier;</li>
+<li>broken links between records;</li>
+<li>extreme or impossible values.</li>
+</ul>
+<p>Cleaning needs rules and owners. Do not "fix" source data by
+guessing. For each issue, record:</p>
+<ul>
+<li>the issue;</li>
+<li>the affected group of records;</li>
+<li>the proposed fix;</li>
+<li>who approves it;</li>
+<li>where the fix happens: in the source, during transformation, in the
+new system, or by hand;</li>
+<li>the evidence and result.</li>
+</ul>
+<p>Matching patients and merging duplicates can affect patient safety.
+Use the clinic's approved patient-identification process and qualified
+reviewers.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every correction to source data needs a
+written rule and a named approver.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> Profiling finds 300 phone numbers in
+three formats. The data owner approves one format, and the
+transformation converts them all.</li>
+<li><strong>Example B.</strong> Profiling finds 45 pairs of likely
+duplicate patients. The clinic's patient-identification reviewer checks
+each pair before any merge.</li>
+</ul>
+<p>The first fix was low risk and could follow a rule. The second could
+put the wrong history in a chart, so a qualified person reviewed each
+case.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List five things profiling measures.</li>
+<li>Why can't the implementer merge duplicate patients on her own?</li>
+<li>Profiling shows 600 birth dates of "01/01/1900." What do you record,
+and who decides the fix?</li>
+</ol>

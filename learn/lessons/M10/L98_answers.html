@@ -1,0 +1,186 @@
+<h1>Module 10 — Answers: Check yourself, examples, knowledge check, spaced review</h1>
+<h2 id="answers-for-this-chapter">Answers for this chapter</h2>
+<h3 id="check-yourself">Check yourself</h3>
+<p><strong>Start with the work, not the tool.</strong> 1. The owner, the
+data, the action, the result, and the control. 2. Return the request to
+the provider and ask them to complete a use-case statement. You cannot
+plan or test a use until it names who owns it, what data it uses, what
+it does, what it produces, and who controls it. 3. It names no trigger,
+action, result, or reviewer, so there is no expected behavior to test
+against.</p>
+<p><strong>Improve the workflow before automating it.</strong> 1. Any
+four: the trigger is reliable; the information is available and
+meaningful; responsibility is settled; normal and exception paths are
+defined; the manual process can be measured; the use removes work, not a
+control; failures can be found and fixed; the clinic can stop it safely.
+2. Ask the client to settle who owns unsigned notes, and get the
+workflow approved before you build the task. A task with no owner sends
+work to no one. 3. Automation speeds up whatever process exists,
+including its gaps, and makes errors harder to see.</p>
+<p><strong>Separate rules-based automation from AI.</strong> 1. The same
+input always gives the same output. 2. Any two: bad data, wrong logic,
+changed workflow, timing, permissions, or an unavailable service. 3. It
+has no expected result or threshold set in advance, so the reviewer can
+pass anything. AI output varies, so it needs a representative set and
+thresholds fixed before the final run.</p>
+<p><strong>Build the use-case inventory.</strong> 1. Any four: reviewer
+or approval point; monitoring and incident owner; fallback and stop
+method; change and retirement plan; test set and threshold. 2. A setting
+shows only that a feature is on. It does not show the purpose, owner,
+risks, tests, or how to stop it. 3. Add the feature to the inventory,
+mark it as not yet approved, and ask the owner whether it should stay on
+until the review is done.</p>
+<p><strong>Run the risk and authority review.</strong> 1. Purpose and
+effect, information, authority, performance, and operations. 2. A tool
+can work well on average and badly for one group, which could cause harm
+the average hides. 3. The accountable owner decides. You record the
+decision, who made it, and the date.</p>
+<p><strong>Review the vendor and the deployment.</strong> 1. Any four:
+data use and retention; training on clinic data; other companies that
+handle the data; security; logging; incident notice; availability; model
+changes; export and contract end; required agreements. 2. A company that
+handles PHI for the clinic. 3. Hold the feature and send the data terms
+to the privacy, security, and contract owners. Appointment data
+identifies patients, so it is PHI.</p>
+<p><strong>Collect decision-support source information.</strong> 1. An
+evidence-based DSI follows published research or guidelines. A
+predictive DSI learns patterns from training data and produces a
+prediction. 2. Any four: intended use; intended patients and users;
+out-of-scope uses and known risks; training data and inputs; fairness
+approach; outside testing; performance results; ongoing checks in local
+data. 3. Copy the source attributes into the inventory, flag the
+hospital-to-clinic mismatch in writing, and take it to the
+decision-support owner. Propose a local test before routine use.</p>
+<p><strong>Design human oversight.</strong> 1. Any four: authority,
+knowledge and context, time, access to information, a clear standard,
+the power to reject or stop, and a record. 2. They cannot study the
+output or reject it, so the "review" changes nothing. 3. A weekly sample
+review, because errors are low-risk and staff confirm each category
+during routing anyway.</p>
+<p><strong>Build a representative evaluation.</strong> 1. If thresholds
+are set after the results, they can be moved to make a weak result pass.
+2. Any five: version; setup and prompt version; connected sources;
+test-set version; date and environment; evaluator and answer; output;
+result and error type; decision and threshold. 3. Report the
+Spanish-language result separately as below threshold. The overall pass
+does not cover it.</p>
+<p><strong>Test rules-based automation carefully.</strong> 1. Any five
+from the list: fires once; does not fire without conditions; no
+duplicate work; timing and time zone; role and access; right queue;
+cancel or change; downstream confirmation; outage; retry; audit; stop.
+2. A correction can start the same chain of messages and tasks again. 3.
+Log a defect with the failed step, then retest the fix and every action
+the trigger starts.</p>
+<p><strong>Apply the domain controls.</strong> 1. Any four: missing
+facts, wrong speaker, negation, medication or measurement errors,
+unrelated content, carried-forward text, unsupported statements. 2. The
+clinician has not yet confirmed the content, so a claim could be built
+on wrong facts. 3. The privacy officer and the clinical lead.</p>
+<p><strong>Monitor after release.</strong> 1. Any four: volume, quality
+and error, correction and override, group checks, privacy and incident
+signals, speed and availability. 2. It may mean staff stopped checking,
+not that the tool improved. 3. Ask for the change details, rerun the
+approved evaluation set, and compare results with the thresholds before
+the new version reaches users.</p>
+<p><strong>Check the plan against the 2025 SAFER Guides.</strong> 1.
+Practice 1.9. 2. AI problems can happen at night or on weekends. If
+nobody can stop the tool then, harm continues. 3. Explain that the
+client's governance owner does the self-assessment. Offer the completed
+crosswalk as evidence.</p>
+<h3 id="worked-example-prompts">Worked example prompts</h3>
+<p><strong>Prompt 1.</strong> The evaluation results decide whether the
+pilot may start. Building the set first keeps the start date from
+pushing the team to skip or rush testing.</p>
+<p><strong>Prompt 2.</strong> Limiting where a clinical tool is used is
+a clinical decision. The specialist brings the evidence; the clinical
+lead owns patient safety for documentation.</p>
+<p><strong>Prompt 3.</strong> The problem appears in one visit type. An
+overall rate would hide it, so the measure must track that type on its
+own.</p>
+<h3 id="faded-example">Faded example</h3>
+<ol start="4" type="1">
+<li><strong>Produced:</strong> a risk and authority decision record
+signed by the office manager and the clinical lead.
+<strong>Why:</strong> a wrong category can send a lab report to the
+school-form queue, where nobody reviews results, so the clinical lead
+must approve how lab reports are handled.</li>
+<li><strong>Produced:</strong> a vendor and data decision record. You
+find out whether the vendor keeps the documents, uses them to train
+models, or passes them to other companies. The privacy, security, and
+contract owners decide. <strong>Why:</strong> scanned documents contain
+PHI.</li>
+<li><strong>Produced:</strong> a review pattern. Staff confirm every
+category before routing, and the office manager samples corrections
+monthly. Staff need time per document and a "correct" option, not just
+"accept." <strong>Why:</strong> a reviewer without time or the power to
+correct is not a control.</li>
+<li><strong>Produced:</strong> a test set with thresholds set in
+advance, broken out by category. It includes each document type, poor
+scans, handwritten forms, documents for the wrong patient, mixed
+documents, and an outage. <strong>Why:</strong> an average can hide a
+dangerous error, such as lab reports sorted as "other."</li>
+<li><strong>Produced:</strong> a monitoring plan with an owner, measures
+for corrections by category and review time, a threshold to pause, and
+written stop steps for the clinic's on-call contact, tested before
+go-live. <strong>Why:</strong> performance can drift, and someone must
+be able to stop the tool at any hour.</li>
+</ol>
+<h3 id="knowledge-check">Knowledge check</h3>
+<ol type="1">
+<li>It must name the role and workflow, the trigger, the action, the
+information used, the result, and who reviews or controls it under what
+rule. In short: owner, data, action, result, and control. Without these,
+the use cannot be built, tested, or stopped.</li>
+<li>Rules-based automation is deterministic, so you test it against an
+exact expected result for each trigger and condition. AI output can vary
+with the model, input, and setup. It needs a representative evaluation
+set with thresholds set in advance and results by category.</li>
+<li>The reviewer needs the authority to decide, the knowledge and
+context to spot errors, time to review, access to supporting
+information, a clear standard, and the power to reject, correct, or
+stop. The review must be recorded where required. A habitual "approve"
+click is not oversight.</li>
+<li>Thresholds set after the results can be moved to fit them, so the
+test proves nothing. Setting them first, with a date, keeps the release
+decision honest and traceable.</li>
+<li>Record the system, model, and feature version; setup and prompt
+version; connected sources; test-set version; date and environment;
+evaluator and approved answer; output; result and error type; and the
+decision and threshold. This lets the team compare behavior after a
+change and spot drift.</li>
+<li>The monitoring plan sets thresholds for investigation, pause,
+rollback, or retirement. Typical triggers are error or correction rates
+past a threshold, a group falling below its threshold, a privacy or
+security incident, service problems, or an unreviewed model or vendor
+change.</li>
+<li>Source attributes for a predictive DSI include intended use,
+patients, and users; out-of-scope uses and known risks; training data
+and inputs; fairness approach; outside testing and performance; and
+ongoing checks, including in local data. The client's decision-support
+or AI governance owner decides whether, where, and for whom to turn it
+on.</li>
+<li>The item on clear written steps and authority for IT staff to turn
+off AI 24 hours a day, 7 days a week. A stop only the vendor's weekday
+desk can perform does not meet it. Name a client on-call role, write the
+steps, and test them.</li>
+</ol>
+<h3 id="spaced-review">Spaced review</h3>
+<ol type="1">
+<li>Record transport, destination, and business results separately.
+Transport passed, but the business result failed because the lab could
+not act on the order. Log a defect against the business result and
+retest end to end.</li>
+<li>A rejection happens before the payer decides; front-end edits
+stopped the claim, and staff fix and resubmit it. A denial happens after
+the payer decides and appears on the 835; it is worked through corrected
+claims or appeals. They go to different queues with different
+owners.</li>
+<li>Add peer review of the tests and name someone other than the builder
+to make the release decision. This gives the independence QC needs.</li>
+<li>Record it as a decision for the clinical owner of the protocol and
+route it through the controlled path from Module 5. You teach routing;
+clinical leadership owns the protocol and decides any change.</li>
+<li>It is a remembered commitment, not scope. Record it in the
+commitments table and decision log with an owner and a due date to
+verify it with someone who has authority.</li>
+</ol>

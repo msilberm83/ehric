@@ -1,0 +1,142 @@
+<h1>Module 7, Lesson 4: Your turn: faded example</h1>
+<h2 id="your-turn-faded-example">Your turn: faded example</h2>
+<p><em>If you have done this task on a real project, try this first,
+then compare with the worked example.</em></p>
+<p>At Cedar Point main, QC tests the referral fax service in build 5.4.
+When the network is slow, a user who clicks "Send" a second time sends
+the same referral twice. The specialist's office books two
+appointments.</p>
+<ol type="1">
+<li><strong>Record the defect.</strong> The implementer wrote defect
+D-251: environment test, build 5.4, front-desk role, steps to reproduce,
+expected one fax, actual two faxes, screenshot attached, linked to
+interface test IT-14.</li>
+<li><strong>Set severity.</strong> The implementer rated it High. A
+required control, duplicate prevention, does not work. The patient is
+not directly harmed, so it is not Critical under the approved
+model.</li>
+<li><strong>Get the fix.</strong> The vendor delivered build 5.5, which
+disables "Send" while a fax is pending.</li>
+<li><strong>Retest.</strong> What exactly do you run, with which role,
+in which build? ____________</li>
+<li><strong>Choose the regression set.</strong> Name at least three
+tests you add, and why each one. ____________</li>
+<li><strong>Record the evidence.</strong> What must the regression
+record show, including anything you leave out? ____________</li>
+<li><strong>Prepare the release decision.</strong> Who decides, for what
+purpose, and what do you hand them? ____________</li>
+</ol>
+<h2 id="field-assignment">Field assignment</h2>
+<p>Use the Cedar Point Internal Medicine practice case (fictional; two
+locations, Cedar Point main and Lakeshore). Use synthetic data only. Do
+not use a real client, employer, or patient. Choose one advanced or
+high-risk workflow:</p>
+<ol type="1">
+<li>Complete the specialty or integration-failure training.</li>
+<li>Gather the approved requirements, scenarios, build version, roles,
+risks, and evidence.</li>
+<li>Define QC entry and exit criteria.</li>
+<li>Write at least eight test cases across relevant test types,
+including one performance test.</li>
+<li>Run or role-play the tests and keep evidence.</li>
+<li>Create defects for failed results and assign severity under the
+approved model.</li>
+<li>Correct and retest, then choose, run, and record a risk-based
+regression set.</li>
+<li>Role-play user acceptance with the practice case's authorized client
+roles.</li>
+<li>Match the tested environment and version to the release record.</li>
+<li>Make and record the release purpose and decision.</li>
+<li>Update the module readiness table.</li>
+</ol>
+<p><strong>Self-check rubric.</strong> Your work is ready when:</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />every test case names its
+requirement, environment, build version, role, and
+evidence;</label></li>
+<li><label><input type="checkbox" />each defect has a severity based on
+impact, with a one-line reason;</label></li>
+<li><label><input type="checkbox" />each fix has a retest and a
+regression record, and tests not rerun show who accepted the
+risk;</label></li>
+<li><label><input type="checkbox" />UAT findings outside the user's
+authority went to the right owner;</label></li>
+<li><label><input type="checkbox" />the release decision names a
+version, a purpose, the decider, and the date;</label></li>
+<li><label><input type="checkbox" />the readiness table matches your
+records.</label></li>
+</ul>
+<p><strong>Capstone link:</strong> capstone Artifact B asks for one test
+case, defect record, and retest record on the Northline case. Its
+instructions and template are in the capstone candidate packet. Build it
+from the packet's facts, not from this chapter's examples.</p>
+<h2 id="knowledge-check">Knowledge check</h2>
+<ol type="1">
+<li>Why is technically functional behavior not always an acceptable
+workflow?</li>
+<li>What makes a test case reproducible?</li>
+<li>What is the difference between severity and priority?</li>
+<li>Why must a fix be retested?</li>
+<li>How does a regression test differ from a retest, and which changes
+should trigger one?</li>
+<li>How do you choose a regression set when there is no time to rerun
+every test?</li>
+<li>How can a small team add independence when the builder also performs
+testing?</li>
+<li>What different questions do QC and user acceptance answer?</li>
+<li>Why does a pass result belong to a specific environment, build, and
+release purpose?</li>
+</ol>
+<h2 id="spaced-review">Spaced review</h2>
+<p>These questions come from earlier modules. Answer them without
+looking back.</p>
+<ol type="1">
+<li><em>(Module 6)</em> During specialized training, a provider says the
+urgent-symptom list in the triage protocol is wrong and asks you to
+change the template tonight. What do you do?</li>
+<li><em>(Module 6)</em> A nurse attended every class for a specialized
+workflow. Is she competent? What must happen first, and who
+decides?</li>
+<li><em>(Module 4)</em> A new client's vendor offers one live system and
+no test environment. What do you record, and who accepts the remaining
+risk?</li>
+<li><em>(Module 3)</em> At kickoff, the clinic manager asks for a new
+interface to a hospital that was never in the sale. How do you handle it
+without stopping the meeting?</li>
+<li><em>(Module 1)</em> A sales email promised "weekend support at
+go-live," but the signed order does not mention it. How do you classify
+this promise, and what do you record?</li>
+</ol>
+<h2 id="module-7-gate--trained-modules-controlled-and-released">Module 7
+gate — trained modules controlled and released</h2>
+<p><strong>Bring:</strong> QC plan, test and defect records, regression
+records, UAT records, readiness table. <strong>In the room:</strong> QC
+lead and release owner.</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Train advanced users on normal,
+failure, and downtime behavior.</label></li>
+<li><label><input type="checkbox" />Trace QC coverage to approved
+requirements, risks, controls, and acceptance scenarios.</label></li>
+<li><label><input type="checkbox" />Apply the agreed entry and exit
+criteria.</label></li>
+<li><label><input type="checkbox" />Record environment, version, role,
+evidence, and impact on every test result and defect.</label></li>
+<li><label><input type="checkbox" />Record packaged, manual, vendor,
+data, device, and outside-service work in the promotion and release
+record.</label></li>
+<li><label><input type="checkbox" />Retest every fix.</label></li>
+<li><label><input type="checkbox" />Run a risk-based regression set
+after each change; get the release owner's acceptance for tests not
+rerun.</label></li>
+<li><label><input type="checkbox" />Record acceptance scenarios
+completed by authorized client users.</label></li>
+<li><label><input type="checkbox" />Resolve each Critical and High
+finding, or record the proper authority's decision under an approved
+rule.</label></li>
+<li><label><input type="checkbox" />Show a readiness and release state
+for every module.</label></li>
+</ul>
+<p><strong>Evidence to keep:</strong> advanced training record, QC plan,
+test cases and results, defect, retest, and regression records, UAT
+evidence, environment and promotion record, release decisions, and
+module readiness table.</p>

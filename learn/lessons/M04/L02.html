@@ -1,0 +1,204 @@
+<h1>Module 4, Lesson 2: Ask about accessibility in discovery</h1>
+<h2 id="ask-about-accessibility-in-discovery">Ask about accessibility in
+discovery</h2>
+<p><strong>Accessibility</strong> means people with disabilities can use
+the system and the tools patients touch. If you wait until go-live to
+ask, the inaccessible form is already built and trained.</p>
+<p>Patient-facing tools include the portal, online intake forms,
+check-in kiosks, text reminders, statements, and printed or emailed
+documents. Staff also need an accessible system to do their jobs. A
+<strong>screen reader</strong> is software that reads the screen aloud
+for people who are blind or have low vision.</p>
+<blockquote>
+<p><strong>Rule:</strong> Ask which accessibility standard applies
+during discovery, and record who decided.</p>
+</blockquote>
+<h3 id="the-standards-you-will-hear-about">The standards you will hear
+about</h3>
+<p>You do not decide which law applies to the client. The client's
+compliance or legal authority decides. Your job is to ask, record the
+answer, and record who gave it. These are the sources you are most
+likely to hear:</p>
+<ul>
+<li><strong>WCAG (Web Content Accessibility Guidelines).</strong> The
+technical standard from the <strong>W3C (World Wide Web
+Consortium)</strong>. Versions 2.0, 2.1, and 2.2 are current, with
+levels A, AA, and AAA. W3C encourages the latest version. Content that
+meets 2.2 also meets 2.1 and 2.0. Most laws name <strong>Level
+AA</strong>, which includes Level A.</li>
+<li><strong>Section 508.</strong> Covers federal agencies' technology.
+The Revised 508 Standards use WCAG 2.0 Level A and AA. It matters when
+the client is a federal agency or a contract requires it.</li>
+<li><strong>ADA Title II web rule (2024).</strong> The
+<strong>ADA</strong> is the Americans with Disabilities Act. This rule
+covers state and local government entities, such as a county clinic or
+public hospital. It requires WCAG 2.1 Level AA for web content and
+mobile apps. An interim final rule of April 20, 2026 moved the
+compliance dates to April 26, 2027 (population 50,000 or more) and April
+26, 2028 (smaller entities and special districts).</li>
+<li><strong>Section 504 (HHS rule, 45 CFR 84.84).</strong>
+<strong>HHS</strong> is the U.S. Department of Health and Human
+Services. <strong>CFR</strong> is the Code of Federal Regulations. This
+rule covers groups that receive HHS federal financial assistance. It
+requires WCAG 2.1 Level A and AA for web content and mobile apps. This
+includes content provided "through contractual, licensing, or other
+arrangements," so a vendor-hosted portal can count. An interim final
+rule of May 11, 2026 moved the dates to May 11, 2027 (15 or more
+employees) and May 10, 2028 (fewer than 15).</li>
+<li><strong>Section 1557 of the Affordable Care Act (45 CFR part
+92).</strong> Covered entities must make communication with people with
+disabilities as effective as with others. They must provide
+<strong>auxiliary aids</strong>, such as interpreters, captioning, large
+print, or accessible electronic formats. These must be free, on time,
+and given in a way that protects privacy and independence. Health
+programs delivered through technology must be accessible, with narrow
+exceptions.</li>
+</ul>
+<p>Laws and dates in this area change. Check the current rule with the
+client's authority before you rely on any date here.</p>
+<h3 id="what-to-ask-the-vendor-for">What to ask the vendor for</h3>
+<p>Ask the vendor for its <strong>Accessibility Conformance Report
+(ACR)</strong>. An ACR is the vendor's own statement of how its product
+meets an accessibility standard. Most ACRs use the <strong>VPAT</strong>
+(Voluntary Product Accessibility Template). The current version is VPAT
+2.5Rev, in four editions: 508, EU, WCAG, and INT (all three
+combined).</p>
+<p>Read the ACR for the product version, date, standard, and every
+criterion marked "Partially Supports" or "Does Not Support." Those are
+the gaps.</p>
+<p>An ACR describes the vendor's product. It does not prove that your
+configured forms, templates, and messages are accessible. A custom
+intake form can fail even when the base product passes. Plan to test the
+configured workflow, with representative users where the client can
+arrange it.</p>
+<h3 id="what-to-record">What to record</h3>
+<p>Add an accessibility entry to the requirements and decision
+record:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Example entry</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Applicable law, contract, or policy</td>
+<td>Section 504; confirmed by compliance lead, date</td>
+</tr>
+<tr>
+<td>Target standard and level</td>
+<td>WCAG 2.1 Level AA</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td>Portal, intake forms, kiosk, statements, staff screens</td>
+</tr>
+<tr>
+<td>Vendor evidence</td>
+<td>ACR, VPAT edition, product version, date, listed exceptions</td>
+</tr>
+<tr>
+<td>Validation plan</td>
+<td>Configured-workflow testing and user testing</td>
+</tr>
+<tr>
+<td>Alternate access</td>
+<td>Staff-assisted intake, phone, large print</td>
+</tr>
+<tr>
+<td>Remediation owner and date</td>
+<td>Named person</td>
+</tr>
+<tr>
+<td>Acceptance authority</td>
+<td>Named client role</td>
+</tr>
+</tbody>
+</table>
+<p>Do not say the system "is compliant." That is a conformance claim.
+Only the client's authority can make it, and only for a defined scope
+and date.</p>
+<p>Compare two cases. A county clinic's nurse says accessibility is
+"IT's problem after go-live." You ask the compliance authority which
+rule applies and record the answer now. At a private clinic, the
+vendor's ACR passes, but your custom intake form has not been tested.
+You plan a test of the configured form. The shared rule: the client's
+authority names the target, and you test what you built.</p>
+<figure style="margin:16px 0"><img src="../../img/M04-04.png" alt="Figure 4.4. Notice that the client's authority names the target, and you test the form you configured." style="width:100%;max-width:1000px"><figcaption><b>Figure 4.4.</b> Notice that the client's authority names the target, and you test the form you configured.</figcaption></figure>
+**Check yourself**
+
+<ol type="1">
+<li>Which WCAG level do most laws name?</li>
+<li>Why is a vendor ACR not enough to show that the configured portal is
+accessible?</li>
+<li>A sponsor asks you to tell the board the portal "is fully
+compliant." What do you say?</li>
+</ol>
+<h2 id="design-the-future-state">Design the future state</h2>
+<p>The <strong>future state</strong> is how the work will happen in the
+new system. A design that adds steps or drops controls fails either the
+staff or the patient. Aim for the simplest safe, approved flow that
+meets the purchased outcome.</p>
+<p>Simpler means fewer needless steps, handoffs, duplicate entries,
+queues, and places to lose information. It does not mean removing
+controls.</p>
+<p>Work through the future state in this order:</p>
+<ol type="1">
+<li>Confirm the outcome and the start and end points.</li>
+<li>Remove steps that no longer serve a requirement.</li>
+<li>Choose the official record for each piece of information.</li>
+<li>Assign each task and decision to a role.</li>
+<li>Design the normal path.</li>
+<li>Design high-impact exception and downtime paths.</li>
+<li>Add permissions, approvals, audit evidence, and follow-up.</li>
+<li>Identify automation candidates.</li>
+<li>Walk typical scenarios.</li>
+<li>Record approval and open items.</li>
+</ol>
+<p>Automation can make a sound process faster. It can also make a poor
+process fail faster. Keep a list of automation candidates during
+discovery. Do not build the automation until the workflow, information,
+authority, exception path, and monitoring owner are approved.</p>
+<blockquote>
+<p><strong>Rule:</strong> Do not automate a process that is broken or
+not yet decided.</p>
+</blockquote>
+<p>Compare two cases. A clinic wants an automatic reminder for overdue
+referrals, and the referral workflow and its owner are approved. The
+reminder goes on the build list. Another clinic wants automatic routing
+of portal messages, but no one has decided who answers billing
+questions. The routing waits. The shared rule: decide the work first,
+then automate it.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List the first four steps of the future-state design order.</li>
+<li>Why is automating an undecided process risky?</li>
+<li>A manager asks you to automate a step that two departments still
+disagree about. What do you do?</li>
+</ol>
+<h2 id="control-access-by-role">Control access by role</h2>
+<p>Access decides who can see and change patient information. If you
+copy the old system's access, you may copy old mistakes into the new
+one.</p>
+<p>Ask what each role needs to view, create, change, approve, export, or
+delete. Use the organization's <strong>least-privilege</strong> or
+<strong>minimum-necessary</strong> approach as it applies. Both mean
+giving each role only the access its work needs. Do not copy the old
+system's access just because it is familiar.</p>
+<p>Involve the organization's privacy and security authorities. Account
+for PHI in electronic form, audit controls, availability, and
+patient-safety needs. The implementer records and configures the
+approved access model. The privacy and security authorities approve
+it.</p>
+<blockquote>
+<p><strong>Rule:</strong> Give each role only the access its work needs,
+as approved by privacy and security.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the six actions you ask about for each role.</li>
+<li>Why is copying the old system's access a poor default?</li>
+<li>A front-desk lead asks for the same access she had in the old
+system, including export. What do you do?</li>
+</ol>

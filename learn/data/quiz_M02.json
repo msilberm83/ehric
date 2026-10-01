@@ -1,0 +1,242 @@
+[
+{
+"stem": "| Purchased item (signed order) | Roadmap workstream |\n|---|---|\n| E-prescribing | Workflow discovery and configuration |\n| Demographics conversion | Data conversion |\n| 20 signature pads | (none) |\n| Clearinghouse connection | Interfaces and devices |\n\nYou are checking the Cedar Point roadmap against the signed order. What should you do?",
+"options": {
+"A": "Leave the pads off until the device team confirms that they are supported",
+"B": "Ask the sponsor whether the signature pads are still needed at go-live",
+"C": "Add the signature pads to the interfaces and devices workstream with an owner",
+"D": "Log the pads as a scope change, since they do not appear in the roadmap"
+},
+"key": "C",
+"feedback": {
+"A": "Not best. Tempting because support is a real open question (right action, wrong time), but the compatibility check is itself roadmap work; leaving the pads off makes them easy to forget (\"Turn scope into workstreams\").",
+"B": "Not best. Tempting because the sponsor owns priorities (too far), but the pads were purchased, so placing them in the roadmap is your job, not a question for the sponsor (\"Turn scope into workstreams\").",
+"C": "Correct: every purchased item has a home in a workstream, and an item missing from the plan usually gets forgotten (\"Turn scope into workstreams\").",
+"D": "Not best. Tempting because the roadmap and order disagree (confused look-alike: planning gap vs. scope change), but a purchased item missing from the plan is a planning gap, not a change to scope (\"Turn scope into workstreams\")."
+}
+},
+{
+"stem": "The Cedar Point roadmap contains a task to build twelve dermatology templates. Cedar Point is an internal medicine practice, and you cannot find the templates in the signed order or approved changes. What should you do?",
+"options": {
+"A": "Confirm whether the task is needed work, an internal cost, or a scope change",
+"B": "Keep the task, since extra templates help the clinic and cost the client nothing",
+"C": "Delete the task, since work that is not in the order cannot appear on the roadmap",
+"D": "Ask the medical director to approve the templates before the build begins"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: when roadmap work has no link to purchased scope, check whether it is a needed implementation task, an internal cost, or a scope change (\"Turn scope into workstreams\").",
+"B": "Not best. Tempting because it helps the client (the habit answer), but unexplained work still needs a disposition, even if the client is not billed (\"Turn scope into workstreams\").",
+"C": "Not best. Tempting because scope traces to the order (too far), but some needed implementation tasks are not order lines, so you check before deleting (\"Turn scope into workstreams\").",
+"D": "Not best. Tempting because templates are clinical (true but doesn't answer the question), but clinical approval does not settle whether the work belongs in the project at all (\"Turn scope into workstreams\")."
+}
+},
+{
+"stem": "The vendor's build lead keeps her own spreadsheet of Cedar Point build dates. Two of her dates differ from the management system, and the client asks which is right. How should you set up the records?",
+"options": {
+"A": "Treat the spreadsheet as the source, since the build lead knows the build work",
+"B": "Attach the spreadsheet to the weekly status report so the client sees both sets",
+"C": "Copy her dates into the shared system, since the build lead owns build timing",
+"D": "Keep official dates in the shared system, with the spreadsheet pointing back"
+},
+"key": "D",
+"feedback": {
+"A": "Not best. Tempting because she knows the work (the habit answer: trust the expert's file), but a spreadsheet may support detailed math; the official dates live in the shared record (\"Build the roadmap on the course's four stages\").",
+"B": "Not best. Tempting because it is transparent (too weak), but showing two sets of dates leaves the team without one current record (\"Build the roadmap on the course's four stages\").",
+"C": "Not best. Tempting because her input should shape the dates (half right), but copying without checking dependencies skips the plan; the fix is one official record that her file points back to (\"Build the roadmap on the course's four stages\").",
+"D": "Correct: official dates, owners, status, and decisions point back to the shared management system; supporting files do not replace it (\"Build the roadmap on the course's four stages\")."
+}
+},
+{
+"stem": "A roadmap date is labeled \"external dependency.\" What does that label tell the team about planning for it?",
+"options": {
+"A": "It may need escalation or a formal change, since an agreement fixes the date",
+"B": "It is controlled by an outside party, so a backup plan may be needed",
+"C": "It may be adjusted through normal planning, since it is not yet supported",
+"D": "It is limited by staff availability, so resource managers must confirm it"
+},
+"key": "B",
+"feedback": {
+"A": "Not best. Tempting because external dates can be hard to move (confused look-alike: external vs. contractual), but escalation or a formal change is what a contractual date may need (\"Label each date by its basis\").",
+"B": "Correct: an external date is controlled by a vendor, clearinghouse, payer, bank, network, or regulator and may need a backup plan (\"Label each date by its basis\").",
+"C": "Not best. Tempting because the date is not in the project's control (confused look-alike: external vs. target), but adjusting through normal planning describes a target date (\"Label each date by its basis\").",
+"D": "Not best. Tempting because someone outside the team must act (confused look-alike: external vs. resource-based), but staff availability describes a resource-based date (\"Label each date by its basis\")."
+}
+},
+{
+"stem": "Cedar Point's billing training cannot begin before November 3, because the vendor's billing trainer is on leave until then. Which basis label should this date carry?",
+"options": {
+"A": "Contractual, because the vendor is bound to supply training under the order",
+"B": "Resource-based, because it depends on when the specialist is available",
+"C": "External dependency, because a person outside the project team controls it",
+"D": "Estimated, because it comes from expected effort and the trainer's plans"
+},
+"key": "B",
+"feedback": {
+"A": "Not best. Tempting because training is in the order (right rule, wrong facts), but the order does not state November 3 as a date (\"Label each date by its basis\").",
+"B": "Correct: a date limited by staff or specialist availability is resource-based (\"Label each date by its basis\").",
+"C": "Not best. Tempting because the trainer is not on the core team (confused look-alike), but she is the vendor's own resource, not an outside vendor, payer, bank, or regulator (\"Label each date by its basis\").",
+"D": "Not best. Tempting because most task dates are estimates (true but doesn't answer the question), but this date comes from when the trainer is available, not from effort (\"Label each date by its basis\")."
+}
+},
+{
+"stem": "| Task | Weeks | Can start after |\n|---|---|---|\n| P1 Payer enrollment, largest payer | 6 | Now |\n| P2 End-to-end claim test | 1 | P1 |\n| P3 Device install | 2 | Now |\n| P4 Device validation | 1 | P3 |\n| P5 Staff training | 4 | Now |\n\nCedar Point's go-live is 8 weeks away and needs P2, P4, and P5 finished. Which statement is correct?",
+"options": {
+"A": "Staff training is on the critical path, since it takes four weeks to complete",
+"B": "Device install is on the critical path, since validation must follow it",
+"C": "Payer enrollment can slip two weeks without moving the go-live date",
+"D": "Device install can slip up to five weeks without moving the go-live date"
+},
+"key": "D",
+"feedback": {
+"A": "Not best. Tempting because training is a long single task (confused look-alike: long task vs. critical chain), but it takes 4 of the 8 weeks and has slack (\"Map dependencies and the critical path\").",
+"B": "Not best. Tempting because install has a follow-on task (right rule, wrong facts), but install plus validation takes 3 weeks, far less than the 7-week enrollment chain (\"Map dependencies and the critical path\").",
+"C": "Not best. Tempting because 6 weeks looks shorter than 8 (half right: forgets P2), but P1 and P2 take 7 weeks, so a two-week slip pushes past go-live (\"Map dependencies and the critical path\").",
+"D": "Correct: P3 and P4 take 3 weeks, leaving 5 weeks before go-live, so a slip of up to five weeks does not move the date (\"Map dependencies and the critical path\")."
+}
+},
+{
+"stem": "Cedar Point's lab results interface will not be ready for go-live. The build team suggests going live without it and finishing the interface quietly in the first month. What should you do?",
+"options": {
+"A": "Present phased activation as a backup plan for the client to approve or decline",
+"B": "Go live as suggested, and list the interface in the stabilization issue log",
+"C": "Recommend moving the go-live date, since the interface is now on the critical path",
+"D": "Ask the lab vendor's manager to add staff so the interface finishes before go-live"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: a phased start is a valid backup path, but it needs client approval and is not permission to hide unfinished work (\"Map dependencies and the critical path\").",
+"B": "Not best. Tempting because it keeps the date and logs the gap (the habit answer), but going live quietly hides unfinished work from the client's decision (\"Map dependencies and the critical path\").",
+"C": "Not best. Tempting because moving the date is one real option (too strong), but offering only one option takes the trade-off away from the client; show the options, including a phased start (\"Worked example: an unsupported target date\").",
+"D": "Not best. Tempting because more staff might help (true but doesn't answer the question), but the client still needs to decide now how to go live without the interface (\"Map dependencies and the critical path\")."
+}
+},
+{
+"stem": "Cedar Point is moving from an old clearinghouse to a new one. Claim enrollments are approved for its payers. ERA enrollments are submitted but not yet in effect. What should you add to the roadmap?",
+"options": {
+"A": "A task to cancel the old clearinghouse account the day the new one goes live",
+"B": "A task for the vendor to reroute ERA files from the old clearinghouse to the new",
+"C": "Each payer's ERA switch date and an owner who watches for missing remittances",
+"D": "A milestone marking billing ready, since each payer has approved claim enrollment"
+},
+"key": "C",
+"feedback": {
+"A": "Not best. Tempting because a clean cutover is good practice (right action, wrong time), but remittances may keep going to the old clearinghouse until each ERA enrollment takes effect (\"Split billing setup into its separate enrollments\").",
+"B": "Not best. Tempting because the vendor owns the connection (half right: wrong owner), but each payer changes the ERA route through enrollment; the vendor cannot redirect it (\"Split billing setup into its separate enrollments\").",
+"C": "Correct: ask each payer when the switch happens and plan who watches for missing remittances (\"Split billing setup into its separate enrollments\").",
+"D": "Not best. Tempting because claims will now be paid (half right), but payment details will not post until ERA takes effect, so billing is not ready (\"Split billing setup into its separate enrollments\")."
+}
+},
+{
+"stem": "| Payer | Claim (EDI) enrollment | ERA enrollment | EFT |\n|---|---|---|---|\n| Medicare | Needed | Needed | Current bank account on file |\n| Medicaid | Needed | Needed | Current bank account on file |\n| Commercial payer 1 | Needed | Needed | Current bank account on file |\n| Commercial payer 2 | Needed | Needed | Current bank account on file |\n\nCedar Point keeps its bank account. The clearinghouse account is already a separate roadmap item. How many payer enrollment dependencies should the roadmap show, and how should you treat EFT?",
+"options": {
+"A": "Eight, one for each claim and ERA enrollment, with EFT confirmed at each payer",
+"B": "Four, one for each payer, with claim, ERA, and EFT grouped under each entry",
+"C": "Two, one for claims and one for ERA, since the clearinghouse submits for each",
+"D": "Twelve, one each for claim, ERA, and EFT, with EFT re-enrolled at each payer"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: each payer's claim and ERA enrollments are separate items, and EFT may need no change when the account stays the same, but you confirm it (\"Split billing setup into its separate enrollments\").",
+"B": "Not best. Tempting because each payer is a separate item (half right), but grouping hides that claim and ERA enrollments have separate forms and timing (\"Split billing setup into its separate enrollments\").",
+"C": "Not best. Tempting because the clearinghouse often submits the forms (true but doesn't answer the question), but each payer sets its own forms and processing time (\"Split billing setup into its separate enrollments\").",
+"D": "Not best. Tempting because it is thorough (too far), but with the same bank account EFT may already be in place, so you confirm it rather than re-enroll (\"Split billing setup into its separate enrollments\")."
+}
+},
+{
+"stem": "Cedar Point is adding a new procedure-note template that also creates the charge for the procedure. You are filling in the decision table. Who should approve what?",
+"options": {
+"A": "The billing manager approves the template, since it creates the charge",
+"B": "The sponsor approves both questions, so the decision has one clear owner",
+"C": "The clinical leader approves both, since the template is part of a note",
+"D": "The clinical leader approves the workflow; billing confirms the charge path"
+},
+"key": "D",
+"feedback": {
+"A": "Not best. Tempting because the charge is a billing matter (half right), but billing does not own the clinical workflow, even when that workflow creates a charge (\"Assign one accountable person to each decision\").",
+"B": "Not best. Tempting because one owner is the goal (right rule, wrong facts), but the sponsor does not hold clinical or billing authority over these questions (\"Assign one accountable person to each decision\").",
+"C": "Not best. Tempting because clinical leaders own clinical decisions (half right), but the charge path is a billing question; when two must approve, split the question (\"Assign one accountable person to each decision\").",
+"D": "Correct: when two parties must approve, record the separate question each one approves, as in the chapter's clinical and billing example (\"Assign one accountable person to each decision\")."
+}
+},
+{
+"stem": "A teammate suggests waiting to contact quality control until the Cedar Point build is finished, \"so QC has something to test.\" Configuration starts in three weeks. What should you do?",
+"options": {
+"A": "Agree, and send QC the finished build with its test scripts once it is ready",
+"B": "Add QC to the go-live readiness review, where test evidence is checked",
+"C": "Send QC the roadmap, acceptance evidence, and risk areas now for its approach",
+"D": "Ask the QC manager to assign a reviewer once configuration is halfway done"
+},
+"key": "C",
+"feedback": {
+"A": "Not best. Tempting because QC does test finished work (the habit answer), but QC should not discover the scope for the first time during final testing (\"Run the internal handoff and track acceptance\").",
+"B": "Not best. Tempting because QC does review test evidence before go-live (right action, wrong time), but its testing approach must be confirmed now, before the build (\"Run the internal handoff and track acceptance\").",
+"C": "Correct: give QC the roadmap, acceptance evidence, risk areas, module order, and review windows now, and ask it to confirm the testing approach (\"Run the internal handoff and track acceptance\").",
+"D": "Not best. Tempting because it brings QC in before the end (too weak), but mid-build leaves QC too little time to shape the testing approach and evidence (\"Run the internal handoff and track acceptance\")."
+}
+},
+{
+"stem": "| Item | Status |\n|---|---|\n| Milestone | Interfaces pass end-to-end testing, due December 8 |\n| Lab test credentials | Promised November 10; lab now says November 20 |\n| Testing needs | 2 weeks after credentials arrive |\n| Response | Lab liaison escalated; vendor pre-building with sample messages |\n\nYou are preparing the weekly Cedar Point status report. Which status should this milestone show?",
+"options": {
+"A": "Green, because the new credential date still leaves time before December 8",
+"B": "Amber, because the delay could affect the milestone and has an active response",
+"C": "Red, because the credential date has slipped from the date the lab first promised",
+"D": "No color yet, until the lab confirms in writing that November 20 is a firm date"
+},
+"key": "B",
+"feedback": {
+"A": "Not best. Tempting because the math still fits (half right), but Green means no unresolved risk threatens a milestone, and four days of margin after a slip is an unresolved risk (\"Set the operating rules before kickoff\").",
+"B": "Correct: Amber is a risk or issue that could affect a milestone and has an active response, which matches this row (\"Set the operating rules before kickoff\").",
+"C": "Not best. Tempting because a promised date slipped (too strong), but Red means the milestone cannot be met without a decision or change, and December 4 still fits (\"Set the operating rules before kickoff\").",
+"D": "Not best. Tempting because a firm date sounds careful (right action, wrong time), but you own the report, and the defined colors let you report the current position now (\"Set the operating rules before kickoff\")."
+}
+},
+{
+"stem": "On Tuesday, a Cedar Point tester finds that the medical assistant role can open restricted behavioral-health notes it should not see. The next routine status meeting is Friday. What should you do?",
+"options": {
+"A": "Add the finding to Friday's agenda so the client can review it with the team",
+"B": "Fix the role setting yourself, then mention the change at Friday's meeting",
+"C": "Ask the tester to log a defect and let quality control set its priority",
+"D": "Raise it now through the escalation route defined for privacy concerns"
+},
+"key": "D",
+"feedback": {
+"A": "Not best. Tempting because the client should review it (right action, wrong time), but privacy concerns should not wait for the next routine status meeting (\"Set the operating rules before kickoff\").",
+"B": "Not best. Tempting because it closes the gap fast (the habit answer), but changing access without the approving authority bypasses the people who own the access design (\"Assign one accountable person to each decision\").",
+"C": "Not best. Tempting because a defect record is useful (half right), but it does not replace the escalation the operating plan defines for privacy concerns (\"Set the operating rules before kickoff\").",
+"D": "Correct: the operating plan defines what is escalated, to whom, and how fast, and privacy concerns do not wait for the next status meeting (\"Set the operating rules before kickoff\")."
+}
+},
+{
+"stem": "A Cedar Point scheduler posts a screenshot of the live appointment list, with patient names, as a comment on the project board to show a problem. What should you do?",
+"options": {
+"A": "Remove the screenshot from the board and move the detail to approved storage",
+"B": "Leave it, and add a reminder about protected data to the board's posting rules",
+"C": "Ask the scheduler to blur the names and post the screenshot to the board again",
+"D": "Ask the privacy officer to decide whether the screenshot may stay on the board"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: the record rules say where restricted information belongs, and the project board does not replace approved storage for protected data (\"Set the operating rules before kickoff\").",
+"B": "Not best. Tempting because it prevents repeats (too weak), but it leaves patient data where the record rules say it does not belong (\"Set the operating rules before kickoff\").",
+"C": "Not best. Tempting because it keeps the problem visible (half right), but the live data is still on the board until removed, and a reposted image of live patient data is still the wrong place (\"Set the operating rules before kickoff\").",
+"D": "Not best. Tempting because privacy questions go to the privacy officer (too far), but the record rules already settle where restricted information belongs, so you act on them now (\"Set the operating rules before kickoff\")."
+}
+},
+{
+"stem": "During planning, Cedar Point's nurse manager asks to add an AI tool that drafts visit summaries. The signed order does not include it. The roadmap review is next week. What should you do?",
+"options": {
+"A": "Pause planning until the sponsor decides whether the AI tool will be added",
+"B": "Add an AI configuration task, and ask the medical director to approve its use",
+"C": "Open a change request and keep planning on the purchased scope meanwhile",
+"D": "Log it as a Module 10 item to review once the purchased build is complete"
+},
+"key": "C",
+"feedback": {
+"A": "Not best. Tempting because the sponsor does decide (too far), but planning continues on the purchased scope while the change is analyzed (\"Set the operating rules before kickoff\").",
+"B": "Not best. Tempting because clinical approval is part of the review (half right), but adding a task skips change control, and no build starts before approval (\"Set the operating rules before kickoff\").",
+"C": "Correct: a request outside the order becomes a change request covering use, data, vendor, review, testing, and cost, while planning continues on purchased scope (\"Set the operating rules before kickoff\").",
+"D": "Not best. Tempting because Module 10 covers AI approval (right action, wrong time), but the request enters change control now rather than waiting until after the build (\"Set the operating rules before kickoff\")."
+}
+}
+]

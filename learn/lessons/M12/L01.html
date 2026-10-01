@@ -1,0 +1,262 @@
+<h1>Module 12, Lesson 1: Confirm the decision still holds before activation</h1>
+<h2 id="confirm-the-decision-still-holds-before-activation">Confirm the
+decision still holds before activation</h2>
+<p>A go-live decision rests on the facts at the time it was made. If the
+facts change before start, the clinic may go live on risks nobody
+approved.</p>
+<p><strong>Activation</strong> is the moment the clinic starts real work
+in the new system. Before activation, confirm that the go-live decision
+still applies. Some changes may need a new decision. Examples are a new
+critical defect, a failed final conversion, missing access, or an
+interface that does not work. A staffing emergency or a security
+incident can also change the picture.</p>
+<figure style="margin:16px 0"><img src="../../img/M12-01.png" alt="Figure 12.1. Notice that activation follows the go/no-go decision, and optimization comes only after closure." style="width:100%;max-width:1000px"><figcaption><b>Figure 12.1.</b> Notice that activation follows the go/no-go decision, and optimization comes only after closure.</figcaption></figure>
+Run the final pre-start check:
+
+<ul>
+<li>approved production version;</li>
+<li>final conversion and reconciliation state;</li>
+<li>critical interfaces, devices, access, and queues;</li>
+<li>required staffing and contacts;</li>
+<li>downtime and fallback readiness;</li>
+<li>central issue record and communication channels;</li>
+<li>must-pass criteria and pause authority;</li>
+<li>client and user announcement;</li>
+<li>current list of accepted limitations and controls.</li>
+</ul>
+<p>Record the time and the person who authorizes activation.</p>
+<blockquote>
+<p><strong>Rule:</strong> If a must-pass condition changes after
+approval, the person who approved go-live decides again.</p>
+</blockquote>
+<p>Two examples show the rule. At Cedar Point, the Lakeshore lab results
+interface fails a test message 50 minutes before start. You hold
+activation and ask the practice administrator for a new decision. At a
+small family clinic, the final conversion count is short by 300 patients
+on start morning. You report the gap to the person who approved go-live
+before anyone signs in. In both cases, the approval covered the facts on
+approval day, not the facts on start day.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List four items on the final pre-start check.</li>
+<li>Why is Friday's go-live approval not enough on its own on Monday
+morning?</li>
+<li>A vendor says it can fix a failed interface "in about an hour." What
+would you do before activation?</li>
+</ol>
+<h2 id="open-one-command-function-and-one-issue-record">Open one command
+function and one issue record</h2>
+<p>During go-live, reports arrive by phone, chat, and walk-up. Without
+one shared record, the team fixes the same problem twice and loses track
+of what changed.</p>
+<p>The <strong>command function</strong> is the team that runs go-live
+support. It may be a physical room, a virtual channel, or a set of
+people who work together. It needs one shared picture of what is
+happening. The <strong>issue record</strong> is the single log of every
+reported problem.</p>
+<figure style="margin:16px 0"><img src="../../img/M12-02.png" alt="Figure 12.2. Notice that reports from phone, chat, and walk-up all go into one issue record." style="width:100%;max-width:1000px"><figcaption><b>Figure 12.2.</b> Notice that reports from phone, chat, and walk-up all go into one issue record.</figcaption></figure>
+Track these fields for each issue:
+
+<ul>
+<li>issue ID and time;</li>
+<li>reporter, location, role, and affected workflow;</li>
+<li>description and evidence, without restricted information that is not
+needed;</li>
+<li>impact and severity;</li>
+<li>workaround or immediate containment;</li>
+<li>owner and specialists engaged;</li>
+<li>related vendor or technical cases;</li>
+<li>decision and authority;</li>
+<li>status and update time;</li>
+<li>correction version;</li>
+<li>test and confirmation;</li>
+<li>affected users or records;</li>
+<li>closure and follow-up.</li>
+</ul>
+<p>A <strong>workaround</strong> is a temporary way to get the work done
+while the problem is open. <strong>Severity</strong> describes how much
+harm the problem causes, as you learned in Module 7.</p>
+<p>Chat is fast, and you should use it to respond. But chat does not
+replace the issue record. After you respond, write the facts in the
+record.</p>
+<blockquote>
+<p><strong>Rule:</strong> Respond in any channel, then record the facts
+in the one issue record.</p>
+</blockquote>
+<p>At Cedar Point, a vendor analyst fixes a check-in freeze in the team
+chat. You add the change, who approved it, and how the fix will be
+checked to the issue record. At a dermatology clinic, a front-desk lead
+phones in a printer failure. The command lead logs it before calling the
+IT owner. In both cases, a fast reply still ends with a written
+record.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name five fields the issue record tracks.</li>
+<li>Why is a fix posted in a team chat not enough, even if it
+works?</li>
+<li>A vendor ticket already describes a change. Why would you still
+enter it in the issue record?</li>
+</ol>
+<h2 id="triage-each-report-by-impact">Triage each report by impact</h2>
+<p>Different problems need different owners. If you sort reports badly,
+a safety risk can wait behind a password reset.</p>
+<p><strong>Triage</strong> means sorting reports so the most harmful
+problems get attention first. First, separate the kind of problem. It
+may be unfamiliarity, a local setup problem, a defect, a data problem,
+an integration failure, a policy question, or an incident. Each kind
+needs a different owner.</p>
+<p>Then ask these questions in order:</p>
+<ol type="1">
+<li>Is there an immediate safety, confidentiality, security, legal,
+financial, or data-integrity risk?</li>
+<li>How many people, records, locations, or workflows are affected?</li>
+<li>Is required work blocked?</li>
+<li>Is an approved workaround available?</li>
+<li>Could continued use make the problem worse?</li>
+<li>Does the issue trigger a pause, downtime, incident, or escalation
+rule?</li>
+<li>Who has authority to decide?</li>
+</ol>
+<figure style="margin:16px 0"><img src="../../img/M12-03.png" alt="Figure 12.3. Notice that safety and data-integrity risk come first, and the last question is who decides." style="width:100%;max-width:1000px"><figcaption><b>Figure 12.3.</b> Notice that safety and data-integrity risk come first, and the last question is who decides.</figcaption></figure>
+Do not call a report "user error" before you check training, workflow, access, configuration, data, and usability. If several trained users make the same mistake, the build or workflow may be the cause.
+
+<p>If you have worked a front desk, you have seen this. When every
+patient misses the same sign, the sign is the problem.</p>
+<blockquote>
+<p><strong>Rule:</strong> When several trained users make the same
+mistake, check the build before you retrain the users.</p>
+</blockquote>
+<p>At Cedar Point, four trained medical assistants save vitals to the
+prior visit. You group the tickets and check the screen setup. At a
+pediatric clinic, three nurses pick the wrong vaccine lot from a list.
+The team finds the list sorts by date, not by lot. In both cases, the
+repeated mistake pointed to the system, not the people.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What is the first triage question, and why does it come first?</li>
+<li>Four trained users report the same mistake. What would you check
+before scheduling more training?</li>
+<li>Name three kinds of problem that need different owners.</li>
+</ol>
+<h2 id="control-changes-made-during-go-live">Control changes made during
+go-live</h2>
+<p>Go-live pressure creates requests for quick fixes. A quick fix can
+quietly break access, routing, billing, data, or reports.</p>
+<p>An <strong>emergency change path</strong> is the approved short route
+for urgent changes in the live system. It is faster than normal change
+control, but it still has every key step:</p>
+<ul>
+<li>describe the issue and impact;</li>
+<li>identify the smallest safe change;</li>
+<li>name the approver;</li>
+<li>assess downstream and regression effect;</li>
+<li>test in the right environment when possible;</li>
+<li>keep the prior version or a fallback;</li>
+<li>tell affected users;</li>
+<li>validate after release;</li>
+<li>update training and permanent records.</li>
+</ul>
+<p>A <strong>regression</strong> is something that used to work and
+stops working after a change (Module 7).</p>
+<figure style="margin:16px 0"><img src="../../img/M12-04.png" alt="Figure 12.4. Notice that even an urgent fix is approved, tested, validated, and recorded." style="width:100%;max-width:1000px"><figcaption><b>Figure 12.4.</b> Notice that even an urgent fix is approved, tested, validated, and recorded.</figcaption></figure>
+Avoid changes in the live system that nobody records. The command team may not notice the side effects for days.
+
+<blockquote>
+<p><strong>Rule:</strong> An emergency change is closed only after it is
+validated and the training and permanent records are updated.</p>
+</blockquote>
+<p>At Cedar Point, a referral routing fix passes validation, but the job
+aid still shows the old route. You update the job aid and the
+configuration record, then close the change. At an urgent care clinic, a
+billing rule changes overnight. The team updates the billing job aid
+before the morning shift. In both cases, the records are part of the
+change, not a later task.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List the last three steps of the emergency change path.</li>
+<li>Why must an urgent fix still have a named approver?</li>
+<li>A change works, but no one has updated the job aid. Is the change
+done? Why?</li>
+</ol>
+<h2 id="reconcile-each-operating-period">Reconcile each operating
+period</h2>
+<p>Some failures make no noise. A lab result that never arrives produces
+no support ticket, but a patient may miss care.</p>
+<p><strong>Reconciliation</strong> means comparing what should have
+happened with what did happen, and explaining every gap. At least once a
+day during the first launch, reconcile the workflows where silent
+failure matters.</p>
+<p>Depending on scope, review:</p>
+<ul>
+<li>expected versus completed appointments, encounters, documents,
+claims, payments, or other transactions;</li>
+<li>failed or pending interfaces;</li>
+<li>duplicate or unmatched records;</li>
+<li>conversion exceptions;</li>
+<li>clinical work that is unreviewed or overdue;</li>
+<li>failed forms or signatures;</li>
+<li>automation errors and overrides;</li>
+<li>access issues;</li>
+<li>support volume, aging, and repeat questions;</li>
+<li>critical and high defects;</li>
+<li>downtime work waiting for entry or reconciliation.</li>
+</ul>
+<figure style="margin:16px 0"><img src="../../img/M12-05.png" alt="Figure 12.5. Notice that the gap no one can explain is the item to chase today." style="width:100%;max-width:1000px"><figcaption><b>Figure 12.5.</b> Notice that the gap no one can explain is the item to chase today.</figcaption></figure>
+Take the measures from the readiness plan you built in Module 11. Do not invent a new dashboard during the crisis.
+
+<blockquote>
+<p><strong>Rule:</strong> A low ticket count does not prove that a
+process works; reconcile the counts.</p>
+</blockquote>
+<p>At Cedar Point, 214 lab orders went out. Results filed, results
+pending, and errors add up to 207. You log the 7 missing orders and the
+4 errors and assign them to the interface owner that day. At a family
+clinic, 60 claims were expected, but the clearinghouse report shows 52.
+The billing lead finds 8 claims stuck in a hold queue. In both cases,
+the counts found what the tickets missed.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four things a daily reconciliation may compare.</li>
+<li>Why can a quiet support line hide a serious failure?</li>
+<li>Your counts show 5 results you cannot account for. What would you do
+today?</li>
+</ol>
+<h2 id="run-the-end-of-day-huddle">Run the end-of-day huddle</h2>
+<p>The team must leave each day knowing what is still at risk overnight.
+Without a huddle, open risks go home with whoever noticed them.</p>
+<p>A <strong>huddle</strong> is a short, focused team meeting. Hold one
+at the end of each operating day. Ask:</p>
+<ol type="1">
+<li>What affected operations today in a way that mattered?</li>
+<li>What was contained or corrected?</li>
+<li>What remains open, and what is the risk overnight?</li>
+<li>What must be ready before the next operating period?</li>
+<li>Does the go-live decision remain valid?</li>
+</ol>
+<p>Record decisions, owners, due times, user communication, and the next
+review. Separate facts from guesses.</p>
+<p>Then issue a short status:</p>
+<ul>
+<li>operating state;</li>
+<li>main volume and reconciliation result;</li>
+<li>critical and high issues, and the controls in place;</li>
+<li>decisions needed;</li>
+<li>next actions;</li>
+<li>next update time.</li>
+</ul>
+<blockquote>
+<p><strong>Rule:</strong> Each huddle ends with owners, due times, and a
+fresh check that the go-live decision still holds.</p>
+</blockquote>
+<p>At Cedar Point, the day-2 huddle finds 4 lab results in the error
+queue. The interface owner must clear them by 07:00. At an eye clinic,
+the huddle learns that the night scanner was never set up. The office
+manager agrees to scan forms at 06:30. In both cases, the open risk left
+the room with an owner and a time.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List the five huddle questions.</li>
+<li>Why does the huddle ask whether the go-live decision is still
+valid?</li>
+<li>What should the short status include?</li>
+</ol>

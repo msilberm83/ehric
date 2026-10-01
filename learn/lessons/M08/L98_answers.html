@@ -1,0 +1,238 @@
+<h1>Module 8 — Answers: Check yourself, examples, knowledge check, spaced review</h1>
+<h2 id="answers-for-this-chapter">Answers for this chapter</h2>
+<h3 id="check-yourself">Check yourself</h3>
+<p><strong>Name who owns and approves the data</strong></p>
+<ol type="1">
+<li>Any four of: what exists; what is in scope; which source is trusted;
+what must stay accessible; what may be changed; how accuracy is checked;
+who may see it; when the source can be retired; which rules affect
+retention.</li>
+<li>Destruction and retention are legal, records, and business decisions
+that belong to the client. Running the migration does not give the
+vendor that authority.</li>
+<li>Do not let it happen during the load. Send the duplicates to the
+clinic's approved patient-identification process, where a qualified
+reviewer decides each case.</li>
+</ol>
+<p><strong>Inventory every source</strong></p>
+<ol type="1">
+<li>Any six of: application database, legacy systems, shared drives,
+scanned charts, paper, spreadsheets, email, outside portals, device
+systems, billing or payment systems, archived exports, interfaces.</li>
+<li>It copies more protected data than the work needs, which adds
+privacy risk and storage the clinic must then protect and destroy.</li>
+<li>Owner and contact, what data it holds, volume and date range,
+format, quality concerns, identifiers, access limits, retention needs,
+planned destination, extraction date, and who validates it.</li>
+</ol>
+<p><strong>Sort the information into categories</strong></p>
+<ol type="1">
+<li>Structured data; documents and scanned items; manual or
+unstructured; derived or calculated; relationships and identifiers;
+audit and history; excluded.</li>
+<li>The links between records can be wrong. A result attached to the
+wrong order, or a document linked to the wrong patient, fails even if
+each value is correct.</li>
+<li>Ask whether the old balance was calculated the same way as the new
+system's balance. Raise it with the billing owner, who decides whether
+to move, recalculate, or keep it as history.</li>
+</ol>
+<p><strong>Set honest expectations and define scope</strong></p>
+<ol type="1">
+<li>Any five of: structured field; document or attachment; summary or
+manual entry of a subset; approved archive; temporary read-only source
+access; approved exclusion; later phase.</li>
+<li>Each person may mean something different, such as seen in the last
+year or three years. A written rule lets the data owner approve one
+population and lets testing check it.</li>
+<li>Explain that not everything moves as searchable data and that
+similar fields may differ in meaning. Ask the data owner to approve a
+treatment for each category and a definition for each population.</li>
+</ol>
+<p><strong>Profile and clean the source</strong></p>
+<ol type="1">
+<li>Any five of: counts, missing values, duplicates, invalid dates or
+codes, mixed formats, orphaned items, odd characters or truncation,
+inactive groups, shared identifiers, broken links, impossible
+values.</li>
+<li>Merging the wrong patients puts one person's history in another's
+chart, which is a safety risk. The clinic's approved
+patient-identification process and qualified reviewers decide.</li>
+<li>Record the issue, the 600 records, a proposed fix, the approver,
+where the fix happens, and the result. The data owner decides the fix,
+such as flagging the dates as unknown rather than guessing.</li>
+</ol>
+<p><strong>Map each field by meaning</strong></p>
+<ol type="1">
+<li>Any six of: source field, source definition and format, destination
+field, destination definition and format, transformation rule, blank or
+default treatment, code translation, matching rule, sensitivity,
+validation method, approver, decision and version.</li>
+<li>A misleading field can cause staff to act on true data with the
+wrong meaning. An archive keeps the information correct and reachable
+without that risk.</li>
+<li>Profile the field and ask the source owner what it means. Map it
+only to a destination with the same meaning, or send it to the data
+owner if none exists.</li>
+</ol>
+<p><strong>Protect the data</strong></p>
+<ol type="1">
+<li>Any five of: transfer method, encryption and keys, access by role,
+staging location, logging, error-file protection, vendor and
+subcontractor handling, contracts and approvals, temporary-copy
+disposal, incident route.</li>
+<li>Error files often hold the same patient details as the main data. An
+unprotected error file is a breach risk like any other copy.</li>
+<li>Check whether the transfer method is approved and whether the
+subcontractor is covered by the needed agreements. The client's privacy
+and security owners approve; email is likely not the approved
+method.</li>
+</ol>
+<p><strong>Run repeated test conversions</strong></p>
+<ol type="1">
+<li>Small technical sample; representative test conversion; corrected
+full-volume rehearsal; final production conversion; checks after the
+load and move to live work.</li>
+<li>If rules change mid-run, no one can tell which rules produced which
+result, so defects cannot be traced or fixed reliably.</li>
+<li>Do not allow the change in this run. Record the defect, fix it in a
+new mapping version, and test that version in the next run.</li>
+</ol>
+<p><strong>Reconcile and validate with the owners</strong></p>
+<ol type="1">
+<li>Any four of: control totals, field and relationship checks, business
+scenario checks, access and audit checks, client validation.</li>
+<li>Errors can cancel each other out. Two wrong balances can still add
+up to the right total.</li>
+<li>Schedule validation by the named business and clinical owners, using
+sample records and real tasks. A clean load report is not client
+acceptance.</li>
+</ol>
+<p><strong>Know why clinical lists need clinical validation</strong></p>
+<ol type="1">
+<li>Medications: status meanings differ, or drugs do not match a
+standard code. Allergies: free text does not code. Problems: resolved
+shows as active. Immunizations: names do not map to CVX, or dates are
+missing.</li>
+<li>"No known allergies" is a clinical statement that the patient was
+asked. A blank list means no one recorded it. Converting blank to "no
+known allergies" creates false safety information.</li>
+<li>Counts show that records moved. They cannot show whether an allergy
+is coded so alerts read it, or whether a status means what a clinician
+assumes.</li>
+</ol>
+<p><strong>Use three clinical safeguards and keep decisions with the
+clinical authority</strong></p>
+<ol type="1">
+<li>Flag, do not drop or guess; prepare charts before visits; reconcile
+at the first visit.</li>
+<li>Choosing a code is a clinical judgment. A wrong code can trigger the
+wrong alert or none. The clinical authority's rule decides how flagged
+items are handled.</li>
+<li>Send the report today with the list of unreviewed visits to the
+clinical authority. You track and report; you do not mark lists reviewed
+or change the target.</li>
+</ol>
+<p><strong>Plan the cutover and a real fallback</strong></p>
+<ol type="1">
+<li>A freeze stops changes in the source. A delta is the set of changes
+made after an extract. Fallback means returning to the old system if the
+new one cannot be used.</li>
+<li>It does not say what can be reversed, how long it takes, what would
+be lost or duplicated, who decides, or how users are told.</li>
+<li>A delta method for the changes, with an owner and a reconciliation
+step, or a freeze if the owners approve one.</li>
+</ol>
+<p><strong>Archive the history before you retire the source</strong></p>
+<ol type="1">
+<li>Any four of: required data converted or archived; users know where
+history is; access, search, export, audit, and retrieval work; contracts
+handled; retention approved; temporary copies handled; retirement
+approver recorded.</li>
+<li>It costs a lot of staff time and adds new typing errors. Most
+history only needs to be reachable, not re-entered.</li>
+<li>Do not retire the source. Raise the conflict with the retirement
+owner and the commercial owner, such as a short license extension or a
+read-only copy, until archive search is proven.</li>
+</ol>
+<h3 id="worked-example-prompts">Worked example prompts</h3>
+<ul>
+<li><em>Why not just add referrals to the load?</em> Open referrals were
+outside the purchased scope. Adding them silently changes scope without
+the commercial and clinical owners' approval, and hides cost and
+risk.</li>
+<li><em>Why similar names and changed addresses?</em> These are the
+records most likely to merge wrongly or match the wrong patient. Testing
+them shows whether matching rules are safe.</li>
+<li><em>Why clinical approval too?</em> The data owner accepts the data
+overall, but only a clinical authority can decide whether clinical lists
+are safe for care. The data owner relies on that review.</li>
+</ul>
+<h3 id="faded-example">Faded example</h3>
+<ol start="4" type="1">
+<li>Do not guess the match. Propose holding the 1,150 files in an
+approved archive, flagged for review, or a manual matching process by
+qualified staff under the patient-identification process. The data owner
+approves, with the privacy owner.</li>
+<li>Source: document file, patient name, birth date, and any old system
+ID. Rule: link only through a validated patient ID or an approved match;
+mark provenance as legacy. Destination: the document area of the right
+patient's chart. Include approver and version.</li>
+<li>Count reconciliation of files; a sample check that documents open in
+the right chart; access tests showing restricted roles cannot see them;
+a business scenario where staff find a consent form; client validation
+by the document owner.</li>
+<li>Every required document is converted or in an approved, searchable
+archive; staff know where to find it; retention is approved; temporary
+copies are handled; and the retirement approver is recorded.</li>
+</ol>
+<h3 id="knowledge-check">Knowledge check</h3>
+<ol type="1">
+<li>They are a useful first sort, but they miss important groups.
+Derived values, relationships, audit history, and excluded items each
+need their own treatment. Treating them as simple fields loses meaning,
+links, or required history.</li>
+<li>Fields with similar names can mean different things. A mapping by
+name can put correct data into a field where staff read it wrongly, such
+as a last-seen provider in a primary care field.</li>
+<li>The decision goes to the data owner. An approved archive or another
+approved treatment is often safer than forcing the data into a
+misleading field.</li>
+<li>Each value can be right while the links are wrong. A result tied to
+the wrong order or a document tied to the wrong patient is a failed
+conversion and a possible safety or privacy problem.</li>
+<li>Technical reconciliation shows that counts and totals match and
+differences are explained. Client validation is named owners confirming
+the data is accurate and usable for their work. Technical success is not
+client acceptance.</li>
+<li>What can actually be reversed, how long it takes, what information
+would be lost or duplicated, who decides, and how users are told.</li>
+<li>The count shows only that records moved. An allergy may arrive as
+free text that alert logic cannot read, or a blank list may convert as
+"no known allergies," so prescribers get no warning.</li>
+<li>The clinical authority approves it. The implementer produces flag
+reports, builds worklists, schedules reviews, tracks completion, and
+reports exceptions. The implementer does not judge clinical correctness,
+recode items, or mark lists reviewed.</li>
+</ol>
+<h3 id="spaced-review">Spaced review</h3>
+<ol type="1">
+<li>Regression tests on lists, screens, and reports that read medication
+status, such as the medication list, the drug-interaction check, and
+active-medication reports. The retest shows the fix works; regression
+tests show the fix did not break anything else.</li>
+<li>No. A pass belongs to one version in one environment. Version 3.3
+changed rules, so you rerun the affected checks, plus the core set, on
+3.3 before relying on it.</li>
+<li>It is a defect: the learner did nothing wrong, and the build linked
+documents to the wrong patient. Log it in the defect log and send it to
+QC with the steps to reproduce. Its severity is based on harm, and a
+wrong-patient document is serious.</li>
+<li>The client's privacy officer, with legal counsel where needed,
+decides. Your job is to ask the questions, record the decision and its
+owner, and build and test what was approved.</li>
+<li>As an external dependency, with the deliverable, provider, receiver,
+need date, and effect of delay. Give it an owner and a decision date,
+and show any go-live date that depends on it as a target until the
+export date is agreed.</li>
+</ol>

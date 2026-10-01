@@ -1,0 +1,269 @@
+<h1>Module 11, Lesson 2: Set recovery objectives and get them approved</h1>
+<h2 id="set-recovery-objectives-and-get-them-approved">Set recovery
+objectives and get them approved</h2>
+<p>Every system fails at some point. Before go-live, the client must
+decide how long each critical function can be down and how much recent
+data it can afford to lose.</p>
+<p>Two terms carry those decisions:</p>
+<ul>
+<li><strong>Recovery time objective (RTO):</strong> how long a system
+can stay in recovery before the outage harms the clinic's work. The
+National Institute of Standards and Technology (NIST) defines it this
+way in its contingency planning guide, SP 800-34.</li>
+<li><strong>Recovery point objective (RPO):</strong> the point in time
+to which data must be recovered after an outage. In plain terms, it is
+how much recent work the clinic can afford to lose and enter again.</li>
+</ul>
+<p>Some clinics also set a <strong>maximum tolerable downtime</strong>.
+This is the longest outage the clinic can survive before patient care or
+the business is seriously harmed. The RTO must fit inside it.</p>
+<p>For example, a clinic sets an RPO of 15 minutes and an RTO of 4 hours
+for its EHR. After a failure, staff may need to re-enter up to 15
+minutes of work from downtime forms. They should expect to work on paper
+for up to 4 hours.</p>
+<figure style="margin:16px 0"><img src="../../img/M11-03.png" alt="Figure 11.3. Notice that RPO looks back to the last good backup, while RTO looks forward to the restore." style="width:100%;max-width:1000px"><figcaption><b>Figure 11.3.</b> Notice that RPO looks back to the last good backup, while RTO looks forward to the restore.</figcaption></figure>
+### How to get them approved
+
+<p>You do not choose these values. You gather the facts, show the gaps,
+and get a written decision.</p>
+<ol type="1">
+<li><strong>List the critical functions</strong> from your journey walk,
+such as the medication list, results, e-prescribing, scheduling, and
+claims.</li>
+<li><strong>Get the vendor's stated capability.</strong> Check the
+contract or service agreement. Ask how often backups run, what they
+include (data and setup), where they are kept, and how long a full
+restore takes.</li>
+<li><strong>Ask each business owner what they can tolerate.</strong> The
+clinical lead speaks for clinical functions. The billing manager speaks
+for claims. The client's security official speaks for security
+needs.</li>
+<li><strong>Compare need with capability.</strong> Where the vendor
+cannot meet the need, set out the options: a higher service tier, a
+manual workaround, or accepting the gap.</li>
+<li><strong>Get a written decision</strong> from the owners named in the
+governance record. A gap that affects patient safety goes to the
+clinical authority, not only to the sponsor.</li>
+<li><strong>Test a restore.</strong> Ask for evidence that a restore of
+the production backup worked and how long it took. Record the date and
+any findings.</li>
+</ol>
+<p>For each critical function, the recovery record holds:</p>
+<ul>
+<li>the RTO and the RPO;</li>
+<li>recovery order and dependencies;</li>
+<li>backup scope;</li>
+<li>the last restore test and its result;</li>
+<li>who may declare downtime, and who may return to normal work;</li>
+<li>how much backlog staff can re-enter after recovery.</li>
+</ul>
+<h3 id="what-the-sources-say">What the sources say</h3>
+<p>The 2025 SAFER Contingency Planning guide from the Office of the
+National Coordinator for Health Information Technology (ONC) recommends
+regularly tested backups of patient data and setup. It suggests a
+complete restore test, ideally monthly, and a setup backup before every
+upgrade. It also recommends a read-only backup copy of the EHR that
+users can print from during downtime. For cloud-hosted EHRs, it says the
+provider should back up data by any means needed for full recovery.</p>
+<p>The <strong>Health Insurance Portability and Accountability Act
+(HIPAA)</strong> Security Rule requires a contingency plan. The plan
+must include a data backup plan, a disaster recovery plan, and an
+emergency mode operation plan. Testing the plan and ranking the most
+critical applications and data are "addressable" parts of the rule.
+Addressable means the organization must assess them and record its
+choice. The client's security official owns HIPAA compliance. You make
+sure the go-live evidence exists and is filed.</p>
+<blockquote>
+<p><strong>Rule:</strong> Named owners approve the RTO and RPO in
+writing, and a restore test supports them.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What is the difference between an RTO and an RPO?</li>
+<li>The vendor restores in 48 hours, but the clinical lead needs 4
+hours. What do you do?</li>
+<li>Why does a gap that affects patient safety go to the clinical
+authority, not only to the sponsor?</li>
+</ol>
+<h2 id="check-security-readiness-against-a-recognized-framework">Check
+security readiness against a recognized framework</h2>
+<p>Security belongs in the go/no-go package. You are not the security
+officer, and you do not assess security controls yourself. Your job is
+to make sure security evidence exists, has an owner, and appears on the
+dashboard.</p>
+<p>Two free frameworks give you and the client a shared language.</p>
+<h3 id="the-405d-health-industry-cybersecurity-practices">The 405(d)
+Health Industry Cybersecurity Practices</h3>
+<p>The <strong>Health Industry Cybersecurity Practices (HICP)</strong>
+is a voluntary guide. A task group of industry and Department of Health
+and Human Services (HHS) experts wrote it under Section 405(d) of the
+Cybersecurity Act of 2015. The 2023 edition is the latest. It names five
+main threats to healthcare:</p>
+<ul>
+<li>social engineering, such as phishing;</li>
+<li>ransomware;</li>
+<li>loss or theft of equipment or data;</li>
+<li>insider data loss, by accident or on purpose;</li>
+<li>attacks on network-connected medical devices.</li>
+</ul>
+<p>It sets out ten practices:</p>
+<ol type="1">
+<li>email protection;</li>
+<li>endpoint protection;</li>
+<li>access management;</li>
+<li>data protection and loss prevention;</li>
+<li>asset management;</li>
+<li>network management;</li>
+<li>vulnerability management;</li>
+<li>security operations centers and incident response;</li>
+<li>network-connected medical devices;</li>
+<li>cybersecurity oversight and governance.</li>
+</ol>
+<p>Technical Volume 1 is for small organizations, such as most
+outpatient clinics. Technical Volume 2 is for medium and large
+organizations. A 2021 law, Public Law 116-321, names practices developed
+under Section 405(d) as one kind of "recognized security practices" that
+HHS considers.</p>
+<h3 id="the-nist-cybersecurity-framework-20">The NIST Cybersecurity
+Framework 2.0</h3>
+<p>NIST released the <strong>Cybersecurity Framework (CSF) 2.0</strong>
+on February 26, 2024. It sorts security outcomes into six functions. Use
+them as headings for the security part of your readiness checklist. Ask
+the client's security official to name the evidence and owner under each
+one.</p>
+<ul>
+<li><strong>Govern:</strong> strategy, roles, and policy are set.
+<em>Ask:</em> Who is the named security owner for the new system? Were
+vendor and supplier risks reviewed? (HICP practice 10.)</li>
+<li><strong>Identify:</strong> current risks are understood.
+<em>Ask:</em> Is the list of new devices, accounts, interfaces, and data
+flows complete? Was the risk analysis updated for the new system? (HICP
+practice 5.)</li>
+<li><strong>Protect:</strong> safeguards are in place. <em>Ask:</em> Did
+role-based access tests pass? Is <strong>multi-factor
+authentication</strong> (sign-in that needs two or more kinds of proof)
+on where the client requires it? Are admin accounts limited? Are new
+workstations patched and protected? (HICP practices 1, 2, 3, 4, and
+7.)</li>
+<li><strong>Detect:</strong> attacks and misuse can be found.
+<em>Ask:</em> Is audit logging on, and who reviews it? (HICP practice
+8.)</li>
+<li><strong>Respond:</strong> incidents are handled. <em>Ask:</em> Are
+incident contacts, including the vendor's, in the command plan? Do users
+know how to report a suspected incident? (HICP practice 8.)</li>
+<li><strong>Recover:</strong> operations are restored. <em>Ask:</em> Are
+the recovery objectives approved, and was a restore tested? (See the
+section above.)</li>
+</ul>
+<figure style="margin:16px 0"><img src="../../img/M11-04.png" alt="Figure 11.4. Notice that each security function has one evidence question to answer before go-live." style="width:100%;max-width:1000px"><figcaption><b>Figure 11.4.</b> Notice that each security function has one evidence question to answer before go-live.</figcaption></figure>
+An open security finding is a readiness item like any other. Record it with its owner and the security official's decision. Do not mark it closed because the vendor says the product is secure.
+
+<h3 id="two-notes-for-the-security-official">Two notes for the security
+official</h3>
+<p><strong>Risk management attestation.</strong> The Centers for
+Medicare &amp; Medicaid Services (CMS) runs the Promoting
+Interoperability reporting program. For 2026, its Security Risk Analysis
+measure asks for two yes-or-no answers: one for a security risk analysis
+and one for security risk management. If the clinic reports Promoting
+Interoperability, its security owner attests to both for the year. Your
+readiness checklist feeds their evidence. They decide and attest.</p>
+<p><strong>Proposed HIPAA update.</strong> On January 6, 2025, HHS
+proposed an update to the Security Rule that would, among other things,
+require written procedures to restore critical systems within 72 hours.
+As of September 30, 2026, it was still a proposal, so the current rule
+applies. If the client wants to adopt a proposed practice early, the
+security official decides and records it as the client's own
+objective.</p>
+<blockquote>
+<p><strong>Rule:</strong> You make sure security evidence has an owner;
+the security official judges it.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Under which CSF 2.0 function would you place audit-log review, and
+under which a restore test?</li>
+<li>Audit logging is on, but no reviewer is named. Is Detect ready? What
+would you do?</li>
+<li>Who attests to risk analysis and risk management for Promoting
+Interoperability?</li>
+</ol>
+<h2 id="define-go-live-support">Define go-live support</h2>
+<p>On go-live day, users need help within minutes, in the room where the
+problem is. A roster with gaps leaves a site or a shift alone.</p>
+<p>Plan the onsite and remote team around expected work. Roles may
+include:</p>
+<ul>
+<li>go-live leader;</li>
+<li>client executive decision-maker;</li>
+<li>client operations lead;</li>
+<li>implementation lead;</li>
+<li>floor or department support;</li>
+<li>client <strong>super users</strong> by location and shift (staff
+trained first, who help peers at the elbow);</li>
+<li>technical and device support;</li>
+<li>data conversion support;</li>
+<li>integration support;</li>
+<li>clinical, billing, finance, privacy, or security authorities;</li>
+<li>QC lead;</li>
+<li>communications and issue-log coordinator;</li>
+<li>vendor escalation contacts.</li>
+</ul>
+<p>Give each role:</p>
+<ul>
+<li>a location or remote channel;</li>
+<li>hours and coverage;</li>
+<li>decision authority;</li>
+<li>issue types it handles;</li>
+<li>escalation path;</li>
+<li>contact method;</li>
+<li>backup;</li>
+<li>expected evidence and handoff.</li>
+</ul>
+<p>"Everyone onsite" is not a plan. Put people where they can solve the
+likely problems. A remote specialist with secure access may help more
+than one waiting in a hallway. Super users need protected time, so
+confirm the clinic has freed them from their normal work.</p>
+<p>If the team travels, confirm dates, badges, access, workspace, and
+expense approval with the client before costs are incurred.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every site and shift has named support, a
+backup, and super users with protected time.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name five things each support role needs.</li>
+<li>Why list super users by location and shift, not only by name?</li>
+<li>Lakeshore has floor support only until noon, but the clinic is open
+until 6 p.m. What would you do?</li>
+</ol>
+<h2 id="agree-the-go-live-schedule-plan">Agree the go-live schedule
+plan</h2>
+<p>Full schedules on day one cause long waits, rushed notes, and
+shortcuts that risk safety. Lighter schedules are the most common
+go-live control at clinics.</p>
+<p>Ask the clinic's operations owner to decide:</p>
+<ul>
+<li>how much to reduce appointment volume during go-live;</li>
+<li>for which providers and roles;</li>
+<li>for how long;</li>
+<li>the date when normal volume resumes.</li>
+</ul>
+<p>Record the decision. The clinic decides. You supply what similar
+clinics needed, such as longer visit slots or extra breaks in the first
+weeks.</p>
+<p>Compare two clinics. One clinic cuts each provider's schedule by half
+for the first week and by a quarter for the second. It returns to full
+volume in week three. Another clinic cannot reduce visits, so it adds a
+second medical assistant to each provider for two weeks. Both clinics
+made and recorded a decision about workload.</p>
+<blockquote>
+<p><strong>Rule:</strong> The clinic decides the go-live schedule, and
+you record it with the date full volume returns.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What four things should the schedule decision cover?</li>
+<li>Who decides how much to reduce appointments?</li>
+<li>The sponsor says, "We can't afford fewer visits." What would you
+do?</li>
+</ol>

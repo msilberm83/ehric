@@ -1,0 +1,242 @@
+[
+{
+"stem": "| Workflow | Domain owner | Evaluator |\n|---|---|---|\n| Nurse triage protocol | Medical director | Nurse lead |\n| Charge capture and coding | Billing lead | Coding supervisor |\n| Release of records for minors | Implementation specialist | Implementation specialist |\n| Abnormal result follow-up | Medical director | Nurse lead |\n\nYou drafted this authority list for Cedar Point Internal Medicine before specialized training. Which row must you correct?",
+"options": {
+"A": "Triage, because the nurse lead should own the protocol as well as evaluate it",
+"B": "Charge capture, because the practice manager should own the clinic's coding rules",
+"C": "Release of minors' records, because records and privacy leaders own that decision",
+"D": "Result follow-up, because the patient-safety lead should own high-risk result work"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because nurses run triage (right rule, wrong facts), but \"Name the domain authority\" gives the protocol to clinical leaders, and the medical director already is one. Leave this row as it is.",
+"B": "Tempting because the practice manager runs the clinic (the habit answer), but \"Name the domain authority\" gives coding rules to the coding and billing leaders, and the billing lead already holds this row.",
+"C": "Correct: \"Name the domain authority\" gives record release to records (HIM) leaders and protected information to privacy leaders. The implementer never owns the decision, so you correct this row yourself, now.",
+"D": "Tempting because patient-safety leaders own high-risk setup (right rule, wrong facts), but result follow-up is a clinical care workflow. The medical director is the right owner, so leave the row."
+}
+},
+{
+"stem": "Cedar Point's medical director has approved a rule that a blood pressure above a set threshold at rooming must alert the provider. Which task belongs to the implementation specialist?",
+"options": {
+"A": "Translate the approved threshold into a build requirement, then verify the alert",
+"B": "Adjust the threshold if testing shows the alert fires too often for rooming staff",
+"C": "Decide which roles may silence the alert, since that is a system setting choice",
+"D": "Write the nurse's response to the alert into the job aid so rooming staff can act"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Name the domain authority\" says the implementer turns approved decisions into system requirements and checks the build. The threshold is approved, so you act on it now.",
+"B": "Tempting because tuning noisy alerts is a common build habit, but \"Name the domain authority\" says you do not set clinical thresholds. Report what testing shows and let the medical director decide.",
+"C": "Tempting because silencing looks like a system setting (a look-alike: a configuration choice versus a clinical decision), but who may silence a patient-risk alert is for clinical leaders. Ask them.",
+"D": "Tempting because job aids are your material (half right), but the approved rule only alerts the provider, so a nurse response would be new clinical content. Teach only the approved steps."
+}
+},
+{
+"stem": "| Readiness check, refill class for medical assistants | Status |\n|---|---|\n| Refill workflow approved | Yes, by medical director |\n| Scenario set approved | Yes |\n| Configuration QC | Passed |\n| Medical assistant role permissions | Can sign refill orders (approved design: assistant pends, provider signs) |\n| Training data | Synthetic |\n\nThe class at a family medicine clinic is tomorrow. What should you do?",
+"options": {
+"A": "Run the class and tell assistants not to use the sign button during practice",
+"B": "Run the class and log the permission issue for the builder to fix before go-live",
+"C": "Ask the medical director to approve assistants signing refills for training only",
+"D": "Report the permission defect and hold the refill practice until access is fixed"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because it keeps the class on time, but a verbal warning is too weak: learners still practice on a screen that lets them sign. Fix the build first.",
+"B": "Tempting because logging the defect is the right action, but at the wrong time: \"Recheck readiness before training\" checks permissions before class, not before go-live. Hold that practice until access is fixed.",
+"C": "Tempting because it asks the clinical owner (a look-alike: an open decision versus a build defect), but the design already says the provider signs. The build must match it, so log a defect.",
+"D": "Correct: \"Recheck readiness before training\" says permissions must match approved roles before training. The build breaks an approved design, so you log the defect and wait to run that practice until access is fixed."
+}
+},
+{
+"stem": "| # | Draft triage practice scenario (approved protocol) |\n|---|---|\n| 1 | Routine refill question |\n| 2 | Caller cannot give a date of birth |\n| 3 | Symptom that triggers the escalation rule |\n| 4 | Message sent to the wrong nurse pool |\n| 5 | Phone system down for two hours |\n\nYou are preparing the triage practice set for an urgent care clinic. Which scenario should you add before the clinical lead approves the set?",
+"options": {
+"A": "A caller who reports a symptom but cannot say when it started",
+"B": "An urgent message that no one acknowledges within the time limit",
+"C": "A caller with chest pain who must go straight to emergency care",
+"D": "The scheduling system down while the phone lines still work"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because incomplete information is a required scenario type (right rule, wrong facts), but scenario 2 already covers it. Add the missing type instead.",
+"B": "Correct: \"Train triage as a routing process\" lists a late acknowledgment among the practice scenarios because it shows whether overdue urgent work becomes visible. The set has none, so you add it.",
+"C": "Tempting because emergency steps matter in triage (true but does not answer the question), but scenario 3 already covers the escalation rule. Look for the listed type the set lacks.",
+"D": "Tempting because downtime is a required scenario (right rule, wrong facts), but scenario 5 already covers it. One of each type is enough, so add the late acknowledgment."
+}
+},
+{
+"stem": "In documentation training at Cedar Point, a provider sees that the approved template carries forward last visit's history and exam. She asks, \"If it carries forward, I can just sign, right?\" The approved workflow requires the provider to verify carried-forward content. What should you do?",
+"options": {
+"A": "Show her the approved step to review and update carried-forward content before signing",
+"B": "Ask the medical director to come to class and explain the verification rule to her",
+"C": "Ask the builder to turn off carry-forward for the exam, since it carries the most risk",
+"D": "Log a requirement for an alert that blocks signing until each section has been opened"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Train visit documentation\" says carried-forward content does not change the clinician's responsibility for the record. The verification step is approved, so you teach it now.",
+"B": "Tempting because the medical director carries weight with providers, but escalating goes too far: the rule is already approved and teaching it is your job. Teach the step yourself.",
+"C": "Tempting because carried-forward exams are a real risk, but turning the feature off goes too far and changes an approved template. Teach verified use, and route any template change to its owner.",
+"D": "Tempting because a hard stop sounds safer (a look-alike: a change request versus a training gap), but the approved step already covers this. Train the step instead of adding a new requirement."
+}
+},
+{
+"stem": "During documentation practice, a nurse enters vital signs on the wrong synthetic patient and signs the entry. She asks how to fix it. The clinic's approved wrong-record correction process is built and covered in the job aid. What should you do?",
+"options": {
+"A": "Reset the synthetic chart yourself so the next exercise starts from a clean record",
+"B": "Ask the health information lead how this error should be handled in class",
+"C": "Walk her through the approved wrong-record correction, then repeat the scenario",
+"D": "Have her add an addendum saying the vitals belong to a different synthetic patient"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because cleaning the chart quickly is a helpful habit, but \"Train visit documentation\" lists correcting notes in the wrong record as a skill to practice. Use the approved correction instead.",
+"B": "Tempting because records leaders own accuracy, but escalating goes too far: the process is already approved and built. Teach it yourself.",
+"C": "Correct: \"Train visit documentation\" lists preventing and correcting notes in the wrong record. The approved process exists, so you teach it now and repeat the scenario to check the skill.",
+"D": "Tempting because an addendum is a real way to change a signed entry (a look-alike: amendment versus wrong-record correction), but it leaves the vitals on the wrong patient. Use the approved correction."
+}
+},
+{
+"stem": "In provider training, a physician asks to connect an ambient AI scribe app she uses at another job so it can draft notes into the synthetic charts. The project has no approved AI documentation workflow. What should you do?",
+"options": {
+"A": "Let her try it on the synthetic charts, since no real patient data is involved there",
+"B": "Record it as a new AI use case for scope, privacy, security, and authority review",
+"C": "Ask the medical director to approve the app so she can use it in the training class",
+"D": "Send it to the privacy officer, as the app could capture patient conversations"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because synthetic data protects real patients (right rule, wrong facts), but a new AI use still needs review before anyone connects it. Route it first.",
+"B": "Correct: \"Route what training reveals and collect approvals\" sends a new AI use through scope, vendor, privacy, security, authority, testing, training, and monitoring review. \"Train visit documentation\" allows AI only under approved policy.",
+"C": "Tempting because a leader's yes is the usual shortcut (the habit answer), but one approval does not replace the full review. Record it as a new AI use case.",
+"D": "Tempting because privacy is a real concern (half right), but it is only one of the required reviews. Send it through the full AI review."
+}
+},
+{
+"stem": "Under HIPAA, which content fits the definition of a psychotherapy note kept separate from the medical record?",
+"options": {
+"A": "The therapist's notes on medication changes discussed during the session",
+"B": "A summary of the diagnosis, the treatment plan, and the patient's progress",
+"C": "Results of the depression screening tests given at the start of each visit",
+"D": "The clinician's analysis of what was said in a private counseling session"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the change came up in the session (a look-alike: discussed in the session versus a note about the talk), but \"Psychotherapy notes\" excludes medicines. They go in the regular record.",
+"B": "Tempting because the therapist writes it about therapy (a look-alike: a summary of care versus an analysis of the talk), but \"Psychotherapy notes\" excludes diagnosis, plan, and progress summaries.",
+"C": "Tempting because screening results are behavioral health content (true but does not answer the question), but \"Psychotherapy notes\" excludes test results from these notes.",
+"D": "Correct: \"Psychotherapy notes\" defines them as a mental health professional's notes about the talk in a counseling session, kept apart from the rest of the record."
+}
+},
+{
+"stem": "At Cedar Point's Lakeshore location, the builder created an author-only note type named \"Psychotherapy note.\" In a training scenario, the social worker places medication changes and a diagnosis summary in it. The builder says the label keeps the note protected. What should you do?",
+"options": {
+"A": "Raise the content issue with the behavioral health lead and the privacy officer",
+"B": "Ask the builder to add a privacy flag to the note type so its content stays protected",
+"C": "Accept the builder's view, since author-only access already keeps everyone else out",
+"D": "Ask the builder to block medication and diagnosis fields in that note type for now"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Psychotherapy notes\" says protection depends on content and separation, and the clinician and privacy officer decide how such notes are used. You route the content issue to them.",
+"B": "Tempting because a flag sounds like stronger protection (a look-alike: a setting versus protected content), but a setting does not create the protection. Let the owners decide what the note holds.",
+"C": "Tempting because author-only access does keep others out (true but does not answer the question), but medications and diagnoses belong in the regular record, and the label does not protect them. Raise it with the owners.",
+"D": "Tempting because blocking those fields may be the eventual fix (right action, wrong time), but it changes the build before the owners decide. Get their decision first, as \"What you own\" says."
+}
+},
+{
+"stem": "A vendor builder says the 2024 change to 42 CFR Part 2 requires any Part 2 program to keep its records in a separate database. According to this module, what does the 2024 rule say?",
+"options": {
+"A": "Part 2 records must be stored in a database separate from the main record",
+"B": "Part 2 records must be flagged and kept in a separate section of the chart",
+"C": "Part 2 does not require segregating Part 2 records from other records",
+"D": "Part 2 records need a new consent for each treatment, payment, or operations use"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because the builder sounds sure (the habit answer: taking the vendor's word), but \"Substance use disorder records\" says the 2024 rule does not require separate storage. Check the rule.",
+"B": "Tempting as a lighter middle path (half right: it drops the separate database), but the rule does not require separate storage in any form.",
+"C": "Correct: \"Substance use disorder records\" says the 2024 final rule does not require Part 2 records to be stored apart.",
+"D": "Tempting because Part 2 is known for strict consent (a look-alike: SUD counseling notes versus Part 2 records), but one consent can cover treatment, payment, and operations. Only counseling notes need their own consent."
+}
+},
+{
+"stem": "Cedar Point's practice manager asks you to make behavioral health progress notes visible in the patient portal, saying patients have asked for them. She approves the role model but has not involved anyone else. What should you do?",
+"options": {
+"A": "Turn on portal release, since the practice manager approves the role model",
+"B": "Ask the behavioral health lead to approve it, since she writes those notes",
+"C": "Turn it on in the training build so the privacy officer can review the result",
+"D": "Send the request to the privacy officer and the records lead, who decide it"
+},
+"key": "D",
+"feedback": {
+"A": "Tempting because the practice manager does approve the role model (right rule, wrong facts), but portal release is a separate decision. Route it to the privacy officer and records lead.",
+"B": "Tempting because the behavioral health lead owns the note type (half right: right subject, wrong owner), but \"What you ask, and who decides\" gives release to the privacy officer and records lead.",
+"C": "Tempting because a working example could help the owners (right action, wrong time), but building the release before they decide puts the build ahead of the decision. Route it first.",
+"D": "Correct: the table in \"What you ask, and who decides\" says the privacy officer and records lead decide which notes may go to the portal, so you route the request to them."
+}
+},
+{
+"stem": "A family medicine clinic is adding a podiatrist. The practice manager asks you to copy the podiatry template from another client and train the podiatrist on it next week. The podiatrist is available to meet. What should you do?",
+"options": {
+"A": "Copy the other client's template and have the podiatrist review it before class",
+"B": "Meet the podiatrist to learn what starts, decides, and completes her work first",
+"C": "Ask the medical director to design the podiatry workflow on the podiatrist's behalf",
+"D": "Train on the default product template and log any gaps the podiatrist finds later"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because reusing proven work is a common habit, but another client's template is not built from this podiatrist's work. Start from her answers.",
+"B": "Correct: \"Ask disciplined questions about specialty work\" says to gather evidence first: ask the specialist what starts her work, what she decides, and what could cause harm, then build with her.",
+"C": "Tempting because the medical director is the clinic's clinical leader (half right: a real authority, wrong owner), but specialty work needs the person who does it. Meet the podiatrist.",
+"D": "Tempting because logging gaps keeps them controlled (right action, wrong time), but gaps found after class mean staff trained on the wrong template. Build with her before training."
+}
+},
+{
+"stem": "| Stage, wound-care documentation class | Planned |\n|---|---|\n| Orientation | Yes |\n| Demonstration | Yes |\n| Guided practice | Yes |\n| Independent practice | Yes |\n| Exception practice | No |\n| Teach-back | No |\n| Competence decision | Nurse lead (named evaluator) |\n\nYou wrote this session plan for Cedar Point. Which change should you make before the class?",
+"options": {
+"A": "Add exception practice and teach-back before the nurse lead's competence decision",
+"B": "Add yourself as co-evaluator, since you will watch each practice case in the class",
+"C": "Add exception practice after the nurse lead's competence decision as a follow-up",
+"D": "Ask the nurse lead to approve skipping exception practice for experienced nurses"
+},
+"key": "A",
+"feedback": {
+"A": "Correct: \"Use progressive practice\" puts exception practice and teach-back before the competence decision. The session plan is yours, so you fix it now without waiting for approval.",
+"B": "Tempting because you will have the closest observations (half right: you observe, but you don't decide), but the named evaluator makes the decision. Give her your evidence.",
+"C": "Tempting because it adds the missing stage (right action, wrong time), but placed after the decision it cannot inform it. Put it before the decision.",
+"D": "Tempting because it asks the evaluator, but a waiver goes too far for a fix to your own plan, and exception practice is a standard stage. Add it."
+}
+},
+{
+"stem": "In specialized training, a medical assistant asks you to remove a required question from the clinic's fall-risk screening template because it slows rooming. The template content was approved by the clinical lead. What should you do?",
+"options": {
+"A": "Remove the question under the low-risk process, since it just affects rooming time",
+"B": "Log the request and make the question optional in the training build for now",
+"C": "Route the request to the clinical lead, who may need other reviews before a build",
+"D": "Ask the practice manager to approve removing it, since it affects rooming flow"
+},
+"key": "C",
+"feedback": {
+"A": "Tempting because rooming speed looks operational (a look-alike: a plain label versus clinical content), but the low-risk process is for plain labels. Route it to the clinical lead.",
+"B": "Tempting because logging the request is right (half right), but making the question optional changes approved clinical content before the owner decides. Leave it as approved and route it.",
+"C": "Correct: \"Route what training reveals and collect approvals\" sends a clinical template change to the clinical owner, who may also need billing, privacy, safety, build, training, and QC review.",
+"D": "Tempting because the practice manager owns clinic operations (right rule, wrong facts), but the change removes clinical content, and you route by what a finding changes. Send it to the clinical lead."
+}
+},
+{
+"stem": "| Homework entry H-14 | Entry |\n|---|---|\n| Deliverable | Approved diabetic foot exam template, version 2 |\n| Owner | Clinical lead supplies content; builder loads it |\n| Approver | (blank) |\n| Date | Content by June 3; load by June 5 |\n| Verification | QC tests template display and signing by June 7 |\n\nWhich change makes H-14 meet this module's homework standard?",
+"options": {
+"A": "Add a backup owner in case the clinical lead misses the June 3 content date",
+"B": "Name the person who approves the template content, such as the medical director",
+"C": "Change verification to the clinical lead's sign-off, since she supplied the content",
+"D": "Split it into two entries, one for content and one for loading the template"
+},
+"key": "B",
+"feedback": {
+"A": "Tempting because a backup owner reduces delay risk (true but does not answer the question), but the standard's missing field is the approver. Fill that field.",
+"B": "Correct: \"Route what training reveals and collect approvals\" requires a deliverable, owner, approver, date, and check. Only the approver is blank, so you fill it now.",
+"C": "Tempting because sign-off sounds like more assurance (a look-alike: approval versus verification), but the author approving her own content is not a QC check. Keep the QC step and name an approver.",
+"D": "Tempting because two entries look tidier, but it goes too far for one missing field, and both entries would still lack an approver. Name the approver."
+}
+}
+]

@@ -1,0 +1,249 @@
+<h1>Module 11, Lesson 1: Walk the whole operating day</h1>
+<h2 id="walk-the-whole-operating-day">Walk the whole operating day</h2>
+<p>The parts were built and tested one module at a time. Problems now
+hide in the gaps between them, where a task leaves one team and no one
+picks it up.</p>
+<p>By now the <strong>electronic health record (EHR)</strong> system is
+the practice's operational record. Some call it the practice's
+operational brain. Work, reminders, follow-up, measures, and evidence no
+longer depend on one person's memory. People still own clinical,
+financial, security, and business judgment.</p>
+<p>Walk the work from start to finish with the people who will run it.
+Use one patient journey:</p>
+<blockquote>
+<p>inquiry or referral → scheduling → intake → identity → arrival →
+visit → documentation → orders or tasks → billing → payment → follow-up
+→ records and reporting</p>
+</blockquote>
+<figure style="margin:16px 0"><img src="../../img/M11-01.png" alt="Figure 11.1. Notice the flags where a task leaves one station and has no owner at the next." style="width:100%;max-width:1000px"><figcaption><b>Figure 11.1.</b> Notice the flags where a task leaves one station and has no owner at the next.</figcaption></figure>
+At every step, ask:
+
+<ul>
+<li>Who owns the next action?</li>
+<li>What record proves the step is done?</li>
+<li>Which information is the official version?</li>
+<li>What queue or reminder shows unfinished work?</li>
+<li>What permission or approval applies?</li>
+<li>What happens when the normal path fails?</li>
+<li>What measure shows health or backlog?</li>
+<li>What does the user do during downtime?</li>
+<li>Who catches up the work after recovery?</li>
+</ul>
+<p>Look for <strong>seams</strong>. A seam is a point where work passes
+between steps or teams. Examples:</p>
+<ul>
+<li>a task that ends in one area but never arrives in the next;</li>
+<li>an exception with no queue;</li>
+<li>an alert with no owner;</li>
+<li>a report no one reviews;</li>
+<li>a form that saves correctly but no one acts on.</li>
+</ul>
+<p>Walk at least two normal journeys and two failure journeys, such as a
+lab interface outage and a patient with two records.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every step in the journey has a named owner
+for the next action.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What is a seam, and why do problems hide there?</li>
+<li>Name five questions you ask at each step of the journey.</li>
+<li>Why do you also walk failure journeys, not only normal ones?</li>
+</ol>
+<h2 id="walk-the-site">Walk the site</h2>
+<p>For a cloud EHR, the clinic's own equipment and network are among the
+most likely day-one failures. They usually belong to the clinic or its
+IT provider, so you must check them early enough for the owner to fix
+them.</p>
+<p>With the clinic's <strong>information technology (IT)</strong> owner,
+visit every room where staff will use the system. Confirm that each of
+these works from each room:</p>
+<ul>
+<li>workstations and laptops;</li>
+<li>scanners and signature pads;</li>
+<li>label printers;</li>
+<li>prescription printers, including tamper-resistant paper where the
+clinic needs it;</li>
+<li>Wi-Fi, with any weak or "dead" areas marked;</li>
+<li>printing from the EHR to the right printer.</li>
+</ul>
+<p>Then test the backup internet connection. Unplug the main line, or
+have the IT owner switch it off, and confirm the system still works.</p>
+<p>Record each failure with an owner and a fix date. Put open items on
+the readiness dashboard.</p>
+<p>Compare two findings. At Cedar Point main, a scanner in the front
+office fails because a driver is missing. The clinic's IT provider fixes
+it in a day. At Lakeshore, Wi-Fi does not reach exam room 4. Fixing it
+needs new hardware, so the IT owner orders it and the clinic places a
+wired workstation in the room for now. In both cases the clinic's owner
+fixes the problem, and you record it.</p>
+<blockquote>
+<p><strong>Rule:</strong> Test every device and room with the clinic's
+IT owner, and record an owner for each failure.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name five items you check in each room.</li>
+<li>Why should the site walk happen weeks before go-live, not the day
+before?</li>
+<li>The backup internet line fails the test. Who fixes it, and what do
+you record?</li>
+</ol>
+<h2 id="simplify-without-removing-controls">Simplify without removing
+controls</h2>
+<p>A late change to reduce clicks can remove a safety check without
+anyone noticing. Simplify, but keep every required control.</p>
+<p>Aim for a simple flow from start to finish. Look for:</p>
+<ul>
+<li>the same data entered twice;</li>
+<li>handoffs that add nothing;</li>
+<li>status values that conflict;</li>
+<li>unused fields;</li>
+<li>extra approvals with no control purpose;</li>
+<li>work that moves between queues more than needed;</li>
+<li>reports that repeat each other;</li>
+<li>reminders that lead to no action;</li>
+<li>training steps that exist only to work around a fixable
+setting.</li>
+</ul>
+<p>Do not remove identity checks, permissions, privacy and security
+controls, clinical approvals, separation of financial duties,
+test-result follow-up, or audit evidence just to save clicks.</p>
+<p>Record the reason for any late workflow change. Then rerun the
+affected setup tests, integrations, automation tests, training, and user
+acceptance before release.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every late simplification keeps its controls
+and gets retested.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four kinds of waste you look for when simplifying.</li>
+<li>A provider asks you to remove the second check on abnormal results
+to save time. What would you do?</li>
+<li>Why must a late workflow change be retested?</li>
+</ol>
+<h2 id="make-reminders-and-queues-accountable">Make reminders and queues
+accountable</h2>
+<p>An alert that nobody owns is only noise. A queue with no aging rule
+can hide unfinished work for weeks.</p>
+<p>For every queue, alert, notice, or reminder, record:</p>
+<ul>
+<li>trigger;</li>
+<li>receiving role;</li>
+<li>expected response;</li>
+<li>due date or <strong>aging rule</strong> (how long an item may
+wait);</li>
+<li>escalation;</li>
+<li>backup owner;</li>
+<li>proof that the item is closed;</li>
+<li>what happens during downtime;</li>
+<li>monitoring measure.</li>
+</ul>
+<p>A reminder that cannot be closed makes it hard to tell unfinished
+work from old notices.</p>
+<p>Check the volume under realistic conditions. A control that sends too
+many low-value alerts teaches users to ignore the important ones. The
+owner of each area approves its thresholds and escalation.</p>
+<figure style="margin:16px 0"><img src="../../img/M11-02.png" alt="Figure 11.2. Notice that every queue has a trigger, an owner, a backup, an aging rule, and an escalation path." style="width:100%;max-width:1000px"><figcaption><b>Figure 11.2.</b> Notice that every queue has a trigger, an owner, a backup, an aging rule, and an escalation path.</figcaption></figure>
+> **Rule:** Every queue has an owner, a backup, an aging rule, and an escalation path.
+
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name six fields you record for every queue or reminder.</li>
+<li>Why can too many alerts be as risky as too few?</li>
+<li>A refill queue has an owner but no aging rule. Who approves the
+rule, and what do you do?</li>
+</ol>
+<h2 id="put-quality-measures-inside-the-workflow">Put quality measures
+inside the workflow</h2>
+<p>A measure helps only if someone acts on it. And after go-live, the
+clinic can show improvement only if it measured where it started.</p>
+<p>Choose measures that help run the system, not measures that only
+decorate a dashboard. Examples:</p>
+<ul>
+<li>incomplete intake items;</li>
+<li>possible duplicate patient records;</li>
+<li>unsigned or unreviewed notes;</li>
+<li>overdue results, tasks, or deadlines;</li>
+<li>rejected or pending transactions;</li>
+<li>unresolved conversion exceptions;</li>
+<li>failed interface messages;</li>
+<li>corrections or overrides of automation;</li>
+<li>training follow-up;</li>
+<li>open defects by severity;</li>
+<li>support requests and their age;</li>
+<li>time through a key workflow.</li>
+</ul>
+<p>For each measure, define:</p>
+<ul>
+<li>its purpose;</li>
+<li>the exact numerator, denominator, population, and time period;</li>
+<li>source;</li>
+<li>owner;</li>
+<li>review schedule;</li>
+<li>threshold;</li>
+<li>action when the measure is outside the threshold;</li>
+<li>evidence and how long it is kept.</li>
+</ul>
+<p>Clinical quality, payer, financial, and regulatory measures need a
+qualified person to define and review them. You make sure the approved
+definition is built correctly and can be traced to source data.</p>
+<h3 id="capture-the-baseline-now">Capture the baseline now</h3>
+<p>A <strong>baseline</strong> is the value of a measure before go-live.
+Capture the pre-live baseline for each agreed measure now. Use the same
+definitions you will use after go-live. If no baseline is possible,
+record that and the reason.</p>
+<p>Without a baseline, the 30-, 60-, and 90-day reviews in Module 13
+cannot show whether anything improved.</p>
+<blockquote>
+<p><strong>Rule:</strong> Capture each measure's baseline before
+go-live, using the same definition you will use after.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name five parts of a measure definition.</li>
+<li>Why must the baseline use the same definition as the post-live
+measure?</li>
+<li>The old system cannot report time to sign notes. What do you
+record?</li>
+</ol>
+<h2 id="build-audit-ready-evidence">Build audit-ready evidence</h2>
+<p>Months later, someone will ask why a setting was approved or how a
+defect was closed. If the answer lives in personal email, nobody can
+find it.</p>
+<p><strong>Audit-ready</strong> means the clinic can find complete,
+clear evidence for an approved purpose. It should not have to rebuild
+the project from memory. It does not mean every audit will pass, and you
+should never promise that.</p>
+<p>Assemble:</p>
+<ul>
+<li>the controlling scope and approved changes;</li>
+<li>decisions and who made them;</li>
+<li>workflow and setup versions;</li>
+<li>access approvals;</li>
+<li>conversion mapping, reconciliation, and acceptance;</li>
+<li>integration and automation tests;</li>
+<li>training and competence records;</li>
+<li>quality control (QC) results, defects, retests, and release
+decisions;</li>
+<li>recovery objectives, restore tests, and security evidence;</li>
+<li>readiness and cutover evidence;</li>
+<li>the operational owner and support handoff.</li>
+</ul>
+<p>Then test retrieval. Ask someone who did not build the record to find
+the evidence for a requirement, an approval, a defect closure, or a
+converted patient group. If that person cannot follow the trail, the
+record is not ready.</p>
+<blockquote>
+<p><strong>Rule:</strong> Evidence is ready only when someone who did
+not build it can find it.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What does "audit-ready" mean, and what does it not mean?</li>
+<li>Why does the builder of the index not count as a fair retrieval
+test?</li>
+<li>A colleague cannot find the approval for a converted patient group.
+What do you do?</li>
+</ol>

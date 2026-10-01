@@ -1,0 +1,290 @@
+<h1>Module 9, Lesson 3: Set up revenue-cycle transactions</h1>
+<h2 id="set-up-revenue-cycle-transactions">Set up revenue-cycle
+transactions</h2>
+<p>Claims, payments, and eligibility checks all flow through electronic
+transactions. If staff read a transaction wrongly, the clinic loses
+money or works the wrong queue.</p>
+<p>A <strong>clearinghouse</strong> is a company that checks claims and
+routes them between the clinic and many payers. A clearinghouse link may
+support eligibility checks, claims, acknowledgements, rejections, and
+payment details. The exact scope depends on the product, the contracts,
+and the payers.</p>
+<p>Implementation work may include:</p>
+<ul>
+<li>clearinghouse and payer enrollment;</li>
+<li>provider, location, payer, and submitter setup;</li>
+<li>approved code and charge setup;</li>
+<li>test and production credentials;</li>
+<li>sample transactions;</li>
+<li>acknowledgement and rejection queues;</li>
+<li>denial work queues;</li>
+<li>payment posting and reconciliation;</li>
+<li>correction owners;</li>
+<li>downtime and backlog recovery.</li>
+</ul>
+<p>You coordinate setup and evidence. Qualified coding, billing,
+compliance, and finance experts own the decisions in their areas. Do not
+choose codes. Do not call a claim compliant just because the software
+accepts it.</p>
+<p><strong>Know the standard transactions.</strong>
+<strong>HIPAA</strong> (the Health Insurance Portability and
+Accountability Act) requires health plans and providers to use adopted
+standards when they do these transactions electronically. For most, the
+standard is <strong>ASC X12</strong> version 5010. You will see the
+transaction numbers in vendor screens and clearinghouse reports.</p>
+<ul>
+<li><strong>270 / 271 — eligibility.</strong> The clinic asks about a
+patient's coverage (270). The payer answers (271).</li>
+<li><strong>837P / 837I — claims.</strong> The 837P is the professional
+claim used by physician practices. The 837I is the institutional claim
+used by hospitals and facilities.</li>
+<li><strong>999 — implementation acknowledgement.</strong> It reports
+whether a file met X12 format rules. A 999 "Accepted" does not mean the
+claims were accepted for payment.</li>
+<li><strong>277CA — claim acknowledgement.</strong> It reports, claim by
+claim, whether each claim passed the payer's first checks or was
+rejected.</li>
+<li><strong>276 / 277 — claim status.</strong> The clinic asks where a
+claim stands (276). The payer answers (277).</li>
+<li><strong>835 — electronic remittance advice (ERA).</strong> It
+explains payment: amounts paid, adjusted, or denied, with standard
+reason codes.</li>
+<li><strong>EFT — electronic funds transfer.</strong> This is the
+payment itself, sent to the clinic's bank. The payer puts the 835's
+trace number in the EFT. Staff use it to match the payment to its 835.
+This matching is called <em>reassociation</em>.</li>
+</ul>
+<p>CMS guidance puts it simply. A 999 problem is technical, so it goes
+to whoever prepares the file. A 277CA problem is a data problem, so
+billing staff correct it.</p>
+<figure style="margin:16px 0"><img src="../../img/M09-06.png" alt="Figure 9.6. Notice that the 835 remittance and the EFT payment arrive separately and must be matched." style="width:100%;max-width:1000px"><figcaption><b>Figure 9.6.</b> Notice that the 835 remittance and the EFT payment arrive separately and must be matched.</figcaption></figure>
+Test more than one "clean claim." Include an eligibility failure, missing information, a rejection, correction and resubmission, duplicate prevention, a denial, and an unexpected reply. Then reconcile to the approved financial workflow.
+
+<blockquote>
+<p><strong>Rule:</strong> A 999 checks the file's format; only the 277CA
+tells you whether each claim was accepted for processing.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Which transaction answers an eligibility question, and which
+explains a payment?</li>
+<li>A 999 came back "Accepted." Why can't you tell the billing manager
+the claims were accepted?</li>
+</ol>
+<h2 id="keep-rejections-and-denials-apart">Keep rejections and denials
+apart</h2>
+<p>Rejections and denials need different fixes, different owners, and
+different deadlines. If one queue holds both, staff appeal claims that
+were never decided and miss real appeal dates.</p>
+<p><strong>Adjudication</strong> is the payer's decision on whether, and
+how much, to pay.</p>
+<p>A <strong>rejection</strong> happens <em>before</em> adjudication.
+The clearinghouse or the payer's first checks stop the claim because
+something is missing or invalid. An example is a provider number the
+payer does not recognize. The claim was never decided. Staff correct it
+and send it again. A rejection usually shows up on a 277CA or a
+clearinghouse report.</p>
+<p>A <strong>denial</strong> happens <em>after</em> adjudication. The
+payer processed the claim and decided not to pay all or part of it. The
+reason appears on the 835 as adjustment reason codes. Staff work a
+denial through the payer's corrected-claim, reopening, or appeal
+process. In Medicare, appeal rights come from the payer's first
+decision. A rejected claim never got one.</p>
+<figure style="margin:16px 0"><img src="../../img/M09-07.png" alt="Figure 9.7. Notice that a rejected claim is corrected and resubmitted, while a denied claim goes to correction or appeal." style="width:100%;max-width:1000px"><figcaption><b>Figure 9.7.</b> Notice that a rejected claim is corrected and resubmitted, while a denied claim goes to correction or appeal.</figcaption></figure>
+For configuration, this means:
+
+<ul>
+<li>rejections and denials usually go to separate work queues with
+different owners and aging rules;</li>
+<li>reports must not count them together;</li>
+<li>training must use the two words exactly.</li>
+</ul>
+<p>The billing manager decides the queue design, owners, and aging
+limits. You build and test what is approved.</p>
+<blockquote>
+<p><strong>Rule:</strong> Staff fix and resend a rejected claim; they
+appeal or correct a denied claim through the payer.</p>
+</blockquote>
+<p>Compare two cases. A claim comes back on the 277CA with "rendering
+provider not on file." A different claim comes back on the 835 with a
+reason code saying the service is not covered. The first was never
+decided, so staff fix and resend it. The second was decided, so staff
+follow the payer's appeal or correction path.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Where does a rejection usually appear, and where does a denial
+appear?</li>
+<li>Why should reports never count rejections and denials together?</li>
+</ol>
+<h2 id="track-clearinghouse-and-payer-enrollment-separately">Track
+clearinghouse and payer enrollment separately</h2>
+<p>"Enrollment is done" can mean four different things. If you track
+only one, claims may go out while payments still arrive as paper
+checks.</p>
+<p>Track each step separately, for each payer and each billing location
+or provider number:</p>
+<ol type="1">
+<li><strong>Clearinghouse enrollment.</strong> The clinic's account and
+submitter setup with the clearinghouse.</li>
+<li><strong>Payer claims enrollment.</strong> Each payer's permission to
+receive the clinic's electronic claims through that clearinghouse. This
+is also called <strong>EDI</strong> (electronic data interchange)
+enrollment.</li>
+<li><strong>ERA enrollment.</strong> Permission to receive 835s
+electronically, routed to the right clearinghouse.</li>
+<li><strong>EFT enrollment.</strong> Setup with each payer to deposit
+payments into the clinic's bank account. Payers may ask for the clinic's
+tax ID and each clinician's <strong>NPI</strong> (National Provider
+Identifier).</li>
+</ol>
+<p>Some payers need several of these steps. Some need none beyond the
+clearinghouse. Approval can take days or weeks.</p>
+<p>Keep an <strong>enrollment tracker</strong> with one row per payer
+and location. The client's billing or credentialing lead owns the
+submissions. You track status. You log each gap as a dependency with an
+owner and a need date. Where a gap will remain at go-live, ask billing
+for an interim plan.</p>
+<figure style="margin:16px 0"><img src="../../img/M09-08.png" alt="Figure 9.8. Notice that each payer has four separate enrollment steps, and some are still only submitted." style="width:100%;max-width:1000px"><figcaption><b>Figure 9.8.</b> Notice that each payer has four separate enrollment steps, and some are still only submitted.</figcaption></figure>
+> **Rule:** Track the four enrollment steps one by one, for each payer and each location.
+
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the four enrollment steps.</li>
+<li>Claims enrollment is approved, but ERA enrollment is only submitted.
+What happens to payments, and what would you do?</li>
+</ol>
+<h2 id="govern-electronic-forms">Govern electronic forms</h2>
+<p>A form with the wrong version, wording, or routing can capture the
+wrong consent or send a signed form to the wrong record. Forms carry
+legal and clinical language, so they need owners.</p>
+<p>Collect the client's approved forms for each stage of the workflow.
+Record:</p>
+<ul>
+<li>owner and approver;</li>
+<li>version and effective date;</li>
+<li>purpose and audience;</li>
+<li>fields and the source of any prefilled information;</li>
+<li>required and optional answers;</li>
+<li>conditional logic;</li>
+<li>signature rule;</li>
+<li>language and accessibility needs;</li>
+<li>routing;</li>
+<li>where the record is stored;</li>
+<li>retention;</li>
+<li>change process.</li>
+</ul>
+<p>Build and test:</p>
+<ul>
+<li>display and completion;</li>
+<li>prefill accuracy;</li>
+<li>required and conditional fields;</li>
+<li>save and resume;</li>
+<li>signature, refusal, expiration, and correction;</li>
+<li>routing and notices;</li>
+<li>link to the correct record;</li>
+<li>version shown and stored;</li>
+<li>role access;</li>
+<li>export and retrieval;</li>
+<li>phone or tablet behavior, if in scope.</li>
+</ul>
+<p>The project team converts approved content. Qualified client
+authorities approve clinical, privacy, financial, consent, and other
+controlled wording.</p>
+<blockquote>
+<p><strong>Rule:</strong> Load a form only after the client authority
+who owns its wording approves it.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four facts you record for each form.</li>
+<li>Why does the stored record need to show the form's version?</li>
+</ol>
+<h2 id="control-codes-values-and-templates">Control codes, values, and
+templates</h2>
+<p>Reports and automation depend on clean lists. Three spellings of one
+appointment type split a report three ways. An old template can copy
+outdated content into every note.</p>
+<p><strong>Codes and controlled values.</strong> Systems rely on code
+sets, status values, task types, appointment types, locations,
+providers, fees, and similar lists. For each list, define:</p>
+<ul>
+<li>business owner;</li>
+<li>source and version;</li>
+<li>active and inactive rules;</li>
+<li>effective dates;</li>
+<li>roles allowed to change it;</li>
+<li>downstream effect;</li>
+<li>test and approval;</li>
+<li>maintenance process.</li>
+</ul>
+<p>Do not let every user create near-duplicate values. "New Patient,"
+"New patient," and "New-Patient" may split reporting and break
+automation. Billing codes and payer rules need review by qualified
+coding and billing staff. You load and validate the approved values.</p>
+<p><strong>Templates.</strong> Templates reduce repeated work. They can
+also carry old or wrong content forward. Keep a template inventory
+with:</p>
+<ul>
+<li>owner;</li>
+<li>use case and role;</li>
+<li>approved content source;</li>
+<li>required and optional sections;</li>
+<li>fields and logic;</li>
+<li>access;</li>
+<li>version and effective date;</li>
+<li>review schedule;</li>
+<li>retirement rule.</li>
+</ul>
+<p>Test each template with sample scenarios. Include missing
+information, wrong carry-forward, conditional sections, signature,
+routing, and the final record. Teach users that a template is a
+structure. It does not prove its content is right for every patient.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every code list and template has a named
+owner, a version, and a rule for how it changes.</p>
+</blockquote>
+<p>Compare two cases. At one clinic, front-desk staff each add their own
+appointment types, and the no-show report becomes useless. At another, a
+physical-exam template still carries last year's screening wording into
+every note. In both cases, a list or template without an owner drifted
+until the data could not be trusted.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four things you define for each code list.</li>
+<li>Why is it a problem when staff can create their own appointment
+types?</li>
+<li>What would you teach a user who trusts a template's default
+text?</li>
+</ol>
+<h2 id="configure-payments-safely">Configure payments safely</h2>
+<p>Payment setup handles money and card data. A missed failure path can
+double-charge a patient or post a payment to the wrong account.</p>
+<p>Payment work can include merchant setup, card or bank options,
+portals, payment plans, receipts, refunds, reversals, failed payments,
+posting, reconciliation, and access.</p>
+<p>Bring in finance, security, privacy, billing, and vendor authorities
+as needed. Use approved payment providers. Follow current company and
+contract rules. Never store card numbers or other payment credentials in
+project documents.</p>
+<p>Test:</p>
+<ul>
+<li>approved payment methods;</li>
+<li>success, decline, cancellation, and timeout;</li>
+<li>duplicate prevention;</li>
+<li>partial payment;</li>
+<li>refund or reversal by an approved person;</li>
+<li>link to the correct account, patient, invoice, or ledger;</li>
+<li>receipt and notice;</li>
+<li>posting and reconciliation;</li>
+<li>role access and audit;</li>
+<li>downtime and recovery.</li>
+</ul>
+<blockquote>
+<p><strong>Rule:</strong> Before go-live, test each way a payment can
+fail, and reconcile the results.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name five payment scenarios to test.</li>
+<li>Why must the finance and security owners join payment setup?</li>
+</ol>

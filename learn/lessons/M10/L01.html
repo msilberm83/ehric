@@ -1,0 +1,264 @@
+<h1>Module 10, Lesson 1: Start with the work, not the tool</h1>
+<h2 id="start-with-the-work-not-the-tool">Start with the work, not the
+tool</h2>
+<p>A request such as "add AI to intake" cannot be built, tested, or
+stopped. If you start with the tool, nobody knows what "working"
+means.</p>
+<p><strong>Automation</strong> means the system takes a set action when
+set conditions occur. <strong>Artificial intelligence (AI)</strong>
+means software that can sort, predict, summarize, write, pull out facts,
+or suggest. Its results can vary. Both can remove repeated work. Both
+can also repeat one error across every record.</p>
+<p>So start every proposed use with a <strong>use-case
+statement</strong>. It is one short paragraph that says what the use
+does and who controls it. Fill in this pattern:</p>
+<blockquote>
+<p>For [role and workflow], when [trigger] occurs, the system will
+[action] using [information]. It produces [result]. [Person or system]
+reviews, approves, acts on, or monitors it under [rule].</p>
+</blockquote>
+<figure style="margin:16px 0"><img src="../../img/M10-01.png" alt="Figure 10.1. Notice that each blank names one thing you must know before an AI or automation use is defined." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.1.</b> Notice that each blank names one thing you must know before an AI or automation use is defined.</figcaption></figure>
+Here are two complete statements:
+
+<ul>
+<li><strong>Example A (rules-based).</strong> When an approved
+appointment is one day away, the system sends the set reminder and
+records delivery. The front-desk lead checks failed deliveries each
+morning.</li>
+<li><strong>Example B (AI).</strong> When a scanned document enters the
+intake queue, an AI service proposes a category. Front-desk staff
+confirm or correct it before routing.</li>
+</ul>
+<p>The two uses are very different. Both statements still name the
+owner, the data, the action, the result, and the control. A request that
+lacks any of these goes back to the person who asked for it.</p>
+<blockquote>
+<p><strong>Rule:</strong> Do not build a use until its statement names
+the owner, data, action, result, and control.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What five things must every use-case statement name?</li>
+<li>A provider emails you: "Let's use AI for referrals." What would you
+do, and why?</li>
+<li>Why is "add AI to intake" not something you can test?</li>
+</ol>
+<h2 id="improve-the-workflow-before-automating-it">Improve the workflow
+before automating it</h2>
+<p>Automation makes a process faster. If the process is unclear, it
+makes unclear work faster and harder to see.</p>
+<p>Use the approved <strong>future-state map</strong> from Module 4.
+This is the agreed drawing of how the work will run in the new system.
+For each proposed use, confirm:</p>
+<ul>
+<li>the trigger is reliable;</li>
+<li>the information is available and means what people think it
+means;</li>
+<li>responsibility and authority are settled;</li>
+<li>normal and exception paths are defined;</li>
+<li>the manual process can be measured today;</li>
+<li>the use removes useful work, not a control;</li>
+<li>a failure can be found and fixed;</li>
+<li>the clinic can stop or bypass the use safely.</li>
+</ul>
+<p>If you have worked a front desk, you have seen this. A reminder sent
+for an appointment that was already moved creates calls, not
+savings.</p>
+<p>Compare two cases. At one clinic, refill requests already go to one
+queue with one owner, so a reminder rule can help at once. At another
+clinic, nobody agrees who owns refill requests. A reminder there would
+send alerts to no one. In both cases the workflow decides whether
+automation helps.</p>
+<blockquote>
+<p><strong>Rule:</strong> Automate only a workflow that is approved,
+measurable, and safe to stop.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List four things you confirm about a workflow before you automate
+it.</li>
+<li>A clinic wants an automatic task for every unsigned note, but nobody
+owns unsigned notes. What would you do first?</li>
+<li>Why can automation make a weak process worse?</li>
+</ol>
+<h2 id="separate-rules-based-automation-from-ai">Separate rules-based
+automation from AI</h2>
+<p>Rules and AI fail in different ways, so they need different tests. If
+you test them the same way, you will miss errors in one of them.</p>
+<p><strong>Rules-based automation</strong> follows set logic: when X
+happens and conditions A and B are true, do Y. It is
+<strong>deterministic</strong>. That means the same input always gives
+the same output. It can still fail because of bad data, wrong logic,
+changed workflows, timing, permissions, or a service that is down.
+Still, you can say exactly what it should do.</p>
+<p>Common rules-based uses are:</p>
+<ul>
+<li>reminders;</li>
+<li>work-queue routing;</li>
+<li>raising overdue tasks to a lead;</li>
+<li>moving documents;</li>
+<li>approved status changes;</li>
+<li>alerts about rejected transactions;</li>
+<li>standard follow-up tasks.</li>
+</ul>
+<p><strong>AI-enabled</strong> features can give different results for
+similar input. The result depends on the model, the input, the setup,
+and changes over time. AI can sound sure of itself and still be wrong or
+incomplete. If vendor, account, and data controls are weak, it may also
+expose or keep information in ways the clinic did not plan.</p>
+<p>Common AI uses are:</p>
+<ul>
+<li>drafting visit notes from conversation (ambient notes);</li>
+<li>summarizing or sorting intake;</li>
+<li>proposing scheduling replies;</li>
+<li>analyzing billing denials and drafting letters;</li>
+<li>sorting documents;</li>
+<li>drafting letters or text;</li>
+<li>searching or answering questions over clinic content.</li>
+</ul>
+<figure style="margin:16px 0"><img src="../../img/M10-02.png" alt="Figure 10.2. Notice that rules give one output for one input, while AI can give several, so a person reviews them." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.2.</b> Notice that rules give one output for one input, while AI can give several, so a person reviews them.</figcaption></figure>
+Do not use one review rule for every use. Base it on risk, authority, and clinic policy. Decisions about care, money, access, eligibility, or the official record need a qualified person. Low-risk office suggestions may use sampling or exception review if the approved risk review supports it.
+
+<blockquote>
+<p><strong>Rule:</strong> Test a rule against its exact expected result,
+and test AI against thresholds set in advance.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What does "deterministic" mean?</li>
+<li>Name two ways a rules-based automation can still fail.</li>
+<li>Why would a pass rate of "looks right to the reviewer" fail as a
+test for an AI feature?</li>
+</ol>
+<h2 id="build-the-use-case-inventory">Build the use-case inventory</h2>
+<p>The <strong>use-case inventory</strong> is the clinic's list of every
+automation and AI use it turns on. Without it, the clinic cannot see or
+govern what the system does on its own.</p>
+<p>For each use, record:</p>
+<ul>
+<li>owner and users;</li>
+<li>purpose and success measure;</li>
+<li>workflow and trigger;</li>
+<li>system or vendor;</li>
+<li>model or feature version, when the vendor provides it;</li>
+<li>input and output;</li>
+<li>information type (for example, patient data or payment data);</li>
+<li>people and decisions affected;</li>
+<li>possible harms and ways it could fail;</li>
+<li>reviewer or approval point;</li>
+<li>status of vendor, contract, privacy, security, and compliance
+reviews;</li>
+<li>decision-support source information, when the vendor supplies the
+decision support (see "Collect decision-support source
+information");</li>
+<li>test set and threshold;</li>
+<li>monitoring and incident owner;</li>
+<li>fallback and stop method;</li>
+<li>change and retirement plan.</li>
+</ul>
+<figure style="margin:16px 0"><img src="../../img/M10-03.png" alt="Figure 10.3. Notice that the inventory records purpose, data, control, and lifecycle, not just that a feature is on." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.3.</b> Notice that the inventory records purpose, data, control, and lifecycle, not just that a feature is on.</figcaption></figure>
+Product settings alone are not enough. A setting shows that a feature is on. The inventory shows why it is on, who owns it, and how to stop it.
+
+<blockquote>
+<p><strong>Rule:</strong> If a use is not in the inventory, the clinic
+cannot govern it.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four fields from the inventory that relate to control or
+stopping.</li>
+<li>Why is a list of product settings not a substitute for the
+inventory?</li>
+<li>A vendor turns on a new AI feature by default after an update. What
+would you do with the inventory?</li>
+</ol>
+<h2 id="run-the-risk-and-authority-review">Run the risk and authority
+review</h2>
+<p>A use can harm a patient, cost money, or expose data even when it
+works as designed. The review makes sure the right owner decides with
+the risks in view.</p>
+<p>The <strong>NIST AI Risk Management Framework</strong> is a free
+guide from the National Institute of Standards and Technology (NIST). It
+and its Generative AI Profile describe how to govern, map, measure, and
+manage AI risk. Use them as general references, and adapt the review to
+the clinic. Ask questions in five groups.</p>
+<p><strong>Purpose and effect.</strong> What decision or work could the
+output change? Could a person be denied, delayed, sent to the wrong
+place, charged wrongly, exposed, or harmed? Could the output enter the
+clinical, billing, or official record?</p>
+<p><strong>Information.</strong> What information goes into the tool? Is
+it <strong>protected health information (PHI)</strong>, meaning health
+information that identifies a patient? Is it personal or payment
+information? May the vendor receive it, keep it, use it to improve its
+service, or pass it to other companies? Can the clinic get it back,
+correct it, delete it, or export it?</p>
+<p><strong>Authority.</strong> Who may approve the use? Who is qualified
+to check the output? When must a person act before the system goes on?
+What notices or consent does the clinic require?</p>
+<p><strong>Performance.</strong> Which errors matter most? Do some
+groups, languages, document types, or specialties get worse results? Can
+the output point to approved sources? Can the system show a useful
+source, confidence level, or reason?</p>
+<p><strong>Operations.</strong> How will a user know AI was used? How
+are corrections recorded? How is the version tracked? What happens when
+the service is down or changes? How are incidents reported, and how is
+the feature turned off?</p>
+<p>Then record the decision and who made it. A feature being available
+is never a reason to approve it.</p>
+<blockquote>
+<p><strong>Rule:</strong> The accountable owner approves each use, and
+you never approve a high-risk use because the feature exists.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the five groups of review questions.</li>
+<li>Why does the review ask whether some groups or languages get worse
+results?</li>
+<li>The vendor says a feature is "ready to go." Who decides whether the
+clinic uses it, and what do you record?</li>
+</ol>
+<h2 id="review-the-vendor-and-the-deployment">Review the vendor and the
+deployment</h2>
+<p>Many AI features send clinic data to the vendor or to other
+companies. If no one checks the terms, patient data may be used in ways
+the clinic never agreed to.</p>
+<p>Confirm that the clinic's approved process covers:</p>
+<ul>
+<li>contract and service terms;</li>
+<li>how data is used, kept, deleted, and used to train models;</li>
+<li>other companies that handle the data, and where they are;</li>
+<li>security and access controls;</li>
+<li>logging and audit;</li>
+<li>incident notice;</li>
+<li>service availability and recovery;</li>
+<li>changes to the model or feature;</li>
+<li>how the clinic's data is kept apart from other customers' data;</li>
+<li>export and contract end;</li>
+<li>any required agreements, such as a business associate
+agreement.</li>
+</ul>
+<p>The <strong>Health Insurance Portability and Accountability Act
+(HIPAA)</strong> sets privacy and security rules for PHI. For uses that
+involve PHI, bring in the client's privacy, security, legal, and
+contract owners. A <strong>business associate</strong> is a company that
+handles PHI for the clinic. Current guidance from the Department of
+Health and Human Services (HHS) says a cloud provider that stores
+electronic PHI for a clinic may be a business associate. This holds even
+when the data is encrypted and the provider has no key.</p>
+<p>Compare two cases. A scheduling assistant may look like "only
+scheduling," but appointment data still identifies patients and their
+care. A spelling checker that runs only on the user's computer may send
+no data out at all. In both cases, the data flow, not the feature name,
+decides who must review.</p>
+<blockquote>
+<p><strong>Rule:</strong> If a use sends PHI outside the clinic, the
+client's privacy, security, and contract owners decide before it is
+turned on.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four vendor terms the clinic must review.</li>
+<li>What is a business associate?</li>
+<li>A manager says, "Just turn it on; it's only scheduling." What would
+you do, and why?</li>
+</ol>

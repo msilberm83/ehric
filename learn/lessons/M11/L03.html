@@ -1,0 +1,357 @@
+<h1>Module 11, Lesson 3: Build the command and communication plan</h1>
+<h2 id="build-the-command-and-communication-plan">Build the command and
+communication plan</h2>
+<p>On go-live day, the same problem may reach four people through four
+channels. Without one plan, nobody knows who owns it or what patients
+have been told.</p>
+<p>Define:</p>
+<ul>
+<li>the central issue record;</li>
+<li>how users ask for help;</li>
+<li>who sorts the issues (triage);</li>
+<li>severity and priority;</li>
+<li>which channel handles urgent issues;</li>
+<li>response times;</li>
+<li>update schedule;</li>
+<li>briefings for client leaders;</li>
+<li>user announcements;</li>
+<li>vendor escalation;</li>
+<li>the route for reporting security incidents;</li>
+<li>who may decide on a change, rollback, or pause;</li>
+<li>the end-of-day huddle and report.</li>
+</ul>
+<p>Do not keep several unconnected issue lists. A floor-support note, a
+vendor case, an IT ticket, and a patient complaint may all describe one
+problem. Link them to one master issue with one owner.</p>
+<figure style="margin:16px 0"><img src="../../img/M11-05.png" alt="Figure 11.5. Notice that four separate reports link to one master issue with one owner." style="width:100%;max-width:1000px"><figcaption><b>Figure 11.5.</b> Notice that four separate reports link to one master issue with one owner.</figcaption></figure>
+### Tell patients and outside partners
+
+<p>Add an external communication list:</p>
+<ul>
+<li><strong>Patients:</strong> signs in the clinic, a phone message, and
+a portal or text notice a few weeks ahead. Tell them visits may take
+longer.</li>
+<li><strong>Partners:</strong> labs, pharmacies, billing services, and
+referral partners. Tell them the go-live date and any changes in how
+orders, prescriptions, or claims will arrive. Check that the pharmacies
+patients use most can receive e-prescriptions.</li>
+</ul>
+<p>The clinic approves the patient wording.</p>
+<blockquote>
+<p><strong>Rule:</strong> One issue gets one master record and one
+owner, and patients and partners hear before go-live.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Why should related reports link to one master issue?</li>
+<li>Name three outside partners to notify before go-live.</li>
+<li>Who approves the wording of the patient notice?</li>
+</ol>
+<h2 id="rehearse-cutover-and-the-first-operating-day">Rehearse cutover
+and the first operating day</h2>
+<p>A rehearsal finds the step that takes too long or depends on someone
+who is missing. It is far cheaper to find that now than at 6 a.m. on
+go-live day.</p>
+<p><strong>Cutover</strong> is the move from the old system to the new
+one. Run a tabletop or hands-on rehearsal of these steps:</p>
+<ol type="1">
+<li>final change and data freeze;</li>
+<li>final data pull or setup promotion;</li>
+<li>load and reconciliation;</li>
+<li>interface and device activation;</li>
+<li>access check;</li>
+<li>critical workflow quick tests;</li>
+<li>go/no-go review;</li>
+<li>user communication;</li>
+<li>start of operations;</li>
+<li>issue triage;</li>
+<li>downtime or rollback decision;</li>
+<li>end-of-day reconciliation.</li>
+</ol>
+<figure style="margin:16px 0"><img src="../../img/M11-06.png" alt="Figure 11.6. Notice that the rehearsal timed each step and caught one that overran, so it could be corrected." style="width:100%;max-width:1000px"><figcaption><b>Figure 11.6.</b> Notice that the rehearsal timed each step and caught one that overran, so it could be corrected.</figcaption></figure>
+Time each step, find dependencies, and record corrections. Then rehearse a serious but likely failure, such as a delayed conversion, a down interface, an access problem, wrong routing, a network outage, ransomware, or a critical defect.
+
+<h3 id="include-a-user-rehearsal">Include a user rehearsal</h3>
+<p>Staff in each role run a full patient visit, from scheduling to
+checkout, in the release going live. This is a mock go-live. It shows
+whether people, not only systems, are ready.</p>
+<blockquote>
+<p><strong>Rule:</strong> Rehearse the normal cutover, a serious
+failure, and a full patient visit before the go/no-go meeting.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What should a cutover rehearsal test besides the normal
+sequence?</li>
+<li>Why does a user rehearsal use the release going live?</li>
+<li>The normal cutover fits the window, but the failure scenario was not
+run. What would you do?</li>
+</ol>
+<h2 id="run-final-qa-on-the-non-production-system">Run final QA on the
+non-production system</h2>
+<p>Before go-live, quality assurance (QA) reviews the non-production
+system one more time. This is the final check that all the parts work
+together, after each module's own QC.</p>
+<p>Make the review traceable and based on risk. Confirm:</p>
+<ul>
+<li>the approved build and setup version;</li>
+<li>required data and relationships;</li>
+<li>access and role behavior;</li>
+<li>key forms, templates, and codes;</li>
+<li>integrations and devices;</li>
+<li>automation and AI setup;</li>
+<li>queues, reminders, reports, and audit;</li>
+<li>downtime materials;</li>
+<li>defects and accepted limits;</li>
+<li>training version;</li>
+<li>cutover and support plan.</li>
+</ul>
+<h3 id="check-every-users-access">Check every user's access</h3>
+<p>Every user has signed in with their own account and confirmed the
+correct role. Failed sign-ins are among the most common day-one
+problems.</p>
+<h3 id="check-prescribing-readiness">Check prescribing readiness</h3>
+<p><strong>Electronic prescribing of controlled substances
+(EPCS)</strong> has extra federal rules from the Drug Enforcement
+Administration (DEA). For each prescriber who will e-prescribe
+controlled substances, confirm:</p>
+<ul>
+<li>identity proofing is complete;</li>
+<li>the prescriber has a two-factor credential;</li>
+<li>two people have set up the prescriber's access, as the DEA rule
+requires;</li>
+<li>the vendor has the third-party audit or certification report that
+the DEA rule requires for the application.</li>
+</ul>
+<p>The prescriber and the clinic complete these steps. You confirm and
+record the status. A prescriber who is not ready cannot e-prescribe
+controlled substances on day one, so the clinic needs a plan for
+them.</p>
+<blockquote>
+<p><strong>Rule:</strong> Final QA passes only when every user has
+signed in with the right role and every EPCS prescriber is ready or has
+a plan.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Why is final QA not the first time QA sees the system?</li>
+<li>Name the four EPCS items you confirm for each prescriber.</li>
+<li>One provider's EPCS identity proofing is still pending a week before
+go-live. What would you do?</li>
+</ol>
+<h2 id="confirm-training-is-current">Confirm training is current</h2>
+<p>Training given months ago, or on screens that later changed, does not
+prepare users for go-live. A "competent" record must refer to the build
+that will actually go live.</p>
+<p>Check the training roster. Every user has shown competence on the
+release going live. Anyone trained on an older release, or long ago,
+gets a short refresher on the changed workflows. For providers, final
+training usually falls in the last two to four weeks.</p>
+<p>Compare two users. A nurse trained six weeks ago on the current
+release passes a short skills check and needs nothing more. A provider
+trained four months ago, before the results screens changed, gets a
+one-hour refresher on results and a new skills check.</p>
+<blockquote>
+<p><strong>Rule:</strong> Competence counts only on the release that
+will go live.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Which users need a refresher before go-live?</li>
+<li>Why does a training date matter, not only a "competent" mark?</li>
+<li>Who records the new competence decision after a refresher?</li>
+</ol>
+<h2 id="build-the-readiness-dashboard">Build the readiness
+dashboard</h2>
+<p>A single "96 percent complete" figure can hide one failure that
+blocks go-live. Leaders need to see each area and each blocker.</p>
+<p>Use readiness areas, not one overall percent:</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Ready criteria</th>
+<th>Evidence</th>
+<th>Owner</th>
+<th>Status</th>
+<th>Blocking item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scope and decisions</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Workflow and configuration</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Data conversion</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Integrations and devices</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Site equipment and network</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Automation and AI</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Privacy and security</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Backup, restore, and recovery objectives</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Training and staffing</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>QC and user acceptance</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cutover and downtime</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Support and communications</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<figure style="margin:16px 0"><img src="../../img/M11-07.png" alt="Figure 11.7. Notice that 96 percent complete still hides a red blocker with a named owner." style="width:100%;max-width:1000px"><figcaption><b>Figure 11.7.</b> Notice that 96 percent complete still hides a red blocker with a named owner.</figcaption></figure>
+The dashboard names blockers and the people who can decide on them.
+
+<blockquote>
+<p><strong>Rule:</strong> Report readiness by area, and lead with any
+must-pass blocker.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Why can percent complete be misleading?</li>
+<li>What six columns does each dashboard row have?</li>
+<li>Training is 41 of 42 done, and the restore test is open and
+must-pass. What do you report first?</li>
+</ol>
+<h2 id="offer-a-pre-live-safer-review">Offer a pre-live SAFER
+review</h2>
+<p>A short safety self-check before go-live can catch gaps that the
+project view misses. Module 13 repeats this check after go-live, so a
+pre-live result also gives a starting point.</p>
+<p>The <strong>SAFER Guides</strong> (Safety Assurance Factors for EHR
+Resilience) are free self-assessment checklists from ONC. Offer the
+clinic's team a pre-live review using the High Priority Practices guide.
+Or offer targeted reviews using the Contingency Planning, Patient
+Identification, and Test Results Reporting and Follow-Up guides.</p>
+<p>The clinic's team does the rating. You bring evidence from the
+project, such as the recovery record, the queue register, and test
+results.</p>
+<blockquote>
+<p><strong>Rule:</strong> The clinic rates its SAFER self-assessment;
+you bring the evidence.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Which SAFER guides fit a pre-live review?</li>
+<li>Why do you not rate the guide yourself?</li>
+</ol>
+<h2 id="make-the-gono-go-decision">Make the go/no-go decision</h2>
+<p>The go-live decision commits patients, staff, and money. It must rest
+on agreed criteria and be made by the people with authority.</p>
+<p>Define the participants and criteria in advance. A go decision should
+confirm that:</p>
+<ul>
+<li>must-pass requirements are met;</li>
+<li>no open defect breaks the approved release rule;</li>
+<li>data and interfaces meet acceptance;</li>
+<li>access, security, privacy, and clinical approvals are complete;</li>
+<li>recovery objectives are approved and a restore test supports
+them;</li>
+<li>site equipment and network work;</li>
+<li>users have current training, and support staff are ready;</li>
+<li>the schedule plan is agreed, and patients and partners are
+notified;</li>
+<li>downtime and recovery steps are usable;</li>
+<li>cutover fits the available window;</li>
+<li>open limits are understood and accepted by the proper
+authority;</li>
+<li>success and pause criteria are clear.</li>
+</ul>
+<p>Possible decisions are:</p>
+<ul>
+<li>go as planned;</li>
+<li>go with an approved limit and an active control;</li>
+<li>phased go-live;</li>
+<li>delay;</li>
+<li>no-go until named conditions are met.</li>
+</ul>
+<p>You assemble the facts and the recommendation. The authorized client
+and vendor leaders decide under the approved governance.</p>
+<blockquote>
+<p><strong>Rule:</strong> You assemble the facts; the authorized leaders
+decide, and you record it.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the five possible decisions.</li>
+<li>Who makes the go/no-go decision, and who assembles the facts?</li>
+<li>A vendor sales manager tells you to announce go-live today. What
+would you do?</li>
+</ol>
