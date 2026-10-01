@@ -12,9 +12,10 @@ valuable. Both can also spread errors at scale if no one owns them.</p>
 shared workflow. It has two or more <strong>endpoints</strong> (the
 systems at each end). It also has transport, meaning, security, timing,
 failure handling, and human owners.</p>
-<figure style="margin:16px 0"><img src="../../img/M09-01.png" alt="Figure 9.1. Notice that an integration has human owners at each end and someone watching the queue between them." style="width:100%;max-width:1000px"><figcaption><b>Figure 9.1.</b> Notice that an integration has human owners at each end and someone watching the queue between them.</figcaption></figure>
-For each integration, record these facts in the **integration inventory**:
+<figure><img src="../../img/M09-01.png" alt="Figure 9.1. Notice that an integration has human owners at each end and someone watching the queue between them." loading="lazy"><figcaption><b>Figure 9.1.</b> Notice that an integration has human owners at each end and someone watching the queue between them.</figcaption></figure>
 
+<p>For each integration, record these facts in the <strong>integration
+inventory</strong>:</p>
 <ul>
 <li>business purpose;</li>
 <li>source and destination;</li>
@@ -54,8 +55,8 @@ happened at the receiving end.</p>
 integration.</li>
 <li>Why should you ask about public health links when the order does not
 list them?</li>
-<li>A test message moved, but the receiving owner is "TBD." What would
-you do?</li>
+<li>A test message moved, but the receiving owner is "TBD" (to be
+determined). What would you do?</li>
 </ol>
 <h2 id="draw-the-data-flow-for-each-integration">Draw the data flow for
 each integration</h2>
@@ -69,9 +70,10 @@ to finish:</p>
 destination processing → acknowledgement → reconciliation → exception
 queue</p>
 </blockquote>
-<figure style="margin:16px 0"><img src="../../img/M09-02.png" alt="Figure 9.2. Notice that a failed acknowledgement drops into an exception queue that has a named owner." style="width:100%;max-width:1000px"><figcaption><b>Figure 9.2.</b> Notice that a failed acknowledgement drops into an exception queue that has a named owner.</figcaption></figure>
-An **exception queue** is a work list that holds items that failed or need a person to review them.
+<figure><img src="../../img/M09-02.png" alt="Figure 9.2. Notice that a failed acknowledgement drops into an exception queue that has a named owner." loading="lazy"><figcaption><b>Figure 9.2.</b> Notice that a failed acknowledgement drops into an exception queue that has a named owner.</figcaption></figure>
 
+<p>An <strong>exception queue</strong> is a work list that holds items
+that failed or need a person to review them.</p>
 <p>Label these parts on the drawing:</p>
 <ul>
 <li>systems and vendors;</li>
@@ -91,6 +93,12 @@ flow will do and who acts when it fails.</p>
 <p><strong>Rule:</strong> Every data-flow diagram names the person who
 owns the failure branch.</p>
 </blockquote>
+<p>Compare two cases. At Cedar Point, the lab diagram ends at "exception
+queue," but no name sits beside it. You ask the clinic to name an owner
+before you call the diagram done. At a pediatric clinic, the registry
+diagram shows rejected immunizations returning to the clinic. You add
+the nurse who works the registry's error report. In both cases, the
+drawing is finished only when a person owns the failure branch.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>List the eight steps of the data-flow chain in order.</li>

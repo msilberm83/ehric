@@ -33,9 +33,9 @@ named client or project person who approves a version for its next
 stage. The release owner accepts any risk from tests not rerun.</p>
 <p>When a defect is found, add a test for it to the regression set. Then
 the same failure cannot quietly return in a later build.</p>
-<figure style="margin:16px 0"><img src="../../img/M07-06.png" alt="Figure 7.6. Notice that a change triggers a retest of the fix, its shared parts, and the core set, with exclusions explained." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.6.</b> Notice that a change triggers a retest of the fix, its shared parts, and the core set, with exclusions explained.</figcaption></figure>
-### Keep the evidence
+<figure><img src="../../img/M07-06.png" alt="Figure 7.6. Notice that a change triggers a retest of the fix, its shared parts, and the core set, with exclusions explained." loading="lazy"><figcaption><b>Figure 7.6.</b> Notice that a change triggers a retest of the fix, its shared parts, and the core set, with exclusions explained.</figcaption></figure>
 
+<h3 id="keep-the-evidence">Keep the evidence</h3>
 <p>A regression record shows:</p>
 <ul>
 <li>the change or build ID and what changed;</li>
@@ -56,6 +56,13 @@ abnormal-result flags, the nurse result inbox, and the lab interface
 acknowledgment. The covering-provider test now fails. The implementer
 opens a new High defect and links it to the fix. The module stays
 unreleased until the test passes.</p>
+<p>At a family medicine clinic, a vendor patch changes how allergies
+display. The implementer runs the core set and every test that uses the
+allergy display. There is no time to rerun the reporting tests. The
+record lists them as not rerun, with the reason, and the release owner
+accepts that risk.</p>
+<p>In both cases, the implementer chose the tests from what the change
+touched. The record showed each choice, including what was left out.</p>
 <blockquote>
 <p><strong>Rule:</strong> You choose the regression set; the release
 owner accepts what you left out.</p>
@@ -122,9 +129,9 @@ approve → train or release</p>
 <p>Training may reveal a new requirement or defect. Send it back through
 the cycle. Do not let training become the first planned test. Do not
 assume a passed configuration stays valid after later changes.</p>
-<figure style="margin:16px 0"><img src="../../img/M07-07.png" alt="Figure 7.7. Notice that a defect found in training goes back through correction and retest, not straight to release." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.7.</b> Notice that a defect found in training goes back through correction and retest, not straight to release.</figcaption></figure>
-Keep a module readiness table:
+<figure><img src="../../img/M07-07.png" alt="Figure 7.7. Notice that a defect found in training goes back through correction and retest, not straight to release." loading="lazy"><figcaption><b>Figure 7.7.</b> Notice that a defect found in training goes back through correction and retest, not straight to release.</figcaption></figure>
 
+<p>Keep a module readiness table:</p>
 <table>
 <thead>
 <tr>
@@ -147,6 +154,17 @@ Keep a module readiness table:
 <p><strong>Rule:</strong> Every module goes through the full QC cycle
 before it is trained or released.</p>
 </blockquote>
+<ul>
+<li><strong>Example A.</strong> Cedar Point's referral module passes QC.
+A week later, the builder changes a referral form. The module goes back
+through retest and regression before training uses the new form.</li>
+<li><strong>Example B.</strong> At a pediatric clinic, the billing
+module has passed QC, but the vaccine-order module has not. The project
+manager wants to train both on one day. You train billing and move
+vaccine-order training until it passes QC.</li>
+</ul>
+<p>In both cases, neither an old pass nor a tight schedule replaced the
+full cycle.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Put the seven stages of the QC cycle in order.</li>
@@ -170,9 +188,12 @@ authority to waive.</p>
 participant, environment, expected result, actual result, findings, and
 approval. A general "UAT passed" email is weak evidence, because no one
 can see what was tested.</p>
-<figure style="margin:16px 0"><img src="../../img/M07-08.png" alt="Figure 7.8. Notice that QC and user acceptance ask different questions and need their own evidence." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.8.</b> Notice that QC and user acceptance ask different questions and need their own evidence.</figcaption></figure>
-> **Rule:** A user can accept a workflow but cannot waive a control they do not own.
+<figure><img src="../../img/M07-08.png" alt="Figure 7.8. Notice that QC and user acceptance ask different questions and need their own evidence." loading="lazy"><figcaption><b>Figure 7.8.</b> Notice that QC and user acceptance ask different questions and need their own evidence.</figcaption></figure>
 
+<blockquote>
+<p><strong>Rule:</strong> A user can accept a workflow but cannot waive
+a control they do not own.</p>
+</blockquote>
 <ul>
 <li><strong>Example A.</strong> In UAT, the front-desk lead finds that
 schedulers can see behavioral-health visit reasons. She says it is fine.
@@ -215,63 +236,21 @@ decision;</li>
 <p><strong>Rule:</strong> Each tested version needs a recorded release
 decision for a named purpose.</p>
 </blockquote>
+<ul>
+<li><strong>Example A.</strong> The release owner approves Cedar Point's
+results module, build 6.2, for training. Later the team wants the same
+build in production. The release owner makes a new recorded decision for
+production, using the QC and UAT evidence.</li>
+<li><strong>Example B.</strong> At a dermatology clinic, the practice
+manager emails "looks good" about the scheduling module. The email names
+no version or purpose. You prepare a release record with the version,
+purpose, open defects, and decider.</li>
+</ul>
+<p>In both cases, an approval counted only when it named one version and
+one purpose.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>What does a release decision approve?</li>
 <li>Why must the record name a release purpose and not just
 "approved"?</li>
 </ol>
-<h2 id="worked-example-a-pending-eligibility-check">Worked example: a
-pending eligibility check</h2>
-<p>Cedar Point's advanced front-desk training includes an insurance
-eligibility check. An <strong>eligibility check</strong> is a request to
-the payer asking whether a patient's coverage is active. Here is how the
-implementer handled a failure found in training.</p>
-<ol type="1">
-<li><strong>Ran the failure scenario, not just the normal one.</strong>
-Staff sent a synthetic eligibility request. The normal response appeared
-correctly. In the delayed-response scenario, the request stayed
-"pending." The queue did not show how long it had waited, and no one was
-assigned to watch it. <em>Produced:</em> a training observation in the
-open-item register. <em>Why:</em> the failure path is part of the
-workflow, so it must be practiced.</li>
-<li><strong>Sorted the finding.</strong> The implementer saw that no
-requirement said who watches pending checks. That made it a missing
-requirement, not a training question or coaching need.
-<em>Produced:</em> a new-requirement entry with the billing owner named.
-<em>Why:</em> more training cannot fix a rule that does not exist.</li>
-<li><strong>Sent the decision to its owner.</strong> The client billing
-owner approved a rule: any check pending over 30 minutes goes to the
-billing lead's queue with an alert. <em>Produced:</em> an approved
-requirement, version 1.1. <em>Why:</em> the client owns business policy;
-the implementer does not invent it.</li>
-</ol>
-<p><em>Why do you think the implementer sent this to the billing owner
-instead of writing the 30-minute rule herself?</em></p>
-<ol start="4" type="1">
-<li><strong>Built the change under control.</strong> The builder added
-the queue view and alert in build 6.2. <em>Produced:</em> an updated
-build and promotion record. <em>Why:</em> QC results apply only to an
-identified version.</li>
-<li><strong>Tested against the new requirement.</strong> QC tested
-success, rejection, delayed response, duplicate prevention, access, and
-acknowledgment. <em>Produced:</em> six test cases with results and
-evidence. <em>Why:</em> each test type covers a different way the
-workflow can fail.</li>
-</ol>
-<p><em>Why did QC test duplicate prevention when the problem was a
-pending response?</em></p>
-<ol start="6" type="1">
-<li><strong>Ran a regression set.</strong> The implementer reran the
-core set and the claim-submission tests that share the billing queue.
-All passed. <em>Produced:</em> a regression record with earlier results
-attached. <em>Why:</em> the new queue and alert could affect other
-billing work.</li>
-<li><strong>Updated training and released.</strong> The job aid and the
-training scenario were updated. The release owner approved build 6.2 for
-training. <em>Produced:</em> a release decision record and an updated
-readiness table. <em>Why:</em> exit criteria require training materials
-to match changed behavior.</li>
-</ol>
-<p><em>Why was the job aid updated before the release decision, not
-after?</em></p>

@@ -1,4 +1,205 @@
-<h1>Module 11, Lesson 3: Build the command and communication plan</h1>
+<h1>Module 11, Lesson 3: Check security readiness against a recognized framework</h1>
+<h2 id="check-security-readiness-against-a-recognized-framework">Check
+security readiness against a recognized framework</h2>
+<p>A security gap found after go-live can expose patient data or stop
+the clinic's work. For that reason, security evidence belongs in the
+go/no-go package.</p>
+<p>You are not the security officer, and you do not assess security
+controls yourself. Your job is to make sure security evidence exists,
+has an owner, and appears on the dashboard.</p>
+<p>Two free frameworks give you and the client a shared language.</p>
+<h3 id="the-405d-health-industry-cybersecurity-practices">The 405(d)
+Health Industry Cybersecurity Practices</h3>
+<p>The <strong>Health Industry Cybersecurity Practices (HICP)</strong>
+is a voluntary guide. A task group of industry and Department of Health
+and Human Services (HHS) experts wrote it under Section 405(d) of the
+Cybersecurity Act of 2015. The 2023 edition is the latest. It names five
+main threats to healthcare:</p>
+<ul>
+<li>social engineering, such as phishing;</li>
+<li>ransomware;</li>
+<li>loss or theft of equipment or data;</li>
+<li>insider data loss, by accident or on purpose;</li>
+<li>attacks on network-connected medical devices.</li>
+</ul>
+<p>It sets out ten practices:</p>
+<ol type="1">
+<li>email protection;</li>
+<li>endpoint protection;</li>
+<li>access management;</li>
+<li>data protection and loss prevention;</li>
+<li>asset management;</li>
+<li>network management;</li>
+<li>vulnerability management;</li>
+<li>security operations centers and incident response;</li>
+<li>network-connected medical devices;</li>
+<li>cybersecurity oversight and governance.</li>
+</ol>
+<p>Technical Volume 1 is for small organizations, such as most
+outpatient clinics. Technical Volume 2 is for medium and large
+organizations. A 2021 law, Public Law 116-321, names practices developed
+under Section 405(d) as one kind of "recognized security practices" that
+HHS considers.</p>
+<h3 id="the-nist-cybersecurity-framework-20">The NIST Cybersecurity
+Framework 2.0</h3>
+<p>NIST released the <strong>Cybersecurity Framework (CSF) 2.0</strong>
+on February 26, 2024. It sorts security outcomes into six functions. Use
+them as headings for the security part of your readiness checklist. Ask
+the client's security official to name the evidence and owner under each
+one.</p>
+<ul>
+<li><strong>Govern:</strong> strategy, roles, and policy are set.
+<em>Ask:</em> Who is the named security owner for the new system? Were
+vendor and supplier risks reviewed? (HICP practice 10.)</li>
+<li><strong>Identify:</strong> current risks are understood.
+<em>Ask:</em> Is the list of new devices, accounts, interfaces, and data
+flows complete? Was the risk analysis updated for the new system? (HICP
+practice 5.)</li>
+<li><strong>Protect:</strong> safeguards are in place. <em>Ask:</em> Did
+role-based access tests pass? Is <strong>multi-factor
+authentication</strong> (sign-in that needs two or more kinds of proof)
+on where the client requires it? Are admin accounts limited? Are new
+workstations patched and protected? (HICP practices 1, 2, 3, 4, and
+7.)</li>
+<li><strong>Detect:</strong> attacks and misuse can be found.
+<em>Ask:</em> Is audit logging on, and who reviews it? (HICP practice
+8.)</li>
+<li><strong>Respond:</strong> incidents are handled. <em>Ask:</em> Are
+incident contacts, including the vendor's, in the command plan? Do users
+know how to report a suspected incident? (HICP practice 8.)</li>
+<li><strong>Recover:</strong> operations are restored. <em>Ask:</em> Are
+the recovery objectives approved, and was a restore tested? (See the
+section above.)</li>
+</ul>
+<figure><img src="../../img/M11-04.png" alt="Figure 11.4. Notice that each security function has one evidence question to answer before go-live." loading="lazy"><figcaption><b>Figure 11.4.</b> Notice that each security function has one evidence question to answer before go-live.</figcaption></figure>
+
+<p>An open security finding is a readiness item like any other. Record
+it with its owner and the security official's decision. Do not mark it
+closed because the vendor says the product is secure.</p>
+<h3 id="two-notes-for-the-security-official">Two notes for the security
+official</h3>
+<p><strong>Risk management attestation.</strong> The Centers for
+Medicare &amp; Medicaid Services (CMS) runs the Promoting
+Interoperability reporting program. For 2026, its Security Risk Analysis
+measure asks for two yes-or-no answers: one for a security risk analysis
+and one for security risk management. If the clinic reports Promoting
+Interoperability, its security owner attests to both for the year. Your
+readiness checklist feeds their evidence. They decide and attest.</p>
+<p><strong>Proposed HIPAA update.</strong> On January 6, 2025, HHS
+proposed an update to the Security Rule that would, among other things,
+require written procedures to restore critical systems within 72 hours.
+As of September 30, 2026, it was still a proposal, so the current rule
+applies. If the client wants to adopt a proposed practice early, the
+security official decides and records it as the client's own
+objective.</p>
+<blockquote>
+<p><strong>Rule:</strong> You make sure security evidence has an owner;
+the security official judges it.</p>
+</blockquote>
+<p><strong>Example A.</strong> The vendor says its product is secure.
+You do not mark Protect as done. You ask the security official which
+evidence she needs, such as passed role-based access tests.
+<strong>Example B.</strong> Multi-factor authentication is on for
+providers but not for front-desk staff. You record the finding with its
+owner. The security official decides whether it blocks go-live. In both
+cases, you collect and route the evidence, and the security official
+judges it.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Under which CSF 2.0 function would you place audit-log review, and
+under which a restore test?</li>
+<li>Audit logging is on, but no reviewer is named. Is Detect ready? What
+would you do?</li>
+<li>Who attests to risk analysis and risk management for Promoting
+Interoperability?</li>
+</ol>
+<h2 id="define-go-live-support">Define go-live support</h2>
+<p>On go-live day, users need help within minutes, in the room where the
+problem is. A roster with gaps leaves a site or a shift alone.</p>
+<p>Plan the onsite and remote team around expected work. Roles may
+include:</p>
+<ul>
+<li>go-live leader;</li>
+<li>client executive decision-maker;</li>
+<li>client operations lead;</li>
+<li>implementation lead;</li>
+<li>floor or department support;</li>
+<li>client <strong>super users</strong> by location and shift (staff
+trained first, who sit beside their peers and help them);</li>
+<li>technical and device support;</li>
+<li>data conversion support;</li>
+<li>integration support;</li>
+<li>clinical, billing, finance, privacy, or security authorities;</li>
+<li>QC lead;</li>
+<li>communications and issue-log coordinator;</li>
+<li>vendor escalation contacts.</li>
+</ul>
+<p>Give each role:</p>
+<ul>
+<li>a location or remote channel;</li>
+<li>hours and coverage;</li>
+<li>decision authority;</li>
+<li>issue types it handles;</li>
+<li>escalation path;</li>
+<li>contact method;</li>
+<li>backup;</li>
+<li>expected evidence and handoff.</li>
+</ul>
+<p>"Everyone onsite" is not a plan. Put people where they can solve the
+likely problems. A remote specialist with secure access may help more
+than one waiting in a hallway. Super users need protected time, so
+confirm the clinic has freed them from their normal work.</p>
+<p>If the team travels, confirm dates, badges, access, workspace, and
+expense approval with the client before costs are incurred.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every site and shift has named support, a
+backup, and super users with protected time.</p>
+</blockquote>
+<p><strong>Example A.</strong> At Cedar Point main, two super users
+cover the morning shift and one covers the afternoon. Each has a named
+backup, and the practice administrator has cleared their schedules.
+<strong>Example B.</strong> At a pediatric clinic, the only super user
+for evening hours is also booked to see patients. You raise it, and the
+clinic frees a second medical assistant for evenings. In both cases,
+every shift had someone who was free to help.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name five things each support role needs.</li>
+<li>Why list super users by location and shift, not only by name?</li>
+<li>Lakeshore has floor support only until noon, but the clinic is open
+until 6 p.m. What would you do?</li>
+</ol>
+<h2 id="agree-the-go-live-schedule-plan">Agree the go-live schedule
+plan</h2>
+<p>Full schedules on day one cause long waits, rushed notes, and
+shortcuts that risk safety. Lighter schedules are the most common
+go-live control at clinics.</p>
+<p>Ask the clinic's operations owner to decide:</p>
+<ul>
+<li>how much to reduce appointment volume during go-live;</li>
+<li>for which providers and roles;</li>
+<li>for how long;</li>
+<li>the date when normal volume resumes.</li>
+</ul>
+<p>Record the decision. The clinic decides. You supply what similar
+clinics needed, such as longer visit slots or extra breaks in the first
+weeks.</p>
+<p>Compare two clinics. One clinic cuts each provider's schedule by half
+for the first week and by a quarter for the second. It returns to full
+volume in week three. Another clinic cannot reduce visits, so it adds a
+second medical assistant to each provider for two weeks. Both clinics
+made and recorded a decision about workload.</p>
+<blockquote>
+<p><strong>Rule:</strong> The clinic decides the go-live schedule, and
+you record it with the date full volume returns.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>What four things should the schedule decision cover?</li>
+<li>Who decides how much to reduce appointments?</li>
+<li>The sponsor says, "We can't afford fewer visits." What would you
+do?</li>
+</ol>
 <h2 id="build-the-command-and-communication-plan">Build the command and
 communication plan</h2>
 <p>On go-live day, the same problem may reach four people through four
@@ -23,9 +224,10 @@ have been told.</p>
 <p>Do not keep several unconnected issue lists. A floor-support note, a
 vendor case, an IT ticket, and a patient complaint may all describe one
 problem. Link them to one master issue with one owner.</p>
-<figure style="margin:16px 0"><img src="../../img/M11-05.png" alt="Figure 11.5. Notice that four separate reports link to one master issue with one owner." style="width:100%;max-width:1000px"><figcaption><b>Figure 11.5.</b> Notice that four separate reports link to one master issue with one owner.</figcaption></figure>
-### Tell patients and outside partners
+<figure><img src="../../img/M11-05.png" alt="Figure 11.5. Notice that four separate reports link to one master issue with one owner." loading="lazy"><figcaption><b>Figure 11.5.</b> Notice that four separate reports link to one master issue with one owner.</figcaption></figure>
 
+<h3 id="tell-patients-and-outside-partners">Tell patients and outside
+partners</h3>
 <p>Add an external communication list:</p>
 <ul>
 <li><strong>Patients:</strong> signs in the clinic, a phone message, and
@@ -41,317 +243,17 @@ patients use most can receive e-prescriptions.</li>
 <p><strong>Rule:</strong> One issue gets one master record and one
 owner, and patients and partners hear before go-live.</p>
 </blockquote>
+<p><strong>Example A.</strong> On day one at Cedar Point, a nurse, the
+vendor, and the IT provider all report that lab orders are not sending.
+You link the three reports to one master issue owned by the integration
+lead. <strong>Example B.</strong> Two weeks before go-live, a family
+clinic tells its reference lab and the 3 pharmacies its patients use
+most. On day one, the lab already expects orders from the new system. In
+both cases, the plan put the right information with the right owner
+before the problem grew.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Why should related reports link to one master issue?</li>
 <li>Name three outside partners to notify before go-live.</li>
 <li>Who approves the wording of the patient notice?</li>
-</ol>
-<h2 id="rehearse-cutover-and-the-first-operating-day">Rehearse cutover
-and the first operating day</h2>
-<p>A rehearsal finds the step that takes too long or depends on someone
-who is missing. It is far cheaper to find that now than at 6 a.m. on
-go-live day.</p>
-<p><strong>Cutover</strong> is the move from the old system to the new
-one. Run a tabletop or hands-on rehearsal of these steps:</p>
-<ol type="1">
-<li>final change and data freeze;</li>
-<li>final data pull or setup promotion;</li>
-<li>load and reconciliation;</li>
-<li>interface and device activation;</li>
-<li>access check;</li>
-<li>critical workflow quick tests;</li>
-<li>go/no-go review;</li>
-<li>user communication;</li>
-<li>start of operations;</li>
-<li>issue triage;</li>
-<li>downtime or rollback decision;</li>
-<li>end-of-day reconciliation.</li>
-</ol>
-<figure style="margin:16px 0"><img src="../../img/M11-06.png" alt="Figure 11.6. Notice that the rehearsal timed each step and caught one that overran, so it could be corrected." style="width:100%;max-width:1000px"><figcaption><b>Figure 11.6.</b> Notice that the rehearsal timed each step and caught one that overran, so it could be corrected.</figcaption></figure>
-Time each step, find dependencies, and record corrections. Then rehearse a serious but likely failure, such as a delayed conversion, a down interface, an access problem, wrong routing, a network outage, ransomware, or a critical defect.
-
-<h3 id="include-a-user-rehearsal">Include a user rehearsal</h3>
-<p>Staff in each role run a full patient visit, from scheduling to
-checkout, in the release going live. This is a mock go-live. It shows
-whether people, not only systems, are ready.</p>
-<blockquote>
-<p><strong>Rule:</strong> Rehearse the normal cutover, a serious
-failure, and a full patient visit before the go/no-go meeting.</p>
-</blockquote>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>What should a cutover rehearsal test besides the normal
-sequence?</li>
-<li>Why does a user rehearsal use the release going live?</li>
-<li>The normal cutover fits the window, but the failure scenario was not
-run. What would you do?</li>
-</ol>
-<h2 id="run-final-qa-on-the-non-production-system">Run final QA on the
-non-production system</h2>
-<p>Before go-live, quality assurance (QA) reviews the non-production
-system one more time. This is the final check that all the parts work
-together, after each module's own QC.</p>
-<p>Make the review traceable and based on risk. Confirm:</p>
-<ul>
-<li>the approved build and setup version;</li>
-<li>required data and relationships;</li>
-<li>access and role behavior;</li>
-<li>key forms, templates, and codes;</li>
-<li>integrations and devices;</li>
-<li>automation and AI setup;</li>
-<li>queues, reminders, reports, and audit;</li>
-<li>downtime materials;</li>
-<li>defects and accepted limits;</li>
-<li>training version;</li>
-<li>cutover and support plan.</li>
-</ul>
-<h3 id="check-every-users-access">Check every user's access</h3>
-<p>Every user has signed in with their own account and confirmed the
-correct role. Failed sign-ins are among the most common day-one
-problems.</p>
-<h3 id="check-prescribing-readiness">Check prescribing readiness</h3>
-<p><strong>Electronic prescribing of controlled substances
-(EPCS)</strong> has extra federal rules from the Drug Enforcement
-Administration (DEA). For each prescriber who will e-prescribe
-controlled substances, confirm:</p>
-<ul>
-<li>identity proofing is complete;</li>
-<li>the prescriber has a two-factor credential;</li>
-<li>two people have set up the prescriber's access, as the DEA rule
-requires;</li>
-<li>the vendor has the third-party audit or certification report that
-the DEA rule requires for the application.</li>
-</ul>
-<p>The prescriber and the clinic complete these steps. You confirm and
-record the status. A prescriber who is not ready cannot e-prescribe
-controlled substances on day one, so the clinic needs a plan for
-them.</p>
-<blockquote>
-<p><strong>Rule:</strong> Final QA passes only when every user has
-signed in with the right role and every EPCS prescriber is ready or has
-a plan.</p>
-</blockquote>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>Why is final QA not the first time QA sees the system?</li>
-<li>Name the four EPCS items you confirm for each prescriber.</li>
-<li>One provider's EPCS identity proofing is still pending a week before
-go-live. What would you do?</li>
-</ol>
-<h2 id="confirm-training-is-current">Confirm training is current</h2>
-<p>Training given months ago, or on screens that later changed, does not
-prepare users for go-live. A "competent" record must refer to the build
-that will actually go live.</p>
-<p>Check the training roster. Every user has shown competence on the
-release going live. Anyone trained on an older release, or long ago,
-gets a short refresher on the changed workflows. For providers, final
-training usually falls in the last two to four weeks.</p>
-<p>Compare two users. A nurse trained six weeks ago on the current
-release passes a short skills check and needs nothing more. A provider
-trained four months ago, before the results screens changed, gets a
-one-hour refresher on results and a new skills check.</p>
-<blockquote>
-<p><strong>Rule:</strong> Competence counts only on the release that
-will go live.</p>
-</blockquote>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>Which users need a refresher before go-live?</li>
-<li>Why does a training date matter, not only a "competent" mark?</li>
-<li>Who records the new competence decision after a refresher?</li>
-</ol>
-<h2 id="build-the-readiness-dashboard">Build the readiness
-dashboard</h2>
-<p>A single "96 percent complete" figure can hide one failure that
-blocks go-live. Leaders need to see each area and each blocker.</p>
-<p>Use readiness areas, not one overall percent:</p>
-<table>
-<thead>
-<tr>
-<th>Area</th>
-<th>Ready criteria</th>
-<th>Evidence</th>
-<th>Owner</th>
-<th>Status</th>
-<th>Blocking item</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Scope and decisions</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Workflow and configuration</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Data conversion</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Integrations and devices</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Site equipment and network</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Automation and AI</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Privacy and security</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Backup, restore, and recovery objectives</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Training and staffing</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>QC and user acceptance</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Cutover and downtime</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Support and communications</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<figure style="margin:16px 0"><img src="../../img/M11-07.png" alt="Figure 11.7. Notice that 96 percent complete still hides a red blocker with a named owner." style="width:100%;max-width:1000px"><figcaption><b>Figure 11.7.</b> Notice that 96 percent complete still hides a red blocker with a named owner.</figcaption></figure>
-The dashboard names blockers and the people who can decide on them.
-
-<blockquote>
-<p><strong>Rule:</strong> Report readiness by area, and lead with any
-must-pass blocker.</p>
-</blockquote>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>Why can percent complete be misleading?</li>
-<li>What six columns does each dashboard row have?</li>
-<li>Training is 41 of 42 done, and the restore test is open and
-must-pass. What do you report first?</li>
-</ol>
-<h2 id="offer-a-pre-live-safer-review">Offer a pre-live SAFER
-review</h2>
-<p>A short safety self-check before go-live can catch gaps that the
-project view misses. Module 13 repeats this check after go-live, so a
-pre-live result also gives a starting point.</p>
-<p>The <strong>SAFER Guides</strong> (Safety Assurance Factors for EHR
-Resilience) are free self-assessment checklists from ONC. Offer the
-clinic's team a pre-live review using the High Priority Practices guide.
-Or offer targeted reviews using the Contingency Planning, Patient
-Identification, and Test Results Reporting and Follow-Up guides.</p>
-<p>The clinic's team does the rating. You bring evidence from the
-project, such as the recovery record, the queue register, and test
-results.</p>
-<blockquote>
-<p><strong>Rule:</strong> The clinic rates its SAFER self-assessment;
-you bring the evidence.</p>
-</blockquote>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>Which SAFER guides fit a pre-live review?</li>
-<li>Why do you not rate the guide yourself?</li>
-</ol>
-<h2 id="make-the-gono-go-decision">Make the go/no-go decision</h2>
-<p>The go-live decision commits patients, staff, and money. It must rest
-on agreed criteria and be made by the people with authority.</p>
-<p>Define the participants and criteria in advance. A go decision should
-confirm that:</p>
-<ul>
-<li>must-pass requirements are met;</li>
-<li>no open defect breaks the approved release rule;</li>
-<li>data and interfaces meet acceptance;</li>
-<li>access, security, privacy, and clinical approvals are complete;</li>
-<li>recovery objectives are approved and a restore test supports
-them;</li>
-<li>site equipment and network work;</li>
-<li>users have current training, and support staff are ready;</li>
-<li>the schedule plan is agreed, and patients and partners are
-notified;</li>
-<li>downtime and recovery steps are usable;</li>
-<li>cutover fits the available window;</li>
-<li>open limits are understood and accepted by the proper
-authority;</li>
-<li>success and pause criteria are clear.</li>
-</ul>
-<p>Possible decisions are:</p>
-<ul>
-<li>go as planned;</li>
-<li>go with an approved limit and an active control;</li>
-<li>phased go-live;</li>
-<li>delay;</li>
-<li>no-go until named conditions are met.</li>
-</ul>
-<p>You assemble the facts and the recommendation. The authorized client
-and vendor leaders decide under the approved governance.</p>
-<blockquote>
-<p><strong>Rule:</strong> You assemble the facts; the authorized leaders
-decide, and you record it.</p>
-</blockquote>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>Name the five possible decisions.</li>
-<li>Who makes the go/no-go decision, and who assembles the facts?</li>
-<li>A vendor sales manager tells you to announce go-live today. What
-would you do?</li>
 </ol>

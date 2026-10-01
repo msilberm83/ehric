@@ -1,4 +1,58 @@
-<h1>Module 7, Lesson 4: Your turn: faded example</h1>
+<h1>Module 7, Lesson 4: Worked example: a pending eligibility check</h1>
+<h2 id="worked-example-a-pending-eligibility-check">Worked example: a
+pending eligibility check</h2>
+<p>Cedar Point's advanced front-desk training includes an insurance
+eligibility check. An <strong>eligibility check</strong> is a request to
+the payer asking whether a patient's coverage is active. Here is how the
+implementer handled a failure found in training.</p>
+<ol type="1">
+<li><strong>Ran the failure scenario, not just the normal one.</strong>
+Staff sent a synthetic eligibility request. The normal response appeared
+correctly. In the delayed-response scenario, the request stayed
+"pending." The queue did not show how long it had waited, and no one was
+assigned to watch it. <em>Produced:</em> a training observation in the
+open-item register. <em>Why:</em> the failure path is part of the
+workflow, so it must be practiced.</li>
+<li><strong>Sorted the finding.</strong> The implementer saw that no
+requirement said who watches pending checks. That made it a missing
+requirement, not a training question or coaching need.
+<em>Produced:</em> a new-requirement entry with the billing owner named.
+<em>Why:</em> more training cannot fix a rule that does not exist.</li>
+<li><strong>Sent the decision to its owner.</strong> The client billing
+owner approved a rule: any check pending over 30 minutes goes to the
+billing lead's queue with an alert. <em>Produced:</em> an approved
+requirement, version 1.1. <em>Why:</em> the client owns business policy;
+the implementer does not invent it.</li>
+</ol>
+<p><em>Why do you think the implementer sent this to the billing owner
+instead of writing the 30-minute rule herself?</em></p>
+<ol start="4" type="1">
+<li><strong>Built the change under control.</strong> The builder added
+the queue view and alert in build 6.2. <em>Produced:</em> an updated
+build and promotion record. <em>Why:</em> QC results apply only to an
+identified version.</li>
+<li><strong>Tested against the new requirement.</strong> QC tested
+success, rejection, delayed response, duplicate prevention, access, and
+acknowledgment. <em>Produced:</em> six test cases with results and
+evidence. <em>Why:</em> each test type covers a different way the
+workflow can fail.</li>
+</ol>
+<p><em>Why did QC test duplicate prevention when the problem was a
+pending response?</em></p>
+<ol start="6" type="1">
+<li><strong>Ran a regression set.</strong> The implementer reran the
+core set and the claim-submission tests that share the billing queue.
+All passed. <em>Produced:</em> a regression record with earlier results
+attached. <em>Why:</em> the new queue and alert could affect other
+billing work.</li>
+<li><strong>Updated training and released.</strong> The job aid and the
+training scenario were updated. The release owner approved build 6.2 for
+training. <em>Produced:</em> a release decision record and an updated
+readiness table. <em>Why:</em> exit criteria require training materials
+to match changed behavior.</li>
+</ol>
+<p><em>Why was the job aid updated before the release decision, not
+after?</em></p>
 <h2 id="your-turn-faded-example">Your turn: faded example</h2>
 <p><em>If you have done this task on a real project, try this first,
 then compare with the worked example.</em></p>

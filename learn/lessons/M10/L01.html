@@ -17,9 +17,9 @@ does and who controls it. Fill in this pattern:</p>
 [action] using [information]. It produces [result]. [Person or system]
 reviews, approves, acts on, or monitors it under [rule].</p>
 </blockquote>
-<figure style="margin:16px 0"><img src="../../img/M10-01.png" alt="Figure 10.1. Notice that each blank names one thing you must know before an AI or automation use is defined." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.1.</b> Notice that each blank names one thing you must know before an AI or automation use is defined.</figcaption></figure>
-Here are two complete statements:
+<figure><img src="../../img/M10-01.png" alt="Figure 10.1. Notice that each blank names one thing you must know before an AI or automation use is defined." loading="lazy"><figcaption><b>Figure 10.1.</b> Notice that each blank names one thing you must know before an AI or automation use is defined.</figcaption></figure>
 
+<p>Here are two complete statements:</p>
 <ul>
 <li><strong>Example A (rules-based).</strong> When an approved
 appointment is one day away, the system sends the set reminder and
@@ -116,13 +116,23 @@ expose or keep information in ways the clinic did not plan.</p>
 <li>drafting letters or text;</li>
 <li>searching or answering questions over clinic content.</li>
 </ul>
-<figure style="margin:16px 0"><img src="../../img/M10-02.png" alt="Figure 10.2. Notice that rules give one output for one input, while AI can give several, so a person reviews them." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.2.</b> Notice that rules give one output for one input, while AI can give several, so a person reviews them.</figcaption></figure>
-Do not use one review rule for every use. Base it on risk, authority, and clinic policy. Decisions about care, money, access, eligibility, or the official record need a qualified person. Low-risk office suggestions may use sampling or exception review if the approved risk review supports it.
+<figure><img src="../../img/M10-02.png" alt="Figure 10.2. Notice that rules give one output for one input, while AI can give several, so a person reviews them." loading="lazy"><figcaption><b>Figure 10.2.</b> Notice that rules give one output for one input, while AI can give several, so a person reviews them.</figcaption></figure>
 
+<p>Do not use one review rule for every use. Base it on risk, authority,
+and clinic policy. Decisions about care, money, access, eligibility, or
+the official record need a qualified person. Low-risk office suggestions
+may use sampling or exception review if the approved risk review
+supports it.</p>
 <blockquote>
 <p><strong>Rule:</strong> Test a rule against its exact expected result,
 and test AI against thresholds set in advance.</p>
 </blockquote>
+<p>Compare two cases. At Cedar Point, a rule should create one nurse
+task when a refill request stays open for 2 days. You test it against
+that exact result, and any other result fails. At a pediatric clinic, an
+AI service sorts scanned documents. Before the final run, the owner sets
+a threshold, such as 95% correct routing, and you measure against it. In
+both cases, the passing standard is written down before you test.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>What does "deterministic" mean?</li>
@@ -156,13 +166,21 @@ information");</li>
 <li>fallback and stop method;</li>
 <li>change and retirement plan.</li>
 </ul>
-<figure style="margin:16px 0"><img src="../../img/M10-03.png" alt="Figure 10.3. Notice that the inventory records purpose, data, control, and lifecycle, not just that a feature is on." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.3.</b> Notice that the inventory records purpose, data, control, and lifecycle, not just that a feature is on.</figcaption></figure>
-Product settings alone are not enough. A setting shows that a feature is on. The inventory shows why it is on, who owns it, and how to stop it.
+<figure><img src="../../img/M10-03.png" alt="Figure 10.3. Notice that the inventory records purpose, data, control, and lifecycle, not just that a feature is on." loading="lazy"><figcaption><b>Figure 10.3.</b> Notice that the inventory records purpose, data, control, and lifecycle, not just that a feature is on.</figcaption></figure>
 
+<p>Product settings alone are not enough. A setting shows that a feature
+is on. The inventory shows why it is on, who owns it, and how to stop
+it.</p>
 <blockquote>
 <p><strong>Rule:</strong> If a use is not in the inventory, the clinic
 cannot govern it.</p>
 </blockquote>
+<p>Compare two cases. At Cedar Point, the practice manager asks why
+reminders went to patients who had cancelled. The reminder rule has no
+inventory row, so nobody knows who owns it or how to stop it. At a
+dermatology clinic, staff use an AI tool to draft letters to patients.
+No row records its vendor, reviewer, or review status. In both cases,
+the clinic could not govern a use it had not listed.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Name four fields from the inventory that relate to control or
@@ -209,6 +227,13 @@ is never a reason to approve it.</p>
 <p><strong>Rule:</strong> The accountable owner approves each use, and
 you never approve a high-risk use because the feature exists.</p>
 </blockquote>
+<p>Compare two cases. At Cedar Point, the AI note tool comes with the
+license, and the practice manager calls it approved. You record that the
+clinical lead has not reviewed it, and you route the decision there. At
+a family practice, an AI tool that drafts denial letters is ready to
+turn on. The billing manager reviews the risks and records the decision.
+In both cases, an accountable owner decides, not the feature's
+availability.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Name the five groups of review questions.</li>
@@ -216,49 +241,4 @@ you never approve a high-risk use because the feature exists.</p>
 results?</li>
 <li>The vendor says a feature is "ready to go." Who decides whether the
 clinic uses it, and what do you record?</li>
-</ol>
-<h2 id="review-the-vendor-and-the-deployment">Review the vendor and the
-deployment</h2>
-<p>Many AI features send clinic data to the vendor or to other
-companies. If no one checks the terms, patient data may be used in ways
-the clinic never agreed to.</p>
-<p>Confirm that the clinic's approved process covers:</p>
-<ul>
-<li>contract and service terms;</li>
-<li>how data is used, kept, deleted, and used to train models;</li>
-<li>other companies that handle the data, and where they are;</li>
-<li>security and access controls;</li>
-<li>logging and audit;</li>
-<li>incident notice;</li>
-<li>service availability and recovery;</li>
-<li>changes to the model or feature;</li>
-<li>how the clinic's data is kept apart from other customers' data;</li>
-<li>export and contract end;</li>
-<li>any required agreements, such as a business associate
-agreement.</li>
-</ul>
-<p>The <strong>Health Insurance Portability and Accountability Act
-(HIPAA)</strong> sets privacy and security rules for PHI. For uses that
-involve PHI, bring in the client's privacy, security, legal, and
-contract owners. A <strong>business associate</strong> is a company that
-handles PHI for the clinic. Current guidance from the Department of
-Health and Human Services (HHS) says a cloud provider that stores
-electronic PHI for a clinic may be a business associate. This holds even
-when the data is encrypted and the provider has no key.</p>
-<p>Compare two cases. A scheduling assistant may look like "only
-scheduling," but appointment data still identifies patients and their
-care. A spelling checker that runs only on the user's computer may send
-no data out at all. In both cases, the data flow, not the feature name,
-decides who must review.</p>
-<blockquote>
-<p><strong>Rule:</strong> If a use sends PHI outside the clinic, the
-client's privacy, security, and contract owners decide before it is
-turned on.</p>
-</blockquote>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>Name four vendor terms the clinic must review.</li>
-<li>What is a business associate?</li>
-<li>A manager says, "Just turn it on; it's only scheduling." What would
-you do, and why?</li>
 </ol>

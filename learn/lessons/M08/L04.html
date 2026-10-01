@@ -1,4 +1,109 @@
-<h1>Module 8, Lesson 4: Worked example: Lakeshore conversion scope</h1>
+<h1>Module 8, Lesson 4: Plan the cutover and a real fallback</h1>
+<h2 id="plan-the-cutover-and-a-real-fallback">Plan the cutover and a
+real fallback</h2>
+<p>Go-live weekend leaves little time to think. A written cutover plan
+decides in advance who does what, in what order, and what happens if the
+load fails.</p>
+<p><strong>Cutover</strong> is the planned switch from the old system to
+the new one. A <strong>freeze</strong> stops changes in the source so
+the final extract is complete. A <strong>delta</strong> is the set of
+changes made in the source after an extract. <strong>Fallback</strong>
+(or <strong>rollback</strong>) means returning to the old system if the
+new one cannot be used.</p>
+<p>The cutover plan states:</p>
+<ul>
+<li>the last date and time for work in the source;</li>
+<li>the freeze, read-only, or delta approach;</li>
+<li>the final extract and secure transfer;</li>
+<li>the mapping and script version;</li>
+<li>the load order;</li>
+<li>who reconciles and validates;</li>
+<li>time allowed for corrections;</li>
+<li>go/no-go criteria and who decides;</li>
+<li>the conditions for fallback;</li>
+<li>communications;</li>
+<li>source-system access after cutover;</li>
+<li>how work done during the switch is handled;</li>
+<li>how temporary files are destroyed;</li>
+<li>support and monitoring.</li>
+</ul>
+<p>Do not use "rollback" as a vague comfort. Define what can actually be
+reversed, how long it takes, what information would be lost or
+duplicated, who decides, and how users are told.</p>
+<figure><img src="../../img/M08-08.png" alt="Figure 8.8. Notice that fallback has a defined point after which it is no longer possible." loading="lazy"><figcaption><b>Figure 8.8.</b> Notice that fallback has a defined point after which it is no longer possible.</figcaption></figure>
+
+<h3 id="handle-deltas-and-work-in-progress">Handle deltas and work in
+progress</h3>
+<p>If users keep working in the source after an extract, decide how
+those changes reach the new system. Options include a final delta
+conversion, controlled manual entry, entry in both systems for a short
+approved period, or a cutover freeze. Each option has risk. Assign
+owners and a reconciliation step.</p>
+<blockquote>
+<p><strong>Rule:</strong> A fallback is real only when the plan says
+what can be reversed, how long it takes, and who decides.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> The plan says, "If the load fails, roll
+back." You add the details: the old system stays read-write until 6 a.m.
+Monday, any visits booked in the new system before then are listed for
+re-entry, and the sponsor decides.</li>
+<li><strong>Example B.</strong> Lakeshore staff will book appointments
+in the old system all weekend after Friday's extract. You add a delta
+step with an owner and a count check on Sunday night.</li>
+</ul>
+<p>Both plans seemed complete until someone asked, "What exactly
+happens?"</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Define freeze, delta, and fallback.</li>
+<li>Why is "we can always roll back" not a plan?</li>
+<li>You learn on Thursday that staff will keep working in the source
+after Friday's extract. What do you add to the plan?</li>
+</ol>
+<h2 id="archive-the-history-before-you-retire-the-source">Archive the
+history before you retire the source</h2>
+<p>Once the old system is gone, missing history cannot be recovered.
+Retirement must wait until the clinic can still reach everything it must
+keep.</p>
+<p>Before anyone retires the source, confirm:</p>
+<ul>
+<li>required information is converted or available in an approved
+archive;</li>
+<li>users know where old information lives;</li>
+<li>access, search, export, audit, legal hold, and retrieval work as
+required;</li>
+<li>contracts and licenses are handled;</li>
+<li>retention and disposal are approved;</li>
+<li>temporary copies are handled;</li>
+<li>the person who approves retirement is recorded.</li>
+</ul>
+<p>Do not re-type years of history without a proven need and an approved
+plan. Do not destroy or abandon it just because re-entry takes too
+long.</p>
+<blockquote>
+<p><strong>Rule:</strong> No source is retired until required history is
+reachable and the retirement owner has approved.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> Lakeshore's old system is ready to
+retire. You test the archive. Staff can find old visit notes but not old
+payment history. Retirement waits until the billing owner can reach that
+history.</li>
+<li><strong>Example B.</strong> At a dermatology clinic, the archive
+works and users know where old records live. The vendor wants to switch
+off the source today. You first record the retirement owner's
+approval.</li>
+</ul>
+<p>In both cases, retirement waited for two things: reachable history
+and a recorded approval.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List four things to confirm before retiring a source.</li>
+<li>Why is re-typing all old history usually a poor choice?</li>
+<li>The old vendor's license ends in two weeks, and the archive search
+does not work yet. What do you do?</li>
+</ol>
 <h2 id="worked-example-lakeshore-conversion-scope">Worked example:
 Lakeshore conversion scope</h2>
 <p>Cedar Point bought a conversion of demographics and future
@@ -158,38 +263,3 @@ system, and what is your job?</li>
 export but has not agreed to a date. How do you record this on the
 roadmap?</li>
 </ol>
-<h2 id="module-8-gate--conversion-ready-for-production-planning">Module
-8 gate — conversion ready for production planning</h2>
-<p><strong>Bring:</strong> source inventory, mapping workbook, test-run
-reports, validation records, clinical validation rule, cutover plan.
-<strong>In the room:</strong> data owner, clinical authority, privacy or
-security lead.</p>
-<ul class="task-list">
-<li><label><input type="checkbox" />Inventory sources, populations,
-owners, formats, access, and retention needs.</label></li>
-<li><label><input type="checkbox" />Get approved scope and treatment for
-every included and excluded category.</label></li>
-<li><label><input type="checkbox" />Version and approve every mapping
-and transformation rule.</label></li>
-<li><label><input type="checkbox" />Define secure transfer, staging,
-access, logging, error handling, and disposal of temporary
-copies.</label></li>
-<li><label><input type="checkbox" />Complete representative test
-conversions with every count difference explained.</label></li>
-<li><label><input type="checkbox" />Pass data, document, relationship,
-access, audit, and business-scenario validation.</label></li>
-<li><label><input type="checkbox" />Record acceptance or open defects
-from the client data and domain owners.</label></li>
-<li><label><input type="checkbox" />Get the clinical authority's
-approval of the clinical validation rule: flags, pre-visit review, and
-first-visit reconciliation.</label></li>
-<li><label><input type="checkbox" />Document cutover, delta, fallback,
-archive, and source-retirement rules.</label></li>
-<li><label><input type="checkbox" />Confirm proper authority and access
-to required history before any source is retired or
-destroyed.</label></li>
-</ul>
-<p><strong>Evidence to keep:</strong> source inventory, scope decision,
-mapping workbook, security plan, test-run reports, reconciliation,
-client validation, clinical validation rule and results, defect record,
-and cutover and transition plan.</p>

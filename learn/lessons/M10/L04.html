@@ -1,4 +1,65 @@
-<h1>Module 10, Lesson 4: Your turn: faded example</h1>
+<h1>Module 10, Lesson 4: Worked example: ambient note pilot</h1>
+<h2 id="worked-example-ambient-note-pilot">Worked example: ambient note
+pilot</h2>
+<p>A three-provider family medicine clinic wants to turn on an ambient
+note tool for every provider at once. Here is how the implementation
+specialist handled it.</p>
+<ol type="1">
+<li><strong>Did:</strong> wrote the use-case statement and proposed a
+pilot with three providers for six weeks instead of a full launch.
+<strong>Produced:</strong> a signed use-case statement and pilot scope.
+<strong>Why:</strong> a small pilot limits harm while the team gathers
+evidence.</li>
+<li><strong>Did:</strong> ran the risk and authority review with the
+clinical, privacy, security, legal, records, billing, and technical
+owners. <strong>Produced:</strong> a decision record naming who approved
+each area. <strong>Why:</strong> each owner decides their own area, and
+the specialist only coordinates.</li>
+<li><strong>Did:</strong> sent the vendor's data terms and business
+associate agreement to the privacy and contract owners.
+<strong>Produced:</strong> a vendor and data decision record.
+<strong>Why:</strong> visit audio is PHI, so those owners must approve
+how the vendor keeps and uses it.</li>
+<li><strong>Did:</strong> built an evaluation set covering different
+visit types, accents, interpreter-assisted visits, interruptions,
+negation, medications, measurements, follow-up instructions, and a
+service outage. The clinical lead set thresholds before the run.
+<strong>Produced:</strong> test set version 1 with thresholds by
+category. <strong>Why:</strong> thresholds set after the results can be
+bent to fit them.</li>
+</ol>
+<p><em>Prompt 1: Why do you think the specialist built the evaluation
+set before choosing the pilot providers' start date?</em></p>
+<ol start="5" type="1">
+<li><strong>Did:</strong> set the review pattern: providers correct and
+sign every draft before it is used, and drafts cannot trigger billing.
+<strong>Produced:</strong> a review pattern in the inventory.
+<strong>Why:</strong> the clinician stays responsible for the signed
+note.</li>
+<li><strong>Did:</strong> ran the pilot and reviewed corrections by
+category each week. <strong>Produced:</strong> a correction log by visit
+type. <strong>Why:</strong> an overall rate could hide one bad visit
+type.</li>
+<li><strong>Did:</strong> found that in interpreter-assisted visits the
+tool often credited the interpreter's words to the patient. The
+specialist took the finding to the clinical lead. The clinical lead
+excluded interpreter-assisted visits until a vendor fix passes
+retesting. <strong>Produced:</strong> a recorded limitation and the
+lead's decision. <strong>Why:</strong> limiting clinical use is a
+clinical decision.</li>
+</ol>
+<p><em>Prompt 2: Why did the clinical lead, not the specialist, decide
+to exclude interpreter-assisted visits?</em></p>
+<ol start="8" type="1">
+<li><strong>Did:</strong> updated training and added a monitoring check
+for wrong-speaker corrections. <strong>Produced:</strong> revised
+training material and a new monitoring measure with an owner.
+<strong>Why:</strong> staff need to know the limit, and the team needs
+to see if the problem returns.</li>
+</ol>
+<p><em>Prompt 3: Why does the new monitoring measure track wrong-speaker
+corrections by visit type instead of one overall correction
+rate?</em></p>
 <h2 id="your-turn-faded-example">Your turn: faded example</h2>
 <p><em>If you have done this task on a real project, try this first,
 then compare with the worked example.</em></p>

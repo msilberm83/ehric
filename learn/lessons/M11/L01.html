@@ -4,10 +4,9 @@
 hide in the gaps between them, where a task leaves one team and no one
 picks it up.</p>
 <p>By now the <strong>electronic health record (EHR)</strong> system is
-the practice's operational record. Some call it the practice's
-operational brain. Work, reminders, follow-up, measures, and evidence no
-longer depend on one person's memory. People still own clinical,
-financial, security, and business judgment.</p>
+the practice's operational record. Work, reminders, follow-up, measures,
+and evidence no longer depend on one person's memory. People still own
+clinical, financial, security, and business judgment.</p>
 <p>Walk the work from start to finish with the people who will run it.
 Use one patient journey:</p>
 <blockquote>
@@ -15,9 +14,9 @@ Use one patient journey:</p>
 visit → documentation → orders or tasks → billing → payment → follow-up
 → records and reporting</p>
 </blockquote>
-<figure style="margin:16px 0"><img src="../../img/M11-01.png" alt="Figure 11.1. Notice the flags where a task leaves one station and has no owner at the next." style="width:100%;max-width:1000px"><figcaption><b>Figure 11.1.</b> Notice the flags where a task leaves one station and has no owner at the next.</figcaption></figure>
-At every step, ask:
+<figure><img src="../../img/M11-01.png" alt="Figure 11.1. Notice the flags where a task leaves one station and has no owner at the next." loading="lazy"><figcaption><b>Figure 11.1.</b> Notice the flags where a task leaves one station and has no owner at the next.</figcaption></figure>
 
+<p>At every step, ask:</p>
 <ul>
 <li>Who owns the next action?</li>
 <li>What record proves the step is done?</li>
@@ -44,6 +43,13 @@ lab interface outage and a patient with two records.</p>
 <p><strong>Rule:</strong> Every step in the journey has a named owner
 for the next action.</p>
 </blockquote>
+<p><strong>Example A.</strong> At Cedar Point main, you walk a referral
+from the fax queue to scheduling. The fax is filed, but no role owns the
+call to the patient. You ask the practice administrator to name one.
+<strong>Example B.</strong> At Lakeshore, you walk a lab interface
+outage. Paper results arrive, and nobody owns entering them. The nurse
+lead names a role and a backup. In both journeys, the gap was a step
+with no owner for the next action.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>What is a seam, and why do problems hide there?</li>
@@ -116,6 +122,13 @@ acceptance before release.</p>
 <p><strong>Rule:</strong> Every late simplification keeps its controls
 and gets retested.</p>
 </blockquote>
+<p><strong>Example A.</strong> Front-desk staff enter the patient's
+phone number on two screens. The team removes the second field, keeps
+the identity checks, and reruns the registration tests. <strong>Example
+B.</strong> A billing supervisor asks to drop the second approval on
+patient refunds. That approval separates financial duties, so it stays.
+You record the request for the billing manager. Both requests aimed to
+save clicks. Only the one that kept every control could go ahead.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Name four kinds of waste you look for when simplifying.</li>
@@ -145,9 +158,19 @@ work from old notices.</p>
 <p>Check the volume under realistic conditions. A control that sends too
 many low-value alerts teaches users to ignore the important ones. The
 owner of each area approves its thresholds and escalation.</p>
-<figure style="margin:16px 0"><img src="../../img/M11-02.png" alt="Figure 11.2. Notice that every queue has a trigger, an owner, a backup, an aging rule, and an escalation path." style="width:100%;max-width:1000px"><figcaption><b>Figure 11.2.</b> Notice that every queue has a trigger, an owner, a backup, an aging rule, and an escalation path.</figcaption></figure>
-> **Rule:** Every queue has an owner, a backup, an aging rule, and an escalation path.
+<figure><img src="../../img/M11-02.png" alt="Figure 11.2. Notice that every queue has a trigger, an owner, a backup, an aging rule, and an escalation path." loading="lazy"><figcaption><b>Figure 11.2.</b> Notice that every queue has a trigger, an owner, a backup, an aging rule, and an escalation path.</figcaption></figure>
 
+<blockquote>
+<p><strong>Rule:</strong> Every queue has an owner, a backup, an aging
+rule, and an escalation path.</p>
+</blockquote>
+<p><strong>Example A.</strong> Cedar Point's portal message queue has an
+owner, a backup, a 1-business-day aging rule, and an escalation to the
+nurse lead. When the owner is away, the backup works the queue.
+<strong>Example B.</strong> A family clinic's referral queue has an
+owner but no backup. During her week off, 40 referrals wait. You ask the
+practice manager to name a backup. In both clinics, the queue is safe
+only when someone covers it every working day.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Name six fields you record for every queue or reminder.</li>
@@ -200,6 +223,13 @@ cannot show whether anything improved.</p>
 <p><strong>Rule:</strong> Capture each measure's baseline before
 go-live, using the same definition you will use after.</p>
 </blockquote>
+<p><strong>Example A.</strong> Cedar Point measures front-desk minutes
+per new-patient check-in. Before go-live, the practice administrator
+times 20 check-ins. She uses the same start and stop points she will use
+after go-live. <strong>Example B.</strong> A pediatric clinic counts
+possible duplicate patient records. The old report matches on name and
+birth date. The new report uses the same rule, so the two counts can be
+compared. In both cases, the later review compares like with like.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Name five parts of a measure definition.</li>
@@ -207,43 +237,4 @@ go-live, using the same definition you will use after.</p>
 measure?</li>
 <li>The old system cannot report time to sign notes. What do you
 record?</li>
-</ol>
-<h2 id="build-audit-ready-evidence">Build audit-ready evidence</h2>
-<p>Months later, someone will ask why a setting was approved or how a
-defect was closed. If the answer lives in personal email, nobody can
-find it.</p>
-<p><strong>Audit-ready</strong> means the clinic can find complete,
-clear evidence for an approved purpose. It should not have to rebuild
-the project from memory. It does not mean every audit will pass, and you
-should never promise that.</p>
-<p>Assemble:</p>
-<ul>
-<li>the controlling scope and approved changes;</li>
-<li>decisions and who made them;</li>
-<li>workflow and setup versions;</li>
-<li>access approvals;</li>
-<li>conversion mapping, reconciliation, and acceptance;</li>
-<li>integration and automation tests;</li>
-<li>training and competence records;</li>
-<li>quality control (QC) results, defects, retests, and release
-decisions;</li>
-<li>recovery objectives, restore tests, and security evidence;</li>
-<li>readiness and cutover evidence;</li>
-<li>the operational owner and support handoff.</li>
-</ul>
-<p>Then test retrieval. Ask someone who did not build the record to find
-the evidence for a requirement, an approval, a defect closure, or a
-converted patient group. If that person cannot follow the trail, the
-record is not ready.</p>
-<blockquote>
-<p><strong>Rule:</strong> Evidence is ready only when someone who did
-not build it can find it.</p>
-</blockquote>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>What does "audit-ready" mean, and what does it not mean?</li>
-<li>Why does the builder of the index not count as a fair retrieval
-test?</li>
-<li>A colleague cannot find the approval for a converted patient group.
-What do you do?</li>
 </ol>

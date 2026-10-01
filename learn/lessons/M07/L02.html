@@ -18,9 +18,10 @@ prove the fix.</p>
 <li>evidence;</li>
 <li>tester and date.</li>
 </ul>
-<figure style="margin:16px 0"><img src="../../img/M07-04.png" alt="Figure 7.4. Notice that one test case traces back to its requirement and forward to its evidence and any defect." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.4.</b> Notice that one test case traces back to its requirement and forward to its evidence and any defect.</figcaption></figure>
-Use the test types that fit the workflow. Each type asks one question.
+<figure><img src="../../img/M07-04.png" alt="Figure 7.4. Notice that one test case traces back to its requirement and forward to its evidence and any defect." loading="lazy"><figcaption><b>Figure 7.4.</b> Notice that one test case traces back to its requirement and forward to its evidence and any defect.</figcaption></figure>
 
+<p>Use the test types that fit the workflow. Each type asks one
+question.</p>
 <table>
 <thead>
 <tr>
@@ -93,6 +94,18 @@ like a system failure.</p>
 <p><strong>Rule:</strong> Write every test so another person can repeat
 it and get the same result.</p>
 </blockquote>
+<ul>
+<li><strong>Example A.</strong> A Cedar Point test says only "Check
+results routing." A second tester picks a different role and patient and
+gets a different result. You rewrite the test with the build version,
+role, test patient, steps, and expected result.</li>
+<li><strong>Example B.</strong> At a dermatology clinic, a tester
+records a failed photo upload with no environment or build version. The
+builder cannot repeat the failure. You add those details, and the
+builder sees the same failure.</li>
+</ul>
+<p>In both cases, missing details meant no one could repeat the test or
+check the result.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>List six parts of a reproducible test case.</li>
@@ -124,9 +137,9 @@ with no real effect on the outcome.</li>
 defects. Priority can differ from severity. An easy fix to a Critical
 defect is still Critical. A hard fix to a cosmetic defect is still
 Low.</p>
-<figure style="margin:16px 0"><img src="../../img/M07-05.png" alt="Figure 7.5. Notice that an easy fix can still be Critical, because severity measures impact, not effort." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.5.</b> Notice that an easy fix can still be Critical, because severity measures impact, not effort.</figcaption></figure>
-A useful defect record includes:
+<figure><img src="../../img/M07-05.png" alt="Figure 7.5. Notice that an easy fix can still be Critical, because severity measures impact, not effort." loading="lazy"><figcaption><b>Figure 7.5.</b> Notice that an easy fix can still be Critical, because severity measures impact, not effort.</figcaption></figure>
 
+<p>A useful defect record includes:</p>
 <ul>
 <li>a short title;</li>
 <li>environment and version;</li>

@@ -12,13 +12,14 @@ happen.</p>
 vendors also have a <strong>build</strong> environment for configuration
 work.</p>
 <p>The <strong>SAFER Guides</strong> (Safety Assurance Factors for EHR
-Resilience) are safety self-assessment guides from the <strong>Office of
-the National Coordinator for Health Information Technology
-(ONC)</strong>. The 2025 SAFER Guide on system management recommends a
-separate, visually distinct production environment, plus other
-environments for build, testing, and training. Many small vendors cannot
-offer this. They may give you one live instance, or one shared
-<strong>sandbox</strong> (a practice copy).</p>
+Resilience, where EHR means electronic health record) are safety
+self-assessment guides from the <strong>Office of the National
+Coordinator for Health Information Technology (ONC)</strong>. The 2025
+SAFER Guide on system management recommends a separate, visually
+distinct production environment, plus other environments for build,
+testing, and training. Many small vendors cannot offer this. They may
+give you one live instance, or one shared <strong>sandbox</strong> (a
+practice copy).</p>
 <p>Do not assume the environments exist. Ask during discovery and record
 the answer in the <strong>environment plan</strong>. If something is
 missing, log it as a risk with an owner.</p>
@@ -57,9 +58,17 @@ separate training environment, and Module 7 covers testing.</p>
 <p><strong>Rule:</strong> Log a missing environment as a risk, propose
 controls, and let the client's owner accept what remains.</p>
 </blockquote>
-<figure style="margin:16px 0"><img src="../../img/M04-08.png" alt="Figure 4.8. Notice that without separate environments, test patients sit inside production behind compensating controls." style="width:100%;max-width:1000px"><figcaption><b>Figure 4.8.</b> Notice that without separate environments, test patients sit inside production behind compensating controls.</figcaption></figure>
-**Check yourself**
+<p>Compare two cases. At Cedar Point, the vendor offers only one live
+instance. You log the risk and propose test patients named like "ZZTEST,
+Adult." You also propose keeping claims in the clearinghouse's test
+mode. At a dermatology clinic, the vendor offers a sandbox on an older
+version. You record its version and differences from production. In both
+clinics, the client's project owner accepts the remaining risk. The
+shared rule: you write the risk and controls; the client's owner accepts
+what remains.</p>
+<figure><img src="../../img/M04-08.png" alt="Figure 4.8. Notice that without separate environments, test patients sit inside production behind compensating controls." loading="lazy"><figcaption><b>Figure 4.8.</b> Notice that without separate environments, test patients sit inside production behind compensating controls.</figcaption></figure>
 
+<p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Name four compensating controls for a single production
 instance.</li>
@@ -100,6 +109,13 @@ client approved.</p>
 <p><strong>Rule:</strong> Approve a workflow only after the group walks
 its scenarios without inventing steps.</p>
 </blockquote>
+<p>Compare two cases. At Lakeshore, the group walks a check-in where the
+patient has no insurance card. No one can say who records it or who
+follows up. You update the map and walk it again. At a family medicine
+clinic, the group walks a lab result that arrives during downtime. Each
+person names what they do, what record is created, and who acts next.
+That workflow is ready for approval. The shared rule: approval waits
+until every step already exists on the map.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>List the six kinds of acceptance scenario.</li>
@@ -216,39 +232,4 @@ solution blueprint and build inventory, each item traced to a
 requirement. <em>Produced:</em> a versioned approval and a build
 handoff. <em>Why:</em> builders work only from approved, traced
 requirements.</p></li>
-</ol>
-<h2 id="your-turn-faded-example">Your turn: faded example</h2>
-<p><em>If you have done this task on a real project, try this first,
-then compare with the worked example.</em></p>
-<p>A small cardiology practice bought an EHR with a lab interface. Its
-workflow to redesign is "test result to review, communication, and
-closure." Today, results arrive by fax, and a nurse files them in a
-paper tray.</p>
-<ol type="1">
-<li><p><strong>Planned discovery by workflow.</strong> The specialist
-planned sessions for result arrival, provider review, patient
-communication, and closure. <em>Produced:</em> a discovery plan with the
-nurse lead, two cardiologists, and the practice manager as decision
-owner for workflow. <em>Why:</em> the workflow crosses roles from
-arrival to closure.</p></li>
-<li><p><strong>Watched real work.</strong> The nurse showed how she
-sorts faxed results and flags abnormal ones with a sticky note.
-<em>Produced:</em> observation notes with no real patient data.
-<em>Why:</em> the paper tray hides results that nobody has
-reviewed.</p></li>
-<li><p><strong>Mapped the current state.</strong> <em>Produced:</em> a
-swimlane map with lanes for lab, nurse, cardiologist, and patient. One
-exception: a result for a patient with no scheduled follow-up.
-<em>Why:</em> the group needed a shared picture before design.</p></li>
-<li><p><strong>Asked for the exceptions.</strong> <em>List three more
-exception questions to ask:</em> __________.</p></li>
-<li><p><strong>Wrote a requirement with evidence.</strong> <em>Write one
-requirement for abnormal results:</em> __________.</p></li>
-<li><p><strong>Classified a proposed change.</strong> A cardiologist
-wants to add a patient-facing results video library before go-live.
-<em>Class and reason:</em> __________.</p></li>
-<li><p><strong>Walked scenarios.</strong> <em>List four scenarios to
-walk:</em> __________.</p></li>
-<li><p><strong>Got approval.</strong> <em>What must the approval record
-show?</em> __________.</p></li>
 </ol>

@@ -1,4 +1,88 @@
-<h1>Module 8, Lesson 3: Know why clinical lists need clinical validation</h1>
+<h1>Module 8, Lesson 3: Reconcile and validate with the owners</h1>
+<h2 id="reconcile-and-validate-with-the-owners">Reconcile and validate
+with the owners</h2>
+<p>A clean load report shows that records moved. It does not show that
+they are right, linked, or usable. Owners must check the data they
+understand.</p>
+<p><strong>Validation</strong> asks whether the converted information is
+complete, accurate, correctly linked, usable, visible to the right
+roles, and fit for its approved purpose. <strong>Reconciliation</strong>
+means comparing numbers from the source and destination and explaining
+every difference.</p>
+<p>Use several methods together:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>What you do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Count reconciliation</td>
+<td>Compare source, extracted, loaded, rejected, skipped, and duplicate
+counts for each group. Explain every difference.</td>
+</tr>
+<tr>
+<td>Control totals</td>
+<td>Compare totals that matter: balances, payments, open items,
+appointments, documents. A matching total does not prove each record is
+right. A total that does not match shows a problem.</td>
+</tr>
+<tr>
+<td>Field and relationship checks</td>
+<td>Check values, formats, translations, cut-off text, IDs, documents,
+and links. Include normal, incomplete, edge, duplicate, and high-risk
+examples.</td>
+</tr>
+<tr>
+<td>Business scenario checks</td>
+<td>Use converted records in approved workflows. Can staff find the
+right record, see where it came from, continue an open task, find a
+document, post a payment, and take the next step?</td>
+</tr>
+<tr>
+<td>Access and audit checks</td>
+<td>Confirm the right roles can see what they need and are blocked from
+restricted records. Check source, author, date, approval, and audit
+details.</td>
+</tr>
+<tr>
+<td>Client validation</td>
+<td>Named business owners validate the information they understand.
+Technical success is not client acceptance.</td>
+</tr>
+</tbody>
+</table>
+<figure><img src="../../img/M08-05.png" alt="Figure 8.5. Notice that every drop from source to loaded must be explained by a reason." loading="lazy"><figcaption><b>Figure 8.5.</b> Notice that every drop from source to loaded must be explained by a reason.</figcaption></figure>
+
+<p>Set the sampling or full-review rule by risk and clinic policy. Some
+critical groups may need a full check. Others may use a written sample.
+The data and domain owners approve the approach. For clinical lists, see
+the next two sections.</p>
+<blockquote>
+<p><strong>Rule:</strong> Explain every count difference, then let the
+named owners validate what they understand.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> A run extracts 21,480 patients. Loaded,
+rejected, and skipped add up to 21,440. You open a defect for the
+missing 40 before the validation meeting.</li>
+<li><strong>Example B.</strong> Every appointment loads. When the
+scheduler opens tomorrow's list, three Lakeshore visits show at Cedar
+Point main. The counts matched, but the business scenario check
+failed.</li>
+</ul>
+<p>The counts caught one problem. Only an owner using the data caught
+the other.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four validation methods besides count reconciliation.</li>
+<li>Why doesn't a matching control total prove every record is
+correct?</li>
+<li>The vendor's report says "100% loaded" and client validation is not
+scheduled. What do you recommend?</li>
+</ol>
 <h2 id="know-why-clinical-lists-need-clinical-validation">Know why
 clinical lists need clinical validation</h2>
 <p>Clinicians prescribe, order, and screen from converted medication,
@@ -12,9 +96,9 @@ logic cannot read. The prescriber then sees no warning at all.</p>
 confirm that converted clinical information is correct and safe to use
 for care. Technical reconciliation cannot do this. It shows that records
 moved, not that a clinician can rely on them.</p>
-<figure style="margin:16px 0"><img src="../../img/M08-06.png" alt="Figure 8.6. Notice that a free-text allergy can move over cleanly yet never trigger a drug-allergy warning." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.6.</b> Notice that a free-text allergy can move over cleanly yet never trigger a drug-allergy warning.</figcaption></figure>
-### Know what can go wrong
+<figure><img src="../../img/M08-06.png" alt="Figure 8.6. Notice that a free-text allergy can move over cleanly yet never trigger a drug-allergy warning." loading="lazy"><figcaption><b>Figure 8.6.</b> Notice that a free-text allergy can move over cleanly yet never trigger a drug-allergy warning.</figcaption></figure>
 
+<h3 id="know-what-can-go-wrong">Know what can go wrong</h3>
 <p>Check each clinical list for these common problems:</p>
 <ul>
 <li><strong>Medications:</strong> "active" and "inactive" mean different
@@ -29,24 +113,25 @@ as "no known allergies."</li>
 <li><strong>Problems:</strong> active and resolved status are mixed up;
 old diagnoses come forward as active; free-text problems have no
 code.</li>
-<li><strong>Immunizations:</strong> dates are missing; vaccine names do
-not map to a <strong>CVX</strong> code (the vaccine code set from the
-Centers for Disease Control and Prevention, or <strong>CDC</strong>);
-old doses from elsewhere are confused with doses the clinic gave. CVX
-has codes for vaccines no longer made and for doses recorded without a
-known product. Use those codes instead of guessing a specific
-product.</li>
+<li><strong>Immunizations:</strong> dates are missing, or vaccine names
+do not map to a <strong>CVX</strong> code. CVX (vaccines administered)
+is the vaccine code set from the Centers for Disease Control and
+Prevention (<strong>CDC</strong>). Old doses given elsewhere may also be
+confused with doses the clinic gave. CVX has codes for vaccines no
+longer made and for doses recorded without a known product. Use those
+codes instead of guessing a specific product.</li>
 </ul>
 <p>These four lists are data classes in the United States Core Data for
 Interoperability (<strong>USCDI</strong>). USCDI is the national
-standard set of data that health IT systems exchange.</p>
-<p>The Office of the National Coordinator for Health IT
-(<strong>ONC</strong>) publishes the <strong>SAFER Guides</strong>
-(Safety Assurance Factors for EHR Resilience). An <strong>EHR</strong>
-is an electronic health record. ONC's 2025 SAFER Guide on System
-Management calls for data-migration steps that protect data integrity.
-This matters most when data moves between EHRs, changes from free text
-to coded form, or gets new clinical codes.</p>
+standard set of data that health information technology systems
+exchange.</p>
+<p>The Office of the National Coordinator for Health Information
+Technology (<strong>ONC</strong>) publishes the <strong>SAFER
+Guides</strong> (Safety Assurance Factors for EHR Resilience). An
+<strong>EHR</strong> is an electronic health record. ONC's 2025 SAFER
+Guide on System Management calls for data-migration steps that protect
+data integrity. This matters most when data moves between EHRs, changes
+from free text to coded form, or gets new clinical codes.</p>
 <blockquote>
 <p><strong>Rule:</strong> A converted clinical list is not safe to use
 until qualified clinicians validate it.</p>
@@ -101,9 +186,9 @@ confidential, population-wide database of vaccine doses.</p>
 <p>During test conversions, clinicians also compare a sample of source
 charts with converted charts. Include high-risk patients and records
 with long lists.</p>
-<figure style="margin:16px 0"><img src="../../img/M08-07.png" alt="Figure 8.7. Notice that clinician review continues after go-live, ending when each chart is marked reviewed at the first visit." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.7.</b> Notice that clinician review continues after go-live, ending when each chart is marked reviewed at the first visit.</figcaption></figure>
-### Who decides
+<figure><img src="../../img/M08-07.png" alt="Figure 8.7. Notice that clinician review continues after go-live, ending when each chart is marked reviewed at the first visit." loading="lazy"><figcaption><b>Figure 8.7.</b> Notice that clinician review continues after go-live, ending when each chart is marked reviewed at the first visit.</figcaption></figure>
 
+<h3 id="who-decides">Who decides</h3>
 <p>The <strong>clinical authority</strong> is the person named in the
 project's governance to make clinical decisions, such as the medical
 director or clinical lead. The clinical authority approves the
@@ -139,6 +224,18 @@ conversion;</li>
 <p><strong>Rule:</strong> You produce and track the clinical checks; the
 clinical authority decides what they mean.</p>
 </blockquote>
+<ul>
+<li><strong>Example A.</strong> The flag report shows 120 free-text
+medications at Lakeshore. You build the pre-visit worklist and schedule
+the reviews. The clinical authority decides which patients come
+first.</li>
+<li><strong>Example B.</strong> At a pediatric clinic, 30 immunization
+records have no matching CVX code. The vendor offers to pick the closest
+code. You keep them on the flag report and send the decision to the
+clinical authority.</li>
+</ul>
+<p>In both cases, you did the tracking work. The meaning of each
+clinical item stayed with the clinical authority.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Name the three clinical safeguards.</li>
@@ -146,96 +243,4 @@ clinical authority decides what they mean.</p>
 the right code seems obvious?</li>
 <li>Two weeks after go-live, one location has reconciled only 58% of
 first-visit lists against a 90% target. What do you do?</li>
-</ol>
-<h2 id="plan-the-cutover-and-a-real-fallback">Plan the cutover and a
-real fallback</h2>
-<p>Go-live weekend leaves little time to think. A written cutover plan
-decides in advance who does what, in what order, and what happens if the
-load fails.</p>
-<p><strong>Cutover</strong> is the planned switch from the old system to
-the new one. A <strong>freeze</strong> stops changes in the source so
-the final extract is complete. A <strong>delta</strong> is the set of
-changes made in the source after an extract. <strong>Fallback</strong>
-(or <strong>rollback</strong>) means returning to the old system if the
-new one cannot be used.</p>
-<p>The cutover plan states:</p>
-<ul>
-<li>the last date and time for work in the source;</li>
-<li>the freeze, read-only, or delta approach;</li>
-<li>the final extract and secure transfer;</li>
-<li>the mapping and script version;</li>
-<li>the load order;</li>
-<li>who reconciles and validates;</li>
-<li>time allowed for corrections;</li>
-<li>go/no-go criteria and who decides;</li>
-<li>the conditions for fallback;</li>
-<li>communications;</li>
-<li>source-system access after cutover;</li>
-<li>how work done during the switch is handled;</li>
-<li>how temporary files are destroyed;</li>
-<li>support and monitoring.</li>
-</ul>
-<p>Do not use "rollback" as a vague comfort. Define what can actually be
-reversed, how long it takes, what information would be lost or
-duplicated, who decides, and how users are told.</p>
-<figure style="margin:16px 0"><img src="../../img/M08-08.png" alt="Figure 8.8. Notice that fallback has a defined point after which it is no longer possible." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.8.</b> Notice that fallback has a defined point after which it is no longer possible.</figcaption></figure>
-### Handle deltas and work in progress
-
-<p>If users keep working in the source after an extract, decide how
-those changes reach the new system. Options include a final delta
-conversion, controlled manual entry, entry in both systems for a short
-approved period, or a cutover freeze. Each option has risk. Assign
-owners and a reconciliation step.</p>
-<blockquote>
-<p><strong>Rule:</strong> A fallback is real only when the plan says
-what can be reversed, how long it takes, and who decides.</p>
-</blockquote>
-<ul>
-<li><strong>Example A.</strong> The plan says, "If the load fails, roll
-back." You add the details: the old system stays read-write until 6 a.m.
-Monday, any visits booked in the new system before then are listed for
-re-entry, and the sponsor decides.</li>
-<li><strong>Example B.</strong> Lakeshore staff will book appointments
-in the old system all weekend after Friday's extract. You add a delta
-step with an owner and a count check on Sunday night.</li>
-</ul>
-<p>Both plans seemed complete until someone asked, "What exactly
-happens?"</p>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>Define freeze, delta, and fallback.</li>
-<li>Why is "we can always roll back" not a plan?</li>
-<li>You learn on Thursday that staff will keep working in the source
-after Friday's extract. What do you add to the plan?</li>
-</ol>
-<h2 id="archive-the-history-before-you-retire-the-source">Archive the
-history before you retire the source</h2>
-<p>Once the old system is gone, missing history cannot be recovered.
-Retirement must wait until the clinic can still reach everything it must
-keep.</p>
-<p>Before anyone retires the source, confirm:</p>
-<ul>
-<li>required information is converted or available in an approved
-archive;</li>
-<li>users know where old information lives;</li>
-<li>access, search, export, audit, legal hold, and retrieval work as
-required;</li>
-<li>contracts and licenses are handled;</li>
-<li>retention and disposal are approved;</li>
-<li>temporary copies are handled;</li>
-<li>the person who approves retirement is recorded.</li>
-</ul>
-<p>Do not re-type years of history without a proven need and an approved
-plan. Do not destroy or abandon it just because re-entry takes too
-long.</p>
-<blockquote>
-<p><strong>Rule:</strong> No source is retired until required history is
-reachable and the retirement owner has approved.</p>
-</blockquote>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>List four things to confirm before retiring a source.</li>
-<li>Why is re-typing all old history usually a poor choice?</li>
-<li>The old vendor's license ends in two weeks, and the archive search
-does not work yet. What do you do?</li>
 </ol>

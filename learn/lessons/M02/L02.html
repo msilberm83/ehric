@@ -25,9 +25,13 @@ that sets the earliest possible finish date. You do not need special
 software to find it. Ask: "If this item slips, can go-live stay the same
 without cutting or squeezing required work?" If the answer is no, the
 item is on or near the critical path. Give it closer review.</p>
-<figure style="margin:16px 0"><img src="../../img/M02-04.png" alt="Figure 2.4. Notice that the export-to-final-conversion chain sets the earliest finish, so a slip there moves go-live." style="width:100%;max-width:1000px"><figcaption><b>Figure 2.4.</b> Notice that the export-to-final-conversion chain sets the earliest finish, so a slip there moves go-live.</figcaption></figure>
-High-risk projects also need backup paths. A clinic needs an approved **downtime process** for times the EHR is unavailable. A project may need a phased start if one location, interface, or data set cannot be ready safely. Backup plans need client approval. They are not permission to hide unfinished work.
+<figure><img src="../../img/M02-04.png" alt="Figure 2.4. Notice that the export-to-final-conversion chain sets the earliest finish, so a slip there moves go-live." loading="lazy"><figcaption><b>Figure 2.4.</b> Notice that the export-to-final-conversion chain sets the earliest finish, so a slip there moves go-live.</figcaption></figure>
 
+<p>High-risk projects also need backup paths. A clinic needs an approved
+<strong>downtime process</strong> for times the EHR is unavailable. A
+project may need a phased start if one location, interface, or data set
+cannot be ready safely. Backup plans need client approval. They are not
+permission to hide unfinished work.</p>
 <blockquote>
 <p><strong>Rule:</strong> Name each dependency's provider, receiver,
 need date, and effect of delay.</p>
@@ -35,9 +39,9 @@ need date, and effect of delay.</p>
 <p><strong>Example A.</strong> "Export pending" becomes "The source
 vendor delivers the test export to the conversion lead by October 3; if
 late, test conversion moves."</p>
-<p><strong>Example B.</strong> "Signature pads TBD" becomes "Device
-support confirms the model works by October 10; if late, front-desk
-testing moves."</p>
+<p><strong>Example B.</strong> "Signature pads TBD" (to be determined)
+becomes "Device support confirms the model works by October 10; if late,
+front-desk testing moves."</p>
 <p>Both entries say who owes what to whom, by when, and what slips if it
 is late.</p>
 <p><strong>Check yourself</strong></p>
@@ -45,6 +49,8 @@ is late.</p>
 <li>Name the five parts of a useful dependency entry.</li>
 <li>What question tells you an item is on or near the critical
 path?</li>
+<li>Your log says "Clearinghouse setup — pending." Why is this entry
+hard to manage, and what would you write instead?</li>
 </ol>
 <h2 id="split-billing-setup-into-its-separate-enrollments">Split billing
 setup into its separate enrollments</h2>
@@ -68,20 +74,14 @@ each piece as its own item.</p>
 </thead>
 <tbody>
 <tr>
-<td><strong>Payer provider enrollment</strong></td>
-<td>Lets the practice and each clinician bill that payer at all</td>
-<td>Client credentialing or billing lead</td>
-<td>Whether any claim can be paid</td>
-</tr>
-<tr>
-<td><strong>Clearinghouse account</strong></td>
-<td>Sets up the practice with the clearinghouse and connects it to the
-new system</td>
+<td><strong>Clearinghouse enrollment</strong></td>
+<td>Sets up the practice's account with the clearinghouse and connects
+it to the new system</td>
 <td>Client billing lead, the vendor, and the clearinghouse</td>
 <td>Whether claims can leave the system</td>
 </tr>
 <tr>
-<td><strong>Claim (EDI) enrollment</strong></td>
+<td><strong>Payer claims (EDI) enrollment</strong></td>
 <td>Tells each payer that this clearinghouse may send claims for this
 practice. <strong>EDI</strong> means electronic data interchange.</td>
 <td>Client billing lead signs; the clearinghouse often submits</td>
@@ -104,9 +104,16 @@ to the practice's bank account</td>
 </tr>
 </tbody>
 </table>
-<figure style="margin:16px 0"><img src="../../img/M02-05.png" alt="Figure 2.5. Notice that claims, remittance, and payment each need their own enrollment, and payment goes straight to the bank." style="width:100%;max-width:1000px"><figcaption><b>Figure 2.5.</b> Notice that claims, remittance, and payment each need their own enrollment, and payment goes straight to the bank.</figcaption></figure>
-What this means for planning:
+<p>These are the same four enrollment steps that Module 9 tracks. One
+prerequisite sits underneath all four: <strong>payer provider
+enrollment</strong> (credentialing), which lets the practice and each
+clinician bill that payer at all. The client's credentialing or billing
+lead owns it. It is not one of the four enrollment steps, but if it is
+not complete, list it as its own dependency, because no claim to that
+payer can be paid without it.</p>
+<figure><img src="../../img/M02-05.png" alt="Figure 2.5. Notice that claims, remittance, and payment each need their own enrollment, and payment goes straight to the bank." loading="lazy"><figcaption><b>Figure 2.5.</b> Notice that claims, remittance, and payment each need their own enrollment, and payment goes straight to the bank.</figcaption></figure>
 
+<p>What this means for planning:</p>
 <ul>
 <li><strong>Each payer is a separate item.</strong> A practice with
 eight payers may have eight claim enrollments and eight ERA enrollments.
@@ -148,7 +155,7 @@ details will not post to the new system.</p>
 piece needs its own entry.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
-<li>Name the five enrollment items in the table.</li>
+<li>Name the four enrollment steps in the table.</li>
 <li>The integration lead says, "Clearinghouse setup is complete." Why is
 that not the same as ready to bill?</li>
 <li>Who signs a payer enrollment, and what do you own?</li>
@@ -179,12 +186,16 @@ least one <strong>super user</strong> per role and location. A super
 user is a staff member trained early who helps peers during training and
 at go-live. The clinic chooses these people. Record their protected
 hours, meaning time freed from normal work for the project.</p>
-<p>Avoid shared accountability such as "IT and operations approve." Name
-one accountable role and list the others as consulted. If two people
-truly must approve, record the separate question each one approves.</p>
-<figure style="margin:16px 0"><img src="../../img/M02-06.png" alt="Figure 2.6. Notice that one shared approval becomes two questions, each with one named approver." style="width:100%;max-width:1000px"><figcaption><b>Figure 2.6.</b> Notice that one shared approval becomes two questions, each with one named approver.</figcaption></figure>
-> **Rule:** Name one accountable person for each decision; if two must approve, split the question.
+<p>Avoid shared accountability such as "IT and operations approve." (IT
+is information technology.) Name one accountable role and list the
+others as consulted. If two people truly must approve, record the
+separate question each one approves.</p>
+<figure><img src="../../img/M02-06.png" alt="Figure 2.6. Notice that one shared approval becomes two questions, each with one named approver." loading="lazy"><figcaption><b>Figure 2.6.</b> Notice that one shared approval becomes two questions, each with one named approver.</figcaption></figure>
 
+<blockquote>
+<p><strong>Rule:</strong> Name one accountable person for each decision;
+if two must approve, split the question.</p>
+</blockquote>
 <p><strong>Example A.</strong> The privacy officer approves which roles
 may open a restricted record. The practice manager confirms the
 front-desk workflow still works.</p>
@@ -197,73 +208,4 @@ approver. You coordinate every review without becoming the approver.</p>
 <li>What is a super user, and who chooses them?</li>
 <li>A row reads "IT and operations approve." What do you change, and
 why?</li>
-</ol>
-<h2 id="run-the-internal-handoff-and-track-acceptance">Run the internal
-handoff and track acceptance</h2>
-<p>Teams that hear about work late cannot plan for it. The
-<strong>internal handoff</strong> brings your company's resource teams
-in before their work becomes urgent.</p>
-<p>This book's method uses an email. That is a good default, because it
-creates a lasting record. A complex or high-risk item may need a
-follow-up meeting. The written request still belongs in the management
-system.</p>
-<p>Each internal-handoff message answers seven questions:</p>
-<ol type="1">
-<li><strong>What is the project?</strong> Give the client, purchased
-outcome, relevant scope, and target window.</li>
-<li><strong>Why is this team involved?</strong> Tie the request to a
-purchased item, requirement, or risk.</li>
-<li><strong>What is needed?</strong> Name a deliverable or decision, not
-a vague request for thoughts.</li>
-<li><strong>Who owns it?</strong> Address a named person, or ask the
-manager to assign one by a date.</li>
-<li><strong>When is it needed, and why then?</strong> Connect the due
-date to the milestone that depends on it.</li>
-<li><strong>Where is the record?</strong> Link to the management-system
-item where status and evidence belong.</li>
-<li><strong>What happens if the date cannot be met?</strong> Name the
-escalation route.</li>
-</ol>
-<p>Each team needs specific details:</p>
-<ul>
-<li><strong>Development:</strong> the approved requirement, acceptance
-statement, required date, affected workflow, and decision owner. Ask for
-feasibility and an estimate before anyone promises delivery.</li>
-<li><strong>Deployment:</strong> the environment, locations, install
-window, access method, client contact, prerequisites, checks, and
-fallback plan.</li>
-<li><strong>Technical and device support:</strong> device type,
-quantity, locations, model, network or workstation needs, who installs,
-and a representative test.</li>
-<li><strong>Data conversion:</strong> source systems, data categories,
-proposed scope, source owner, export dates, security needs,
-test-conversion window, and validation owner.</li>
-<li><strong>Integrations:</strong> both endpoints, business owner,
-technical contacts, contracts or enrollments, credentials, data flow,
-test environment, expected result, and failure owner. For a
-clearinghouse, list the account and each payer enrollment
-separately.</li>
-<li><strong>Quality control (QC):</strong> the roadmap, acceptance
-evidence, risk areas, module order, and review windows. Ask the QC lead
-to confirm the testing approach now. QC should not discover the scope
-for the first time during final testing.</li>
-</ul>
-<blockquote>
-<p><strong>Rule:</strong> A handoff is complete only when the receiving
-team accepts the work.</p>
-</blockquote>
-<p><strong>Example A.</strong> You send device support a complete
-request. Ten days pass with no reply. The handoff is still open, so you
-use the escalation route in the message.</p>
-<p><strong>Example B.</strong> Development replies that it can estimate
-the report but not by your date. You log the declined date and raise it
-with the dependent milestone's owner.</p>
-<p>In both, the record shows what was accepted and what was not, so
-nobody assumes the work is covered.</p>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>List the seven questions every internal-handoff message
-answers.</li>
-<li>Why does QC need the scope and acceptance evidence before
-configuration is complete?</li>
 </ol>

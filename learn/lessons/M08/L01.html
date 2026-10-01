@@ -96,9 +96,24 @@ miss becomes a gap staff discover after go-live.</p>
 records because of a lawsuit or investigation.</p>
 <p>Do not collect a broad export "just in case." Use the approved secure
 method, and limit access to the work needed.</p>
-<figure style="margin:16px 0"><img src="../../img/M08-01.png" alt="Figure 8.1. Notice that every data source has a named owner before anyone pulls data from it." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.1.</b> Notice that every data source has a named owner before anyone pulls data from it.</figcaption></figure>
-> **Rule:** Every source gets an owner, a format, and a planned destination before anyone extracts it.
+<figure><img src="../../img/M08-01.png" alt="Figure 8.1. Notice that every data source has a named owner before anyone pulls data from it." loading="lazy"><figcaption><b>Figure 8.1.</b> Notice that every data source has a named owner before anyone pulls data from it.</figcaption></figure>
 
+<blockquote>
+<p><strong>Rule:</strong> Every source gets an owner, a format, and a
+planned destination before anyone extracts it.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> Lakeshore stores scanned referral
+letters on a shared drive. They are not in the main system. You record
+the office manager as owner, scanned image files as the format, and each
+patient's document area as the destination.</li>
+<li><strong>Example B.</strong> A family medicine clinic keeps archived
+billing exports on backup media. You record the billing owner, the
+export format, and an approved archive as the destination. Extraction
+waits until all three are recorded.</li>
+</ul>
+<p>Neither source was in the main system. Both needed an owner, a
+format, and a destination before extraction.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>List six kinds of sources a clinic might have.</li>
@@ -175,9 +190,12 @@ of it under an approved rule.</td>
 <p>For paper charts, agree a scanning plan. Decide which items get
 scanned before go-live, who labels and links them, and what stays on
 paper.</p>
-<figure style="margin:16px 0"><img src="../../img/M08-02.png" alt="Figure 8.2. Notice that information is sorted by how it must be treated, not by where it sits today." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.2.</b> Notice that information is sorted by how it must be treated, not by where it sits today.</figcaption></figure>
-> **Rule:** Classify information by how it must be treated, not by where it sits today.
+<figure><img src="../../img/M08-02.png" alt="Figure 8.2. Notice that information is sorted by how it must be treated, not by where it sits today." loading="lazy"><figcaption><b>Figure 8.2.</b> Notice that information is sorted by how it must be treated, not by where it sits today.</figcaption></figure>
 
+<blockquote>
+<p><strong>Rule:</strong> Classify information by how it must be
+treated, not by where it sits today.</p>
+</blockquote>
 <ul>
 <li><strong>Example A.</strong> An old system stores a "balance due" for
 each patient. The new system calculates balances from transactions. The
@@ -236,65 +254,21 @@ history.</p>
 <p><strong>Rule:</strong> Every category gets an approved treatment, and
 every population gets a written definition.</p>
 </blockquote>
+<ul>
+<li><strong>Example A.</strong> Cedar Point's data owner says, "Move the
+active patients." You ask for a written rule. She approves "patients
+with a Lakeshore visit in the last 3 years."</li>
+<li><strong>Example B.</strong> A pediatric clinic has 10 years of old
+visit notes. The data owner approves a treatment: the last 2 years
+convert as documents. Older notes stay in a searchable, approved
+archive.</li>
+</ul>
+<p>In both cases, a general wish became a written choice that the data
+owner approved.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>List five possible treatments for a category of information.</li>
 <li>Why does "active patients" need a written definition?</li>
 <li>The practice manager says, "Just bring everything over." What do you
 say, and what do you ask for?</li>
-</ol>
-<h2 id="profile-and-clean-the-source">Profile and clean the source</h2>
-<p>You cannot map data you have not measured. Profiling shows problems
-before they reach the new system, where they are harder to find and
-fix.</p>
-<p><strong>Profiling</strong> means measuring the source data before
-mapping. Useful checks include:</p>
-<ul>
-<li>record counts;</li>
-<li>missing required values;</li>
-<li>duplicates and likely duplicates;</li>
-<li>invalid dates or codes;</li>
-<li>mixed formats;</li>
-<li>documents or transactions with no matching record;</li>
-<li>odd characters, or values too long for the new field;</li>
-<li>inactive and closed groups;</li>
-<li>two records sharing one identifier;</li>
-<li>broken links between records;</li>
-<li>extreme or impossible values.</li>
-</ul>
-<p>Cleaning needs rules and owners. Do not "fix" source data by
-guessing. For each issue, record:</p>
-<ul>
-<li>the issue;</li>
-<li>the affected group of records;</li>
-<li>the proposed fix;</li>
-<li>who approves it;</li>
-<li>where the fix happens: in the source, during transformation, in the
-new system, or by hand;</li>
-<li>the evidence and result.</li>
-</ul>
-<p>Matching patients and merging duplicates can affect patient safety.
-Use the clinic's approved patient-identification process and qualified
-reviewers.</p>
-<blockquote>
-<p><strong>Rule:</strong> Every correction to source data needs a
-written rule and a named approver.</p>
-</blockquote>
-<ul>
-<li><strong>Example A.</strong> Profiling finds 300 phone numbers in
-three formats. The data owner approves one format, and the
-transformation converts them all.</li>
-<li><strong>Example B.</strong> Profiling finds 45 pairs of likely
-duplicate patients. The clinic's patient-identification reviewer checks
-each pair before any merge.</li>
-</ul>
-<p>The first fix was low risk and could follow a rule. The second could
-put the wrong history in a chart, so a qualified person reviewed each
-case.</p>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>List five things profiling measures.</li>
-<li>Why can't the implementer merge duplicate patients on her own?</li>
-<li>Profiling shows 600 birth dates of "01/01/1900." What do you record,
-and who decides the fix?</li>
 </ol>

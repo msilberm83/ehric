@@ -1,4 +1,199 @@
-<h1>Module 9, Lesson 4: Hand monitoring to operations</h1>
+<h1>Module 9, Lesson 4: Track clearinghouse and payer enrollment separately</h1>
+<h2 id="track-clearinghouse-and-payer-enrollment-separately">Track
+clearinghouse and payer enrollment separately</h2>
+<p>"Enrollment is done" can mean four different things. If you track
+only one, claims may go out while payments still arrive as paper
+checks.</p>
+<p>Track each step separately, for each payer and each billing location
+or provider number:</p>
+<ol type="1">
+<li><strong>Clearinghouse enrollment.</strong> The clinic's account and
+submitter setup with the clearinghouse.</li>
+<li><strong>Payer claims enrollment.</strong> Each payer's permission to
+receive the clinic's electronic claims through that clearinghouse. This
+is also called <strong>EDI</strong> (electronic data interchange)
+enrollment.</li>
+<li><strong>ERA enrollment.</strong> Permission to receive 835s
+electronically, routed to the right clearinghouse.</li>
+<li><strong>EFT enrollment.</strong> Setup with each payer to deposit
+payments into the clinic's bank account. Payers may ask for the clinic's
+tax ID and each clinician's <strong>NPI</strong> (National Provider
+Identifier).</li>
+</ol>
+<p>Some payers need several of these steps. Some need none beyond the
+clearinghouse. Approval can take days or weeks.</p>
+<p>Keep an <strong>enrollment tracker</strong> with one row per payer
+and location. The client's billing or credentialing lead owns the
+submissions. You track status. You log each gap as a dependency with an
+owner and a need date. Where a gap will remain at go-live, ask billing
+for an interim plan.</p>
+<figure><img src="../../img/M09-08.png" alt="Figure 9.8. Notice that each payer has four separate enrollment steps, and some are still only submitted." loading="lazy"><figcaption><b>Figure 9.8.</b> Notice that each payer has four separate enrollment steps, and some are still only submitted.</figcaption></figure>
+
+<blockquote>
+<p><strong>Rule:</strong> Track the four enrollment steps one by one,
+for each payer and each location.</p>
+</blockquote>
+<p>Compare two cases. At Cedar Point, the main location is fully
+enrolled with one payer. The Lakeshore location shows EFT not started
+for that same payer, so its payments will arrive as checks. At a family
+practice, the clearinghouse account is active, but the largest payer has
+not approved claims enrollment. No electronic claims can reach that
+payer yet. In both cases, one "enrolled" check box would have hidden the
+gap.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the four enrollment steps.</li>
+<li>Claims enrollment is approved, but ERA enrollment is only submitted.
+What happens to payments, and what would you do?</li>
+</ol>
+<h2 id="govern-electronic-forms">Govern electronic forms</h2>
+<p>A form with the wrong version, wording, or routing can capture the
+wrong consent or send a signed form to the wrong record. Forms carry
+legal and clinical language, so they need owners.</p>
+<p>Collect the client's approved forms for each stage of the workflow.
+Record:</p>
+<ul>
+<li>owner and approver;</li>
+<li>version and effective date;</li>
+<li>purpose and audience;</li>
+<li>fields and the source of any prefilled information;</li>
+<li>required and optional answers;</li>
+<li>conditional logic;</li>
+<li>signature rule;</li>
+<li>language and accessibility needs;</li>
+<li>routing;</li>
+<li>where the record is stored;</li>
+<li>retention;</li>
+<li>change process.</li>
+</ul>
+<p>Build and test:</p>
+<ul>
+<li>display and completion;</li>
+<li>prefill accuracy;</li>
+<li>required and conditional fields;</li>
+<li>save and resume;</li>
+<li>signature, refusal, expiration, and correction;</li>
+<li>routing and notices;</li>
+<li>link to the correct record;</li>
+<li>version shown and stored;</li>
+<li>role access;</li>
+<li>export and retrieval;</li>
+<li>phone or tablet behavior, if in scope.</li>
+</ul>
+<p>The project team converts approved content. Qualified client
+authorities approve clinical, privacy, financial, consent, and other
+controlled wording.</p>
+<blockquote>
+<p><strong>Rule:</strong> Load a form only after the client authority
+who owns its wording approves it.</p>
+</blockquote>
+<p>Compare two cases. At Cedar Point, the front-desk lead sends you a
+consent form with new wording about sharing records. You hold it until
+the privacy officer approves the wording. At a pediatric clinic, a nurse
+asks you to add a question to the vaccine screening form. You hold it
+until the clinical lead who owns that form approves the change. In both
+cases, you build and test the form, but its owner approves the
+words.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four facts you record for each form.</li>
+<li>Why does the stored record need to show the form's version?</li>
+</ol>
+<h2 id="control-codes-values-and-templates">Control codes, values, and
+templates</h2>
+<p>Reports and automation depend on clean lists. Three spellings of one
+appointment type split a report three ways. An old template can copy
+outdated content into every note.</p>
+<p><strong>Codes and controlled values.</strong> Systems rely on code
+sets, status values, task types, appointment types, locations,
+providers, fees, and similar lists. For each list, define:</p>
+<ul>
+<li>business owner;</li>
+<li>source and version;</li>
+<li>active and inactive rules;</li>
+<li>effective dates;</li>
+<li>roles allowed to change it;</li>
+<li>downstream effect;</li>
+<li>test and approval;</li>
+<li>maintenance process.</li>
+</ul>
+<p>Do not let every user create near-duplicate values. "New Patient,"
+"New patient," and "New-Patient" may split reporting and break
+automation. Billing codes and payer rules need review by qualified
+coding and billing staff. You load and validate the approved values.</p>
+<p><strong>Templates.</strong> Templates reduce repeated work. They can
+also carry old or wrong content forward. Keep a template inventory
+with:</p>
+<ul>
+<li>owner;</li>
+<li>use case and role;</li>
+<li>approved content source;</li>
+<li>required and optional sections;</li>
+<li>fields and logic;</li>
+<li>access;</li>
+<li>version and effective date;</li>
+<li>review schedule;</li>
+<li>retirement rule.</li>
+</ul>
+<p>Test each template with sample scenarios. Include missing
+information, wrong carry-forward, conditional sections, signature,
+routing, and the final record. Teach users that a template is a
+structure. It does not prove its content is right for every patient.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every code list and template has a named
+owner, a version, and a rule for how it changes.</p>
+</blockquote>
+<p>Compare two cases. At one clinic, front-desk staff each add their own
+appointment types, and the no-show report becomes useless. At another, a
+physical-exam template still carries last year's screening wording into
+every note. In both cases, a list or template without an owner drifted
+until the data could not be trusted.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four things you define for each code list.</li>
+<li>Why is it a problem when staff can create their own appointment
+types?</li>
+<li>What would you teach a user who trusts a template's default
+text?</li>
+</ol>
+<h2 id="configure-payments-safely">Configure payments safely</h2>
+<p>Payment setup handles money and card data. A missed failure path can
+double-charge a patient or post a payment to the wrong account.</p>
+<p>Payment work can include merchant setup, card or bank options,
+portals, payment plans, receipts, refunds, reversals, failed payments,
+posting, reconciliation, and access.</p>
+<p>Bring in finance, security, privacy, billing, and vendor authorities
+as needed. Use approved payment providers. Follow current company and
+contract rules. Never store card numbers or other payment credentials in
+project documents.</p>
+<p>Test:</p>
+<ul>
+<li>approved payment methods;</li>
+<li>success, decline, cancellation, and timeout;</li>
+<li>duplicate prevention;</li>
+<li>partial payment;</li>
+<li>refund or reversal by an approved person;</li>
+<li>link to the correct account, patient, invoice, or ledger;</li>
+<li>receipt and notice;</li>
+<li>posting and reconciliation;</li>
+<li>role access and audit;</li>
+<li>downtime and recovery.</li>
+</ul>
+<blockquote>
+<p><strong>Rule:</strong> Before go-live, test each way a payment can
+fail, and reconcile the results.</p>
+</blockquote>
+<p>Compare two cases. At Cedar Point, a test portal payment times out,
+and the tester submits it again. The test account shows two charges, so
+you log a duplicate-prevention defect. At a dermatology clinic, a test
+refund succeeds at the payment provider but never posts to the patient's
+account. Reconciliation finds the gap before go-live. In both cases,
+only a failure test and a reconciliation showed the problem.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name five payment scenarios to test.</li>
+<li>Why must the finance and security owners join payment setup?</li>
+</ol>
 <h2 id="hand-monitoring-to-operations">Hand monitoring to
 operations</h2>
 <p>Every integration keeps running after the project team leaves. If no
@@ -17,13 +212,21 @@ trained person watches the queues, failures pile up unseen.</p>
 <li>evidence and retention;</li>
 <li>planned maintenance and change review.</li>
 </ul>
-<figure style="margin:16px 0"><img src="../../img/M09-09.png" alt="Figure 9.9. Notice that every queue has a named owner and backup, and aging items stand out in amber." style="width:100%;max-width:1000px"><figcaption><b>Figure 9.9.</b> Notice that every queue has a named owner and backup, and aging items stand out in amber.</figcaption></figure>
-Do not become the permanent owner by default. Transfer monitoring to an operational role with training, access, and support.
+<figure><img src="../../img/M09-09.png" alt="Figure 9.9. Notice that every queue has a named owner and backup, and aging items stand out in amber." loading="lazy"><figcaption><b>Figure 9.9.</b> Notice that every queue has a named owner and backup, and aging items stand out in amber.</figcaption></figure>
 
+<p>Do not become the permanent owner by default. Transfer monitoring to
+an operational role with training, access, and support.</p>
 <blockquote>
 <p><strong>Rule:</strong> An integration is done only when a trained
 staff owner watches its queues.</p>
 </blockquote>
+<p>Compare two cases. At Cedar Point, you watch the lab queue during
+go-live week. Before you leave, you train the lab coordinator and a
+backup, and they take over the daily review. At a family practice, a
+billing specialist is named owner of the rejection queue but cannot open
+the clearinghouse report. The integration is not done until that person
+has access and training. In both cases, a name alone does not make an
+owner.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Name five items in the operational monitoring plan.</li>
@@ -74,150 +277,3 @@ evidence.</p>
 <p><em>What could go wrong if the team had marked the integration
 complete after the first clean claim?</em></p></li>
 </ol>
-<h2 id="your-turn-faded-example">Your turn: faded example</h2>
-<p><em>If you have done this task on a real project, try this first,
-then compare with the worked example.</em></p>
-<p>A clinic's reference-lab results interface uses HL7 v2 result
-messages. In testing, every message returns an "accepted"
-acknowledgement.</p>
-<ol type="1">
-<li><strong>The tester compared the business result to the transport
-result.</strong> Two results for a synthetic patient with a common name
-filed to another patient with the same name and a different birth date.
-<em>Produced:</em> a failed test step. <em>Why:</em> a transport
-acknowledgement does not prove the result filed to the right chart.</li>
-<li><strong>The tester logged a defect.</strong> <em>Produced:</em> a
-defect record linked to the failed step. <em>Why:</em> a wrong-patient
-result is a safety failure that needs a tracked fix.</li>
-<li><strong>Who decides what happens to results that fail the birth-date
-match?</strong> <em>Produced:</em> ________. <em>Why:</em>
-________.</li>
-<li><strong>What does the vendor change, and what does QC test
-afterward?</strong> <em>Produced:</em> ________. <em>Why:</em>
-________.</li>
-<li><strong>What must be in place before the interface is
-approved?</strong> <em>Produced:</em> ________. <em>Why:</em>
-________.</li>
-</ol>
-<h2 id="field-assignment">Field assignment</h2>
-<p>Use the Cedar Point Internal Medicine practice case (course casebook,
-Track A, Month 9 packet). Do not use a real organization, project, or
-data. Select one integration other than the clearinghouse, such as the
-payment vendor or the electronic-signature service. Also select two
-configuration areas.</p>
-<ol type="1">
-<li>Complete the integration inventory and owner map.</li>
-<li>Draw the data flow and security boundaries.</li>
-<li>Record contracts, enrollment, credentials, user accounts,
-environment, and outside dependencies.</li>
-<li>Build a prescriber readiness tracker for EPCS for the case's
-prescribers, with owners and need dates.</li>
-<li>Define acknowledgement, error, retry, duplicate, downtime, and
-reconciliation behavior.</li>
-<li>Write at least ten end-to-end tests with the expected result of
-each.</li>
-<li>Build governed form, code, template, or payment records for your two
-configuration areas.</li>
-<li>Draft a source register entry for one clinical exchange the case
-needs, such as sending a referral note.</li>
-<li>List the technical, business, clinical, privacy, security, and
-financial approvals needed, and who gives each.</li>
-<li>Assign operational monitoring and support.</li>
-</ol>
-<p><strong>Self-check rubric.</strong> Your work is ready when:</p>
-<ul class="task-list">
-<li><p><label><input type="checkbox" />every endpoint in your inventory
-has a named owner on each side;</label></p></li>
-<li><p><label><input type="checkbox" />your tests include failure,
-duplicate, downtime, and reconciliation cases, with transport and
-business results recorded separately;</label></p></li>
-<li><p><label><input type="checkbox" />each dependency, including each
-prescriber's EPCS steps, has an owner and a need date;</label></p></li>
-<li><p><label><input type="checkbox" />your source register entry names
-the standard, version, and decision owner;</label></p></li>
-<li><p><label><input type="checkbox" />each approval names the authority
-who gives it, and none names you as the decider;</label></p></li>
-<li><p><label><input type="checkbox" />each queue has a trained
-operational owner and a backup.</label></p></li>
-</ul>
-<h2 id="knowledge-check">Knowledge check</h2>
-<ol type="1">
-<li>Why is a successful connection not the same as a successful business
-workflow?</li>
-<li>What is the difference between transport acknowledgement and
-business acceptance?</li>
-<li>What does a 999 tell you, and what does a 277CA tell you?</li>
-<li>How is a rejection different from a denial, and how is each one
-worked?</li>
-<li>Why must clearinghouse enrollment and each payer's ERA and EFT
-enrollment be tracked separately?</li>
-<li>Why does "supports USCDI" need a version number, and where would you
-check certification?</li>
-<li>Who decides whether a configuration choice could be information
-blocking?</li>
-<li>Why must both endpoints have owners?</li>
-<li>What controls prevent forms, codes, and templates from becoming
-inconsistent?</li>
-<li>What must be transferred to operations before an integration is
-complete?</li>
-<li>Which EPCS steps must be done for each prescriber, and who completes
-them?</li>
-</ol>
-<h2 id="spaced-review">Spaced review</h2>
-<ol type="1">
-<li>(Module 8) A test conversion at a dermatology clinic shows 2,400
-source patients and 2,385 loaded. The vendor says the difference is
-"within tolerance." What must happen before the data owner accepts the
-run?</li>
-<li>(Module 8) A converted medication list has 40 uncoded entries. A
-physician asks you to delete them so the list looks clean. What would
-you do?</li>
-<li>(Module 6) During provider training on lab orders, a physician asks
-who will see results that do not match a patient. Why does this question
-belong in the scenario, and who should answer it?</li>
-<li>(Module 5) A medical assistant attended every training session. The
-practice manager asks you to mark her competent so she can get access.
-What evidence is needed first?</li>
-<li>(Module 2) A prescriber's EPCS identity proofing depends on an
-outside credential company. How would you write this item in the
-dependency record?</li>
-<li>(Module 1) The practice manager says the salesperson promised a link
-to the state immunization registry, but the signed order does not list
-it. How do you record it?</li>
-</ol>
-<h2 id="module-9-gate--integrations-and-configuration-accepted">Module 9
-gate — integrations and configuration accepted</h2>
-<p><strong>Who must be in the room:</strong> the client project owner,
-billing manager, privacy or compliance lead, and vendor interface
-lead.</p>
-<ul class="task-list">
-<li><label><input type="checkbox" />Check that each integration has a
-purpose, an owner at each end, a data-flow diagram, signed agreements,
-and a security review.</label></li>
-<li><label><input type="checkbox" />Check that each clinical exchange
-lists its standard, version, proof of certification, and decision
-owner.</label></li>
-<li><label><input type="checkbox" />Check that each user has an account
-request with the right role, tracked with a date.</label></li>
-<li><label><input type="checkbox" />Check that each prescriber's EPCS
-steps (audit report, identity proofing, two-factor credential, access
-approval) have owners and dates.</label></li>
-<li><label><input type="checkbox" />Check that clearinghouse, claims,
-ERA, and EFT enrollment are tracked by payer and location, and each gap
-has an owner.</label></li>
-<li><label><input type="checkbox" />Run normal, failure, duplicate,
-downtime, and reconciliation tests, and keep the results.</label></li>
-<li><label><input type="checkbox" />Give each form, code list, template,
-and payment setup an owner, a version, an approval, and a change
-rule.</label></li>
-<li><label><input type="checkbox" />Get sign-off from the right client
-leader for each clinical, billing, money, privacy, security, and sharing
-decision.</label></li>
-<li><label><input type="checkbox" />Fix, retest, and check each defect
-for wider effects.</label></li>
-<li><label><input type="checkbox" />Name a trained staff owner, a
-backup, and an escalation path for each queue and alert.</label></li>
-</ul>
-<p><strong>Capstone note:</strong> nothing from this module is submitted
-for the capstone. The capstone's three artifacts are described in Module
-12 and in the capstone candidate packet.</p>

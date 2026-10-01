@@ -1,4 +1,4 @@
-<h1>Module 7, Lesson 1: Decide what "it works" must mean</h1>
+<h1>Module 7, Lesson 1: Decide what &quot;it works&quot; must mean</h1>
 <h2 id="decide-what-it-works-must-mean">Decide what "it works" must
 mean</h2>
 <p>A team that says "it works" may mean five different things. If you do
@@ -24,9 +24,12 @@ conversion, integration, and automation step.</p>
 the meaning that applies. A build can run without errors and still be
 wrong for the clinic. It can also follow the workflow and still break a
 security, privacy, billing, data, or safety control.</p>
-<figure style="margin:16px 0"><img src="../../img/M07-01.png" alt="Figure 7.1. Notice that a loading screen is the lowest meaning of "it works"; the approved requirement sets the level QC proves." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.1.</b> Notice that a loading screen is the lowest meaning of "it works"; the approved requirement sets the level QC proves.</figcaption></figure>
-> **Rule:** The approved requirement sets the level of "it works" that QC must prove.
+<figure><img src="../../img/M07-01.png" alt="Figure 7.1. Notice that a loading screen is the lowest meaning of &quot;it works&quot;; the approved requirement sets the level QC proves." loading="lazy"><figcaption><b>Figure 7.1.</b> Notice that a loading screen is the lowest meaning of &quot;it works&quot;; the approved requirement sets the level QC proves.</figcaption></figure>
 
+<blockquote>
+<p><strong>Rule:</strong> The approved requirement sets the level of "it
+works" that QC must prove.</p>
+</blockquote>
 <p>Two examples show the rule:</p>
 <ul>
 <li><strong>Example A.</strong> A new-patient form loads and saves. The
@@ -49,11 +52,11 @@ it?</li>
 </ol>
 <h2 id="finish-advanced-workflows-and-train-the-failure-path">Finish
 advanced workflows and train the failure path</h2>
-<p><em>These two steps are carried from Module 6. They finish training
-work before QC takes over the build.</em></p>
 <p>Staff who know only the normal path will repeat work, create
 duplicates, or assume a task is done when an interface fails. Advanced
 training prevents that.</p>
+<p><em>These two steps are carried from Module 6. They finish training
+work before QC takes over the build.</em></p>
 <h3 id="specialty-configuration">Specialty configuration</h3>
 <p>Specialty workflows often add their own templates, terms, devices,
 results, rules, reports, or handoffs. Use the same method as in Modules
@@ -92,9 +95,24 @@ the right person.</p>
 <p>Common examples are claim and eligibility checks, lab and imaging
 orders and results, e-prescribing, payments, document signing, and data
 exchange with outside systems.</p>
-<figure style="margin:16px 0"><img src="../../img/M07-02.png" alt="Figure 7.2. Notice that each result state, not just success, has a next action users must be trained on." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.2.</b> Notice that each result state, not just success, has a next action users must be trained on.</figcaption></figure>
-> **Rule:** Train users on what failure looks like and what to do, not only on the normal path.
+<figure><img src="../../img/M07-02.png" alt="Figure 7.2. Notice that each result state, not just success, has a next action users must be trained on." loading="lazy"><figcaption><b>Figure 7.2.</b> Notice that each result state, not just success, has a next action users must be trained on.</figcaption></figure>
 
+<blockquote>
+<p><strong>Rule:</strong> Train users on what failure looks like and
+what to do, not only on the normal path.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> At Lakeshore, a lab order shows
+"rejected" on the order screen. Training taught the medical assistant to
+read the reason and correct the order. She does not place a new
+order.</li>
+<li><strong>Example B.</strong> At a family medicine clinic, a
+prescription to the pharmacy shows "failed." Training taught the nurse
+not to send it again. She sends the failed item to the named owner and
+tells the provider.</li>
+</ul>
+<p>Both users saw the failure on screen and knew the next step. Neither
+one sent the item twice.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>List four things a user should know about an interface.</li>
@@ -135,9 +153,12 @@ the affected behavior.</p>
 <p>Module 4 ("Hand the approved design into a controlled build") set out
 the blueprint, environments, and promotion path. This module applies
 that method to QC and release.</p>
-<figure style="margin:16px 0"><img src="../../img/M07-03.png" alt="Figure 7.3. Notice that each environment gets a named version and its own release approval before the build moves on." style="width:100%;max-width:1000px"><figcaption><b>Figure 7.3.</b> Notice that each environment gets a named version and its own release approval before the build moves on.</figcaption></figure>
-> **Rule:** A pass belongs to one version in one environment until you prove otherwise.
+<figure><img src="../../img/M07-03.png" alt="Figure 7.3. Notice that each environment gets a named version and its own release approval before the build moves on." loading="lazy"><figcaption><b>Figure 7.3.</b> Notice that each environment gets a named version and its own release approval before the build moves on.</figcaption></figure>
 
+<blockquote>
+<p><strong>Rule:</strong> A pass belongs to one version in one
+environment until you prove otherwise.</p>
+</blockquote>
 <ul>
 <li><strong>Example A.</strong> The referral module passed in test on
 build 5.1. In production, the vendor added a manual fax setting. You
@@ -213,6 +234,18 @@ go-live, pressure makes every open item look small.</p>
 <p><strong>Rule:</strong> Agree entry and exit criteria before testing
 starts, not when the deadline arrives.</p>
 </blockquote>
+<ul>
+<li><strong>Example A.</strong> Before QC starts on Cedar Point's
+referral module, the team agrees that no High defect may stay open
+without a recorded decision. Two days before training, a High defect
+appears. The agreed rule decides what happens, not the deadline.</li>
+<li><strong>Example B.</strong> A pediatric clinic agrees an entry
+criterion: approved test data must be ready. On the first test day, the
+test patients are missing. QC does not start, and the team records the
+delay.</li>
+</ul>
+<p>In both cases, a rule agreed early made the decision under
+pressure.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Name three entry criteria and three exit criteria.</li>

@@ -1,4 +1,4 @@
-<h1>Module 2 — Answers: Check yourself, examples, knowledge check, spaced review</h1>
+<h1>Module 2 — Answers</h1>
 <h2 id="answers-for-this-chapter">Answers for this chapter</h2>
 <h3 id="check-yourself">Check yourself</h3>
 <p><strong>Turn scope into workstreams</strong></p>
@@ -10,6 +10,10 @@ review; training and adoption; quality control and testing; go-live
 readiness, activation, and follow-up.</li>
 <li>Whether it is a needed implementation task, an internal cost, or a
 scope change. A scope change goes through change control.</li>
+<li>An item with no workstream has no owner and no tasks, so nobody
+plans it. If you find the gap at go-live, the clinic finds the item
+missing. Tracing it early gives it a home while there is still time to
+plan the work.</li>
 </ol>
 <p><strong>Break each workstream into owned work</strong></p>
 <ol type="1">
@@ -64,12 +68,18 @@ effect of delay.</li>
 <li>"If this item slips, can go-live stay the same without cutting or
 squeezing required work?" If not, it is on or near the critical
 path.</li>
+<li>It names no deliverable, provider, receiver, need date, or effect of
+delay, so nobody knows who must act or what slips. Write it with those
+five parts, for example: "The billing manager signs the claim enrollment
+forms by September 12; if late, claim testing moves." Then split it into
+its separate enrollments.</li>
 </ol>
 <p><strong>Split billing setup into its separate
 enrollments</strong></p>
 <ol type="1">
-<li>Payer provider enrollment, clearinghouse account, claim (EDI)
-enrollment, ERA enrollment, and EFT enrollment.</li>
+<li>Clearinghouse enrollment, payer claims (EDI) enrollment, ERA
+enrollment, and EFT enrollment. Payer provider enrollment
+(credentialing) is a separate prerequisite, not one of the four.</li>
 <li>The clearinghouse connection is only one piece. Each payer must
 still approve claim enrollment, ERA must go to the new destination, and
 EFT must be confirmed. A test claim accepted by the clearinghouse does

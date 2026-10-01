@@ -1,15 +1,64 @@
-<h1>Module 10, Lesson 2: Collect decision-support source information</h1>
+<h1>Module 10, Lesson 2: Review the vendor and the deployment</h1>
+<h2 id="review-the-vendor-and-the-deployment">Review the vendor and the
+deployment</h2>
+<p>Many AI features send clinic data to the vendor or to other
+companies. If no one checks the terms, patient data may be used in ways
+the clinic never agreed to.</p>
+<p>Confirm that the clinic's approved process covers:</p>
+<ul>
+<li>contract and service terms;</li>
+<li>how data is used, kept, deleted, and used to train models;</li>
+<li>other companies that handle the data, and where they are;</li>
+<li>security and access controls;</li>
+<li>logging and audit;</li>
+<li>incident notice;</li>
+<li>service availability and recovery;</li>
+<li>changes to the model or feature;</li>
+<li>how the clinic's data is kept apart from other customers' data;</li>
+<li>export and contract end;</li>
+<li>any required agreements, such as a business associate
+agreement.</li>
+</ul>
+<p>The <strong>Health Insurance Portability and Accountability Act
+(HIPAA)</strong> sets privacy and security rules for PHI. For uses that
+involve PHI, bring in the client's privacy, security, legal, and
+contract owners. A <strong>business associate</strong> is a company that
+handles PHI for the clinic. Current guidance from the Department of
+Health and Human Services (HHS) says a cloud provider that stores
+electronic PHI for a clinic may be a business associate. This holds even
+when the data is encrypted and the provider has no key.</p>
+<p>Compare two cases. A scheduling assistant may look like "only
+scheduling," but appointment data still identifies patients and their
+care. A spelling checker that runs only on the user's computer may send
+no data out at all. In both cases, the data flow, not the feature name,
+decides who must review.</p>
+<blockquote>
+<p><strong>Rule:</strong> If a use sends PHI outside the clinic, the
+client's privacy, security, and contract owners decide before it is
+turned on.</p>
+</blockquote>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name four vendor terms the clinic must review.</li>
+<li>What is a business associate?</li>
+<li>A manager says, "Just turn it on; it's only scheduling." What would
+you do, and why?</li>
+</ol>
 <h2 id="collect-decision-support-source-information">Collect
 decision-support source information</h2>
+<p>Clinicians may act on a decision-support alert or score without
+knowing what it was built on. If nobody collects the developer's facts,
+the clinic cannot judge whether the tool fits its own patients.</p>
 <p>Many electronic health record (EHR) systems now include decision
 support, and some of it is AI. A federal rule tells the developer what
 it must disclose. Your job is to ask for those facts and record them.
 You collect them and pass them along. You do not judge them.</p>
 <h3 id="what-the-rule-covers">What the rule covers</h3>
 <p>The <strong>Office of the National Coordinator for Health Information
-Technology (ONC)</strong> runs the federal Health IT Certification
-Program. For a time it was called ASTP/ONC. A notice published April 1,
-2026, returned it to the name ONC.</p>
+Technology (ONC)</strong> runs the federal Health IT (health information
+technology) Certification Program. For a time it was called ASTP/ONC,
+after the Assistant Secretary for Technology Policy (ASTP). A notice
+published April 1, 2026, returned it to the name ONC.</p>
 <p>ONC's <strong>HTI-1</strong> final rule was published January 9,
 2024. It replaced the old clinical decision support criterion with a
 <strong>decision support interventions (DSI)</strong> criterion, 45 CFR
@@ -70,9 +119,12 @@ an outpatient clinic.</li>
 owner. That owner decides whether, where, and for whom to turn on the
 DSI.</li>
 </ol>
-<figure style="margin:16px 0"><img src="../../img/M10-04.png" alt="Figure 10.4. Notice that "not available" fields are flagged in the inventory, not left out or assumed safe." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.4.</b> Notice that "not available" fields are flagged in the inventory, not left out or assumed safe.</figcaption></figure>
-You do not judge a model clinically fit. You do not turn on a predictive DSI because the software is certified. Certification means the facts are disclosed. It does not mean the model suits this clinic.
+<figure><img src="../../img/M10-04.png" alt="Figure 10.4. Notice that &quot;not available&quot; fields are flagged in the inventory, not left out or assumed safe." loading="lazy"><figcaption><b>Figure 10.4.</b> Notice that &quot;not available&quot; fields are flagged in the inventory, not left out or assumed safe.</figcaption></figure>
 
+<p>You do not judge a model clinically fit. You do not turn on a
+predictive DSI because the software is certified. Certification means
+the facts are disclosed. It does not mean the model suits this
+clinic.</p>
 <h3 id="rule-status">Rule status</h3>
 <p>In December 2025, ONC proposed the <strong>HTI-5</strong> rule. Among
 other changes, it would narrow the DSI criterion and remove the
@@ -85,6 +137,13 @@ practice.</p>
 <p><strong>Rule:</strong> Certification means the facts are disclosed,
 not that the model fits this clinic.</p>
 </blockquote>
+<p>Compare two cases. At Cedar Point, a certified predictive DSI lists
+local testing as "not available." You copy that gap into the inventory
+and flag it for the decision-support owner. At a pediatric clinic, a
+certified risk score lists its intended patients as adults only. You
+flag the mismatch, because the clinic treats children. In both cases,
+certification made the facts visible, and the owner still decides
+whether the tool fits.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>What is the difference between an evidence-based DSI and a
@@ -119,9 +178,12 @@ has:</p>
 <li>watch totals and trends only;</li>
 <li>forbid the AI from certain actions.</li>
 </ul>
-<figure style="margin:16px 0"><img src="../../img/M10-05.png" alt="Figure 10.5. Notice that higher-risk uses need review of every output, while lower-risk uses may need only monitoring." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.5.</b> Notice that higher-risk uses need review of every output, while lower-risk uses may need only monitoring.</figcaption></figure>
-Compare two uses. A portal reply that answers a question about symptoms needs a clinician to review every draft. A suggested document category for a routine form may need only a weekly sample. Both patterns match the reviewer's authority and time to the risk.
+<figure><img src="../../img/M10-05.png" alt="Figure 10.5. Notice that higher-risk uses need review of every output, while lower-risk uses may need only monitoring." loading="lazy"><figcaption><b>Figure 10.5.</b> Notice that higher-risk uses need review of every output, while lower-risk uses may need only monitoring.</figcaption></figure>
 
+<p>Compare two uses. A portal reply that answers a question about
+symptoms needs a clinician to review every draft. A suggested document
+category for a routine form may need only a weekly sample. Both patterns
+match the reviewer's authority and time to the risk.</p>
 <p>Base the pattern on risk and clinic policy. Review it again when the
 use, data, model, workflow, or failure history changes.</p>
 <blockquote>
@@ -173,9 +235,9 @@ Measures may include:</p>
 </ul>
 <p>An average can hide a dangerous group or error type. Record results
 by category.</p>
-<figure style="margin:16px 0"><img src="../../img/M10-06.png" alt="Figure 10.6. Notice that the overall result passes while one category falls below its threshold." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.6.</b> Notice that the overall result passes while one category falls below its threshold.</figcaption></figure>
-### Keep a traceable record
+<figure><img src="../../img/M10-06.png" alt="Figure 10.6. Notice that the overall result passes while one category falls below its threshold." loading="lazy"><figcaption><b>Figure 10.6.</b> Notice that the overall result passes while one category falls below its threshold.</figcaption></figure>
 
+<h3 id="keep-a-traceable-record">Keep a traceable record</h3>
 <p>For each run, record:</p>
 <ul>
 <li>system, model, and feature version, when available;</li>
@@ -196,43 +258,17 @@ time.</p>
 <p><strong>Rule:</strong> Set thresholds before the final run, and
 report results by category.</p>
 </blockquote>
+<p>Compare two cases. At Cedar Point, an AI document sorter scores 96%
+overall, but poor-quality faxed referrals score 78%. You report both
+numbers, so the owner sees the weak category. At a family practice, the
+team sees the final results and asks to lower the threshold from 95% to
+90%. You report the result against the threshold set before the run. In
+both cases, the record compares real results with a standard set in
+advance.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Why must thresholds be set before the final run?</li>
 <li>Name five details you record for each evaluation run.</li>
 <li>Overall accuracy is 97%, but accuracy on Spanish-language documents
 is 81%. What would you report?</li>
-</ol>
-<h2 id="test-rules-based-automation-carefully">Test rules-based
-automation carefully</h2>
-<p>A rule that fires twice, fires late, or goes to the wrong queue can
-create hundreds of wrong tasks in a day. Small timing and routing errors
-grow fast.</p>
-<p>For each trigger, rule, and action, test that:</p>
-<ul>
-<li>the trigger fires once;</li>
-<li>the trigger does not fire when conditions are missing;</li>
-<li>repeated events do not create repeated work;</li>
-<li>timing and time zone are right;</li>
-<li>role and access are right;</li>
-<li>the right person or queue receives it;</li>
-<li>a cancelled or changed source item is handled;</li>
-<li>the next system confirms receipt;</li>
-<li>an unavailable service is handled;</li>
-<li>retry and backlog work;</li>
-<li>audit and monitoring work;</li>
-<li>the rule can be stopped or bypassed.</li>
-</ul>
-<p>Record how automations depend on each other. One status change may
-start several messages, tasks, or interface messages. A correction can
-start the chain again if you test only the first action.</p>
-<figure style="margin:16px 0"><img src="../../img/M10-07.png" alt="Figure 10.7. Notice that one status change starts several actions, and a correction can start them all again." style="width:100%;max-width:1000px"><figcaption><b>Figure 10.7.</b> Notice that one status change starts several actions, and a correction can start them all again.</figcaption></figure>
-> **Rule:** Test every action a trigger starts, not only the first one.
-
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>Name five conditions you test for a rules-based automation.</li>
-<li>Why must you test what happens after a correction?</li>
-<li>A cancel-and-rebook test creates three open tasks instead of one.
-What would you do?</li>
 </ol>

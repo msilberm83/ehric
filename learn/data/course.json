@@ -25,7 +25,7 @@
 },
 {
 "file": "lessons/M01/L98_answers.html",
-"title": "Module 1 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 1 \u2014 Answers"
 },
 {
 "file": "lessons/M01/L99_sources.html",
@@ -51,11 +51,15 @@
 },
 {
 "file": "lessons/M02/L03.html",
-"title": "Module 2, Lesson 3: Set the operating rules before kickoff"
+"title": "Module 2, Lesson 3: Run the internal handoff and track acceptance"
+},
+{
+"file": "lessons/M02/L04.html",
+"title": "Module 2, Lesson 4: Spaced review"
 },
 {
 "file": "lessons/M02/L98_answers.html",
-"title": "Module 2 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 2 \u2014 Answers"
 },
 {
 "file": "lessons/M02/L99_sources.html",
@@ -77,15 +81,19 @@
 },
 {
 "file": "lessons/M03/L02.html",
-"title": "Module 3, Lesson 2: Say how firm each date is"
+"title": "Module 3, Lesson 2: Name the team and the escalation bypass"
 },
 {
 "file": "lessons/M03/L03.html",
-"title": "Module 3, Lesson 3: Worked example: kickoff at a two-location outpatient clinic"
+"title": "Module 3, Lesson 3: Close, record, and issue the kickoff record"
+},
+{
+"file": "lessons/M03/L04.html",
+"title": "Module 3, Lesson 4: Module 3 gate \u2014 client operating agreement established"
 },
 {
 "file": "lessons/M03/L98_answers.html",
-"title": "Module 3 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 3 \u2014 Answers"
 },
 {
 "file": "lessons/M03/L99_sources.html",
@@ -119,11 +127,11 @@
 },
 {
 "file": "lessons/M04/L05.html",
-"title": "Module 4, Lesson 5: Field assignment"
+"title": "Module 4, Lesson 5: Your turn: faded example"
 },
 {
 "file": "lessons/M04/L98_answers.html",
-"title": "Module 4 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 4 \u2014 Answers"
 },
 {
 "file": "lessons/M04/L99_sources.html",
@@ -157,7 +165,7 @@
 },
 {
 "file": "lessons/M05/L98_answers.html",
-"title": "Module 5 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 5 \u2014 Answers"
 },
 {
 "file": "lessons/M05/L99_sources.html",
@@ -187,7 +195,7 @@
 },
 {
 "file": "lessons/M06/L98_answers.html",
-"title": "Module 6 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 6 \u2014 Answers"
 },
 {
 "file": "lessons/M06/L99_sources.html",
@@ -217,11 +225,11 @@
 },
 {
 "file": "lessons/M07/L04.html",
-"title": "Module 7, Lesson 4: Your turn: faded example"
+"title": "Module 7, Lesson 4: Worked example: a pending eligibility check"
 },
 {
 "file": "lessons/M07/L98_answers.html",
-"title": "Module 7 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 7 \u2014 Answers"
 },
 {
 "file": "lessons/M07/L99_sources.html",
@@ -243,19 +251,23 @@
 },
 {
 "file": "lessons/M08/L02.html",
-"title": "Module 8, Lesson 2: Map each field by meaning"
+"title": "Module 8, Lesson 2: Profile and clean the source"
 },
 {
 "file": "lessons/M08/L03.html",
-"title": "Module 8, Lesson 3: Know why clinical lists need clinical validation"
+"title": "Module 8, Lesson 3: Reconcile and validate with the owners"
 },
 {
 "file": "lessons/M08/L04.html",
-"title": "Module 8, Lesson 4: Worked example: Lakeshore conversion scope"
+"title": "Module 8, Lesson 4: Plan the cutover and a real fallback"
+},
+{
+"file": "lessons/M08/L05.html",
+"title": "Module 8, Lesson 5: Module 8 gate \u2014 conversion ready for production planning"
 },
 {
 "file": "lessons/M08/L98_answers.html",
-"title": "Module 8 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 8 \u2014 Answers"
 },
 {
 "file": "lessons/M08/L99_sources.html",
@@ -281,15 +293,19 @@
 },
 {
 "file": "lessons/M09/L03.html",
-"title": "Module 9, Lesson 3: Set up revenue-cycle transactions"
+"title": "Module 9, Lesson 3: Route interoperability rules to the people who decide"
 },
 {
 "file": "lessons/M09/L04.html",
-"title": "Module 9, Lesson 4: Hand monitoring to operations"
+"title": "Module 9, Lesson 4: Track clearinghouse and payer enrollment separately"
+},
+{
+"file": "lessons/M09/L05.html",
+"title": "Module 9, Lesson 5: Your turn: faded example"
 },
 {
 "file": "lessons/M09/L98_answers.html",
-"title": "Module 9 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 9 \u2014 Answers"
 },
 {
 "file": "lessons/M09/L99_sources.html",
@@ -311,19 +327,19 @@
 },
 {
 "file": "lessons/M10/L02.html",
-"title": "Module 10, Lesson 2: Collect decision-support source information"
+"title": "Module 10, Lesson 2: Review the vendor and the deployment"
 },
 {
 "file": "lessons/M10/L03.html",
-"title": "Module 10, Lesson 3: Apply the domain controls"
+"title": "Module 10, Lesson 3: Test rules-based automation carefully"
 },
 {
 "file": "lessons/M10/L04.html",
-"title": "Module 10, Lesson 4: Your turn: faded example"
+"title": "Module 10, Lesson 4: Worked example: ambient note pilot"
 },
 {
 "file": "lessons/M10/L98_answers.html",
-"title": "Module 10 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 10 \u2014 Answers"
 },
 {
 "file": "lessons/M10/L99_sources.html",
@@ -345,19 +361,23 @@
 },
 {
 "file": "lessons/M11/L02.html",
-"title": "Module 11, Lesson 2: Set recovery objectives and get them approved"
+"title": "Module 11, Lesson 2: Build audit-ready evidence"
 },
 {
 "file": "lessons/M11/L03.html",
-"title": "Module 11, Lesson 3: Build the command and communication plan"
+"title": "Module 11, Lesson 3: Check security readiness against a recognized framework"
 },
 {
 "file": "lessons/M11/L04.html",
-"title": "Module 11, Lesson 4: Worked example: clinic readiness"
+"title": "Module 11, Lesson 4: Rehearse cutover and the first operating day"
+},
+{
+"file": "lessons/M11/L05.html",
+"title": "Module 11, Lesson 5: Worked example: clinic readiness"
 },
 {
 "file": "lessons/M11/L98_answers.html",
-"title": "Module 11 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 11 \u2014 Answers"
 },
 {
 "file": "lessons/M11/L99_sources.html",
@@ -387,7 +407,7 @@
 },
 {
 "file": "lessons/M12/L98_answers.html",
-"title": "Module 12 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 12 \u2014 Answers"
 },
 {
 "file": "lessons/M12/L99_sources.html",
@@ -421,7 +441,7 @@
 },
 {
 "file": "lessons/M13/L98_answers.html",
-"title": "Module 13 \u2014 Answers: Check yourself, examples, knowledge check, spaced review"
+"title": "Module 13 \u2014 Answers"
 },
 {
 "file": "lessons/M13/L99_sources.html",

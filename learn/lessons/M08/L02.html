@@ -1,4 +1,59 @@
-<h1>Module 8, Lesson 2: Map each field by meaning</h1>
+<h1>Module 8, Lesson 2: Profile and clean the source</h1>
+<h2 id="profile-and-clean-the-source">Profile and clean the source</h2>
+<p>You cannot map data you have not measured. Profiling shows problems
+before they reach the new system, where they are harder to find and
+fix.</p>
+<p><strong>Profiling</strong> means measuring the source data before
+mapping. Useful checks include:</p>
+<ul>
+<li>record counts;</li>
+<li>missing required values;</li>
+<li>duplicates and likely duplicates;</li>
+<li>invalid dates or codes;</li>
+<li>mixed formats;</li>
+<li>documents or transactions with no matching record;</li>
+<li>odd characters, or values too long for the new field;</li>
+<li>inactive and closed groups;</li>
+<li>two records sharing one identifier;</li>
+<li>broken links between records;</li>
+<li>extreme or impossible values.</li>
+</ul>
+<p>Cleaning needs rules and owners. Do not "fix" source data by
+guessing. For each issue, record:</p>
+<ul>
+<li>the issue;</li>
+<li>the affected group of records;</li>
+<li>the proposed fix;</li>
+<li>who approves it;</li>
+<li>where the fix happens: in the source, during transformation, in the
+new system, or by hand;</li>
+<li>the evidence and result.</li>
+</ul>
+<p>Matching patients and merging duplicates can affect patient safety.
+Use the clinic's approved patient-identification process and qualified
+reviewers.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every correction to source data needs a
+written rule and a named approver.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> Profiling finds 300 phone numbers in
+three formats. The data owner approves one format, and the
+transformation converts them all.</li>
+<li><strong>Example B.</strong> Profiling finds 45 pairs of likely
+duplicate patients. The clinic's patient-identification reviewer checks
+each pair before any merge.</li>
+</ul>
+<p>The first fix was low risk and could follow a rule. The second could
+put the wrong history in a chart, so a qualified person reviewed each
+case.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List five things profiling measures.</li>
+<li>Why can't the implementer merge duplicate patients on her own?</li>
+<li>Profiling shows 600 birth dates of "01/01/1900." What do you record,
+and who decides the fix?</li>
+</ol>
 <h2 id="map-each-field-by-meaning">Map each field by meaning</h2>
 <p>Two fields with the same name can mean different things. A wrong
 mapping can put true data in a place where staff will read it the wrong
@@ -43,9 +98,12 @@ system.</li>
 where information came from.</p>
 <p>Every transformation should give the same result each time it runs.
 Give each version of the workbook a number.</p>
-<figure style="margin:16px 0"><img src="../../img/M08-03.png" alt="Figure 8.3. Notice that each mapping row records its rule, its approver, and its version number." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.3.</b> Notice that each mapping row records its rule, its approver, and its version number.</figcaption></figure>
-> **Rule:** Map by meaning, not by name; if no safe destination exists, the data owner decides.
+<figure><img src="../../img/M08-03.png" alt="Figure 8.3. Notice that each mapping row records its rule, its approver, and its version number." loading="lazy"><figcaption><b>Figure 8.3.</b> Notice that each mapping row records its rule, its approver, and its version number.</figcaption></figure>
 
+<blockquote>
+<p><strong>Rule:</strong> Map by meaning, not by name; if no safe
+destination exists, the data owner decides.</p>
+</blockquote>
 <ul>
 <li><strong>Example A.</strong> The old field "Provider" holds the last
 provider who saw the patient. The new field "Primary care provider"
@@ -104,6 +162,17 @@ clinic's privacy and legal review.</p>
 <p><strong>Rule:</strong> Every copy of converted data needs a protected
 place, a limited set of users, and a planned end.</p>
 </blockquote>
+<ul>
+<li><strong>Example A.</strong> Before a test load, the vendor backs up
+the Lakeshore staging area. You record where the backup is stored, which
+roles can open it, and when it will be destroyed.</li>
+<li><strong>Example B.</strong> At a dermatology clinic, an analyst
+copies patient photos to a laptop to check their labels. You move the
+work to the approved staging location and limit access by role. The
+laptop copy is destroyed under the plan.</li>
+</ul>
+<p>Each copy was easy to forget. Each one needed a protected place,
+limited users, and an end date.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Name five items a conversion security plan must cover.</li>
@@ -138,94 +207,28 @@ from live work. A well-run conversion usually includes:</p>
 </ul>
 <p>Do not change mappings during a run without version control. The team
 must know which rules gave which result.</p>
-<figure style="margin:16px 0"><img src="../../img/M08-04.png" alt="Figure 8.4. Notice that every conversion run uses one numbered mapping version and passes a gate before the next." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.4.</b> Notice that every conversion run uses one numbered mapping version and passes a gate before the next.</figcaption></figure>
-> **Rule:** Every test run uses one numbered mapping version, so each result traces to its rules.
+<figure><img src="../../img/M08-04.png" alt="Figure 8.4. Notice that every conversion run uses one numbered mapping version and passes a gate before the next." loading="lazy"><figcaption><b>Figure 8.4.</b> Notice that every conversion run uses one numbered mapping version and passes a gate before the next.</figcaption></figure>
 
+<blockquote>
+<p><strong>Rule:</strong> Every test run uses one numbered mapping
+version, so each result traces to its rules.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> Cedar Point's second test run uses
+mapping version 3. Allergy reactions are missing after the load. Because
+the version is recorded, the team finds the rule in version 3 that
+dropped them.</li>
+<li><strong>Example B.</strong> At a family medicine clinic, two
+analysts used different copies of the workbook in one run. No one can
+tell which rule caused 200 rejected appointments. The team repeats the
+run under one numbered version.</li>
+</ul>
+<p>A result is useful only when the team knows which rules produced
+it.</p>
 <p><strong>Check yourself</strong></p>
 <ol type="1">
 <li>Put the five conversion runs in order.</li>
 <li>Why must the mapping version stay fixed during a run?</li>
 <li>Halfway through a rehearsal, the vendor wants to fix a mapping row
 while the run is still going. What do you do?</li>
-</ol>
-<h2 id="reconcile-and-validate-with-the-owners">Reconcile and validate
-with the owners</h2>
-<p>A clean load report shows that records moved. It does not show that
-they are right, linked, or usable. Owners must check the data they
-understand.</p>
-<p><strong>Validation</strong> asks whether the converted information is
-complete, accurate, correctly linked, usable, visible to the right
-roles, and fit for its approved purpose. <strong>Reconciliation</strong>
-means comparing numbers from the source and destination and explaining
-every difference.</p>
-<p>Use several methods together:</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>What you do</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Count reconciliation</td>
-<td>Compare source, extracted, loaded, rejected, skipped, and duplicate
-counts for each group. Explain every difference.</td>
-</tr>
-<tr>
-<td>Control totals</td>
-<td>Compare totals that matter: balances, payments, open items,
-appointments, documents. A matching total does not prove each record is
-right. A total that does not match shows a problem.</td>
-</tr>
-<tr>
-<td>Field and relationship checks</td>
-<td>Check values, formats, translations, cut-off text, IDs, documents,
-and links. Include normal, incomplete, edge, duplicate, and high-risk
-examples.</td>
-</tr>
-<tr>
-<td>Business scenario checks</td>
-<td>Use converted records in approved workflows. Can staff find the
-right record, see where it came from, continue an open task, find a
-document, post a payment, and take the next step?</td>
-</tr>
-<tr>
-<td>Access and audit checks</td>
-<td>Confirm the right roles can see what they need and are blocked from
-restricted records. Check source, author, date, approval, and audit
-details.</td>
-</tr>
-<tr>
-<td>Client validation</td>
-<td>Named business owners validate the information they understand.
-Technical success is not client acceptance.</td>
-</tr>
-</tbody>
-</table>
-<figure style="margin:16px 0"><img src="../../img/M08-05.png" alt="Figure 8.5. Notice that every drop from source to loaded must be explained by a reason." style="width:100%;max-width:1000px"><figcaption><b>Figure 8.5.</b> Notice that every drop from source to loaded must be explained by a reason.</figcaption></figure>
-Set the sampling or full-review rule by risk and clinic policy. Some critical groups may need a full check. Others may use a written sample. The data and domain owners approve the approach. For clinical lists, see the next two sections.
-
-<blockquote>
-<p><strong>Rule:</strong> Explain every count difference, then let the
-named owners validate what they understand.</p>
-</blockquote>
-<ul>
-<li><strong>Example A.</strong> A run extracts 21,480 patients. Loaded,
-rejected, and skipped add up to 21,440. You open a defect for the
-missing 40 before the validation meeting.</li>
-<li><strong>Example B.</strong> Every appointment loads. When the
-scheduler opens tomorrow's list, three Lakeshore visits show at Cedar
-Point main. The counts matched, but the business scenario check
-failed.</li>
-</ul>
-<p>The counts caught one problem. Only an owner using the data caught
-the other.</p>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>Name four validation methods besides count reconciliation.</li>
-<li>Why doesn't a matching control total prove every record is
-correct?</li>
-<li>The vendor's report says "100% loaded" and client validation is not
-scheduled. What do you recommend?</li>
 </ol>
