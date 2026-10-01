@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+
+    <!-- Stage Bands (Upper Background Labels) -->
+    <!-- Band 1: Stops 1 to 3 -->
+    <rect x="40" y="180" width="422.5" height="200" rx="16" fill="#1F3A5F"/>
+    <text x="251.25" y="297" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="48" font-weight="800" fill="#FFFFFF" text-anchor="middle">Start the project</text>
+
+    <!-- Band 2: Stops 4 to 7 -->
+    <rect x="462.5" y="180" width="564.0" height="200" rx="0" fill="#2A9D8F"/>
+    <text x="744.5" y="297" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="48" font-weight="800" fill="#FFFFFF" text-anchor="middle">Design and train</text>
+
+    <!-- Band 3: Stops 8 to 10 -->
+    <rect x="1026.5" y="180" width="423.0" height="200" rx="0" fill="#1F3A5F"/>
+    <text x="1238.0" y="242" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="48" font-weight="800" fill="#FFFFFF" text-anchor="middle"><tspan x="1238.0" dy="0">Build the</tspan><tspan x="1238.0" dy="1.15em">connected</tspan><tspan x="1238.0" dy="1.15em">system</tspan></text>
+
+    <!-- Band 4: Stops 11 to 13 -->
+    <rect x="1449.5" y="180" width="430.5" height="200" rx="16" fill="#2A9D8F"/>
+    <text x="1664.75" y="270" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="48" font-weight="800" fill="#FFFFFF" text-anchor="middle"><tspan x="1664.75" dy="0">Go live and</tspan><tspan x="1664.75" dy="1.15em">keep improving</tspan></text>
+
+    <!-- Road: 4 wide bands alternating navy and teal -->
+    <rect x="40" y="470" width="422.5" height="90" fill="#1F3A5F"/>
+    <rect x="462.5" y="470" width="564.0" height="90" fill="#2A9D8F"/>
+    <rect x="1026.5" y="470" width="423.0" height="90" fill="#1F3A5F"/>
+    <rect x="1449.5" y="470" width="430.5" height="90" fill="#2A9D8F"/>
+
+    <!-- Center road markings -->
+    <line x1="50" y1="515" x2="1870" y2="515" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="25 15"/>
+    
+        <!-- Orange Gate -->
+        <g transform="translate(462.5, 430)">
+          <!-- Posts -->
+          <rect x="-14" y="0" width="10" height="170" rx="4" fill="#F4A261"/>
+          <rect x="4" y="0" width="10" height="170" rx="4" fill="#F4A261"/>
+          <!-- Crossbar -->
+          <rect x="-24" y="25" width="48" height="20" rx="4" fill="#F4A261"/>
+          <!-- Top bar -->
+          <rect x="-20" y="5" width="40" height="12" rx="3" fill="#F4A261"/>
+        </g>
+        
+        <!-- Orange Gate -->
+        <g transform="translate(1026.5, 430)">
+          <!-- Posts -->
+          <rect x="-14" y="0" width="10" height="170" rx="4" fill="#F4A261"/>
+          <rect x="4" y="0" width="10" height="170" rx="4" fill="#F4A261"/>
+          <!-- Crossbar -->
+          <rect x="-24" y="25" width="48" height="20" rx="4" fill="#F4A261"/>
+          <!-- Top bar -->
+          <rect x="-20" y="5" width="40" height="12" rx="3" fill="#F4A261"/>
+        </g>
+        
+        <!-- Orange Gate -->
+        <g transform="translate(1449.5, 430)">
+          <!-- Posts -->
+          <rect x="-14" y="0" width="10" height="170" rx="4" fill="#F4A261"/>
+          <rect x="4" y="0" width="10" height="170" rx="4" fill="#F4A261"/>
+          <!-- Crossbar -->
+          <rect x="-24" y="25" width="48" height="20" rx="4" fill="#F4A261"/>
+          <!-- Top bar -->
+          <rect x="-20" y="5" width="40" height="12" rx="3" fill="#F4A261"/>
+        </g>
+        
+        <!-- Stop 1 -->
+        <circle cx="110" cy="515" r="28" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="7"/>
+        <line x1="110" y1="550" x2="110" y2="610" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="110" y="630" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="110" dy="0">1 Handoff</tspan><tspan x="110" dy="38">and scope</tspan>
+        </text>
+        
+        <!-- Stop 2 -->
+        <circle cx="251" cy="515" r="28" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="7"/>
+        <line x1="251" y1="550" x2="251" y2="740" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="251" y="760" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="251" dy="0">2 Planning</tspan>
+        </text>
+        
+        <!-- Stop 3 -->
+        <circle cx="392" cy="515" r="28" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="7"/>
+        <line x1="392" y1="550" x2="392" y2="610" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="392" y="630" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="392" dy="0">3 Kickoff</tspan>
+        </text>
+        
+        <!-- Stop 4 -->
+        <circle cx="533" cy="515" r="28" fill="#FFFFFF" stroke="#2A9D8F" stroke-width="7"/>
+        <line x1="533" y1="550" x2="533" y2="740" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="533" y="760" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="533" dy="0">4 Workflow</tspan><tspan x="533" dy="38">discovery</tspan>
+        </text>
+        
+        <!-- Stop 5 -->
+        <circle cx="674" cy="515" r="28" fill="#FFFFFF" stroke="#2A9D8F" stroke-width="7"/>
+        <line x1="674" y1="550" x2="674" y2="610" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="674" y="630" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="674" dy="0">5 General</tspan><tspan x="674" dy="38">training</tspan>
+        </text>
+        
+        <!-- Stop 6 -->
+        <circle cx="815" cy="515" r="28" fill="#FFFFFF" stroke="#2A9D8F" stroke-width="7"/>
+        <line x1="815" y1="550" x2="815" y2="740" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="815" y="760" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="815" dy="0">6 Specialized</tspan><tspan x="815" dy="38">training</tspan>
+        </text>
+        
+        <!-- Stop 7 -->
+        <circle cx="956" cy="515" r="28" fill="#FFFFFF" stroke="#2A9D8F" stroke-width="7"/>
+        <line x1="956" y1="550" x2="956" y2="610" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="956" y="630" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="956" dy="0">7 Quality</tspan><tspan x="956" dy="38">control</tspan>
+        </text>
+        
+        <!-- Stop 8 -->
+        <circle cx="1097" cy="515" r="28" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="7"/>
+        <line x1="1097" y1="550" x2="1097" y2="740" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="1097" y="760" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="1097" dy="0">8 Data</tspan><tspan x="1097" dy="38">conversion</tspan>
+        </text>
+        
+        <!-- Stop 9 -->
+        <circle cx="1238" cy="515" r="28" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="7"/>
+        <line x1="1238" y1="550" x2="1238" y2="610" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="1238" y="630" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="1238" dy="0">9 Integrations</tspan><tspan x="1238" dy="38">and configuration</tspan>
+        </text>
+        
+        <!-- Stop 10 -->
+        <circle cx="1379" cy="515" r="28" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="7"/>
+        <line x1="1379" y1="550" x2="1379" y2="740" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="1379" y="760" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="1379" dy="0">10 Automation</tspan><tspan x="1379" dy="38">and AI</tspan>
+        </text>
+        
+        <!-- Stop 11 -->
+        <circle cx="1520" cy="515" r="28" fill="#FFFFFF" stroke="#2A9D8F" stroke-width="7"/>
+        <line x1="1520" y1="550" x2="1520" y2="610" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="1520" y="630" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="1520" dy="0">11 Go-live</tspan><tspan x="1520" dy="38">readiness</tspan>
+        </text>
+        
+        <!-- Stop 12 -->
+        <circle cx="1661" cy="515" r="28" fill="#FFFFFF" stroke="#2A9D8F" stroke-width="7"/>
+        <line x1="1661" y1="550" x2="1661" y2="740" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="1661" y="760" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="1661" dy="0">12 Go-live</tspan><tspan x="1661" dy="38">and stabilization</tspan>
+        </text>
+        
+        <!-- Stop 13 -->
+        <circle cx="1802" cy="515" r="28" fill="#FFFFFF" stroke="#2A9D8F" stroke-width="7"/>
+        <line x1="1802" y1="550" x2="1802" y2="610" stroke="#1F3A5F" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <text x="1802" y="630" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#1F3A5F" text-anchor="middle">
+          <tspan x="1802" dy="0">13 Post</tspan><tspan x="1802" dy="38">go-live</tspan>
+        </text>
+        
+</svg>
