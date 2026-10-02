@@ -138,7 +138,7 @@
 "key": "A",
 "feedback": {
 "A": "Correct: one person may fill several roles on a small project, but you record the role each time, because a name alone is not a control (\"Turn each purchased item into a named resource\").",
-"B": "Not best. Tempting because separating doer and approver is a real rule (right rule, wrong facts), but nothing shows self-approval yet; recording each role is what would reveal it (\"Turn each purchased item into a named resource\").",
+"B": "Not best. Tempting because a separate approver is a real safeguard for high-risk work (right rule, wrong facts), but one person may do and approve work on a small project, and nothing here shows a high-risk item; recording each role is what would reveal it (\"Turn each purchased item into a named resource\").",
 "C": "Not best. Tempting because roles do need recording (half right), but the map needs a named person and a role; removing the name loses the person who acts (\"Turn each purchased item into a named resource\").",
 "D": "Not best. Tempting because workload is a real concern (too far), but it adds an approval step for a drafting fix you can make yourself (\"Turn each purchased item into a named resource\")."
 }
