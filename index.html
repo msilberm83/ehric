@@ -16,7 +16,8 @@ header.top{background:var(--navy);color:#fff}
 header.top .wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;gap:12px;flex-wrap:wrap}
 header.top b{letter-spacing:.3px}
 header.top nav a{color:#fff;text-decoration:none;margin-left:18px;font-size:15px}
-header.top nav a.signin{border:2px solid var(--orange);border-radius:8px;padding:5px 12px;font-weight:700}
+header.top nav a.signin{border:2px solid var(--orange);border-radius:8px;padding:5px 12px;font-weight:700;white-space:nowrap}
+@media (max-width:600px){header.top nav a:not(.signin){display:none}header.top nav a.signin{margin-left:0}}
 .hero{background:var(--navy);color:#fff;padding:56px 0 64px}
 .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 14px}
 .hero p{font-size:19px;max-width:720px;color:#dce6f0;margin:0 0 26px}
