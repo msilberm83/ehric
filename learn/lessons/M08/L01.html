@@ -139,7 +139,7 @@ useful. A real conversion needs more detail.</p>
 </thead>
 <tbody>
 <tr>
-<td>Structured data</td>
+<td>Structured (discrete) data</td>
 <td>Values in defined fields: names, IDs, dates, codes, balances,
 appointments, providers</td>
 <td>How each field maps. Matching names do not mean matching
@@ -219,6 +219,27 @@ What question do you raise, and with whom?</li>
 expectations and define scope</h2>
 <p>Clients often assume "everything will move." If you do not correct
 that early, every gap found later looks like a broken promise.</p>
+<p>The most important fact to share: <strong>only discrete data converts
+cleanly.</strong> <strong>Discrete data</strong> is information stored
+in its own defined field, in a set format or code. Examples are a birth
+date, an appointment time, a coded allergy, and a lab result with its
+units. Everything else can move only as text or as a document. That
+includes typed notes, comments, and scanned pages. Staff can still read
+it, but the new system cannot search it, graph it, or use it to fire an
+alert. Even discrete data comes over correctly only after its fields are
+mapped and tested.</p>
+<blockquote>
+<p><strong>Rule:</strong> Before the conversion starts, show the client
+which of their data is discrete and which is not, so that their
+expectations match what can really happen.</p>
+</blockquote>
+<ul>
+<li><strong>Example.</strong> A provider expects old blood pressure
+readings to appear on the new vitals graph. The readings were typed into
+visit notes, not stored in vitals fields. They will arrive inside the
+old notes, readable but not graphed. You tell the provider at the scope
+meeting, not after go-live.</li>
+</ul>
 <p>Tell the client early, in words like these:</p>
 <blockquote>
 <p>"Not every item will move as the same kind of searchable data. Fields
@@ -271,4 +292,6 @@ owner approved.</p>
 <li>Why does "active patients" need a written definition?</li>
 <li>The practice manager says, "Just bring everything over." What do you
 say, and what do you ask for?</li>
+<li>Why will an allergy typed as a note not work the same way after
+conversion as a coded allergy?</li>
 </ol>
