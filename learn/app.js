@@ -170,8 +170,8 @@ function signInView(msg) {
     <p>Enter your email and we'll send you a sign-in link. No password needed. Open the link on this same device and browser.</p>
     ${msg ? `<p class="fb" role="status">${msg}</p>` : ""}
     <form id="si" class="q" style="max-width:520px">
-      <label for="si-name">Full name (first time only)</label><input id="si-name" autocomplete="name" style="width:100%;padding:10px;margin:4px 0 12px">
       <label for="si-email">Email</label><input id="si-email" type="email" required autocomplete="email" style="width:100%;padding:10px;margin:4px 0 14px">
+      <label for="si-name">Full name <span class="muted">(new learners only; leave blank if you've signed in before)</span></label><input id="si-name" autocomplete="name" style="width:100%;padding:10px;margin:4px 0 14px">
       <button class="btn" type="submit">Email me a sign-in link</button>
     </form>`;
   $("#si").addEventListener("submit", async (e) => {
