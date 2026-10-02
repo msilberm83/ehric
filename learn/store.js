@@ -9,18 +9,20 @@ const Store = (() => {
   const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
     auth: { flowType: "pkce", detectSessionInUrl: true, persistSession: true },
   });
-  let user = null;
+  let user = null, admin = false;
   let cache = { lessons: {}, quizzes: {} };
 
   async function load() {
     const { data } = await sb.auth.getSession();
     user = data.session ? data.session.user : null;
-    cache = { lessons: {}, quizzes: {} };
+    cache = { lessons: {}, quizzes: {} }; admin = false;
     if (!user) return;
-    const [les, qz] = await Promise.all([
+    const [les, qz, me] = await Promise.all([
       sb.from("lesson_progress").select("lesson_file, read_at").eq("user_id", user.id),
       sb.from("quiz_attempts").select("module, score, total").eq("user_id", user.id),
+      sb.from("profiles").select("is_admin").eq("id", user.id).maybeSingle(),
     ]);
+    admin = !!(me.data && me.data.is_admin);
     (les.data || []).forEach((r) => { cache.lessons[r.lesson_file] = r.read_at; });
     (qz.data || []).forEach((r) => {
       const q = cache.quizzes[r.module] || { best: 0, attempts: 0 };
@@ -31,7 +33,26 @@ const Store = (() => {
   return {
     load,
     user: () => user,
+    isAdmin: () => admin,
     get: () => cache,
+    // Admin only: Row Level Security returns every learner's rows to admins, and only your own to anyone else.
+    async adminData() {
+      const all = async (table, cols) => {
+        const rows = [];
+        for (let from = 0; ; from += 1000) {
+          const { data, error } = await sb.from(table).select(cols).range(from, from + 999);
+          if (error) throw error;
+          rows.push(...data);
+          if (data.length < 1000) return rows;
+        }
+      };
+      const [profiles, lessons, quizzes] = await Promise.all([
+        all("profiles", "id, full_name, email, created_at, is_admin"),
+        all("lesson_progress", "user_id, module, read_at"),
+        all("quiz_attempts", "user_id, module, score, total, taken_at"),
+      ]);
+      return { profiles, lessons, quizzes };
+    },
     async signIn(email, fullName) {
       return sb.auth.signInWithOtp({
         email,

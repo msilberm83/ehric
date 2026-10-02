@@ -110,6 +110,61 @@ async function quizView(n) {
   show();
 }
 
+// Admin: every learner's progress. Only admins get other learners' rows from the database.
+const day = (t) => (t ? new Date(t).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" }) : "—");
+async function adminView() {
+  if (!Store.isAdmin()) return dashboard();
+  main.innerHTML = `<h1>Learners</h1><p class="muted">Loading…</p>`;
+  let d;
+  try { d = await Store.adminData(); } catch (e) {
+    main.innerHTML = `<h1>Learners</h1><p class="fb">Could not load learner records: ${esc(e.message || String(e))}.
+      If this mentions the <b>email</b> column, run <b>supabase/02_admin.sql</b> in the Supabase SQL Editor once.</p>`;
+    return focusMain("Learners");
+  }
+  const nLessons = COURSE.reduce((s, m) => s + m.lessons.length, 0);
+  const rows = d.profiles.map((p) => {
+    const les = d.lessons.filter((r) => r.user_id === p.id), qz = d.quizzes.filter((r) => r.user_id === p.id);
+    const mods = COURSE.map((m) => {
+      const a = qz.filter((r) => r.module === m.n);
+      const best = a.length ? Math.max(...a.map((r) => r.score / r.total)) : null;
+      return { n: m.n, best, tries: a.length, read: les.filter((r) => r.module === m.n).length, of: m.lessons.length };
+    });
+    const passedN = mods.filter((m) => m.best !== null && m.best >= PASS).length;
+    const current = (mods.find((m) => !(m.best >= PASS)) || {}).n;
+    const last = [...les.map((r) => r.read_at), ...qz.map((r) => r.taken_at)].sort().pop();
+    return { p, mods, passedN, read: les.length, current, last };
+  }).sort((a, b) => (b.last || "").localeCompare(a.last || ""));
+  const learners = rows.filter((r) => !r.p.is_admin);
+  const active = learners.filter((r) => r.last && Date.now() - new Date(r.last) < 7 * 864e5).length;
+
+  const draw = (q) => {
+    const show = rows.filter((r) => !q || `${r.p.full_name || ""} ${r.p.email || ""}`.toLowerCase().includes(q));
+    $("#lr").innerHTML = show.map((r) => `<li class="q" style="margin:10px 0">
+      <details><summary style="cursor:pointer"><b>${esc(r.p.full_name || "(no name)")}</b> · ${esc(r.p.email || "")}${r.p.is_admin ? ` <span class="tag">admin</span>` : ""}<br>
+        <span class="muted">Joined ${day(r.p.created_at)} · Last active ${day(r.last)} · Lessons read ${r.read}/${nLessons} · Modules passed ${r.passedN}/13${r.passedN < 13 && r.current ? ` · Working on Module ${r.current}` : r.passedN === 13 ? " · All modules passed" : ""}</span></summary>
+        <table><thead><tr><th>Module</th><th>Lessons read</th><th>Best quiz</th><th>Tries</th></tr></thead><tbody>${r.mods.map((m) =>
+          `<tr><td>${m.n}</td><td>${m.read}/${m.of}</td><td>${m.best === null ? "—" : `${Math.round(m.best * 100)}%${m.best >= PASS ? " ✓" : ""}`}</td><td>${m.tries}</td></tr>`).join("")}</tbody></table>
+      </details></li>`).join("") || `<li class="muted">No matches.</li>`;
+  };
+  main.innerHTML = `<p><a href="#/">← My course</a></p><h1>Learners</h1>
+    <p class="muted">${learners.length} ${learners.length === 1 ? "learner" : "learners"} · ${active} active in the last 7 days · ${learners.filter((r) => r.passedN === 13).length} passed all 13 modules</p>
+    <div class="pager" style="margin-top:10px"><input id="lf" type="search" placeholder="Search name or email" aria-label="Search learners" style="flex:1;min-width:200px;padding:10px">
+      <button class="btn sec" id="csv">Download spreadsheet (CSV)</button></div>
+    <ol id="lr" style="list-style:none;padding:0"></ol>`;
+  draw("");
+  $("#lf").addEventListener("input", (e) => draw(e.target.value.trim().toLowerCase()));
+  $("#csv").addEventListener("click", () => {
+    const cell = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+    const head = ["Name", "Email", "Joined", "Last active", "Lessons read", "Modules passed", ...COURSE.map((m) => `M${m.n} best %`)];
+    const lines = learners.map((r) => [r.p.full_name, r.p.email, day(r.p.created_at), day(r.last), r.read, r.passedN,
+      ...r.mods.map((m) => (m.best === null ? "" : Math.round(m.best * 100)))].map(cell).join(","));
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([[head.map(cell).join(","), ...lines].join("\n")], { type: "text/csv" }));
+    a.download = `ehric-learners-${new Date().toISOString().slice(0, 10)}.csv`; a.click();
+  });
+  focusMain("Learners");
+}
+
 function signInView(msg) {
   main.innerHTML = `<h1>Sign in to your course</h1>
     <p>Enter your email and we'll send you a sign-in link. No password needed. Open the link on this same device and browser.</p>
@@ -131,7 +186,7 @@ function signInView(msg) {
 
 function showWho() {
   const u = Store.user(); const w = $("#who");
-  w.innerHTML = u ? `${esc(u.email)} · <a href="#/signout" style="color:#fff">Sign out</a>` : "";
+  w.innerHTML = u ? `${Store.isAdmin() ? `<a href="#/admin" style="color:#fff">Learners</a> · ` : ""}${esc(u.email)} · <a href="#/signout" style="color:#fff">Sign out</a>` : "";
 }
 
 async function route() {
@@ -139,6 +194,7 @@ async function route() {
   if (h[0] === "signout") { await Store.signOut(); showWho(); location.hash = "#/"; return; }
   showWho();
   if (!Store.user()) return signInView();
+  if (h[0] === "admin") return adminView();
   if (h[0] === "m" && h[2] === "l") return lessonView(+h[1], +h[3]);
   if (h[0] === "m" && h[2] === "quiz") return quizView(+h[1]);
   if (h[0] === "m") return moduleView(+h[1]);
