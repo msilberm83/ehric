@@ -1,4 +1,89 @@
-<h1>Module 8, Lesson 5: Module 8 gate — conversion ready for production planning</h1>
+<h1>Module 8, Lesson 5: Field assignment</h1>
+<h2 id="field-assignment">Field assignment</h2>
+<p>Build a conversion plan for the Cedar Point Internal Medicine
+practice case (fictional; two locations, Cedar Point main and
+Lakeshore). Use a simulated source with synthetic data only. Do not use
+a real client, employer, or patient.</p>
+<ol type="1">
+<li>Inventory sources, owners, formats, populations, risks, access, and
+retention needs.</li>
+<li>Classify structured data, documents, manual information, derived
+values, relationships, audit history, and exclusions.</li>
+<li>Define the approved treatment for each category.</li>
+<li>Profile a sample or simulated source.</li>
+<li>Build at least fifteen mapping rows with transformation and
+validation rules.</li>
+<li>Write the secure-transfer and staging plan.</li>
+<li>Plan at least two test conversions before production.</li>
+<li>Define count, total, field, relationship, scenario, access, and
+client validation.</li>
+<li>Draft a clinical validation rule for medications, allergies,
+problems, and immunizations for the clinical authority to approve, with
+the flag report, pre-visit worklist, and first-visit reconciliation
+tracking.</li>
+<li>Write production cutover, delta, fallback, communication, archive,
+and retirement steps.</li>
+<li>Role-play the required data, clinical, privacy and security, and
+release approvals.</li>
+</ol>
+<p><strong>Self-check rubric.</strong> Your work is ready when:</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />every source and category has an
+owner and an approved treatment;</label></li>
+<li><label><input type="checkbox" />every mapping row has a definition,
+rule, version, and approver, and no row maps by name alone;</label></li>
+<li><label><input type="checkbox" />your test-run report explains every
+count difference;</label></li>
+<li><label><input type="checkbox" />your clinical validation rule names
+the clinical authority and covers flags, pre-visit review, and
+first-visit reconciliation;</label></li>
+<li><label><input type="checkbox" />your fallback says what can be
+reversed, how long it takes, what is lost, and who decides;</label></li>
+<li><label><input type="checkbox" />no source is retired without
+approved access to required history.</label></li>
+</ul>
+<p><strong>Capstone link:</strong> capstone Artifact C (the go/no-go
+decision record) draws on readiness evidence that includes conversion
+results. Its instructions are in the capstone candidate packet. Build it
+from the packet's facts, not from this chapter's examples.</p>
+<h2 id="knowledge-check">Knowledge check</h2>
+<ol type="1">
+<li>Why are discrete, manual, and scanned categories useful but
+insufficient by themselves?</li>
+<li>What is the risk of mapping fields by name alone?</li>
+<li>What should happen when there is no safe destination field?</li>
+<li>Why must converted relationships be validated as well as
+values?</li>
+<li>What is the difference between technical reconciliation and client
+validation?</li>
+<li>What must be defined before the team can rely on a fallback or
+rollback plan?</li>
+<li>Why can a converted allergy list pass count reconciliation and still
+be unsafe?</li>
+<li>Who approves the clinical validation rule, and what does the
+implementer do and not do?</li>
+</ol>
+<h2 id="spaced-review">Spaced review</h2>
+<p>These questions come from earlier modules. Answer them without
+looking back.</p>
+<ol type="1">
+<li><em>(Module 7)</em> The vendor fixes a mapping row in version 3.3 so
+stopped medications no longer convert as active. The clinical sample now
+looks right. What else must you run before the defect closes, and
+why?</li>
+<li><em>(Module 7)</em> Mapping version 3.2 passed all checks in the
+test environment. The production load will use version 3.3. Can you
+reuse the 3.2 results? Explain.</li>
+<li><em>(Module 5)</em> In a training class on converted data, a learner
+opens a patient's scanned history and finds another patient's documents.
+How do you sort this item, and where does it go?</li>
+<li><em>(Module 4)</em> The old system holds psychotherapy notes for
+Lakeshore's social worker. Who decides who may see them in the new
+system, and what is your job?</li>
+<li><em>(Module 2)</em> The old system's vendor will provide the final
+export but has not agreed to a date. How do you record this on the
+roadmap?</li>
+</ol>
 <h2 id="module-8-gate--conversion-ready-for-production-planning">Module
 8 gate — conversion ready for production planning</h2>
 <p><strong>Bring:</strong> source inventory, mapping workbook, test-run

@@ -1,4 +1,87 @@
-<h1>Module 8, Lesson 2: Profile and clean the source</h1>
+<h1>Module 8, Lesson 2: Set honest expectations and define scope</h1>
+<h2 id="set-honest-expectations-and-define-scope">Set honest
+expectations and define scope</h2>
+<p>Clients often assume "everything will move." If you do not correct
+that early, every gap found later looks like a broken promise.</p>
+<p>The most important fact to share: <strong>only discrete data converts
+cleanly.</strong> <strong>Discrete data</strong> is information stored
+in its own defined field, in a set format or code. Examples are a birth
+date, an appointment time, a coded allergy, and a lab result with its
+units. Everything else comes over as a copy: a text or document version
+of the old record. That includes typed notes, comments, and scanned
+pages. Staff can read a copy, but the new system cannot search it, graph
+it, or use it to fire an alert. Staff refer back to these copies as
+needed until they are phased out, usually as patients are seen and their
+current information is entered as new discrete data. Even discrete data
+comes over correctly only after its fields are mapped and tested.</p>
+<blockquote>
+<p><strong>Rule:</strong> Set this expectation at the kickoff call, then
+confirm it at the scope meeting: discrete data converts; everything else
+arrives as a copy for reference until it is phased out.</p>
+</blockquote>
+<ul>
+<li><strong>Example.</strong> A provider expects old blood pressure
+readings to appear on the new vitals graph. The readings were typed into
+visit notes, not stored in vitals fields. They will arrive inside copies
+of the old notes, readable but not graphed. Because you raised this at
+kickoff, the provider is not surprised; at the scope meeting you confirm
+it and plan to enter current readings as new vitals.</li>
+</ul>
+<p>Tell the client early, in words like these:</p>
+<blockquote>
+<p>"Not every item will move as the same kind of searchable data. Fields
+that look alike may not mean the same thing. We will convert the
+approved information through tested mappings. We will keep required
+history in the new system or in an approved archive. We will write down
+what changes and what stays outside the new system."</p>
+</blockquote>
+<p>This is more accurate than promising that everything will move. It is
+also better than assuming all history should stay in the old system. The
+right choice depends on need, risk, retention, access, cost, and
+approval.</p>
+<h3 id="define-the-scope">Define the scope</h3>
+<p>For each category, choose a treatment:</p>
+<ul>
+<li>convert to a structured field;</li>
+<li>convert as a document or attachment;</li>
+<li>summarize, or have staff enter an approved subset by hand;</li>
+<li>keep in a searchable, approved archive;</li>
+<li>keep the source open read-only for a set time;</li>
+<li>leave out under an approved disposal rule;</li>
+<li>move it in a later phase.</li>
+</ul>
+<p>Record date ranges, patient groups, status filters, locations,
+departments, and special groups. "Active patients" needs a definition.
+"Recent records" needs a date rule. The data owner approves the
+population.</p>
+<p>Plan for work in progress. Upcoming appointments, open orders,
+unreviewed results, active claims, unpaid balances, open tasks, pending
+signatures, and open messages may need different treatment from closed
+history.</p>
+<blockquote>
+<p><strong>Rule:</strong> Every category gets an approved treatment, and
+every population gets a written definition.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> Cedar Point's data owner says, "Move the
+active patients." You ask for a written rule. She approves "patients
+with a Lakeshore visit in the last 3 years."</li>
+<li><strong>Example B.</strong> A pediatric clinic has 10 years of old
+visit notes. The data owner approves a treatment: the last 2 years
+convert as documents. Older notes stay in a searchable, approved
+archive.</li>
+</ul>
+<p>In both cases, a general wish became a written choice that the data
+owner approved.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>List five possible treatments for a category of information.</li>
+<li>Why does "active patients" need a written definition?</li>
+<li>The practice manager says, "Just bring everything over." What do you
+say, and what do you ask for?</li>
+<li>Why will an allergy typed as a note not work the same way after
+conversion as a coded allergy?</li>
+</ol>
 <h2 id="profile-and-clean-the-source">Profile and clean the source</h2>
 <p>You cannot map data you have not measured. Profiling shows problems
 before they reach the new system, where they are harder to find and
@@ -179,56 +262,4 @@ limited users, and an end date.</p>
 <li>Why do error files need the same protection as the main data?</li>
 <li>A vendor wants to email a test extract to a subcontractor. What do
 you check, and who approves it?</li>
-</ol>
-<h2 id="run-repeated-test-conversions">Run repeated test
-conversions</h2>
-<p>The first load almost never works. Repeated test runs let the team
-find and fix mapping problems before the real go-live load.</p>
-<p>Use a non-production environment, or an approved test area kept apart
-from live work. A well-run conversion usually includes:</p>
-<ol type="1">
-<li>a small technical sample;</li>
-<li>a representative test conversion;</li>
-<li>a corrected full-volume rehearsal;</li>
-<li>the final production conversion;</li>
-<li>checks after the load, and the move to live work.</li>
-</ol>
-<p>Each run uses a controlled mapping version and produces:</p>
-<ul>
-<li>source counts and checks;</li>
-<li>extracted counts;</li>
-<li>loaded, rejected, skipped, and transformed counts;</li>
-<li>reasons for errors;</li>
-<li>relationship checks;</li>
-<li>data-owner validation;</li>
-<li>defects and corrections;</li>
-<li>run time and performance;</li>
-<li>the evidence needed for the next gate.</li>
-</ul>
-<p>Do not change mappings during a run without version control. The team
-must know which rules gave which result.</p>
-<figure><img src="img/M08-04.png" alt="Figure 8.4. Notice that every conversion run uses one numbered mapping version and passes a gate before the next." loading="lazy"><figcaption><b>Figure 8.4.</b> Notice that every conversion run uses one numbered mapping version and passes a gate before the next.</figcaption></figure>
-
-<blockquote>
-<p><strong>Rule:</strong> Every test run uses one numbered mapping
-version, so each result traces to its rules.</p>
-</blockquote>
-<ul>
-<li><strong>Example A.</strong> Cedar Point's second test run uses
-mapping version 3. Allergy reactions are missing after the load. Because
-the version is recorded, the team finds the rule in version 3 that
-dropped them.</li>
-<li><strong>Example B.</strong> At a family medicine clinic, two
-analysts used different copies of the workbook in one run. No one can
-tell which rule caused 200 rejected appointments. The team repeats the
-run under one numbered version.</li>
-</ul>
-<p>A result is useful only when the team knows which rules produced
-it.</p>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>Put the five conversion runs in order.</li>
-<li>Why must the mapping version stay fixed during a run?</li>
-<li>Halfway through a rehearsal, the vendor wants to fix a mapping row
-while the run is still going. What do you do?</li>
 </ol>

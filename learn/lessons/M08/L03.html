@@ -1,4 +1,56 @@
-<h1>Module 8, Lesson 3: Reconcile and validate with the owners</h1>
+<h1>Module 8, Lesson 3: Run repeated test conversions</h1>
+<h2 id="run-repeated-test-conversions">Run repeated test
+conversions</h2>
+<p>The first load almost never works. Repeated test runs let the team
+find and fix mapping problems before the real go-live load.</p>
+<p>Use a non-production environment, or an approved test area kept apart
+from live work. A well-run conversion usually includes:</p>
+<ol type="1">
+<li>a small technical sample;</li>
+<li>a representative test conversion;</li>
+<li>a corrected full-volume rehearsal;</li>
+<li>the final production conversion;</li>
+<li>checks after the load, and the move to live work.</li>
+</ol>
+<p>Each run uses a controlled mapping version and produces:</p>
+<ul>
+<li>source counts and checks;</li>
+<li>extracted counts;</li>
+<li>loaded, rejected, skipped, and transformed counts;</li>
+<li>reasons for errors;</li>
+<li>relationship checks;</li>
+<li>data-owner validation;</li>
+<li>defects and corrections;</li>
+<li>run time and performance;</li>
+<li>the evidence needed for the next gate.</li>
+</ul>
+<p>Do not change mappings during a run without version control. The team
+must know which rules gave which result.</p>
+<figure><img src="img/M08-04.png" alt="Figure 8.4. Notice that every conversion run uses one numbered mapping version and passes a gate before the next." loading="lazy"><figcaption><b>Figure 8.4.</b> Notice that every conversion run uses one numbered mapping version and passes a gate before the next.</figcaption></figure>
+
+<blockquote>
+<p><strong>Rule:</strong> Every test run uses one numbered mapping
+version, so each result traces to its rules.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> Cedar Point's second test run uses
+mapping version 3. Allergy reactions are missing after the load. Because
+the version is recorded, the team finds the rule in version 3 that
+dropped them.</li>
+<li><strong>Example B.</strong> At a family medicine clinic, two
+analysts used different copies of the workbook in one run. No one can
+tell which rule caused 200 rejected appointments. The team repeats the
+run under one numbered version.</li>
+</ul>
+<p>A result is useful only when the team knows which rules produced
+it.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Put the five conversion runs in order.</li>
+<li>Why must the mapping version stay fixed during a run?</li>
+<li>Halfway through a rehearsal, the vendor wants to fix a mapping row
+while the run is still going. What do you do?</li>
+</ol>
 <h2 id="reconcile-and-validate-with-the-owners">Reconcile and validate
 with the owners</h2>
 <p>A clean load report shows that records moved. It does not show that
@@ -153,94 +205,4 @@ could see that it was unsafe.</p>
 allergies"?</li>
 <li>Why can't count reconciliation show that a converted allergy list is
 safe?</li>
-</ol>
-<h2
-id="use-three-clinical-safeguards-and-keep-decisions-with-the-clinical-authority">Use
-three clinical safeguards and keep decisions with the clinical
-authority</h2>
-<p>The safeguards below catch clinical errors before and at each
-patient's first visit. They only work if the right people own each
-decision.</p>
-<h3 id="the-three-safeguards">The three safeguards</h3>
-<p><strong>1. Flag; do not drop or guess.</strong> Each test conversion
-produces a <strong>flag report</strong>. It lists uncoded or free-text
-items, unmapped codes, conflicting statuses, duplicates, and impossible
-dates. Flagged items arrive in the new system clearly marked as legacy
-or unverified. Do not quietly drop them. Do not let anyone assign a code
-by guessing.</p>
-<p><strong>2. Prepare charts before visits.</strong> For patients with
-visits in the first weeks after go-live, clinical staff review the
-converted lists before the visit. Build a worklist from the flag report.
-The clinical owner decides the order of review. High-risk patients often
-come first, such as those on blood thinners or insulin, or with severe
-allergies.</p>
-<p><strong>3. Reconcile at the first visit.</strong> At each patient's
-first visit in the new system, the clinician checks the converted lists
-with the patient and marks them reviewed. This matches normal medication
-reconciliation. For example, The Joint Commission's 2026 ambulatory
-National Patient Safety Goals ask clinics to find out what medicines a
-patient takes and compare them with new ones. Staff can also compare
-immunization history with the state's immunization information system
-(<strong>IIS</strong>), where one is available. An IIS is a
-confidential, population-wide database of vaccine doses.</p>
-<p>During test conversions, clinicians also compare a sample of source
-charts with converted charts. Include high-risk patients and records
-with long lists.</p>
-<figure><img src="img/M08-07.png" alt="Figure 8.7. Notice that clinician review continues after go-live, ending when each chart is marked reviewed at the first visit." loading="lazy"><figcaption><b>Figure 8.7.</b> Notice that clinician review continues after go-live, ending when each chart is marked reviewed at the first visit.</figcaption></figure>
-
-<h3 id="who-decides">Who decides</h3>
-<p>The <strong>clinical authority</strong> is the person named in the
-project's governance to make clinical decisions, such as the medical
-director or clinical lead. The clinical authority approves the
-<strong>clinical validation rule</strong>. The rule covers:</p>
-<ul>
-<li>which items are flagged;</li>
-<li>the sample size;</li>
-<li>what must be reviewed before a visit;</li>
-<li>how "reviewed" is recorded;</li>
-<li>what stays in the archive.</li>
-</ul>
-<p>The data owner accepts the converted data overall and relies on the
-clinical review for clinical lists. A pharmacist or nurse lead may
-advise.</p>
-<p>You coordinate. You produce the flag reports, build the worklists,
-schedule reviews, track completion, and report exceptions to the
-clinical authority. You do not decide whether a converted allergy is
-clinically correct. You do not recode free-text items or mark lists
-reviewed. The vendor does not decide either, even when it runs the
-conversion.</p>
-<h3 id="evidence-to-keep">Evidence to keep</h3>
-<ul>
-<li>the approved clinical validation rule, its version, and its
-approver;</li>
-<li>flag counts by type and list, for each test and the final
-conversion;</li>
-<li>the clinician sample results, with defects opened;</li>
-<li>pre-visit review completion by location;</li>
-<li>first-visit reconciliation rates after go-live;</li>
-<li>open clinical exceptions, each with an owner and due date.</li>
-</ul>
-<blockquote>
-<p><strong>Rule:</strong> You produce and track the clinical checks; the
-clinical authority decides what they mean.</p>
-</blockquote>
-<ul>
-<li><strong>Example A.</strong> The flag report shows 120 free-text
-medications at Lakeshore. You build the pre-visit worklist and schedule
-the reviews. The clinical authority decides which patients come
-first.</li>
-<li><strong>Example B.</strong> At a pediatric clinic, 30 immunization
-records have no matching CVX code. The vendor offers to pick the closest
-code. You keep them on the flag report and send the decision to the
-clinical authority.</li>
-</ul>
-<p>In both cases, you did the tracking work. The meaning of each
-clinical item stayed with the clinical authority.</p>
-<p><strong>Check yourself</strong></p>
-<ol type="1">
-<li>Name the three clinical safeguards.</li>
-<li>Why does the implementer not recode free-text allergies, even when
-the right code seems obvious?</li>
-<li>Two weeks after go-live, one location has reconciled only 58% of
-first-visit lists against a 90% target. What do you do?</li>
 </ol>

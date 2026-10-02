@@ -1,4 +1,94 @@
-<h1>Module 8, Lesson 4: Plan the cutover and a real fallback</h1>
+<h1>Module 8, Lesson 4: Use three clinical safeguards and keep decisions with the clinical authority</h1>
+<h2
+id="use-three-clinical-safeguards-and-keep-decisions-with-the-clinical-authority">Use
+three clinical safeguards and keep decisions with the clinical
+authority</h2>
+<p>The safeguards below catch clinical errors before and at each
+patient's first visit. They only work if the right people own each
+decision.</p>
+<h3 id="the-three-safeguards">The three safeguards</h3>
+<p><strong>1. Flag; do not drop or guess.</strong> Each test conversion
+produces a <strong>flag report</strong>. It lists uncoded or free-text
+items, unmapped codes, conflicting statuses, duplicates, and impossible
+dates. Flagged items arrive in the new system clearly marked as legacy
+or unverified. Do not quietly drop them. Do not let anyone assign a code
+by guessing.</p>
+<p><strong>2. Prepare charts before visits.</strong> For patients with
+visits in the first weeks after go-live, clinical staff review the
+converted lists before the visit. Build a worklist from the flag report.
+The clinical owner decides the order of review. High-risk patients often
+come first, such as those on blood thinners or insulin, or with severe
+allergies.</p>
+<p><strong>3. Reconcile at the first visit.</strong> At each patient's
+first visit in the new system, the clinician checks the converted lists
+with the patient and marks them reviewed. This matches normal medication
+reconciliation. For example, The Joint Commission's 2026 ambulatory
+National Patient Safety Goals ask clinics to find out what medicines a
+patient takes and compare them with new ones. Staff can also compare
+immunization history with the state's immunization information system
+(<strong>IIS</strong>), where one is available. An IIS is a
+confidential, population-wide database of vaccine doses.</p>
+<p>During test conversions, clinicians also compare a sample of source
+charts with converted charts. Include high-risk patients and records
+with long lists.</p>
+<figure><img src="img/M08-07.png" alt="Figure 8.7. Notice that clinician review continues after go-live, ending when each chart is marked reviewed at the first visit." loading="lazy"><figcaption><b>Figure 8.7.</b> Notice that clinician review continues after go-live, ending when each chart is marked reviewed at the first visit.</figcaption></figure>
+
+<h3 id="who-decides">Who decides</h3>
+<p>The <strong>clinical authority</strong> is the person named in the
+project's governance to make clinical decisions, such as the medical
+director or clinical lead. The clinical authority approves the
+<strong>clinical validation rule</strong>. The rule covers:</p>
+<ul>
+<li>which items are flagged;</li>
+<li>the sample size;</li>
+<li>what must be reviewed before a visit;</li>
+<li>how "reviewed" is recorded;</li>
+<li>what stays in the archive.</li>
+</ul>
+<p>The data owner accepts the converted data overall and relies on the
+clinical review for clinical lists. A pharmacist or nurse lead may
+advise.</p>
+<p>You coordinate. You produce the flag reports, build the worklists,
+schedule reviews, track completion, and report exceptions to the
+clinical authority. You do not decide whether a converted allergy is
+clinically correct. You do not recode free-text items or mark lists
+reviewed. The vendor does not decide either, even when it runs the
+conversion.</p>
+<h3 id="evidence-to-keep">Evidence to keep</h3>
+<ul>
+<li>the approved clinical validation rule, its version, and its
+approver;</li>
+<li>flag counts by type and list, for each test and the final
+conversion;</li>
+<li>the clinician sample results, with defects opened;</li>
+<li>pre-visit review completion by location;</li>
+<li>first-visit reconciliation rates after go-live;</li>
+<li>open clinical exceptions, each with an owner and due date.</li>
+</ul>
+<blockquote>
+<p><strong>Rule:</strong> You produce and track the clinical checks; the
+clinical authority decides what they mean.</p>
+</blockquote>
+<ul>
+<li><strong>Example A.</strong> The flag report shows 120 free-text
+medications at Lakeshore. You build the pre-visit worklist and schedule
+the reviews. The clinical authority decides which patients come
+first.</li>
+<li><strong>Example B.</strong> At a pediatric clinic, 30 immunization
+records have no matching CVX code. The vendor offers to pick the closest
+code. You keep them on the flag report and send the decision to the
+clinical authority.</li>
+</ul>
+<p>In both cases, you did the tracking work. The meaning of each
+clinical item stayed with the clinical authority.</p>
+<p><strong>Check yourself</strong></p>
+<ol type="1">
+<li>Name the three clinical safeguards.</li>
+<li>Why does the implementer not recode free-text allergies, even when
+the right code seems obvious?</li>
+<li>Two weeks after go-live, one location has reconciled only 58% of
+first-visit lists against a 90% target. What do you do?</li>
+</ol>
 <h2 id="plan-the-cutover-and-a-real-fallback">Plan the cutover and a
 real fallback</h2>
 <p>Go-live weekend leaves little time to think. A written cutover plan
@@ -177,89 +267,4 @@ linked to the right patient and visible only to the right roles?
 ____________</li>
 <li><strong>Set the retirement condition.</strong> What must be true
 before the old document system is turned off? ____________</li>
-</ol>
-<h2 id="field-assignment">Field assignment</h2>
-<p>Build a conversion plan for the Cedar Point Internal Medicine
-practice case (fictional; two locations, Cedar Point main and
-Lakeshore). Use a simulated source with synthetic data only. Do not use
-a real client, employer, or patient.</p>
-<ol type="1">
-<li>Inventory sources, owners, formats, populations, risks, access, and
-retention needs.</li>
-<li>Classify structured data, documents, manual information, derived
-values, relationships, audit history, and exclusions.</li>
-<li>Define the approved treatment for each category.</li>
-<li>Profile a sample or simulated source.</li>
-<li>Build at least fifteen mapping rows with transformation and
-validation rules.</li>
-<li>Write the secure-transfer and staging plan.</li>
-<li>Plan at least two test conversions before production.</li>
-<li>Define count, total, field, relationship, scenario, access, and
-client validation.</li>
-<li>Draft a clinical validation rule for medications, allergies,
-problems, and immunizations for the clinical authority to approve, with
-the flag report, pre-visit worklist, and first-visit reconciliation
-tracking.</li>
-<li>Write production cutover, delta, fallback, communication, archive,
-and retirement steps.</li>
-<li>Role-play the required data, clinical, privacy and security, and
-release approvals.</li>
-</ol>
-<p><strong>Self-check rubric.</strong> Your work is ready when:</p>
-<ul class="task-list">
-<li><label><input type="checkbox" />every source and category has an
-owner and an approved treatment;</label></li>
-<li><label><input type="checkbox" />every mapping row has a definition,
-rule, version, and approver, and no row maps by name alone;</label></li>
-<li><label><input type="checkbox" />your test-run report explains every
-count difference;</label></li>
-<li><label><input type="checkbox" />your clinical validation rule names
-the clinical authority and covers flags, pre-visit review, and
-first-visit reconciliation;</label></li>
-<li><label><input type="checkbox" />your fallback says what can be
-reversed, how long it takes, what is lost, and who decides;</label></li>
-<li><label><input type="checkbox" />no source is retired without
-approved access to required history.</label></li>
-</ul>
-<p><strong>Capstone link:</strong> capstone Artifact C (the go/no-go
-decision record) draws on readiness evidence that includes conversion
-results. Its instructions are in the capstone candidate packet. Build it
-from the packet's facts, not from this chapter's examples.</p>
-<h2 id="knowledge-check">Knowledge check</h2>
-<ol type="1">
-<li>Why are discrete, manual, and scanned categories useful but
-insufficient by themselves?</li>
-<li>What is the risk of mapping fields by name alone?</li>
-<li>What should happen when there is no safe destination field?</li>
-<li>Why must converted relationships be validated as well as
-values?</li>
-<li>What is the difference between technical reconciliation and client
-validation?</li>
-<li>What must be defined before the team can rely on a fallback or
-rollback plan?</li>
-<li>Why can a converted allergy list pass count reconciliation and still
-be unsafe?</li>
-<li>Who approves the clinical validation rule, and what does the
-implementer do and not do?</li>
-</ol>
-<h2 id="spaced-review">Spaced review</h2>
-<p>These questions come from earlier modules. Answer them without
-looking back.</p>
-<ol type="1">
-<li><em>(Module 7)</em> The vendor fixes a mapping row in version 3.3 so
-stopped medications no longer convert as active. The clinical sample now
-looks right. What else must you run before the defect closes, and
-why?</li>
-<li><em>(Module 7)</em> Mapping version 3.2 passed all checks in the
-test environment. The production load will use version 3.3. Can you
-reuse the 3.2 results? Explain.</li>
-<li><em>(Module 5)</em> In a training class on converted data, a learner
-opens a patient's scanned history and finds another patient's documents.
-How do you sort this item, and where does it go?</li>
-<li><em>(Module 4)</em> The old system holds psychotherapy notes for
-Lakeshore's social worker. Who decides who may see them in the new
-system, and what is your job?</li>
-<li><em>(Module 2)</em> The old system's vendor will provide the final
-export but has not agreed to a date. How do you record this on the
-roadmap?</li>
 </ol>
